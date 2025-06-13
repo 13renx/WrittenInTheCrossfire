@@ -1,42 +1,66 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <iostream>
 #include <string>
 #include <dotenv.h>
 #include <cpr/cpr.h>
+#include <fmt/base.h>
+#include <fmt/format.h>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 void printInstructions();
 
 int main()
 {
 	dotenv::init(".env");
-	const std::string apiKey = std::getenv("API_KEY");
-	std::string userInput;
-	std::string data;
+	const char* apiKeyTemp = std::getenv("API_KEY");	
 
-	std::cout << "Terminal AI Chatbot using C++ and Gemini API";
+	if (apiKeyTemp == nullptr) {
+		throw std::runtime_error("API_KEY was not found");
+	}
+
+	const std::string apiKey = std::string(apiKeyTemp);
+
+	std::string input;
+	json data;
+	json output;
+	std::string outputText;
+
+	fmt::print("Terminal AI Chatbot using C++ and Gemini API\n");
 	printInstructions();
 
 	do {
-		std::cout << "> ";
-		std::getline(std::cin, userInput);
+		fmt::print("> ");
+		std::getline(std::cin, input);
 
-		if (userInput == "help") {
+		if (input == "help") {
 			printInstructions();
 		}
-		else if (userInput == "exit") {
-			std::cout << "Thanks for using the chatbot!" << "\n";
+		else if (input == "exit") {
+			fmt::print("Thanks for using the chatbot!\n");
 			break;
 		}
-		else if (userInput != "") {
-			data = R"({ "contents": [{ "parts": [ { "text": ")" + userInput + R"(" }] }] })";
-
+		else if (input != "") {
+			data = json::parse(R"(
+				{ 
+					"contents": [
+						{ 
+							"parts": []
+						}
+					] 
+				}
+			)");
+			data["contents"][0]["parts"][0]["text"] = input;
+			
 			cpr::Response res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" },
 				cpr::Parameters{ { "key", apiKey } },
 				cpr::Header{ { "Content-Type", "application/json" } },
-				cpr::Body{ data });
+				cpr::Body{ data.dump() });
 
-			std::cout << res.text << "\n";
+			output = json::parse(res.text);
+			outputText = output["candidates"][0]["content"]["parts"][0]["text"].template get<std::string>();
+			fmt::print("{}\n", outputText);
 		}
 	} while (true);
 
@@ -44,9 +68,9 @@ int main()
 }
 
 void printInstructions() {
-	std::cout << "\n" << "----------------------------------------------" << "\n";
-	std::cout << "Instructions:" << "\n";
-	std::cout << "Type 'help' to show instructions." << "\n";
-	std::cout << "Type 'exit' to quit." << "\n";
-	std::cout << "----------------------------------------------" << "\n\n";
+	fmt::print("----------------------------------------------\n");
+	fmt::print("Instructions:\n");
+	fmt::print("Type 'help' to show instructions.\n");
+	fmt::print("Type 'exit' to quit.\n");
+	fmt::print("----------------------------------------------\n\n");
 }

@@ -58,6 +58,8 @@ int main()
 				cpr::Header{ { "Content-Type", "application/json" } },
 				cpr::Body{ data.dump() });
 
+			// Add error handling for response
+
 			output = json::parse(res.text);
 			outputText = output["candidates"][0]["content"]["parts"][0]["text"].template get<std::string>();
 			fmt::print("{}\n", outputText);

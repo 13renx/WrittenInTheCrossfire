@@ -21,7 +21,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".env" />
-    <None Include="output.json" />
-    <None Include="input.json" />
   </ItemGroup>
 </Project>

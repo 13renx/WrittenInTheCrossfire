@@ -25,17 +25,20 @@ int main() {
 	json output;
 	std::string outputText;
 
-	sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Prototype 2");
+	// Initialize SFML
+	bool isFullscreen = false;
+	sf::RenderWindow window(sf::VideoMode({ 1416, 984 }), "Prototype 2", sf::Style::Titlebar | sf::Style::Close);
 
 	sf::Texture backgroundTexture("Textures/background.png");
 	sf::Sprite backgroundSprite(backgroundTexture);
-	backgroundSprite.setScale({ 0.5f, 0.5f });
+	backgroundSprite.setScale({ 0.6f, 0.6f });
 
 	sf::Font font("Fonts/Allura-Regular.ttf");
 	sf::Text text(font);
 	text.setCharacterSize(100);
 	text.setFillColor(sf::Color::Black);
 
+	// Game loop
 	while(window.isOpen()) {
 		while(const auto event = window.pollEvent()) {
 			if(event->is<sf::Event::Closed>()) {
@@ -45,7 +48,16 @@ int main() {
 			if(const auto* textEntered = event->getIf<sf::Event::TextEntered>()) {
 				std::string tempString = fmt::to_string(static_cast<char>(textEntered->unicode));
 
-				// When backspace key is pressed, the last letter of textString will be removed.
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
+					if(isFullscreen) {
+						isFullscreen = false;
+						window.create(sf::VideoMode({ 1416, 984 }), "Prototype 2", sf::Style::Titlebar | sf::Style::Close);
+					} else {
+						isFullscreen = true;
+						window.create(sf::VideoMode(), "Prototype 2", sf::Style::Titlebar | sf::Style::Close, sf::State::Fullscreen);
+					}
+				}
+
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
 					if(!textString.empty()) {
 						textString.pop_back();

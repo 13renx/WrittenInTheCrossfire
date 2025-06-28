@@ -364,3 +364,6 @@ FodyWeavers.xsd
 
 # dotenv
 .env
+
+# Ignore Visual Studio 2022 temporary folder
+**/enc_temp_folder

@@ -26,8 +26,7 @@ int main() {
 	std::string outputText;
 
 	// Initialize SFML
-	bool isFullscreen = false;
-	sf::RenderWindow window(sf::VideoMode({ 1416, 984 }), "Prototype 2", sf::Style::Titlebar | sf::Style::Close);
+	sf::RenderWindow window(sf::VideoMode(), "Prototype 2", sf::Style::Titlebar | sf::Style::Close, sf::State::Fullscreen);
 
 	sf::Texture backgroundTexture("Textures/background.png");
 	sf::Sprite backgroundSprite(backgroundTexture);
@@ -47,16 +46,6 @@ int main() {
 
 			if(const auto* textEntered = event->getIf<sf::Event::TextEntered>()) {
 				std::string tempString = fmt::to_string(static_cast<char>(textEntered->unicode));
-
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
-					if(isFullscreen) {
-						isFullscreen = false;
-						window.create(sf::VideoMode({ 1416, 984 }), "Prototype 2", sf::Style::Titlebar | sf::Style::Close);
-					} else {
-						isFullscreen = true;
-						window.create(sf::VideoMode(), "Prototype 2", sf::Style::Titlebar | sf::Style::Close, sf::State::Fullscreen);
-					}
-				}
 
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
 					if(!textString.empty()) {

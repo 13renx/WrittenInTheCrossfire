@@ -26,12 +26,12 @@ int main() {
 	std::string outputText;
 
 	// Initialize SFML
-	sf::RenderWindow window(sf::VideoMode({ 1280, 960 }), "Prototype 2", sf::State::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "Prototype 2", sf::State::Fullscreen);
 
 	sf::Texture backgroundTexture("Textures/background.png");
 	sf::Sprite backgroundSprite(backgroundTexture);
-	backgroundSprite.setScale({ 0.59f, 0.59f });
-	backgroundSprite.setPosition({ -56.2f, -3.8f });
+	backgroundSprite.setScale({ 0.66f, 0.66f });
+	backgroundSprite.setPosition({ 181.2f, -1.2f });
 
 	sf::Font font("Fonts/Allura-Regular.ttf");           
 	sf::Text text(font);

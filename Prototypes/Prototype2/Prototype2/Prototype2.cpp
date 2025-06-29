@@ -26,16 +26,16 @@ int main() {
 	std::string outputText;
 
 	// Initialize SFML
-	sf::RenderWindow window(sf::VideoMode({ 1280, 960 }), "Prototype 2", sf::Style::Titlebar | sf::Style::Close, sf::State::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode({ 1280, 960 }), "Prototype 2", sf::State::Fullscreen);
 
 	sf::Texture backgroundTexture("Textures/background.png");
 	sf::Sprite backgroundSprite(backgroundTexture);
 	backgroundSprite.setScale({ 0.59f, 0.59f });
-	backgroundSprite.setPosition({ -56.2, -3.8 });
+	backgroundSprite.setPosition({ -56.2f, -3.8f });
 
-	sf::Font font("Fonts/Allura-Regular.ttf");
+	sf::Font font("Fonts/Allura-Regular.ttf");           
 	sf::Text text(font);
-	text.setCharacterSize(100);
+	text.setCharacterSize(40);
 	text.setFillColor(sf::Color::Black);
 
 	// Game loop

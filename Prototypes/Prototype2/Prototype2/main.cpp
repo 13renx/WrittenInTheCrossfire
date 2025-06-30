@@ -11,6 +11,8 @@
 
 using json = nlohmann::json;
 
+void combineStrings(std::string& combinedString, const std::vector<std::string>& stringVector);
+
 int main() {
 	dotenv::init(".env");
 	const char* apiKeyTemp = std::getenv("API_KEY");
@@ -20,7 +22,7 @@ int main() {
 	}
 
 	const std::string apiKey = std::string(apiKeyTemp);
-	std::string textString = "";
+	std::string inputText = "";
 	json data;
 	json output;
 	std::string outputText;
@@ -39,6 +41,8 @@ int main() {
 	text.setFillColor(sf::Color::Black);
 	text.setPosition({ 693.0f, 230.0f });
 	text.setLineSpacing(0.8f);
+	int textLineNum = 0;
+	std::vector<std::string> letterText = { "", "", "", "", "", "", "", "", "", "", "", "", "" }; // 13 strings
 
 	// Game loop
 	while(window.isOpen()) {
@@ -50,31 +54,26 @@ int main() {
 			if(const auto* textEntered = event->getIf<sf::Event::TextEntered>()) {
 				std::string tempString = fmt::to_string(static_cast<char>(textEntered->unicode));
 
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace) && !textString.empty()) {
-					textString.pop_back();
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
+					if(textLineNum > 0 && letterText.at(textLineNum).empty()) {
+						textLineNum--;
+					}
+
+					if((textLineNum == 0 && !letterText.at(textLineNum).empty()) || textLineNum > 0) {
+						letterText.at(textLineNum).pop_back();
+					}
 				}
 				
-				/*if (text.getLocalBounds().size.y >= 283.2f && text.getLocalBounds().size.y <= 328.2f) {
-					if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
-
-					}
-					if(text.findCharacterPos(text.getString().getSize() - 1).x >= 680 && text.findCharacterPos(text.getString().getSize() - 1).x <= 731) {
-
-					}
-					textString += "  ";
-					text.setString(textString);
-				}*/
-				
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
-					textString += "\n";
+					letterText.at(textLineNum) += "\n";
 				}
 				
 				if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
-					textString += tempString;
+					letterText.at(textLineNum) += tempString;
 				}
 
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::RShift) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
-					if(textString != "") {
+					if(inputText != "") {
 						data = json::parse(R"(
 							{ 
 								"contents": [
@@ -84,7 +83,7 @@ int main() {
 								] 
 							}
 						)");
-						data["contents"][0]["parts"][0]["text"] = textString;
+						data["contents"][0]["parts"][0]["text"] = inputText;
 
 						cpr::Response res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" },
 							cpr::Parameters{ { "key", apiKey } },
@@ -99,18 +98,29 @@ int main() {
 					}
 				}
 
-				text.setString(textString);
+				combineStrings(inputText, letterText);
+				text.setString(inputText);
 
 				// Prevent text from reaching the edge of right side of the paper
 				if(text.findCharacterPos(text.getString().getSize() - 1).x >= 1110.0f && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
-					textString += "\n";
-					text.setString(textString);
+					letterText.at(textLineNum) += "\n";
+					combineStrings(inputText, letterText);
+					text.setString(inputText);
+				}
+
+				if(!letterText.at(textLineNum).empty()) {
+					if(letterText.at(textLineNum).back() == '\n') {
+						textLineNum++;
+					}
 				}
 
 				fmt::print("Width = {}\n", text.getLocalBounds().size.x);
 				fmt::print("Height = {}\n", text.getLocalBounds().size.y);
 				fmt::print("Last character x position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).x);
 				fmt::print("Last character y position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).y);
+				fmt::print("Line num = {}\n", textLineNum);
+				fmt::print("Input text = {}\n", inputText);
+				fmt::print("letterText.at(textLineNum).empty() = {}\n", letterText.at(textLineNum).empty());
 			}
 		}
 
@@ -118,5 +128,13 @@ int main() {
 		window.draw(backgroundSprite);
 		window.draw(text);
 		window.display();
+	}
+}
+
+void combineStrings(std::string& combinedString, const std::vector<std::string>& stringVector) {
+	combinedString.clear();
+
+	for(const std::string& str : stringVector) {
+		combinedString += str;
 	}
 }

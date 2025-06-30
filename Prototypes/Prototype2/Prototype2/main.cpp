@@ -11,7 +11,7 @@
 
 using json = nlohmann::json;
 
-void combineStrings(std::string& combinedString, const std::vector<std::string>& stringVector);
+void combineStrings(std::string& combinedString, const std::vector<std::string>& stringVector, const int& lines);
 
 int main() {
 	dotenv::init(".env");
@@ -42,7 +42,7 @@ int main() {
 	text.setPosition({ 693.0f, 230.0f });
 	text.setLineSpacing(0.8f);
 	int textLineNum = 0;
-	std::vector<std::string> letterText = { "", "", "", "", "", "", "", "", "", "", "", "", "" }; // 13 strings
+	std::vector<std::string> letterText = { "", "", "", "", "", "", "", "", "", "", "", "" }; // 12 strings
 
 	// Game loop
 	while(window.isOpen()) {
@@ -64,12 +64,14 @@ int main() {
 					}
 				}
 				
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter) && textLineNum < 11) {
 					letterText.at(textLineNum) += "\n";
 				}
 				
 				if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
-					letterText.at(textLineNum) += tempString;
+					if(textLineNum < 11 || (textLineNum == 11 && text.findCharacterPos(text.getString().getSize() - 1).x <= 1082.0f)) {
+						letterText.at(textLineNum) += tempString;
+					}
 				}
 
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::RShift) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
@@ -98,13 +100,13 @@ int main() {
 					}
 				}
 
-				combineStrings(inputText, letterText);
+				combineStrings(inputText, letterText, textLineNum);
 				text.setString(inputText);
 
 				// Prevent text from reaching the edge of right side of the paper
-				if(text.findCharacterPos(text.getString().getSize() - 1).x >= 1110.0f && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
+				if(textLineNum < 11 && text.findCharacterPos(text.getString().getSize() - 1).x >= 1082.0f && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
 					letterText.at(textLineNum) += "\n";
-					combineStrings(inputText, letterText);
+					combineStrings(inputText, letterText, textLineNum);
 					text.setString(inputText);
 				}
 
@@ -114,8 +116,8 @@ int main() {
 					}
 				}
 
-				fmt::print("Width = {}\n", text.getLocalBounds().size.x);
-				fmt::print("Height = {}\n", text.getLocalBounds().size.y);
+				fmt::print("Text width = {}\n", text.getLocalBounds().size.x);
+				fmt::print("Text height = {}\n", text.getLocalBounds().size.y);
 				fmt::print("Last character x position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).x);
 				fmt::print("Last character y position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).y);
 				fmt::print("Line num = {}\n", textLineNum);
@@ -131,10 +133,24 @@ int main() {
 	}
 }
 
-void combineStrings(std::string& combinedString, const std::vector<std::string>& stringVector) {
+void combineStrings(std::string& combinedString, const std::vector<std::string>& stringVector, const int& lines) {
 	combinedString.clear();
 
-	for(const std::string& str : stringVector) {
-		combinedString += str;
+	for(int i = 0; i <= lines; i++) {
+		switch(i) {
+			case 6:
+				combinedString += "     ";
+				break;
+			case 7:
+			case 8:
+				combinedString += "    ";
+				break;
+			case 9:
+			case 10:
+			case 11:
+				combinedString += "  ";
+		}
+
+		combinedString += stringVector.at(i);
 	}
 }

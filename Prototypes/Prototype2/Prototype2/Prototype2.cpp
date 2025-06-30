@@ -33,10 +33,12 @@ int main() {
 	backgroundSprite.setScale({ 0.66f, 0.66f });
 	backgroundSprite.setPosition({ 181.2f, -1.2f });
 
-	sf::Font font("Fonts/Allura-Regular.ttf");           
+	sf::Font font("Fonts/Quentin.otf");          
 	sf::Text text(font);
 	text.setCharacterSize(40);
 	text.setFillColor(sf::Color::Black);
+	text.setPosition({ 693.0f, 230.0f });
+	text.setLineSpacing(0.8f);
 
 	// Game loop
 	while(window.isOpen()) {
@@ -88,7 +90,16 @@ int main() {
 					}
 				}
 
+				/*if() {
+					
+				}*/
+
 				text.setString(textString);
+
+				fmt::print("Width = {}\n", text.getLocalBounds().size.x);
+				fmt::print("Height = {}\n", text.getLocalBounds().size.y);
+				fmt::print("Last character x position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).x);
+				fmt::print("Last character y position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).y);
 			}
 		}
 

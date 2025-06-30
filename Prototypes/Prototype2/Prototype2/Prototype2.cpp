@@ -50,11 +50,20 @@ int main() {
 			if(const auto* textEntered = event->getIf<sf::Event::TextEntered>()) {
 				std::string tempString = fmt::to_string(static_cast<char>(textEntered->unicode));
 
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
-					if(!textString.empty()) {
-						textString.pop_back();
-					}
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace) && !textString.empty()) {
+					textString.pop_back();
 				}
+				
+				/*if (text.getLocalBounds().size.y >= 283.2f && text.getLocalBounds().size.y <= 328.2f) {
+					if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
+
+					}
+					if(text.findCharacterPos(text.getString().getSize() - 1).x >= 680 && text.findCharacterPos(text.getString().getSize() - 1).x <= 731) {
+
+					}
+					textString += "  ";
+					text.setString(textString);
+				}*/
 				
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
 					textString += "\n";
@@ -90,11 +99,13 @@ int main() {
 					}
 				}
 
-				/*if() {
-					
-				}*/
-
 				text.setString(textString);
+
+				// Prevent text from reaching the edge of right side of the paper
+				if(text.findCharacterPos(text.getString().getSize() - 1).x >= 1110.0f && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Backspace)) {
+					textString += "\n";
+					text.setString(textString);
+				}
 
 				fmt::print("Width = {}\n", text.getLocalBounds().size.x);
 				fmt::print("Height = {}\n", text.getLocalBounds().size.y);

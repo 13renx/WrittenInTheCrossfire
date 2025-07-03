@@ -29,13 +29,14 @@ int main() {
 
 	// Initialize SFML
 	sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "Prototype 2", sf::State::Fullscreen);
+	window.setFramerateLimit(60);
 
-	sf::Texture backgroundTexture("Textures/background.png");
+	sf::Texture backgroundTexture("Assets/Textures/Backgrounds/full_body_bg.PNG");
 	sf::Sprite backgroundSprite(backgroundTexture);
 	backgroundSprite.setScale({ 0.66f, 0.66f });
 	backgroundSprite.setPosition({ 181.2f, -1.2f });
 
-	sf::Font font("Fonts/Quentin.otf");          
+	sf::Font font("Assets/Fonts/Quentin.otf");          
 	sf::Text text(font);
 	text.setCharacterSize(40);
 	text.setFillColor(sf::Color::Black);
@@ -86,8 +87,9 @@ int main() {
 							}
 						)");
 						data["contents"][0]["parts"][0]["text"] = inputText;
+						//data["system_instruction"]["parts"][0]["text"] = "";
 
-						cpr::Response res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" },
+						cpr::Response res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" },
 							cpr::Parameters{ { "key", apiKey } },
 							cpr::Header{ { "Content-Type", "application/json" } },
 							cpr::Body{ data.dump() });
@@ -116,13 +118,14 @@ int main() {
 					}
 				}
 
+				// For debugging
 				fmt::print("Text width = {}\n", text.getLocalBounds().size.x);
 				fmt::print("Text height = {}\n", text.getLocalBounds().size.y);
 				fmt::print("Last character x position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).x);
 				fmt::print("Last character y position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).y);
 				fmt::print("Line num = {}\n", textLineNum);
 				fmt::print("Input text = {}\n", inputText);
-				fmt::print("letterText.at(textLineNum).empty() = {}\n", letterText.at(textLineNum).empty());
+				fmt::print("letterText.at(textLineNum).empty() = {}\n\n", letterText.at(textLineNum).empty());
 			}
 		}
 

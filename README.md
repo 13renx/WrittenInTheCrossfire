@@ -1,9 +1,28 @@
 # WrittenInTheCrossfire
 
-## Fonts
+## Table of Contents
 
-### [Quentin](https://www.dafont.com/quentin-2.font?l[]=10&l[]=1)
+- Getting Started
+- Dependencies
+  - Libraries
+  - Fonts
 
-- **Author:** Get Studio
-- **License:** 100% Free (No specific license mentioned)
-- **Purpose:** Used for the text in writing letters.
+## Getting Started
+
+
+## Dependencies
+
+### Libraries
+
+- SFML (Simple and Fast Multimedia Library)
+- fmtlib/fmt
+- nlohmann/json
+- libcpr/cpr
+- laserpants/dotenv-cpp
+
+### Fonts
+
+- [Quentin](https://www.dafont.com/quentin-2.font?l[]=10&l[]=1)
+  - **Author:** Get Studio
+  - **License:** 100% Free (No specific license mentioned)
+  - **Purpose:** Used for the text in writing letters.

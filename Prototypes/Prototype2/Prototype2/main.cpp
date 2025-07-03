@@ -87,7 +87,8 @@ int main() {
 							}
 						)");
 						data["contents"][0]["parts"][0]["text"] = inputText;
-						//data["system_instruction"]["parts"][0]["text"] = "";
+						data["system_instruction"]["parts"][0]["text"] = "";
+						data["generationConfig"]["thinkingConfig"]["thinkingBudget"] = 0; // Disable thinking
 
 						cpr::Response res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" },
 							cpr::Parameters{ { "key", apiKey } },

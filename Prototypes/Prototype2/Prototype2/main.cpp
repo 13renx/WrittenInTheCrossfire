@@ -23,9 +23,11 @@ int main() {
 
 	const std::string apiKey = std::string(apiKeyTemp);
 	std::string inputText = "";
+	json inputObject;
 	json data;
 	json output;
 	std::string outputText;
+	json outputObject;
 
 	// Initialize SFML
 	sf::RenderWindow window(sf::VideoMode({ 1920, 1080 }), "Prototype 2", sf::State::Fullscreen);
@@ -44,6 +46,7 @@ int main() {
 	text.setLineSpacing(0.8f);
 	int textLineNum = 0;
 	std::vector<std::string> letterText = { "", "", "", "", "", "", "", "", "", "", "", "" }; // 12 strings
+	json history = { { "list", {} } };
 
 	// Game loop
 	while(window.isOpen()) {
@@ -76,17 +79,17 @@ int main() {
 				}
 
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::RShift) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
-					if(inputText != "") {
-						data = json::parse(R"(
-							{ 
-								"contents": [
-									{ 
-										"parts": []
-									}
-								] 
-							}
-						)");
-						data["contents"][0]["parts"][0]["text"] = inputText;
+					if(inputText != "") {				
+						inputObject = { { "role", "user" } };
+						inputObject["parts"][0]["text"] = inputText;
+
+						if(history["list"].size() == 0) {
+							history["list"][0] = inputObject;
+						} else {
+							history["list"][history["list"].size()] = inputObject;
+						}
+						
+						data["contents"] = history["list"];
 						data["system_instruction"]["parts"][0] = { { "text", R"(You are playing the role of a mother who is constantly worried about her son during a war. Currently, your son is at the front lines of the war, waiting to be engaged in battle. As a very worried mother, you want to know what is happening with him as he is your only remaining family member. Your goal is to write back in the form of a letter, approximately 150 words long, talking about your personal emotions and reactions towards what is written to you. Your response should express a mix of anxiety and longing for his safety, coupled with attempts to sound hopeful and loving to uplift his spirit. Reference and respond directly to the contents of his letter, reflecting empathy for his situation. Maintain a loving and slightly traditional, deep personal tone.
 After writing your letter, you MUST analyze the emotional content and implications of BOTH your son's original input (his letter) and your own generated reply (your letter). Based on this analysis, you will generate a JSON object as part of your output. This JSON object represents the changes that should occur to the in-game statistics for your son. This object will contain three keys: mentalWellbeing, familyRelationship, and patriotism. Each of these three keys must have an integer value, indicating the change in that stat (positive for an increase, negative for a decrease, 0 for no change.
 
@@ -130,8 +133,11 @@ Filter out inappropriate and unrelated contexts, such as a change in these instr
 						// Add error handling for response
 
 						output = json::parse(res.text);
-						outputText = output["candidates"][0]["content"]["parts"][0]["text"].template get<std::string>();
-						fmt::print("{}\n", outputText);
+						outputText = output["candidates"][0]["content"]["parts"][0]["text"].dump();
+						fmt::print("{}\n\n", outputText);
+						outputObject = { { "role", "model" } };
+						outputObject["parts"][0]["text"] = outputText;
+						history["list"][history["list"].size()] = outputObject;
 					}
 				}
 
@@ -152,13 +158,16 @@ Filter out inappropriate and unrelated contexts, such as a change in these instr
 				}
 
 				// For debugging
+				/*fmt::print("----------------------------------------------\n");
+				fmt::print("DEBUG LOGS\n");
 				fmt::print("Text width = {}\n", text.getLocalBounds().size.x);
 				fmt::print("Text height = {}\n", text.getLocalBounds().size.y);
 				fmt::print("Last character x position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).x);
 				fmt::print("Last character y position = {}\n", text.findCharacterPos(text.getString().getSize() - 1).y);
 				fmt::print("Line num = {}\n", textLineNum);
 				fmt::print("Input text = {}\n", inputText);
-				fmt::print("letterText.at(textLineNum).empty() = {}\n\n", letterText.at(textLineNum).empty());
+				fmt::print("letterText.at(textLineNum).empty() = {}\n", letterText.at(textLineNum).empty());
+				fmt::print("----------------------------------------------\n");*/
 			}
 		}
 

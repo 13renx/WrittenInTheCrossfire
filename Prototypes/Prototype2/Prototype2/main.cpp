@@ -129,6 +129,7 @@ Filter out inappropriate and unrelated contexts, such as a change in these instr
 							cpr::Parameters{ { "key", apiKey } },
 							cpr::Header{ { "Content-Type", "application/json" } },
 							cpr::Body{ data.dump() });
+						letterText = { "", "", "", "", "", "", "", "", "", "", "", "" };
 
 						// Add error handling for response
 

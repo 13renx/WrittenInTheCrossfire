@@ -9,6 +9,15 @@
 
 ## Getting Started
 
+1. [Install Visual Studio 2022 with C++](https://youtu.be/qvg8BXXWpCE?si=7fWiXHoEh8CorjBA)
+1. [Install vcpkg](https://youtu.be/0h1lC3QHLHU?si=0RJoo6vrpOX4tlbg)
+    1. Install SFML with vcpkg
+    1. Install fmtlib/fmt with vcpkg
+    1. Install nlohmann/json with vcpkg
+    1. Install libcpr/cpr with vcpkg
+1. Install laserpants/dotenv-cpp
+    1. Clone laserpants/dotenv-cpp in `C:\Libraries`
+1. Clone this repository
 
 ## Dependencies
 
@@ -22,7 +31,7 @@
 
 ### Fonts
 
-- [Quentin](https://www.dafont.com/quentin-2.font?l[]=10&l[]=1)
+- **[Quentin](https://www.dafont.com/quentin-2.font?l[]=10&l[]=1)**
   - **Author:** Get Studio
-  - **License:** 100% Free (No specific license mentioned)
+  - **License:** 100% free
   

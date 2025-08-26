@@ -14,11 +14,11 @@
 
 ### Libraries
 
-- SFML (Simple and Fast Multimedia Library)
-- fmtlib/fmt
-- nlohmann/json
-- libcpr/cpr
-- laserpants/dotenv-cpp
+- [SFML](https://www.sfml-dev.org/)
+- [fmtlib/fmt](https://github.com/fmtlib/fmt)
+- [nlohmann/json](https://github.com/nlohmann/json)
+- [libcpr/cpr](https://github.com/libcpr/cpr)
+- [laserpants/dotenv-cpp](https://github.com/laserpants/dotenv-cpp)
 
 ### Fonts
 

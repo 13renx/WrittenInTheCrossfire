@@ -52,7 +52,7 @@
   <thead>
     <tr>
       <th></th>
-      <th>Name</th>
+      <th>Names</th>
       <th>Roles</th>
     </tr>
   </thead>

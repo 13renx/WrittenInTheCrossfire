@@ -14,5 +14,5 @@ class Client {
     public:
         Client();
         void setApiKey(const std::string& apiKey);
-        json fetchResponse(const std::string& promptType);
+        json fetchResponse(const std::string& promptType, const std::string& apiKey);
 };

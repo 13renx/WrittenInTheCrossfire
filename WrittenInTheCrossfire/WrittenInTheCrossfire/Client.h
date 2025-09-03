@@ -1,17 +1,18 @@
 #pragma once
-#include <nlohmann/json.hpp>
+
 #include <vector>
+#include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
 class Client {
-    std::vector<json> history;
-    json prompt;
-    json testPrompt;
     std::string apiKey;
+    json testPrompt;
+    json gamePrompt;
+    std::vector<json> history;
 
     public:
         Client();
         void setApiKey(const std::string& apiKey);
-        void fetchResponse(const std::string& promptType);
+        json fetchResponse(const std::string& promptType);
 };

@@ -13,6 +13,7 @@ class Client {
 
     public:
         Client();
-        void setApiKey(const std::string& apiKey);
         json fetchResponse(const std::string& promptType, const std::string& apiKey);
+        bool testApiKey(const std::string& promptType, const std::string& apiKey);
+        void setApiKey(const std::string& apiKey);
 };

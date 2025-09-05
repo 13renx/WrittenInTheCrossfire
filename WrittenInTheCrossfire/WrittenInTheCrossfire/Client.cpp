@@ -97,16 +97,6 @@ Client::Client() {
 	this->history = std::vector<json>();
 }
 
-void Client::setApiKey(const std::string& apiKey) {
-	json res = this->fetchResponse("test", apiKey);
-
-	if(res.contains("error")) {
-
-	} else {
-		this->apiKey = apiKey;
-	}
-}
-
 json Client::fetchResponse(const std::string& promptType, const std::string& apiKey) {
 	cpr::Response res;
 	std::string prompt;
@@ -123,7 +113,17 @@ json Client::fetchResponse(const std::string& promptType, const std::string& api
 		cpr::Header{ { "Content-Type", "application/json" } },
 		cpr::Body{ prompt });
 
-	std::cout << res.text << std::endl;
-
 	return json::parse(res.text);
+}
+
+bool Client::testApiKey(const std::string& testType, const std::string& apiKey) {
+	json res = this->fetchResponse("test", apiKey);
+
+	if(res.contains("error")) {
+
+	}
+}
+
+void Client::setApiKey(const std::string& apiKey) {
+
 }

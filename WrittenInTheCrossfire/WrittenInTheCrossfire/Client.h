@@ -13,7 +13,17 @@ class Client {
 
     public:
         Client();
-        json fetchResponse(const std::string& promptType, const std::string& apiKey);
-        bool testApiKey(const std::string& promptType, const std::string& apiKey);
+
+        enum class PromptType {
+            TEST,
+            GAME
+        };
+
+        enum class TestType {
+            NO_API_KEY,
+        };
+
+        json fetchResponse(PromptType promptType, const std::string& apiKey);
+        bool testApiKey(TestType testType, const std::string& apiKey);
         void setApiKey(const std::string& apiKey);
 };

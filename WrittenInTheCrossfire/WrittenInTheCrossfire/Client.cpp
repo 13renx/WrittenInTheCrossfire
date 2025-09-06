@@ -97,14 +97,14 @@ Client::Client() {
 	this->history = std::vector<json>();
 }
 
-json Client::fetchResponse(const std::string& promptType, const std::string& apiKey) {
+json Client::fetchResponse(Client::PromptType promptType, const std::string& apiKey) {
 	cpr::Response res;
 	std::string prompt;
 
-	if(promptType == "test") {
+	if(promptType == Client::PromptType::TEST) {
 		prompt = this->testPrompt.dump();
 	}
-	else if(promptType == "game") {
+	else if(promptType == Client::PromptType::GAME) {
 		prompt = this->gamePrompt.dump();
 	}
 
@@ -116,11 +116,18 @@ json Client::fetchResponse(const std::string& promptType, const std::string& api
 	return json::parse(res.text);
 }
 
-bool Client::testApiKey(const std::string& testType, const std::string& apiKey) {
-	json res = this->fetchResponse("test", apiKey);
+bool Client::testApiKey(Client::TestType testType, const std::string& apiKey) {
+	json res = this->fetchResponse(Client::PromptType::TEST, apiKey);
 
 	if(res.contains("error")) {
+		switch(testType) {
+			case Client::TestType::NO_API_KEY:
+				if(res["error"]["status"] == "INVALID_ARGUMENT") {
 
+				}
+
+				break;
+		}
 	}
 }
 

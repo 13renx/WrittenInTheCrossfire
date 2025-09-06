@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+#include <tuple>
 #include <vector>
 #include <nlohmann/json.hpp>
 
@@ -21,9 +23,10 @@ class Client {
 
         enum class TestType {
             NO_API_KEY,
+			WITH_API_KEY
         };
 
         json fetchResponse(PromptType promptType, const std::string& apiKey);
-        bool testApiKey(TestType testType, const std::string& apiKey);
+        std::tuple<bool, std::string>  testApiKey(TestType testType, const std::string& apiKey);
         void setApiKey(const std::string& apiKey);
 };

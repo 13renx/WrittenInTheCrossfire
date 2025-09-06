@@ -1,6 +1,7 @@
 #include "Client.h"
 #include <iostream>
 #include <string>
+#include <tuple>
 #include <vector>
 #include <cpr/cpr.h>
 #include <nlohmann/json.hpp>
@@ -116,21 +117,29 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 	return json::parse(res.text);
 }
 
-bool Client::testApiKey(Client::TestType testType, const std::string& apiKey) {
+std::tuple<bool, std::string> Client::testApiKey(Client::TestType testType, const std::string& apiKey) {
 	json res = this->fetchResponse(Client::PromptType::TEST, apiKey);
 
 	if(res.contains("error")) {
 		switch(testType) {
 			case Client::TestType::NO_API_KEY:
-				if(res["error"]["status"] == "INVALID_ARGUMENT") {
-
+				if(res["error"]["details"][0]["reason"] == "API_KEY_INVALID") {
+					return false;
 				}
 
 				break;
+			case Client::TestType::WITH_API_KEY:
+				return false;
 		}
+	} else {
+		return true;
 	}
 }
 
 void Client::setApiKey(const std::string& apiKey) {
-
+	if(Client::testApiKey(Client::TestType::NO_API_KEY, apiKey)) {
+		this->apiKey = apiKey;
+	} else {
+		
+	}	
 }

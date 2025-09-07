@@ -120,19 +120,23 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 std::tuple<bool, std::string> Client::testApiKey(Client::TestType testType, const std::string& apiKey) {
 	json res = this->fetchResponse(Client::PromptType::TEST, apiKey);
 
-	if(res.contains("error")) {
-		switch(testType) {
-			case Client::TestType::NO_API_KEY:
+	switch(testType) {
+		case Client::TestType::NO_API_KEY:
+			if(res.contains("error")) {
 				if(res["error"]["details"][0]["reason"] == "API_KEY_INVALID") {
-					return false;
+					return { false, res["error"]["message"] };
 				}
+			} else {
+				return { true, "API key is valid." };
+			}
 
-				break;
-			case Client::TestType::WITH_API_KEY:
-				return false;
-		}
-	} else {
-		return true;
+			break;
+		case Client::TestType::WITH_API_KEY:
+			if(res.contains("error")) {
+				return { false, res["error"]["message"] };
+			} else {
+				return { true, "API key is working." };
+			}
 	}
 }
 

@@ -28,5 +28,5 @@ class Client {
 
         json fetchResponse(PromptType promptType, const std::string& apiKey);
         std::tuple<bool, std::string>  testApiKey(TestType testType, const std::string& apiKey);
-        void setApiKey(const std::string& apiKey);
+        std::string setApiKey(const std::string& apiKey);
 };

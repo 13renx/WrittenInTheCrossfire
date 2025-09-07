@@ -140,11 +140,11 @@ std::tuple<bool, std::string> Client::testApiKey(Client::TestType testType, cons
 	}
 }
 
-std::string Client::setApiKey(const std::string& apiKey) {
+std::tuple<bool, std::string> Client::setApiKey(const std::string& apiKey) {
 const auto [result, message] = 	Client::testApiKey(Client::TestType::NO_API_KEY, apiKey);
 if(result) {
 		this->apiKey = apiKey;
 	}
 
-return message;
+return { result, message };
 }

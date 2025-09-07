@@ -2,7 +2,6 @@
 
 #include <string>
 #include <tuple>
-#include <vector>
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
@@ -11,7 +10,6 @@ class Client {
     std::string apiKey;
     json testPrompt;
     json gamePrompt;
-    std::vector<json> history;
 
     public:
         Client();

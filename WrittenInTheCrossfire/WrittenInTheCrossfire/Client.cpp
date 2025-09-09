@@ -33,16 +33,25 @@ Client::Client() {
 						"letter": {
 							"type": "string"
 						},
-						"statsChanges": {
+						"stats": {
 							"properties": {
 								"familyRelationship": {
-									"type": "integer"
+            								"enum": [
+										"terrible",
+										"bad",
+										"poor",
+										"neutral",
+										"okay",
+										"good",
+										"excellent"
+									],
+									"type": "string"
 								},
 								"mentalWellbeing": {
-									"type": "integer"
+									"type": "string"
 								},
 								"patriotism": {
-									"type": "integer"
+									"type": "string"
 								}
 							},
 							"type": "object"
@@ -141,10 +150,10 @@ std::tuple<bool, std::string> Client::testApiKey(Client::TestType testType, cons
 }
 
 std::tuple<bool, std::string> Client::setApiKey(const std::string& apiKey) {
-const auto [result, message] = 	Client::testApiKey(Client::TestType::NO_API_KEY, apiKey);
-if(result) {
-		this->apiKey = apiKey;
+        const auto [result, message] = 	Client::testApiKey(Client::TestType::NO_API_KEY, apiKey);
+        if(result) {
+	        	this->apiKey = apiKey;
 	}
 
-return { result, message };
+        return { result, message };
 }

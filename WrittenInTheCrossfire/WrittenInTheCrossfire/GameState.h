@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Stats.h"
 #include <vector>
 #include <nlohmann/json.hpp>
 
@@ -8,17 +9,13 @@ using json = nlohmann::json;
 class GameState {
     std::vector<json> chatHistory;
     int checkpoint;
-    struct stats {
-        int mentalWellbeing;
-        int familyRelationship;
-        int patriotism;
-	} currentStats;
+    stats currentStats;
 
     public:
         std::vector<json> getChatHistory();
-        void setChatHistory();
+        void setChatHistory(std::vector<json> chatHistory);
         int getCheckpoint();
-        void setCheckpoint();
+        void setCheckpoint(int checkpoint);
 		stats getCurrentStats();
-		void setCurrentStats();
+		void setCurrentStats(stats currentStats);
 };

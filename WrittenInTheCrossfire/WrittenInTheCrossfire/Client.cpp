@@ -9,8 +9,8 @@
 using json = nlohmann::json;
 
 Client::Client() {
-	this->apiKey = "";
-	this->testPrompt = json::parse(R"(
+	apiKey = "";
+	testPrompt = json::parse(R"(
 		{ 
 			"contents": [
 				{ 
@@ -23,7 +23,7 @@ Client::Client() {
 			] 
 		}
 	)");
-	this->gamePrompt = json::parse(R"(
+	gamePrompt = json::parse(R"(
 		{ 
 			"contents": [],
 			"generationConfig": {
@@ -97,7 +97,7 @@ Client::Client() {
 			}
 		}
 	)");
-	this->gamePrompt["system_instruction"]["parts"][0]["text"] = R"(
+	gamePrompt["system_instruction"]["parts"][0]["text"] = R"(
 			You are playing the role of a mother who is constantly worried about her son during a war. Currently, your son is at the front lines of the war, waiting to be engaged in battle. As a very worried mother, you want to know what is happening with him as he is your only remaining family member. Your goal is to write back in the form of a letter, approximately 150 words long, talking about your personal emotions and reactions towards what is written to you. Your response should express a mix of anxiety and longing for his safety, coupled with attempts to sound hopeful and loving to uplift his spirit. Reference and respond directly to the contents of his letter, reflecting empathy for his situation. Maintain a loving and slightly traditional, deep personal tone.
 			After writing your letter, you MUST analyze the emotional content and implications of BOTH your son's original input (his letter) and your own generated reply (your letter). Based on this analysis, you will generate a JSON object as part of your output. This JSON object represents the changes that should occur to the in-game statistics for your son. This object will contain three keys: mentalWellbeing, familyRelationship, and patriotism. Each of these three keys must have an integer value, indicating the change in that stat (positive for an increase, negative for a decrease, 0 for no change.
 
@@ -129,10 +129,10 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 	std::string prompt;
 
 	if(promptType == Client::PromptType::TEST) {
-		prompt = this->testPrompt.dump();
+		prompt = testPrompt.dump();
 	}
 	else if(promptType == Client::PromptType::GAME) {
-		prompt = this->gamePrompt.dump();
+		prompt = gamePrompt.dump();
 	}
 
 	res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" },
@@ -144,7 +144,7 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 }
 
 std::tuple<bool, std::string> Client::testApiKey(Client::TestType testType, const std::string& apiKey) {
-	json res = this->fetchResponse(Client::PromptType::TEST, apiKey);
+	json res = fetchResponse(Client::PromptType::TEST, apiKey);
 
 	switch(testType) {
 		case Client::TestType::NO_API_KEY:

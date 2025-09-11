@@ -18,4 +18,6 @@ class GameState {
         void setCheckpoint(int checkpoint);
 		stats getCurrentStats();
 		void setCurrentStats(stats currentStats);
+		void save(); // Save game state to save file (save.json)
+		void load(); // Load game state from save file (save.json)
 };

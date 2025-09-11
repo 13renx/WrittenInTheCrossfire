@@ -28,3 +28,12 @@ stats GameState::getCurrentStats() {
 void GameState::setCurrentStats(stats currentStats) {
 	this->currentStats = currentStats;
 }
+
+void GameState::save() {
+    json save;
+    save["chatHistory"] = GameState::getCurrentStats();
+}
+
+void GameState::load() {
+    
+}

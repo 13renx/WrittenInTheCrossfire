@@ -31,7 +31,9 @@ void GameState::setCurrentStats(stats currentStats) {
 
 void GameState::save() {
     json save;
-    save["chatHistory"] = GameState::getCurrentStats();
+    save["chatHistory"] = getCurrentStats();
+    save["checkpoint"] = getCheckpoint();
+    save["currentStats"] = getCurrentStats();
 }
 
 void GameState::load() {

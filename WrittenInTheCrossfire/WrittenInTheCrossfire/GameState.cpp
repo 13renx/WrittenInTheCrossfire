@@ -9,7 +9,12 @@
 using json = nlohmann::json;
 
 GameState::GameState() {
+  checkpoint = 1;
+  currentStats.mentalWellbeing = 100;
+  currentStats.familyRelationship = 100;
+  currentStats.patriotism = 100;
   
+  save();
 }
 
 std::vector<json> GameState::getChatHistory() {

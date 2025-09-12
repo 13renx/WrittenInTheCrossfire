@@ -1,7 +1,10 @@
 #include "GameState.h"
 #include "witc.h"
-#include <nlohmann/json.hpp>
+#include <iostream>
+#include <fstream>
+#include <tuple>
 #include <vector>
+#include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
@@ -29,15 +32,23 @@ void GameState::setCurrentStats(witc::stats currentStats) {
 	this->currentStats = currentStats;
 }
 
-void GameState::save() {
+std::tuple<bool, std::string> GameState::save() {
     json save;
+
     save["chatHistory"] = getChatHistory();
     save["checkpoint"] = getCheckpoint();
     save["currentStats"] = getCurrentStats();
 
-	
+	std::ofstream file("save.json");
+
+	if(file.is_open()) {
+		file << save.dump(4) << std::endl;
+		return { true, "Game state saved successfully." };
+	} else {
+		return { false, "Failed to save game state." };
+	}
 }
 
-void GameState::load() {
+std::tuple<bool, std::string> GameState::load() {
     
 }

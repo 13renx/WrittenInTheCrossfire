@@ -1,4 +1,5 @@
 ﻿#include "Client.h"
+#include "GameState.h"
 #include <iostream>
 #include <string>
 #include <cpr/cpr.h>
@@ -11,4 +12,6 @@ using json = nlohmann::json;
 
 int main() {
 
+
+	return 0;
 }

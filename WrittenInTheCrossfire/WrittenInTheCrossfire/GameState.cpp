@@ -1,5 +1,5 @@
 #include "GameState.h"
-#include "Stats.h"
+#include "witc.h"
 #include <nlohmann/json.hpp>
 #include <vector>
 
@@ -21,19 +21,21 @@ void GameState::setCheckpoint(int checkpoint) {
 	this->checkpoint = checkpoint;
 }
 
-stats GameState::getCurrentStats() {
+witc::stats GameState::getCurrentStats() {
 	return currentStats;
 }
 
-void GameState::setCurrentStats(stats currentStats) {
+void GameState::setCurrentStats(witc::stats currentStats) {
 	this->currentStats = currentStats;
 }
 
 void GameState::save() {
     json save;
-    save["chatHistory"] = getCurrentStats();
+    save["chatHistory"] = getChatHistory();
     save["checkpoint"] = getCheckpoint();
     save["currentStats"] = getCurrentStats();
+
+	
 }
 
 void GameState::load() {

@@ -8,6 +8,10 @@
 
 using json = nlohmann::json;
 
+GameState::GameState() {
+  
+}
+
 std::vector<json> GameState::getChatHistory() {
 	return chatHistory;
 }
@@ -50,5 +54,13 @@ std::tuple<bool, std::string> GameState::save() {
 }
 
 std::tuple<bool, std::string> GameState::load() {
+    json load;
+    std::ifstream file("save.json");
     
+    if(file.is_open()) {
+      file >> load;
+      return { true, "Save loaded successfully." };
+    } else {
+      return { false, "Failed to load save." };
+	  }
 }

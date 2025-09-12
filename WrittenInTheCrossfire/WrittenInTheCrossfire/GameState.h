@@ -14,6 +14,8 @@ class GameState {
     witc::stats currentStats;
 
     public:
+        GameState();
+        
         std::vector<json> getChatHistory();
         void setChatHistory(std::vector<json> chatHistory);
         int getCheckpoint();

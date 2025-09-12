@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="witc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

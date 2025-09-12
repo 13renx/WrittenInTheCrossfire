@@ -9,12 +9,12 @@
 using json = nlohmann::json;
 
 GameState::GameState() {
-  checkpoint = 1;
-  currentStats.mentalWellbeing = 100;
-  currentStats.familyRelationship = 100;
-  currentStats.patriotism = 100;
+	checkpoint = 1;
+	currentStats.mentalWellbeing = 100;
+	currentStats.familyRelationship = 100;
+	currentStats.patriotism = 100;
   
-  save();
+	save();
 }
 
 std::vector<json> GameState::getChatHistory() {
@@ -59,13 +59,13 @@ std::tuple<bool, std::string> GameState::save() {
 }
 
 std::tuple<bool, std::string> GameState::load() {
-    json load;
-    std::ifstream file("save.json");
+	json load;
+	std::ifstream file("save.json");
     
-    if(file.is_open()) {
-      file >> load;
-      return { true, "Save loaded successfully." };
-    } else {
-      return { false, "Failed to load save." };
-	  }
+	if(file.is_open()) {
+		file >> load;
+		return { true, "Save loaded successfully." };
+	} else {
+		return { false, "Failed to load save." };
+	}
 }

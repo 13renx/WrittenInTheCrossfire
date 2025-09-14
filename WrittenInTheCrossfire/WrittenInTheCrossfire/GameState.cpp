@@ -13,8 +13,6 @@ GameState::GameState() {
 	currentStats.mentalWellbeing = 100;
 	currentStats.familyRelationship = 100;
 	currentStats.patriotism = 100;
-  
-	save();
 }
 
 std::vector<json> GameState::getChatHistory() {
@@ -42,12 +40,7 @@ void GameState::setCurrentStats(Stats currentStats) {
 }
 
 std::tuple<bool, std::string> GameState::save() {
-    json save;
-
-    save["chatHistory"] = getChatHistory();
-    save["checkpoint"] = getCheckpoint();
-    save["currentStats"] = getCurrentStats();
-
+	json save = *this;
 	std::ofstream file("save.json");
 
 	if(file.is_open()) {

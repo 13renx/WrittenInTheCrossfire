@@ -25,5 +25,5 @@ class GameState {
         std::tuple<bool, std::string> save(); // Saves game state to save file (save.json)
         std::tuple<bool, std::string> load(); // Loads game state from save file (save.json)
 
-        NLOHMANN_DEFINE_TYPE_INTRUSIVE(GameState, chatHistory, checkpoint, currentStats)
+        NLOHMANN_DEFINE_TYPE_INTRUSIVE(GameState, chatHistory, checkpoint, currentStats) // Creates to_json() and from_json() for GameState
 };

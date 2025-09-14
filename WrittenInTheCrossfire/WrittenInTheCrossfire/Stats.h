@@ -10,4 +10,4 @@ struct Stats {
     int patriotism;
 };
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Stats, mentalWellbeing, familyRelationship, patriotism) // Creates to_json() and from_json()
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Stats, mentalWellbeing, familyRelationship, patriotism) // Creates to_json() and from_json() for Stats

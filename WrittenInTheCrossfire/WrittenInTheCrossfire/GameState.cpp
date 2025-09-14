@@ -64,10 +64,14 @@ std::tuple<bool, std::string> GameState::load() {
     
 	if(file.is_open()) {
 		file >> load;
+		auto gameState = load.template get<GameState>();
+
+		setChatHistory(gameState.getChatHistory());
+		setCheckpoint(gameState.getCheckpoint());
+		setCurrentStats(gameState.getCurrentStats());
 
 		return { true, "Save loaded successfully." };
 	} else {
 		return { false, "Failed to load save." };
 	}
 }
-

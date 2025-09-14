@@ -1,6 +1,6 @@
 #pragma once
 
-#include "witc.h"
+#include "Stats.h"
 #include <string>
 #include <tuple>
 #include <vector>
@@ -11,7 +11,7 @@ using json = nlohmann::json;
 class GameState {
     std::vector<json> chatHistory;
     int checkpoint;
-    witc::stats currentStats;
+    Stats currentStats;
 
     public:
         GameState();
@@ -20,8 +20,8 @@ class GameState {
         void setChatHistory(std::vector<json> chatHistory);
         int getCheckpoint();
         void setCheckpoint(int checkpoint);
-        witc::stats getCurrentStats();
-        void setCurrentStats(witc::stats currentStats);
+        Stats getCurrentStats();
+        void setCurrentStats(Stats currentStats);
         std::tuple<bool, std::string> save(); // Saves game state to save file (save.json)
         std::tuple<bool, std::string> load(); // Loads game state from save file (save.json)
 };

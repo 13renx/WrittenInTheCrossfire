@@ -27,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".env" />
+    <None Include="save.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -35,7 +36,7 @@
     <ClInclude Include="GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="witc.h">
+    <ClInclude Include="Stats.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,5 @@
 #include "GameState.h"
-#include "witc.h"
+#include "Stats.h"
 #include <iostream>
 #include <fstream>
 #include <tuple>
@@ -33,11 +33,11 @@ void GameState::setCheckpoint(int checkpoint) {
 	this->checkpoint = checkpoint;
 }
 
-witc::stats GameState::getCurrentStats() {
+Stats GameState::getCurrentStats() {
 	return currentStats;
 }
 
-void GameState::setCurrentStats(witc::stats currentStats) {
+void GameState::setCurrentStats(Stats currentStats) {
 	this->currentStats = currentStats;
 }
 
@@ -64,8 +64,10 @@ std::tuple<bool, std::string> GameState::load() {
     
 	if(file.is_open()) {
 		file >> load;
+
 		return { true, "Save loaded successfully." };
 	} else {
 		return { false, "Failed to load save." };
 	}
 }
+

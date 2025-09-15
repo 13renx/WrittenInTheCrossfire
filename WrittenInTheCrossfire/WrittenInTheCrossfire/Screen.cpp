@@ -3,3 +3,7 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 Screen::Screen() : panel(tgui::Panel::create()) { }
+
+tgui::Panel::Ptr Screen::getPanel() {
+	return panel;
+}

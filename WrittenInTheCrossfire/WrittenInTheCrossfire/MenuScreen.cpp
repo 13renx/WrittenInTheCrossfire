@@ -4,17 +4,23 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 MenuScreen::MenuScreen() {
-	titleLabel = tgui::Label::create("Written In The Crossfire");
-	newGameLabel = tgui::Label::create("New Game");
-	continueLabel = tgui::Label::create("Continue");
-	settingsLabel = tgui::Label::create("Settings");
-	aboutLabel = tgui::Label::create("About");
-	exitLabel = tgui::Label::create("Exit");
+	layout = tgui::GrowVerticalLayout::create();
+	titleLabel = tgui::Label::create("Written in the Crossfire");
+	newGameLabel = tgui::Label::create("NEW GAME");
+	continueLabel = tgui::Label::create("CONTINUE");
+	settingsLabel = tgui::Label::create("SETTINGS");
+	aboutLabel = tgui::Label::create("ABOUT");
+	exitLabel = tgui::Label::create("EXIT");
 
+	titleLabel->setPosition(700, 100);
+	titleLabel->setTextSize(100);
+	layout->setPosition(1700, 500);
+
+	layout->add(newGameLabel);
+	layout->add(continueLabel);
+	layout->add(settingsLabel);
+	layout->add(aboutLabel);
+	layout->add(exitLabel);
 	panel->add(titleLabel);
-	panel->add(newGameLabel);
-	panel->add(continueLabel);
-	panel->add(settingsLabel);
-	panel->add(aboutLabel);
-	panel->add(exitLabel);
+	panel->add(layout);
 }

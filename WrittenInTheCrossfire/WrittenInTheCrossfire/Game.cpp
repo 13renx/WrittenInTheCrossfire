@@ -4,7 +4,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-Game::Game() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire"), gui(window), activeScreen(MenuScreen()) {
+Game::Game() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire", sf::State::Fullscreen), gui(window), activeScreen(MenuScreen()) {
 	gui.add(activeScreen.getPanel());
 }
 

@@ -7,6 +7,7 @@
 class MenuScreen : public Screen
 {
 	protected:
+		tgui::GrowVerticalLayout::Ptr layout;
 		tgui::Label::Ptr titleLabel;
 		tgui::Label::Ptr newGameLabel;
 		tgui::Label::Ptr continueLabel;

@@ -10,4 +10,6 @@ class Screen
 
 	public:
 		Screen();
+
+		tgui::Panel::Ptr getPanel();
 };

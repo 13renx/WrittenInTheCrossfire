@@ -1,27 +1,25 @@
 #include "Game.h"
+#include "Screen.h"
+#include "MenuScreen.h"
+#include <TGUI/TGUI.hpp>
+#include <TGUI/Backend/SFML-Graphics.hpp>
 
-Game::Game() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire", sf::State::Fullscreen) {}
+Game::Game() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire"), gui(window), activeScreen(MenuScreen()) {
+	gui.add(activeScreen.getPanel());
+}
 
 void Game::run() {
 	while(window.isOpen()) {
-		processEvents();
-		update();
-		render();
-	}
-}
+		while(const std::optional event = window.pollEvent()) {
+			if(event->is<sf::Event::Closed>()) {
+				window.close();
+			}
 
-void Game::processEvents() {
-	while(const auto event = window.pollEvent()) {
-		if(event->is<sf::Event::Closed>()) {
-			window.close();
+			gui.handleEvent(*event);
 		}
+
+		window.clear();
+		gui.draw();
+		window.display();
 	}
-}
-
-void Game::update() {}
-
-void Game::render() {
-	window.clear();
-
-	window.display();
 }

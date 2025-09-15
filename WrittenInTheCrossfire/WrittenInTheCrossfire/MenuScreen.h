@@ -6,6 +6,8 @@
 
 class MenuScreen : public Screen
 {
+	sf::RenderWindow& window;
+
 	protected:
 		tgui::GrowVerticalLayout::Ptr layout;
 		tgui::Label::Ptr titleLabel;
@@ -14,7 +16,10 @@ class MenuScreen : public Screen
 		tgui::Label::Ptr settingsLabel;
 		tgui::Label::Ptr aboutLabel;
 		tgui::Label::Ptr exitLabel;
+		tgui::Panel::Ptr exitPanel;
+		tgui::MessageBox::Ptr exitMessageBox;
+		tgui::Group::Ptr exitGroup;
 
 	public:
-		MenuScreen();
+		MenuScreen(sf::RenderWindow& w);
 };

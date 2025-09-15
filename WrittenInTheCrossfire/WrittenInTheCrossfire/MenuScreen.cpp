@@ -3,7 +3,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuScreen::MenuScreen() {
+MenuScreen::MenuScreen(sf::RenderWindow& w) : window(w) {
 	layout = tgui::GrowVerticalLayout::create();
 	titleLabel = tgui::Label::create("Written in the Crossfire");
 	newGameLabel = tgui::Label::create("NEW GAME");
@@ -11,10 +11,24 @@ MenuScreen::MenuScreen() {
 	settingsLabel = tgui::Label::create("SETTINGS");
 	aboutLabel = tgui::Label::create("ABOUT");
 	exitLabel = tgui::Label::create("EXIT");
+	exitPanel = tgui::Panel::create();
+	exitMessageBox = tgui::MessageBox::create("Exit", "Are you sure you want to exit?", { "Yes", "No" });
+	exitGroup = tgui::Group::create();
 
+	layout->setPosition(1570, 500);
 	titleLabel->setPosition(700, 100);
 	titleLabel->setTextSize(100);
-	layout->setPosition(1700, 500);
+	newGameLabel->setTextSize(50);
+	continueLabel->setTextSize(50);
+	settingsLabel->setTextSize(50);
+	aboutLabel->setTextSize(50);
+	exitLabel->setTextSize(50);
+	exitPanel->getRenderer()->setOpacity(0.5f);
+	exitGroup->setVisible(false);
+	exitMessageBox->setPosition(760, 400);
+
+	exitLabel->onClick([](tgui::Group::Ptr group) { group->setVisible(true); }, exitGroup);
+	exitPanel->onClick([](tgui::Group::Ptr group) { group->setVisible(false); }, exitGroup);
 
 	layout->add(newGameLabel);
 	layout->add(continueLabel);
@@ -23,4 +37,9 @@ MenuScreen::MenuScreen() {
 	layout->add(exitLabel);
 	panel->add(titleLabel);
 	panel->add(layout);
+
+	exitGroup->add(exitPanel);
+	exitGroup->add(exitMessageBox);
+
+	panel->add(exitGroup);
 }

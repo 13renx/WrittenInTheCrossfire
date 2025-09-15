@@ -7,7 +7,7 @@ class Game {
 
 	public:
 		Game();
-		void run();
+		void run(); // Game loop
 
 	private:
 		void processEvents();

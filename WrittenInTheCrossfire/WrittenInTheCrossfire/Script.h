@@ -1,16 +1,13 @@
 #pragma once
 
-#include "Script.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class Screen : public Script
+class Script
 {
 	protected:
-		tgui::Panel::Ptr panel;
 		tgui::Gui& gui;
-		Script script;
 
 	public:
-		Screen();
+		Script(tgui::Gui& g);
 };

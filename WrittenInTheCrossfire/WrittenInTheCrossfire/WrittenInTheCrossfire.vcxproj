@@ -138,6 +138,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuScreen.cpp" />
+    <ClCompile Include="MenuScript.cpp" />
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="MenuScreen.h" />
+    <ClInclude Include="MenuScript.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="Stats.h" />
   </ItemGroup>

@@ -1,9 +1,10 @@
 #include "Screen.h"
 #include "MenuScreen.h"
+#include "MenuScript.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuScreen::MenuScreen(sf::RenderWindow& w) : window(w) {
+MenuScreen::MenuScreen(tgui::Gui& g) : gui(g), script(MenuScript(g)) {
 	layout = tgui::GrowVerticalLayout::create();
 	titleLabel = tgui::Label::create("Written in the Crossfire");
 	newGameLabel = tgui::Label::create("NEW GAME");
@@ -12,9 +13,26 @@ MenuScreen::MenuScreen(sf::RenderWindow& w) : window(w) {
 	aboutLabel = tgui::Label::create("ABOUT");
 	exitLabel = tgui::Label::create("EXIT");
 	exitPanel = tgui::Panel::create();
-	exitMessageBox = tgui::MessageBox::create("Exit", "Are you sure you want to exit?", { "Yes", "No" });
+	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "YES", "NO" });
 	exitGroup = tgui::Group::create();
 
+	stylize();
+	functionalize();
+
+	layout->add(newGameLabel);
+	layout->add(continueLabel);
+	layout->add(settingsLabel);
+	layout->add(aboutLabel);
+	layout->add(exitLabel);
+	panel->add(titleLabel);
+	panel->add(layout);
+	exitGroup->add(exitPanel);
+	exitGroup->add(exitMessageBox);
+	panel->add(exitGroup, "ExitGroup");
+	gui.add(panel, "MenuScreen");
+}
+
+void MenuScreen::stylize() {
 	layout->setPosition(1570, 500);
 	titleLabel->setPosition(700, 100);
 	titleLabel->setTextSize(100);
@@ -26,20 +44,9 @@ MenuScreen::MenuScreen(sf::RenderWindow& w) : window(w) {
 	exitPanel->getRenderer()->setOpacity(0.5f);
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
+}
 
+void MenuScreen::functionalize() {
 	exitLabel->onClick([](tgui::Group::Ptr group) { group->setVisible(true); }, exitGroup);
 	exitPanel->onClick([](tgui::Group::Ptr group) { group->setVisible(false); }, exitGroup);
-
-	layout->add(newGameLabel);
-	layout->add(continueLabel);
-	layout->add(settingsLabel);
-	layout->add(aboutLabel);
-	layout->add(exitLabel);
-	panel->add(titleLabel);
-	panel->add(layout);
-
-	exitGroup->add(exitPanel);
-	exitGroup->add(exitMessageBox);
-
-	panel->add(exitGroup);
 }

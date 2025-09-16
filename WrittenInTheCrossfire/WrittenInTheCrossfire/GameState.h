@@ -9,9 +9,10 @@
 using json = nlohmann::json;
 
 class GameState {
-    std::vector<json> chatHistory;
-    int checkpoint;
-    Stats currentStats;
+    private:
+        std::vector<json> chatHistory;
+        int checkpoint;
+        Stats currentStats;
 
     public:
         GameState();

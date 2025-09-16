@@ -7,9 +7,10 @@
 using json = nlohmann::json;
 
 class Client {
-    std::string apiKey;
-    json testPrompt;
-    json gamePrompt;
+    private:
+        std::string apiKey;
+        json testPrompt;
+        json gamePrompt;
 
     public:
         Client();

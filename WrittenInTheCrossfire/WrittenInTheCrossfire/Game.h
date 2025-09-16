@@ -5,9 +5,10 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 class Game {
-	sf::RenderWindow window;
-	tgui::Gui gui;
-	Screen activeScreen;
+	private:
+		sf::RenderWindow window;
+		tgui::Gui gui;
+		Screen activeScreen;
 
 	public:
 		Game();

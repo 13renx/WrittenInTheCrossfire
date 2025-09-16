@@ -1,14 +1,13 @@
 #pragma once
 
 #include "Screen.h"
+#include "MenuScript.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 class MenuScreen : public Screen
 {
-	sf::RenderWindow& window;
-
-	protected:
+	private:
 		tgui::GrowVerticalLayout::Ptr layout;
 		tgui::Label::Ptr titleLabel;
 		tgui::Label::Ptr newGameLabel;
@@ -21,5 +20,8 @@ class MenuScreen : public Screen
 		tgui::Group::Ptr exitGroup;
 
 	public:
-		MenuScreen(sf::RenderWindow& w);
+		MenuScreen(tgui::Gui& g);
+
+		void stylize();
+		void functionalize();
 };

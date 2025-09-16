@@ -3,12 +3,13 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class Screen
+class View
 {
 	protected:
 		tgui::Gui& gui;
 		tgui::Panel::Ptr panel;
+		std::shared_ptr<View> activeView;
 
 	public:
-		Screen(tgui::Gui& g);
+		View(tgui::Gui& g, std::shared_ptr<View> v);
 };

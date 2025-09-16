@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Screen.h"
+#include "View.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class MenuScreen : public Screen
+class MenuView : public View
 {
 	private:
 		tgui::GrowVerticalLayout::Ptr layout;
@@ -18,10 +18,6 @@ class MenuScreen : public Screen
 		tgui::MessageBox::Ptr exitMessageBox;
 		tgui::Group::Ptr exitGroup;
 
-	private:
-		void stylize();
-		void functionalize();
-
 	public:
-		MenuScreen(tgui::Gui& g);
+		MenuView(tgui::Gui& g, std::shared_ptr<View> v);
 };

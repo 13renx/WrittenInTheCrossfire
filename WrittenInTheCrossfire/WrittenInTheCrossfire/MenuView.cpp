@@ -1,9 +1,10 @@
-#include "MenuScreen.h"
-#include "Screen.h"
+#include "MenuView.h"
+#include "SettingsView.h"
+#include "View.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuScreen::MenuScreen(tgui::Gui& g) : Screen(g) {
+MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
 	layout = tgui::GrowVerticalLayout::create();
 	titleLabel = tgui::Label::create("Written in the Crossfire");
 	newGameLabel = tgui::Label::create("NEW GAME");
@@ -15,23 +16,6 @@ MenuScreen::MenuScreen(tgui::Gui& g) : Screen(g) {
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "YES", "NO" });
 	exitGroup = tgui::Group::create();
 
-	stylize();
-	functionalize();
-
-	layout->add(newGameLabel);
-	layout->add(continueLabel);
-	layout->add(settingsLabel);
-	layout->add(aboutLabel);
-	layout->add(exitLabel, "ExitLabel");
-	panel->add(titleLabel);
-	panel->add(layout);
-	exitGroup->add(exitPanel);
-	exitGroup->add(exitMessageBox);
-	panel->add(exitGroup, "ExitGroup");
-	gui.add(panel, "MenuScreen");
-}
-
-void MenuScreen::stylize() {
 	layout->setPosition(1570, 500);
 	titleLabel->setPosition(700, 100);
 	titleLabel->setTextSize(100);
@@ -43,29 +27,31 @@ void MenuScreen::stylize() {
 	exitPanel->getRenderer()->setOpacity(0.5f);
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
-}
 
-void MenuScreen::functionalize() {
-	// New Game
-	
-
-	// Continue
-	
-
-	// Settings
-	//settingsLabel->onClick([=]() { });
-
-	// About
-	//aboutLabel->onClick([=]() { });
-
-	// Exit
+	settingsLabel->onClick([=]() { 
+		gui.removeAllWidgets();
+		activeView = std::make_shared<SettingsView>(gui, activeView);
+	});
 	exitLabel->onClick([=]() { exitGroup->setVisible(true); });
 	exitPanel->onClick([=]() { exitGroup->setVisible(false); });
 	exitMessageBox->onButtonPress([=](const tgui::String& button) {
 		if(button == "YES") {
 			exit(0);
-		} else {
+		}
+		else {
 			exitGroup->setVisible(false);
 		}
 	});
+
+	layout->add(newGameLabel);
+	layout->add(continueLabel);
+	layout->add(settingsLabel);
+	layout->add(aboutLabel);
+	layout->add(exitLabel);
+	panel->add(titleLabel);
+	panel->add(layout);
+	exitGroup->add(exitPanel);
+	exitGroup->add(exitMessageBox);
+	panel->add(exitGroup);
+	gui.add(panel);
 }

@@ -1,15 +1,16 @@
 #pragma once
 
+#include "Screen.h"
 #include "Script.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class Screen
+class Manager
 {
 	protected:
-		tgui::Gui& gui;
-		tgui::Panel::Ptr panel;
+		Screen screen;
+		Script script;
 
 	public:
-		Screen(tgui::Gui& g);
+		Manager(Screen s, Script sc);
 };

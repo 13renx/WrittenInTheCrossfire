@@ -1,10 +1,10 @@
-#include "Screen.h"
 #include "MenuScreen.h"
 #include "MenuScript.h"
+#include "Screen.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuScreen::MenuScreen(tgui::Gui& g) : gui(g), script(MenuScript(g)) {
+MenuScreen::MenuScreen(tgui::Gui& g) : Screen(g) {
 	layout = tgui::GrowVerticalLayout::create();
 	titleLabel = tgui::Label::create("Written in the Crossfire");
 	newGameLabel = tgui::Label::create("NEW GAME");
@@ -17,13 +17,12 @@ MenuScreen::MenuScreen(tgui::Gui& g) : gui(g), script(MenuScript(g)) {
 	exitGroup = tgui::Group::create();
 
 	stylize();
-	functionalize();
 
 	layout->add(newGameLabel);
 	layout->add(continueLabel);
 	layout->add(settingsLabel);
 	layout->add(aboutLabel);
-	layout->add(exitLabel);
+	layout->add(exitLabel, "ExitLabel");
 	panel->add(titleLabel);
 	panel->add(layout);
 	exitGroup->add(exitPanel);
@@ -44,9 +43,4 @@ void MenuScreen::stylize() {
 	exitPanel->getRenderer()->setOpacity(0.5f);
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
-}
-
-void MenuScreen::functionalize() {
-	exitLabel->onClick([](tgui::Group::Ptr group) { group->setVisible(true); }, exitGroup);
-	exitPanel->onClick([](tgui::Group::Ptr group) { group->setVisible(false); }, exitGroup);
 }

@@ -23,5 +23,4 @@ class MenuScreen : public Screen
 		MenuScreen(tgui::Gui& g);
 
 		void stylize();
-		void functionalize();
 };

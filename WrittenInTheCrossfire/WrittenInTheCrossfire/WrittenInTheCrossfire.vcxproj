@@ -137,9 +137,12 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="MenuManager.cpp" />
     <ClCompile Include="MenuScreen.cpp" />
     <ClCompile Include="MenuScript.cpp" />
     <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="Script.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".env" />
@@ -149,9 +152,12 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="Manager.h" />
+    <ClInclude Include="MenuManager.h" />
     <ClInclude Include="MenuScreen.h" />
     <ClInclude Include="MenuScript.h" />
     <ClInclude Include="Screen.h" />
+    <ClInclude Include="Script.h" />
     <ClInclude Include="Stats.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

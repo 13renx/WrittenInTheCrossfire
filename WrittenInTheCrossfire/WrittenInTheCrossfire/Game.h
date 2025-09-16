@@ -12,5 +12,5 @@ class Game {
 
 	public:
 		Game();
-		void run(); // Game loop
+		void run();
 };

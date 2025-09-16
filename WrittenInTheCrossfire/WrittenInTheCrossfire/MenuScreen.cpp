@@ -46,7 +46,26 @@ void MenuScreen::stylize() {
 }
 
 void MenuScreen::functionalize() {
+	// New Game
+	
+
+	// Continue
+	
+
+	// Settings
+	//settingsLabel->onClick([=]() { });
+
+	// About
+	//aboutLabel->onClick([=]() { });
+
 	// Exit
-	exitLabel->onClick([](tgui::Group::Ptr group) { group->setVisible(true); }, exitGroup);
-	exitPanel->onClick([](tgui::Group::Ptr group) { group->setVisible(false); }, exitGroup);
+	exitLabel->onClick([=]() { exitGroup->setVisible(true); });
+	exitPanel->onClick([=]() { exitGroup->setVisible(false); });
+	exitMessageBox->onButtonPress([=](const tgui::String& button) {
+		if(button == "YES") {
+			exit(0);
+		} else {
+			exitGroup->setVisible(false);
+		}
+	});
 }

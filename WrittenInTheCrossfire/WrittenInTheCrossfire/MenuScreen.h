@@ -18,9 +18,10 @@ class MenuScreen : public Screen
 		tgui::MessageBox::Ptr exitMessageBox;
 		tgui::Group::Ptr exitGroup;
 
-	public:
-		MenuScreen(tgui::Gui& g);
-
+	private:
 		void stylize();
 		void functionalize();
+
+	public:
+		MenuScreen(tgui::Gui& g);
 };

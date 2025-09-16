@@ -13,8 +13,6 @@ class Client {
         json gamePrompt;
 
     public:
-        Client();
-
         enum class PromptType {
             TEST,
             GAME
@@ -22,8 +20,11 @@ class Client {
 
         enum class TestType {
             NO_API_KEY,
-			WITH_API_KEY
+            WITH_API_KEY
         };
+
+    public:
+        Client();
 
         json fetchResponse(PromptType promptType, const std::string& apiKey);
         std::tuple<bool, std::string>  testApiKey(TestType testType, const std::string& apiKey);

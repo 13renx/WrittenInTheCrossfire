@@ -1,5 +1,4 @@
 #include "MenuScreen.h"
-#include "MenuScript.h"
 #include "Screen.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -17,6 +16,7 @@ MenuScreen::MenuScreen(tgui::Gui& g) : Screen(g) {
 	exitGroup = tgui::Group::create();
 
 	stylize();
+	functionalize();
 
 	layout->add(newGameLabel);
 	layout->add(continueLabel);
@@ -43,4 +43,10 @@ void MenuScreen::stylize() {
 	exitPanel->getRenderer()->setOpacity(0.5f);
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
+}
+
+void MenuScreen::functionalize() {
+	// Exit
+	exitLabel->onClick([](tgui::Group::Ptr group) { group->setVisible(true); }, exitGroup);
+	exitPanel->onClick([](tgui::Group::Ptr group) { group->setVisible(false); }, exitGroup);
 }

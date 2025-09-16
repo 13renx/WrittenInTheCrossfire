@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Screen.h"
-#include "MenuScript.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -23,4 +22,5 @@ class MenuScreen : public Screen
 		MenuScreen(tgui::Gui& g);
 
 		void stylize();
+		void functionalize();
 };

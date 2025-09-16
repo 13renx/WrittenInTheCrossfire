@@ -1,5 +1,4 @@
 #include "Screen.h"
-#include "Script.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 

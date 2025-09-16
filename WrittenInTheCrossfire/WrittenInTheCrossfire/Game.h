@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Manager.h"
+#include "Screen.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -8,7 +8,7 @@ class Game {
 	private:
 		sf::RenderWindow window;
 		tgui::Gui gui;
-		Manager activeManager;
+		std::shared_ptr<Screen> activeScreen;
 
 	public:
 		Game();

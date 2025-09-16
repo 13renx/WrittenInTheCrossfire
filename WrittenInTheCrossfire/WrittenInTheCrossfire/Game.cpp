@@ -1,9 +1,9 @@
 #include "Game.h"
-#include "MenuManager.h"
+#include "MenuScreen.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-Game::Game() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire", sf::State::Fullscreen), gui(window), activeManager(MenuManager(gui)) {}
+Game::Game() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire", sf::State::Fullscreen), gui(window), activeScreen(std::make_shared<MenuScreen>(gui)) {}
 
 void Game::run() {
 	while(window.isOpen()) {

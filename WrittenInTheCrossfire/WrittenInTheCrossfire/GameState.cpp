@@ -41,7 +41,7 @@ void GameState::setCurrentStats(Stats currentStats) {
 
 std::tuple<bool, std::string> GameState::save() {
 	json save = *this;
-	std::ofstream file("save.json");
+	std::ofstream file = std::ofstream("save.json");
 
 	if(file.is_open()) {
 		file << save.dump(4) << std::endl;
@@ -53,7 +53,7 @@ std::tuple<bool, std::string> GameState::save() {
 
 std::tuple<bool, std::string> GameState::load() {
 	json load;
-	std::ifstream file("save.json");
+	std::ifstream file = std::ifstream("save.json");
     
 	if(file.is_open()) {
 		file >> load;

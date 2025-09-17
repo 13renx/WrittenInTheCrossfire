@@ -1,10 +1,16 @@
 #include "MenuView.h"
+#include "Macros.h"
 #include "SettingsView.h"
 #include "View.h"
+#include <fstream>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
+
 MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
+	tgui::Theme::setDefault("Assets/Themes/Test.txt");
+
+	mainPanel = tgui::Panel::create();
 	layout = tgui::GrowVerticalLayout::create();
 	titleLabel = tgui::Label::create("Written in the Crossfire");
 	newGameLabel = tgui::Label::create("NEW GAME");
@@ -16,6 +22,7 @@ MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "YES", "NO" });
 	exitGroup = tgui::Group::create();
 
+	mainPanel->getRenderer()->setTextureBackground("Assets/Textures/Backgrounds/Main Menu.PNG");
 	layout->setPosition(1570, 500);
 	titleLabel->setPosition(700, 100);
 	titleLabel->setTextSize(100);
@@ -28,6 +35,12 @@ MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
 
+	newGameLabel->onMouseEnter([=]() { 
+		newGameLabel->getRenderer()->setTextColor(tgui::Color::White);
+	});
+	newGameLabel->onMouseLeave([=]() { 
+		newGameLabel->getRenderer()->setTextColor(Macros::Colors::Redwood);
+	});
 	settingsLabel->onClick([=]() { 
 		gui.removeAllWidgets();
 		activeView = std::make_shared<SettingsView>(gui, activeView);
@@ -48,10 +61,10 @@ MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
 	layout->add(settingsLabel);
 	layout->add(aboutLabel);
 	layout->add(exitLabel);
-	panel->add(titleLabel);
-	panel->add(layout);
+	mainPanel->add(titleLabel);
+	mainPanel->add(layout);
 	exitGroup->add(exitPanel);
 	exitGroup->add(exitMessageBox);
-	panel->add(exitGroup);
-	gui.add(panel);
+	mainPanel->add(exitGroup);
+	gui.add(mainPanel);
 }

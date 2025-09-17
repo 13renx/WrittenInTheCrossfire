@@ -149,6 +149,7 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="Macros.h" />
     <ClInclude Include="MenuView.h" />
     <ClInclude Include="SettingsView.h" />
     <ClInclude Include="View.h" />

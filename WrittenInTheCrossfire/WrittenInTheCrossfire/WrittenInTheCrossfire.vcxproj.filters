@@ -63,5 +63,8 @@
     <ClInclude Include="SettingsView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

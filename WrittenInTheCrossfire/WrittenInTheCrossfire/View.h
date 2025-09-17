@@ -7,7 +7,7 @@ class View
 {
 	protected:
 		tgui::Gui& gui;
-		tgui::Panel::Ptr panel;
+		tgui::Panel::Ptr mainPanel;
 		std::shared_ptr<View> activeView;
 
 	public:

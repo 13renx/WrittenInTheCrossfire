@@ -133,27 +133,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Client.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuView.cpp" />
     <ClCompile Include="SettingsView.cpp" />
     <ClCompile Include="View.cpp" />
+    <ClCompile Include="Widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".env" />
     <None Include="save.json" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Client.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameState.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MenuView.h" />
     <ClInclude Include="SettingsView.h" />
     <ClInclude Include="View.h" />
     <ClInclude Include="Stats.h" />
+    <ClInclude Include="Widgets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

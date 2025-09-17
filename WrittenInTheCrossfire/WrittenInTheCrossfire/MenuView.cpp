@@ -2,42 +2,30 @@
 #include "Macros.h"
 #include "SettingsView.h"
 #include "View.h"
+#include "Widgets.h"
 #include <fstream>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
 	mainPanel = tgui::Panel::create();
-	titleLabel = tgui::Label::create("Written in the Crossfire");
+	titleLabel = Widgets::Label::createNormalLabel("Written in the Crossfire", 100, 700, 100);
 	optionsLayout = tgui::GrowVerticalLayout::create();
-	newGameLabel = tgui::Label::create("NEW GAME");
-	continueLabel = tgui::Label::create("CONTINUE");
-	settingsLabel = tgui::Label::create("SETTINGS");
-	aboutLabel = tgui::Label::create("ABOUT");
-	exitLabel = tgui::Label::create("EXIT");
+	newGameLabel = Widgets::Label::createButtonLabel("NEW GAME", 50, 0, 0);
+	continueLabel = Widgets::Label::createButtonLabel("CONTINUE", 50, 0, 0);
+	settingsLabel = Widgets::Label::createButtonLabel("SETTINGS", 50, 0, 0);
+	aboutLabel = Widgets::Label::createButtonLabel("ABOUT", 50, 0, 0);
+	exitLabel = Widgets::Label::createButtonLabel("EXIT", 50, 0, 0);
 	exitGroup = tgui::Group::create();
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "YES", "NO" });
 	exitPanel = tgui::Panel::create();
 
 	mainPanel->getRenderer()->setTextureBackground("Assets/Textures/Backgrounds/Main Menu.PNG");
-	titleLabel->setPosition(700, 100);
-	titleLabel->setTextSize(100);
 	optionsLayout->setPosition(1570, 500);
-	newGameLabel->setTextSize(50);
-	continueLabel->setTextSize(50);
-	settingsLabel->setTextSize(50);
-	aboutLabel->setTextSize(50);
-	exitLabel->setTextSize(50);
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
 	exitPanel->getRenderer()->setOpacity(0.5f);
 	
-	newGameLabel->onMouseEnter([=]() { 
-		newGameLabel->getRenderer()->setTextColor(tgui::Color::White);
-	});
-	newGameLabel->onMouseLeave([=]() { 
-		newGameLabel->getRenderer()->setTextColor(Macros::Colors::Redwood);
-	});
 	settingsLabel->onClick([=]() { 
 		gui.removeAllWidgets();
 		activeView = std::make_shared<SettingsView>(gui, activeView);

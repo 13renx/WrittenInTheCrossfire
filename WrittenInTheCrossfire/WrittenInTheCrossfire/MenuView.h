@@ -7,16 +7,16 @@
 class MenuView : public View
 {
 	private:
-		tgui::GrowVerticalLayout::Ptr layout;
 		tgui::Label::Ptr titleLabel;
+		tgui::GrowVerticalLayout::Ptr optionsLayout;
 		tgui::Label::Ptr newGameLabel;
 		tgui::Label::Ptr continueLabel;
 		tgui::Label::Ptr settingsLabel;
 		tgui::Label::Ptr aboutLabel;
 		tgui::Label::Ptr exitLabel;
-		tgui::Panel::Ptr exitPanel;
-		tgui::MessageBox::Ptr exitMessageBox;
 		tgui::Group::Ptr exitGroup;
+		tgui::MessageBox::Ptr exitMessageBox;
+		tgui::Panel::Ptr exitPanel;
 
 	public:
 		MenuView(tgui::Gui& g, std::shared_ptr<View> v);

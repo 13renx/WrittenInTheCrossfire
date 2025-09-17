@@ -8,4 +8,8 @@ namespace Widgets {
 		tgui::Label::Ptr createNormalLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y);
 		tgui::Label::Ptr createButtonLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y);
 	}
+
+	namespace Panel {
+		tgui::Panel::Ptr createNormalPanel(const tgui::Texture& textureBackground);
+	}
 }

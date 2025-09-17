@@ -23,3 +23,10 @@ tgui::Label::Ptr Widgets::Label::createButtonLabel(std::string text, unsigned in
 	
 	return label;
 }
+
+tgui::Panel::Ptr Widgets::Panel::createNormalPanel(const tgui::Texture& textureBackground) {
+	tgui::Panel::Ptr panel = tgui::Panel::create();
+	panel->getRenderer()->setTextureBackground(textureBackground);
+
+	return panel;
+}

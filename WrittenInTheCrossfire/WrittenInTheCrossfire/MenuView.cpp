@@ -8,7 +8,7 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
-	mainPanel = tgui::Panel::create();
+	mainPanel = Widgets::Panel::createNormalPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
 	titleLabel = Widgets::Label::createNormalLabel("Written in the Crossfire", 100, 700, 100);
 	optionsLayout = tgui::GrowVerticalLayout::create();
 	newGameLabel = Widgets::Label::createButtonLabel("NEW GAME", 50, 0, 0);
@@ -20,7 +20,6 @@ MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "YES", "NO" });
 	exitPanel = tgui::Panel::create();
 
-	mainPanel->getRenderer()->setTextureBackground("Assets/Textures/Backgrounds/Main Menu.PNG");
 	optionsLayout->setPosition(1570, 500);
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);

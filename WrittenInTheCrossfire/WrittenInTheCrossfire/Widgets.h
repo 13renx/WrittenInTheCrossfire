@@ -4,12 +4,12 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 namespace Widgets {
-	namespace Label {
-		tgui::Label::Ptr createNormalLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y);
+	namespace Labels {
+		tgui::Label::Ptr createLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y);
 		tgui::Label::Ptr createButtonLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y);
 	}
 
-	namespace Panel {
-		tgui::Panel::Ptr createNormalPanel(const tgui::Texture& textureBackground);
+	namespace Panels {
+		tgui::Panel::Ptr createPanel(const tgui::Texture& textureBackground);
 	}
 }

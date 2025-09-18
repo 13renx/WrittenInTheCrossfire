@@ -1,6 +1,7 @@
 #pragma once
 
 #include "View.h"
+#include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -19,5 +20,5 @@ class MenuView : public View
 		tgui::Panel::Ptr exitPanel;
 
 	public:
-		MenuView(tgui::Gui& g, std::shared_ptr<View> v);
+		MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView);
 };

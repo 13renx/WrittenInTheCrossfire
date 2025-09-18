@@ -21,9 +21,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="View.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MenuView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,5 +57,8 @@
     <ClInclude Include="Widgets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\Themes\MainTheme.txt" />
   </ItemGroup>
 </Project>

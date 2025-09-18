@@ -1,6 +1,7 @@
 #pragma once
 
 #include "View.h"
+#include <memory>
 #include <vector>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>

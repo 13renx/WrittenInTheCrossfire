@@ -1,5 +1,6 @@
 #include "Widgets.h"
 #include "Macros.h"
+#include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 

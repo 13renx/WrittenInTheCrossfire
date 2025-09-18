@@ -1,11 +1,11 @@
 #include "Game.h"
 #include "MenuView.h"
+#include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 Game::Game() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire", sf::State::Fullscreen), gui(window), activeView(std::make_shared<MenuView>(gui, activeView)) {
 	window.setFramerateLimit(60);
-	//window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Hand));
 }
 
 void Game::run() {

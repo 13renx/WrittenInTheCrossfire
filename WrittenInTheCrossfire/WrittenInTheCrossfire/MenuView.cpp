@@ -3,12 +3,12 @@
 #include "SettingsView.h"
 #include "View.h"
 #include "Widgets.h"
-#include <fstream>
+#include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
-	sf::Window* window = g.getWindow();
+MenuView::MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView) : View() {
+	sf::Window* window = gui.getWindow();
 
 	mainPanel = Widgets::Panels::createPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
 	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 100, 700, 100);
@@ -26,11 +26,12 @@ MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
 	exitPanel->getRenderer()->setOpacity(0.5f);
-	
-	settingsLabel->onClick([=]() { 
-		gui.removeAllWidgets();
-		activeView = std::make_shared<SettingsView>(gui, activeView);
-	});
+
+	settingsLabel->onClick([](tgui::Gui& g, std::shared_ptr<View> v) {
+		g.removeAllWidgets();
+		std::shared_ptr<View> settingsView = std::make_shared<SettingsView>(g);
+		v = settingsView;
+	}, gui, activeView);
 	exitLabel->onClick([=]() { exitGroup->setVisible(true); });
 	exitPanel->onClick([=]() { exitGroup->setVisible(false); });
 	exitMessageBox->onButtonPress([=](const tgui::String& button) {

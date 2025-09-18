@@ -11,5 +11,5 @@ class SettingsView : public View
 		tgui::Label::Ptr titleLabel;
 
 	public:
-		SettingsView(tgui::Gui& gui);
+		SettingsView(tgui::Gui& gui, std::shared_ptr<View> activeView);
 };

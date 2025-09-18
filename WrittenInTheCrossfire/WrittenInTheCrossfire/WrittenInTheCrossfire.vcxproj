@@ -137,6 +137,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuView.cpp" />
     <ClCompile Include="SettingsView.cpp" />
+    <ClCompile Include="View.cpp" />
     <ClCompile Include="Widgets.cpp" />
   </ItemGroup>
   <ItemGroup>

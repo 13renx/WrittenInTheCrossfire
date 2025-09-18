@@ -4,10 +4,11 @@
 #include "View.h"
 #include "Widgets.h"
 #include <memory>
+#include <typeinfo>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView) : View() {
+MenuView::MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView) : View(activeView) {
 	sf::Window* window = gui.getWindow();
 
 	mainPanel = Widgets::Panels::createPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
@@ -26,14 +27,16 @@ MenuView::MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView) : View() {
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
 	exitPanel->getRenderer()->setOpacity(0.5f);
+	std::shared_ptr<View> v;
+	settingsLabel->onClick([=, &gui] {
+		gui.removeAllWidgets();
+		std::shared_ptr<View> settingsView = std::make_shared<SettingsView>(gui, nullptr);
+		this->activeView = settingsView;
+		settingsView->setActiveView(this->activeView);
 
-	settingsLabel->onClick([](tgui::Gui& g, std::shared_ptr<View> v) {
-		g.removeAllWidgets();
-		std::shared_ptr<View> settingsView = std::make_shared<SettingsView>(g);
-		v = settingsView;
-	}, gui, activeView);
-	exitLabel->onClick([=]() { exitGroup->setVisible(true); });
-	exitPanel->onClick([=]() { exitGroup->setVisible(false); });
+	});
+	exitLabel->onClick([=] { exitGroup->setVisible(true); });
+	exitPanel->onClick([=] { exitGroup->setVisible(false); });
 	exitMessageBox->onButtonPress([=](const tgui::String& button) {
 		if(button == "YES") {
 			exit(0);

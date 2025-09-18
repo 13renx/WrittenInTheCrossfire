@@ -27,13 +27,13 @@ MenuView::MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView) : View(acti
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition(760, 400);
 	exitPanel->getRenderer()->setOpacity(0.5f);
-	std::shared_ptr<View> v;
+
 	settingsLabel->onClick([=, &gui] {
+		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		gui.removeAllWidgets();
 		std::shared_ptr<View> settingsView = std::make_shared<SettingsView>(gui, nullptr);
 		this->activeView = settingsView;
 		settingsView->setActiveView(this->activeView);
-
 	});
 	exitLabel->onClick([=] { exitGroup->setVisible(true); });
 	exitPanel->onClick([=] { exitGroup->setVisible(false); });

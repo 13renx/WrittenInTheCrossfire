@@ -8,14 +8,16 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 MenuView::MenuView(tgui::Gui& g, std::shared_ptr<View> v) : View(g, v) {
+	sf::Window* window = g.getWindow();
+
 	mainPanel = Widgets::Panels::createPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
 	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 100, 700, 100);
 	optionsLayout = tgui::GrowVerticalLayout::create();
-	newGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0);
-	continueLabel = Widgets::Labels::createButtonLabel("CONTINUE", 50, 0, 0);
-	settingsLabel = Widgets::Labels::createButtonLabel("SETTINGS", 50, 0, 0);
-	aboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0);
-	exitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0);
+	newGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0, window);
+	continueLabel = Widgets::Labels::createButtonLabel("CONTINUE", 50, 0, 0, window);
+	settingsLabel = Widgets::Labels::createButtonLabel("SETTINGS", 50, 0, 0, window);
+	aboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0, window);
+	exitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
 	exitGroup = tgui::Group::create();
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "YES", "NO" });
 	exitPanel = tgui::Panel::create();

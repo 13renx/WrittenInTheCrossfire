@@ -1,9 +1,10 @@
 #pragma once
 
-#include "View.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
+
+class View;
 
 class ViewManager {
 	private:

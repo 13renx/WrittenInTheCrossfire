@@ -1,16 +1,17 @@
 #pragma once
 
-#include "ViewManager.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
+
+class ViewManager;
 
 class View
 {
 	protected:
 		tgui::Panel::Ptr mainPanel;
-		ViewManager*& viewManager;
+		ViewManager& viewManager;
 
 	public:
-		View(ViewManager*& viewManager);
+		View(ViewManager& viewManager);
 };

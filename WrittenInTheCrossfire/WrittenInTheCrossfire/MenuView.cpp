@@ -1,14 +1,13 @@
 #include "MenuView.h"
 #include "Macros.h"
-#include "SettingsView.h"
 #include "View.h"
+#include "ViewManager.h"
 #include "Widgets.h"
 #include <memory>
-#include <typeinfo>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView) : View(activeView) {
+MenuView::MenuView(tgui::Gui& gui, ViewManager*& viewManager) : View(viewManager) {
 	sf::Window* window = gui.getWindow();
 
 	mainPanel = Widgets::Panels::createPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
@@ -30,10 +29,7 @@ MenuView::MenuView(tgui::Gui& gui, std::shared_ptr<View> activeView) : View(acti
 
 	settingsLabel->onClick([=, &gui] {
 		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		gui.removeAllWidgets();
-		std::shared_ptr<View> settingsView = std::make_shared<SettingsView>(gui, nullptr);
-		this->activeView = settingsView;
-		settingsView->setActiveView(this->activeView);
+		this->viewManager->changeView(ViewManager::ViewType::SETTINGS_VIEW, gui);
 	});
 	exitLabel->onClick([=] { exitGroup->setVisible(true); });
 	exitPanel->onClick([=] { exitGroup->setVisible(false); });

@@ -29,7 +29,7 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 
 	settingsLabel->onClick([=, &gui] {
 		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewManager->changeView(ViewManager::ViewType::SETTINGS_VIEW, gui);
+		this->viewManager->changeView(ViewManager::ViewType::SETTINGS_VIEW);
 	});
 	exitLabel->onClick([=] { exitGroup->setVisible(true); });
 	exitPanel->onClick([=] { exitGroup->setVisible(false); });

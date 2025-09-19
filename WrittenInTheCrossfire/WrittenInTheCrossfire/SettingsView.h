@@ -9,6 +9,7 @@
 class SettingsView : public View
 {
 	private:
+		tgui::Label::Ptr backLabel;
 		tgui::Label::Ptr titleLabel;
 
 	public:

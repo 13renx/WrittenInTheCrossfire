@@ -8,6 +8,7 @@ class View;
 
 class ViewManager {
 	private:
+		tgui::Gui& gui;
 		std::shared_ptr<View> activeView;
 
 	public:
@@ -20,5 +21,5 @@ class ViewManager {
 
 		std::shared_ptr<View> getActiveView();
 		void setActiveView(std::shared_ptr<View> view);
-		void changeView(ViewType viewType, tgui::Gui& gui);
+		void changeView(ViewType viewType);
 };

@@ -7,7 +7,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(tgui::Gui& gui, ViewManager& viewManager) : View(viewManager) {
+MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager) {
 	sf::Window* window = gui.getWindow();
 
 	mainPanel = Widgets::Panels::createPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
@@ -29,7 +29,7 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager& viewManager) : View(viewManager)
 
 	settingsLabel->onClick([=, &gui] {
 		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewManager.changeView(ViewManager::ViewType::SETTINGS_VIEW, gui);
+		this->viewManager->changeView(ViewManager::ViewType::SETTINGS_VIEW, gui);
 	});
 	exitLabel->onClick([=] { exitGroup->setVisible(true); });
 	exitPanel->onClick([=] { exitGroup->setVisible(false); });

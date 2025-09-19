@@ -12,5 +12,5 @@ class SettingsView : public View
 		tgui::Label::Ptr titleLabel;
 
 	public:
-		SettingsView(tgui::Gui& gui, ViewManager& viewManager);
+		SettingsView(tgui::Gui& gui, ViewManager* viewManager);
 };

@@ -10,8 +10,8 @@ class View
 {
 	protected:
 		tgui::Panel::Ptr mainPanel;
-		ViewManager& viewManager;
+		ViewManager* viewManager;
 
 	public:
-		View(ViewManager& viewManager);
+		View(ViewManager* viewManager);
 };

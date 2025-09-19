@@ -21,5 +21,5 @@ class MenuView : public View
 		tgui::Panel::Ptr exitPanel;
 
 	public:
-		MenuView(tgui::Gui& gui, ViewManager& viewManager);
+		MenuView(tgui::Gui& gui, ViewManager* viewManager);
 };

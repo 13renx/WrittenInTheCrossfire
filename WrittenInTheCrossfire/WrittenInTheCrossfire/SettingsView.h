@@ -9,8 +9,14 @@
 class SettingsView : public View
 {
 	private:
-		tgui::Label::Ptr backLabel;
 		tgui::Label::Ptr titleLabel;
+		tgui::Label::Ptr audioLabel;
+		tgui::GrowVerticalLayout::Ptr leftLayout;
+		tgui::Label::Ptr masterVolumeLabel;
+		tgui::HorizontalLayout::Ptr masterVolumeLayout;
+		tgui::Slider::Ptr masterVolumeSlider;
+		tgui::Label::Ptr masterVolumeValueLabel;
+		tgui::Label::Ptr backLabel;
 
 	public:
 		SettingsView(tgui::Gui& gui, ViewManager* viewManager);

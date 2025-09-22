@@ -15,8 +15,15 @@ class SettingsView : public View
 		tgui::Label::Ptr masterVolumeLabel;
 		tgui::HorizontalLayout::Ptr masterVolumeLayout;
 		tgui::Slider::Ptr masterVolumeSlider;
-		tgui::Label::Ptr masterVolumeValueLabel;
+		tgui::Label::Ptr masterVolumeValueLabel;		
+		tgui::Label::Ptr musicVolumeLabel;
+		tgui::HorizontalLayout::Ptr musicVolumeLayout;
+		tgui::Slider::Ptr musicVolumeSlider;
+		tgui::Label::Ptr musicVolumeValueLabel;
+		tgui::GrowHorizontalLayout::Ptr buttonsLayout;
 		tgui::Label::Ptr backLabel;
+		tgui::Label::Ptr resetLabel;
+		tgui::Label::Ptr saveLabel;
 
 	public:
 		SettingsView(tgui::Gui& gui, ViewManager* viewManager);

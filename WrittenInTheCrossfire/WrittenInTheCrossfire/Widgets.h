@@ -13,4 +13,9 @@ namespace Widgets {
 	namespace Panels {
 		tgui::Panel::Ptr createPanel(const tgui::Texture& textureBackground);
 	}
+
+	namespace Sliders {
+		tgui::Slider::Ptr createSlider();
+		tgui::Slider::Ptr createVolumeSlider(tgui::Label::Ptr label);
+	}
 }

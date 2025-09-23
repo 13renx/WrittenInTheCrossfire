@@ -3,7 +3,7 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 int main() {
-	tgui::Theme::setDefault("Assets/Themes/MainTheme.txt");
+	tgui::Theme::setDefault("MainTheme.txt");
 
 	Game game = Game();
 	game.run();

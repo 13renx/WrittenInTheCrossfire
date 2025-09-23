@@ -16,31 +16,25 @@ SettingsView::SettingsView(tgui::Gui& gui, ViewManager* viewManager) : View(view
 	leftLayout = tgui::GrowVerticalLayout::create(1000);
 	masterVolumeLabel = Widgets::Labels::createLabel("MASTER VOLUME", 50, 0, 0);
 	masterVolumeLayout = tgui::HorizontalLayout::create({ 600, 50 });
-	masterVolumeSlider = tgui::Slider::create();
 	masterVolumeValueLabel = Widgets::Labels::createLabel("100", 25, 0, 0);
+	masterVolumeSlider = Widgets::Sliders::createVolumeSlider(masterVolumeValueLabel);
+	sfxVolumeLabel = Widgets::Labels::createLabel("SFX", 50, 0, 0);
+	sfxVolumeLayout = tgui::HorizontalLayout::create({ 600, 50 });
+	sfxVolumeValueLabel = Widgets::Labels::createLabel("100", 25, 0, 0);
+	sfxVolumeSlider = Widgets::Sliders::createVolumeSlider(sfxVolumeValueLabel);
 	musicVolumeLabel = Widgets::Labels::createLabel("MUSIC", 50, 0, 0);
 	musicVolumeLayout = tgui::HorizontalLayout::create({ 600, 50 });
-	musicVolumeSlider = tgui::Slider::create();
 	musicVolumeValueLabel = Widgets::Labels::createLabel("100", 25, 0, 0);
+	musicVolumeSlider = Widgets::Sliders::createVolumeSlider(musicVolumeValueLabel);
 	backLabel = Widgets::Labels::createButtonLabel("BACK", 50, 0, 0, window);
 	resetLabel = Widgets::Labels::createButtonLabel("RESET", 50, 0, 0, window);
 	saveLabel = Widgets::Labels::createButtonLabel("SAVE", 50, 0, 0, window);
 	buttonsLayout = tgui::GrowHorizontalLayout::create();
 	
 	leftLayout->setPosition(120, 200);
-	masterVolumeSlider->setMaximum(100);
-	masterVolumeSlider->setValue(100);
-	musicVolumeSlider->setMaximum(100);
-	musicVolumeSlider->setValue(100);
 	buttonsLayout->setPosition(120, 930);
 	buttonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
-	
-	masterVolumeSlider->onValueChange([=](float value) {
-		masterVolumeValueLabel->setText(fmt::format("{}", value));
-	});
-	musicVolumeSlider->onValueChange([=](float value) {
-		musicVolumeValueLabel->setText(fmt::format("{}", value));
-	});
+
 	backLabel->onClick([=, &gui] {
 		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewManager->changeView(ViewManager::ViewType::MENU_VIEW);
@@ -52,10 +46,14 @@ SettingsView::SettingsView(tgui::Gui& gui, ViewManager* viewManager) : View(view
 	leftLayout->add(audioLabel);
 	leftLayout->add(masterVolumeLabel);
 	leftLayout->add(masterVolumeLayout);
+	leftLayout->add(sfxVolumeLabel);
+	leftLayout->add(sfxVolumeLayout);
 	leftLayout->add(musicVolumeLabel);
 	leftLayout->add(musicVolumeLayout);
 	masterVolumeLayout->add(masterVolumeSlider);
 	masterVolumeLayout->add(masterVolumeValueLabel);
+	sfxVolumeLayout->add(sfxVolumeSlider);
+	sfxVolumeLayout->add(sfxVolumeValueLabel);
 	musicVolumeLayout->add(musicVolumeSlider);
 	musicVolumeLayout->add(musicVolumeValueLabel);
 	buttonsLayout->add(backLabel);

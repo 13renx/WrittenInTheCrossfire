@@ -16,6 +16,10 @@ class SettingsView : public View
 		tgui::HorizontalLayout::Ptr masterVolumeLayout;
 		tgui::Slider::Ptr masterVolumeSlider;
 		tgui::Label::Ptr masterVolumeValueLabel;		
+		tgui::Label::Ptr sfxVolumeLabel;
+		tgui::HorizontalLayout::Ptr sfxVolumeLayout;
+		tgui::Slider::Ptr sfxVolumeSlider;
+		tgui::Label::Ptr sfxVolumeValueLabel;
 		tgui::Label::Ptr musicVolumeLabel;
 		tgui::HorizontalLayout::Ptr musicVolumeLayout;
 		tgui::Slider::Ptr musicVolumeSlider;

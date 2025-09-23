@@ -69,5 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Assets\Themes\MainTheme.txt" />
+    <Text Include="MainTheme.txt" />
   </ItemGroup>
 </Project>

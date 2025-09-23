@@ -5,13 +5,13 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class Game {
+class App {
 	private:
 		sf::RenderWindow window;
 		tgui::Gui gui;
 		ViewManager viewManager;
 
 	public:
-		Game();
+		App();
 		void run();
 };

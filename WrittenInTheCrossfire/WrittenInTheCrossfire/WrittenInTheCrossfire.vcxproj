@@ -133,9 +133,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="GameModel.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuView.cpp" />
+    <ClCompile Include="SettingsModel.cpp" />
     <ClCompile Include="SettingsView.cpp" />
     <ClCompile Include="View.cpp" />
     <ClCompile Include="ViewManager.cpp" />
@@ -143,12 +145,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".env" />
-    <None Include="save.json" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="App.h" />
+    <ClInclude Include="GameModel.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MenuView.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="SettingsModel.h" />
     <ClInclude Include="SettingsView.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="View.h" />

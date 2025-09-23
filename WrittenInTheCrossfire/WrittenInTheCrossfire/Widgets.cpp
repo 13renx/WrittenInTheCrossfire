@@ -1,5 +1,6 @@
 #include "Widgets.h"
 #include "Macros.h"
+#include "Model.h"
 #include <fmt/core.h>
 #include <memory>
 #include <TGUI/TGUI.hpp>
@@ -36,18 +37,18 @@ tgui::Panel::Ptr Widgets::Panels::createPanel(const tgui::Texture& textureBackgr
 	return panel;
 }
 
-tgui::Slider::Ptr Widgets::Sliders::createSlider() {
+tgui::Slider::Ptr Widgets::Sliders::createSlider(int value) {
 	tgui::Slider::Ptr slider = tgui::Slider::create();
 
 	slider->setMaximum(100);
-	slider->setValue(100);
+	slider->setValue(value);
 	slider->setPosition(100, 0);
 
 	return slider;
 }
 
-tgui::Slider::Ptr Widgets::Sliders::createVolumeSlider(tgui::Label::Ptr label) {
-	tgui::Slider::Ptr slider = createSlider();
+tgui::Slider::Ptr Widgets::Sliders::createVolumeSlider(tgui::Label::Ptr label, int volume) {
+	tgui::Slider::Ptr slider = createSlider(volume);
 
 	slider->onValueChange([=](float value) {
 		label->setText(fmt::format("{}", value));

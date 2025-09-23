@@ -15,7 +15,7 @@ namespace Widgets {
 	}
 
 	namespace Sliders {
-		tgui::Slider::Ptr createSlider();
-		tgui::Slider::Ptr createVolumeSlider(tgui::Label::Ptr label);
+		tgui::Slider::Ptr createSlider(int value);
+		tgui::Slider::Ptr createVolumeSlider(tgui::Label::Ptr label, int volume);
 	}
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "View.h"
+#include "SettingsModel.h"
 #include "ViewManager.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
@@ -9,6 +10,8 @@
 class SettingsView : public View
 {
 	private:
+		SettingsModel settingsModel;
+
 		tgui::Label::Ptr titleLabel;
 		tgui::Label::Ptr audioLabel;
 		tgui::GrowVerticalLayout::Ptr leftLayout;

@@ -69,6 +69,9 @@ std::tuple<bool, std::string> GameModel::load() {
 
 		return { true, "Save loaded successfully." };
 	} else {
+		init();
+		save();
+
 		return { false, "Failed to load save." };
 	}
 }

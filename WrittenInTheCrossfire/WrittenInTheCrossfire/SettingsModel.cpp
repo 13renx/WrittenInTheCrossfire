@@ -69,6 +69,7 @@ std::tuple<bool, std::string> SettingsModel::load() {
 	} else {
 		init();
 		save();
+
 		return { false, "Failed to load settings." };
 	}
 }

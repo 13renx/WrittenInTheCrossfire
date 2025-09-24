@@ -17,7 +17,13 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "NO", "YES" });
 	exitPanel = tgui::Panel::create();
 	apiChildWindow = tgui::ChildWindow::create();
+	apiMainLayout = tgui::GrowVerticalLayout::create();
+	apiButtonsLayout = tgui::GrowHorizontalLayout::create();
+	apiLabel = Widgets::Labels::createLabel("ENTER GEMINI API KEY", 13, 0, 0);
 	apiEditBox = tgui::EditBox::create();
+	apiFillerGroup = tgui::Group::create();
+	apiEnterButton = tgui::Button::create("ENTER");
+	apiCancelButton = tgui::Button::create("CANCEL");
 	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 100, 700, 100);
 	optionsLayout = tgui::GrowVerticalLayout::create();
 	newGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0, window);
@@ -30,8 +36,14 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 	exitMessageBox->setPosition(760, 400);
 	exitMessageBox->setButtonAlignment(tgui::HorizontalAlignment::Right);
 	exitPanel->getRenderer()->setOpacity(0.5f);
-	apiChildWindow->add(apiEditBox);
-	apiChildWindow->setSize(500, 300);
+	apiChildWindow->setSize(400, 155);
+	apiChildWindow->setTitleButtons(tgui::ChildWindow::TitleButton::None);
+	apiMainLayout->getRenderer()->setSpaceBetweenWidgets(15);
+	apiMainLayout->getRenderer()->setPadding(20);
+	apiButtonsLayout->setSize(0, 25);
+	apiButtonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
+	apiFillerGroup->setSize(190, 0);
+	
 	optionsLayout->setPosition(1570, 500);
 	{
 		std::ifstream file = std::ifstream("game.json");
@@ -66,6 +78,13 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 	mainPanel->add(apiChildWindow);
 	exitGroup->add(exitPanel);
 	exitGroup->add(exitMessageBox);
+	apiChildWindow->add(apiMainLayout);
+	apiMainLayout->add(apiLabel);
+	apiMainLayout->add(apiEditBox);
+	apiMainLayout->add(apiButtonsLayout);
+	apiButtonsLayout->add(apiFillerGroup);
+	apiButtonsLayout->add(apiEnterButton);
+	apiButtonsLayout->add(apiCancelButton);
 	optionsLayout->add(newGameLabel);
 	optionsLayout->add(continueLabel);
 	optionsLayout->add(settingsLabel);

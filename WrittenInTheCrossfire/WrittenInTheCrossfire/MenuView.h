@@ -16,7 +16,14 @@ class MenuView : public View
 		tgui::MessageBox::Ptr exitMessageBox;
 		tgui::Panel::Ptr exitPanel;
 		tgui::ChildWindow::Ptr apiChildWindow;
+		tgui::Group::Ptr apiGroup;
+		tgui::GrowVerticalLayout::Ptr apiMainLayout;
+		tgui::GrowHorizontalLayout::Ptr apiButtonsLayout;
+		tgui::Label::Ptr apiLabel;
 		tgui::EditBox::Ptr apiEditBox;
+		tgui::Group::Ptr apiFillerGroup;
+		tgui::Button::Ptr apiEnterButton;
+		tgui::Button::Ptr apiCancelButton;
 		tgui::Label::Ptr titleLabel;
 		tgui::GrowVerticalLayout::Ptr optionsLayout;
 		tgui::Label::Ptr newGameLabel;

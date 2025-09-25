@@ -6,16 +6,14 @@
 #include "Widgets.h"
 #include <fstream>
 #include <memory>
+#include <fmt/core.h>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(viewManager), client(client) {
+MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, "Assets/Textures/Backgrounds/Main Menu.PNG"), client(client) {
 	gameModel = GameModel();
 	sf::Window* window = gui.getWindow();
-
-	mainPanel = Widgets::Panels::createPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
-	alertChildWindow = tgui::ChildWindow::create();
-	alertLabel = Widgets::Labels::createLabel("Hello world", 13, 0, 0);
+	
 	exitGroup = tgui::Group::create();
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "NO", "YES" });
 	exitPanel = tgui::Panel::create();
@@ -36,13 +34,7 @@ MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : V
 	settingsLabel = Widgets::Labels::createButtonLabel("SETTINGS", 50, 0, 0, window);
 	aboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0, window);
 	exitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
-	
-	alertChildWindow->setSize(400, 100);
-	alertChildWindow->setCloseBehavior(tgui::ChildWindow::CloseBehavior::Hide);
-	alertChildWindow->setPositionLocked(true);
-	alertChildWindow->setPosition(1500, 960);
-	alertLabel->setPosition(10, 10);
-	alertChildWindow->setVisible(false);
+
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(exitMessageBox)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(exitMessageBox)) / 2.0f);
 	exitMessageBox->setButtonAlignment(tgui::HorizontalAlignment::Right);
@@ -91,9 +83,14 @@ MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : V
 		if(result) {
 			this->client.setApiKey(apiKey);
 			apiGroup->setVisible(false);
+			alertLabel->setText("API key stored successfully.");
+		} else {
+			alertLabel->setText(message);
 		}
 	});
 	newGameLabel->onClick([=] { 
+		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+
 		if(this->client.getApiKey() == "") {
 			apiGroup->setVisible(true);
 		}
@@ -102,15 +99,19 @@ MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : V
 		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewManager->changeView(ViewManager::ViewType::SETTINGS_VIEW);
 	});
-	exitLabel->onClick([=] { exitGroup->setVisible(true); });
+	exitLabel->onClick([=] { 
+		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		exitGroup->setVisible(true); 
+	});
 
-	mainPanel->add(alertChildWindow);
+	
 	mainPanel->add(titleLabel);
 	mainPanel->add(optionsLayout);
 	mainPanel->add(exitGroup);
 	mainPanel->add(apiGroup);
 	exitGroup->add(exitPanel);
 	exitGroup->add(exitMessageBox);
+	mainPanel->add(alertChildWindow);
 	alertChildWindow->add(alertLabel);
 	apiGroup->add(apiPanel);
 	apiGroup->add(apiChildWindow);

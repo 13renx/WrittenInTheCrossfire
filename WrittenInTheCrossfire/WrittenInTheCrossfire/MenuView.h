@@ -14,8 +14,6 @@ class MenuView : public View
 		Client& client;
 		GameModel gameModel;
 
-		tgui::ChildWindow::Ptr alertChildWindow;
-		tgui::Label::Ptr alertLabel;
 		tgui::Group::Ptr exitGroup;
 		tgui::MessageBox::Ptr exitMessageBox;
 		tgui::Panel::Ptr exitPanel;

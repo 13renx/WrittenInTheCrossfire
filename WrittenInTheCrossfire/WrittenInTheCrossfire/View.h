@@ -9,9 +9,12 @@ class ViewManager;
 class View
 {
 	protected:
+		tgui::Gui& gui;
 		tgui::Panel::Ptr mainPanel;
 		ViewManager* viewManager;
+		tgui::ChildWindow::Ptr alertChildWindow;
+		tgui::Label::Ptr alertLabel;
 
 	public:
-		View(ViewManager* viewManager);
+		View(tgui::Gui& gui, ViewManager* viewManager, tgui::Texture mainPanelTexture);
 };

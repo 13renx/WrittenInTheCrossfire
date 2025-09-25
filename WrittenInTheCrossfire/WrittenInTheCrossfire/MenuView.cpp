@@ -1,4 +1,5 @@
 #include "MenuView.h"
+#include "Client.h"
 #include "Macros.h"
 #include "View.h"
 #include "ViewManager.h"
@@ -8,15 +9,19 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager) {
+MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(viewManager), client(client) {
 	gameModel = GameModel();
 	sf::Window* window = gui.getWindow();
 
 	mainPanel = Widgets::Panels::createPanel("Assets/Textures/Backgrounds/Main Menu.PNG");
+	alertChildWindow = tgui::ChildWindow::create();
+	alertLabel = Widgets::Labels::createLabel("Hello world", 13, 0, 0);
 	exitGroup = tgui::Group::create();
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "NO", "YES" });
 	exitPanel = tgui::Panel::create();
+	apiGroup = tgui::Group::create();
 	apiChildWindow = tgui::ChildWindow::create();
+	apiPanel = tgui::Panel::create();
 	apiMainLayout = tgui::GrowVerticalLayout::create();
 	apiButtonsLayout = tgui::GrowHorizontalLayout::create();
 	apiLabel = Widgets::Labels::createLabel("ENTER GEMINI API KEY", 13, 0, 0);
@@ -32,14 +37,26 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 	aboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0, window);
 	exitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
 	
+	alertChildWindow->setSize(400, 100);
+	alertChildWindow->setCloseBehavior(tgui::ChildWindow::CloseBehavior::Hide);
+	alertChildWindow->setPositionLocked(true);
+	alertChildWindow->setPosition(1500, 960);
+	alertLabel->setPosition(10, 10);
+	alertChildWindow->setVisible(false);
 	exitGroup->setVisible(false);
-	exitMessageBox->setPosition(760, 400);
+	exitMessageBox->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(exitMessageBox)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(exitMessageBox)) / 2.0f);
 	exitMessageBox->setButtonAlignment(tgui::HorizontalAlignment::Right);
+	exitMessageBox->setPositionLocked(true);
 	exitPanel->getRenderer()->setOpacity(0.5f);
+	apiGroup->setVisible(false);
 	apiChildWindow->setSize(400, 155);
+	apiChildWindow->setPositionLocked(true);
 	apiChildWindow->setTitleButtons(tgui::ChildWindow::TitleButton::None);
+	apiChildWindow->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(apiChildWindow)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(apiChildWindow)) / 2.0f);
+	apiPanel->getRenderer()->setOpacity(0.5f);
 	apiMainLayout->getRenderer()->setSpaceBetweenWidgets(15);
 	apiMainLayout->getRenderer()->setPadding(20);
+	apiEditBox->setMaximumCharacters(39);
 	apiButtonsLayout->setSize(0, 25);
 	apiButtonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	apiFillerGroup->setSize(190, 0);
@@ -53,7 +70,6 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 			continueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
 		}
 	}
-	
 	exitPanel->onClick([=] { exitGroup->setVisible(false); });
 	exitMessageBox->onButtonPress([=](const tgui::String& button) {
 		if(button == "YES") {
@@ -63,8 +79,24 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 			exitGroup->setVisible(false);
 		}
 	});
-	newGameLabel->onClick([] {
+	apiPanel->onClick([=] { apiGroup->setVisible(false); });
+	apiCancelButton->onPress([=] { apiGroup->setVisible(false); });
+	apiEnterButton->onPress([=]() { 
+		const std::string apiKey = apiEditBox->getText().toStdString();
+		auto [result, message] = this->client.testApiKey(Client::TestType::NO_API_KEY, apiKey);
 
+		alertLabel->setText(message);
+		alertChildWindow->setVisible(true);
+
+		if(result) {
+			this->client.setApiKey(apiKey);
+			apiGroup->setVisible(false);
+		}
+	});
+	newGameLabel->onClick([=] { 
+		if(this->client.getApiKey() == "") {
+			apiGroup->setVisible(true);
+		}
 	});
 	settingsLabel->onClick([=, &gui] {
 		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
@@ -72,12 +104,16 @@ MenuView::MenuView(tgui::Gui& gui, ViewManager* viewManager) : View(viewManager)
 	});
 	exitLabel->onClick([=] { exitGroup->setVisible(true); });
 
+	mainPanel->add(alertChildWindow);
 	mainPanel->add(titleLabel);
 	mainPanel->add(optionsLayout);
 	mainPanel->add(exitGroup);
-	mainPanel->add(apiChildWindow);
+	mainPanel->add(apiGroup);
 	exitGroup->add(exitPanel);
 	exitGroup->add(exitMessageBox);
+	alertChildWindow->add(alertLabel);
+	apiGroup->add(apiPanel);
+	apiGroup->add(apiChildWindow);
 	apiChildWindow->add(apiMainLayout);
 	apiMainLayout->add(apiLabel);
 	apiMainLayout->add(apiEditBox);

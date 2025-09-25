@@ -124,6 +124,10 @@ Client::Client() {
 	)";
 }
 
+std::string Client::getApiKey() {
+	return apiKey;
+}
+
 json Client::fetchResponse(Client::PromptType promptType, const std::string& apiKey) {
 	cpr::Response res;
 	std::string prompt;

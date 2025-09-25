@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Client.h"
 #include "GameModel.h"
 #include "View.h"
 #include "ViewManager.h"
@@ -10,13 +11,17 @@
 class MenuView : public View
 {
 	private:
+		Client& client;
 		GameModel gameModel;
 
+		tgui::ChildWindow::Ptr alertChildWindow;
+		tgui::Label::Ptr alertLabel;
 		tgui::Group::Ptr exitGroup;
 		tgui::MessageBox::Ptr exitMessageBox;
 		tgui::Panel::Ptr exitPanel;
-		tgui::ChildWindow::Ptr apiChildWindow;
 		tgui::Group::Ptr apiGroup;
+		tgui::ChildWindow::Ptr apiChildWindow;
+		tgui::Panel::Ptr apiPanel;
 		tgui::GrowVerticalLayout::Ptr apiMainLayout;
 		tgui::GrowHorizontalLayout::Ptr apiButtonsLayout;
 		tgui::Label::Ptr apiLabel;
@@ -33,5 +38,5 @@ class MenuView : public View
 		tgui::Label::Ptr exitLabel;
 
 	public:
-		MenuView(tgui::Gui& gui, ViewManager* viewManager);
+		MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager);
 };

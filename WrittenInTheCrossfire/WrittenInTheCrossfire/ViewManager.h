@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Client.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -8,6 +9,7 @@ class View;
 
 class ViewManager {
 	private:
+		Client client;
 		tgui::Gui& gui;
 		std::shared_ptr<View> activeView;
 

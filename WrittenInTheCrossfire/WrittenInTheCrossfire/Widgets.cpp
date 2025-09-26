@@ -37,6 +37,13 @@ tgui::Panel::Ptr Widgets::Panels::createPanel(const tgui::Texture& textureBackgr
 	return panel;
 }
 
+tgui::Panel::Ptr Widgets::Panels::createPanel(const tgui::Color& BackgroundColor) {
+	tgui::Panel::Ptr panel = tgui::Panel::create();
+	panel->getRenderer()->setBackgroundColor(BackgroundColor);
+
+	return panel;
+}
+
 tgui::Slider::Ptr Widgets::Sliders::createSlider(int value) {
 	tgui::Slider::Ptr slider = tgui::Slider::create();
 

@@ -18,7 +18,8 @@ class ViewManager {
 
 		enum class ViewType {
 			MENU_VIEW,
-			SETTINGS_VIEW
+			SETTINGS_VIEW,
+			CAMP_VIEW
 		};
 
 		std::shared_ptr<View> getActiveView();

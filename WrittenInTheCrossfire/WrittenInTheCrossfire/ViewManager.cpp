@@ -1,4 +1,5 @@
 #include "ViewManager.h"
+#include "CampView.h"
 #include "Client.h"
 #include "MenuView.h"
 #include "SettingsView.h"
@@ -26,5 +27,9 @@ void ViewManager::changeView(ViewType viewType) {
 			break;
 		case ViewType::SETTINGS_VIEW:
 			setActiveView(std::make_shared<SettingsView>(gui, this));
+			break;
+		case ViewType::CAMP_VIEW:
+			setActiveView(std::make_shared<CampView>(client, gui, this));
+			break;
 	}
 }

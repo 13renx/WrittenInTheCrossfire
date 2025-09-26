@@ -10,7 +10,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, "Assets/Textures/Backgrounds/Main Menu.PNG"), client(client) {
+MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("Assets/Textures/Backgrounds/Main Menu.PNG")), client(client) {
 	gameModel = GameModel();
 	sf::Window* window = gui.getWindow();
 	
@@ -75,24 +75,40 @@ MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : V
 	apiCancelButton->onPress([=] { apiGroup->setVisible(false); });
 	apiEnterButton->onPress([=]() { 
 		const std::string apiKey = apiEditBox->getText().toStdString();
-		auto [result, message] = this->client.testApiKey(Client::TestType::NO_API_KEY, apiKey);
+		
+		if(apiKey != "") {
+			auto [result, message] = this->client.testApiKey(Client::TestType::NO_API_KEY, apiKey);
 
-		alertLabel->setText(message);
-		alertChildWindow->setVisible(true);
-
-		if(result) {
-			this->client.setApiKey(apiKey);
-			apiGroup->setVisible(false);
-			alertLabel->setText("API key stored successfully.");
+			if(result) {
+				this->client.setApiKey(apiKey);
+				apiGroup->setVisible(false);
+				alertLabel->setText("API key stored successfully.");
+			}
+			else {
+				alertLabel->setText(message);
+			}
 		} else {
-			alertLabel->setText(message);
+			alertLabel->setText("The input field is empty. Please enter an API key.");
 		}
+
+		alertChildWindow->setVisible(true);
 	});
 	newGameLabel->onClick([=] { 
 		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
 		if(this->client.getApiKey() == "") {
 			apiGroup->setVisible(true);
+		} else {
+			auto[result, message] = this->client.testApiKey(Client::TestType::WITH_API_KEY, this->client.getApiKey());
+
+			alertLabel->setText(message);
+			alertChildWindow->setVisible(true);
+
+			if(result) {
+
+			} else {
+				
+			}
 		}
 	});
 	settingsLabel->onClick([=, &gui] {

@@ -8,7 +8,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-SettingsView::SettingsView(tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, "Assets/Textures/Backgrounds/Settings Page with other stuff.png") {
+SettingsView::SettingsView(tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")) {
 	settingsModel = SettingsModel();
 	settingsModel.load();
 

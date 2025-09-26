@@ -7,6 +7,15 @@
 
 View::View(tgui::Gui& gui, ViewManager* viewManager, tgui::Texture mainPanelTexture) : gui(gui), viewManager(viewManager) {
 	mainPanel = Widgets::Panels::createPanel(mainPanelTexture);
+	init();
+}
+
+View::View(tgui::Gui& gui, ViewManager* viewManager, tgui::Color mainPanelColor) : gui(gui), viewManager(viewManager) {
+	mainPanel = Widgets::Panels::createPanel(mainPanelColor);
+	init();
+}
+
+void View::init() {
 	alertChildWindow = tgui::ChildWindow::create();
 	alertLabel = Widgets::Labels::createLabel("", 13, 0, 0);
 

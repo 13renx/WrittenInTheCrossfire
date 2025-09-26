@@ -17,4 +17,7 @@ class View
 
 	public:
 		View(tgui::Gui& gui, ViewManager* viewManager, tgui::Texture mainPanelTexture);
+		View(tgui::Gui& gui, ViewManager* viewManager, tgui::Color mainPanelColor);
+
+		void init();
 };

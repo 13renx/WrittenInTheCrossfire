@@ -13,6 +13,14 @@ class CampView : public View
 	private:
 		Client& client;
 		GameModel gameModel;
+		
+		tgui::HorizontalLayout::Ptr buttonLayoutOne;
+		tgui::Button::Ptr writeButton;
+		tgui::Button::Ptr dontWriteButton;
+		
+		tgui::VerticalLayout::Ptr buttonLayoutTwo;
+		tgui::Button::Ptr cancelButton;
+		tgui::Button::Ptr selectButton;
 
 	public:
 		CampView(Client& client, tgui::Gui& gui, ViewManager* viewManager);

@@ -10,8 +10,10 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-CampView::CampView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("")), client(client) {
+CampView::CampView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("Assets/Textures/Backgrounds/full_body_bg.PNG")), client(client) {
 	gameModel = GameModel();
 
 
+
+	gui.add(mainPanel);
 }

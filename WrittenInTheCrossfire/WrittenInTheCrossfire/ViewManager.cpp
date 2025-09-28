@@ -3,12 +3,13 @@
 #include "Client.h"
 #include "MenuView.h"
 #include "SettingsView.h"
+#include "TableView.h"
 #include "View.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ViewManager::ViewManager(tgui::Gui& gui) : client(Client()), gui(gui), activeView(std::make_shared<MenuView>(client, gui, this)) {}
+ViewManager::ViewManager(tgui::Gui& gui) : client(Client()), gui(gui), activeView(std::make_shared<TableView>(client, gui, this)) {}
 
 std::shared_ptr<View> ViewManager::getActiveView() {
 	return activeView;
@@ -30,6 +31,9 @@ void ViewManager::changeView(ViewType viewType) {
 			break;
 		case ViewType::CAMP_VIEW:
 			setActiveView(std::make_shared<CampView>(client, gui, this));
+			break;
+		case ViewType::TABLE_VIEW:
+			setActiveView(std::make_shared<TableView>(client, gui, this));
 			break;
 	}
 }

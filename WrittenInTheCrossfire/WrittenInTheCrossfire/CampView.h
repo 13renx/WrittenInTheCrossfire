@@ -14,8 +14,6 @@ class CampView : public View
 		Client& client;
 		GameModel gameModel;
 
-
-
 	public:
 		CampView(Client& client, tgui::Gui& gui, ViewManager* viewManager);
-};
+}; 

@@ -1,15 +1,14 @@
 #pragma once
 
-#include "ViewManager.h"
+#include "GameModel.h"
+#include "ViewController.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 class App {
-	private:
-		sf::RenderWindow window;
-		tgui::Gui gui;
-		ViewManager viewManager;
+	GameModel gameModel;
+	ViewController viewController;
 
 	public:
 		App();

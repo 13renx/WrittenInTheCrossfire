@@ -2,7 +2,7 @@
 #include "Client.h"
 #include "Macros.h"
 #include "View.h"
-#include "ViewManager.h"
+#include "ViewController.h"
 #include "Widgets.h"
 #include <fstream>
 #include <memory>
@@ -10,9 +10,9 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("Assets/Textures/Backgrounds/Main Menu.PNG")), client(client) {
-	gameModel = GameModel();
-	sf::Window* window = gui.getWindow();
+MenuView::MenuView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Main Menu.PNG")) {
+	sf::RenderWindow& window = this->gameModel.getWindow();
+	tgui::Gui& gui = this->gameModel.getGui();
 	
 	exitGroup = tgui::Group::create();
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "NO", "YES" });
@@ -73,52 +73,52 @@ MenuView::MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : V
 	});
 	apiPanel->onClick([=] { apiGroup->setVisible(false); });
 	apiCancelButton->onPress([=] { apiGroup->setVisible(false); });
-	apiEnterButton->onPress([=]() { 
-		const std::string apiKey = apiEditBox->getText().toStdString();
-		
-		if(apiKey != "") {
-			auto [result, message] = this->client.testApiKey(Client::TestType::NO_API_KEY, apiKey);
+	//apiEnterButton->onPress([=]() { 
+	//	const std::string apiKey = apiEditBox->getText().toStdString();
+	//	
+	//	if(apiKey != "") {
+	//		auto [result, message] = this->client.testApiKey(Client::TestType::NO_API_KEY, apiKey);
 
-			if(result) {
-				this->client.setApiKey(apiKey);
-				apiGroup->setVisible(false);
-				alertLabel->setText("API key stored successfully.");
-			}
-			else {
-				alertLabel->setText(message);
-			}
-		} else {
-			alertLabel->setText("The input field is empty. Please enter an API key.");
-		}
+	//		if(result) {
+	//			this->client.setApiKey(apiKey);
+	//			apiGroup->setVisible(false);
+	//			alertLabel->setText("API key stored successfully.");
+	//		}
+	//		else {
+	//			alertLabel->setText(message);
+	//		}
+	//	} else {
+	//		alertLabel->setText("The input field is empty. Please enter an API key.");
+	//	}
 
-		alertChildWindow->setVisible(true);
-	});
-	newGameLabel->onClick([=] { 
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	alertChildWindow->setVisible(true);
+	//});
+	//newGameLabel->onClick([=] { 
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
-		if(this->client.getApiKey() == "") {
-			apiGroup->setVisible(true);
-		} else {
-			auto[result, message] = this->client.testApiKey(Client::TestType::WITH_API_KEY, this->client.getApiKey());
+	//	if(this->client.getApiKey() == "") {
+	//		apiGroup->setVisible(true);
+	//	} else {
+	//		auto[result, message] = this->client.testApiKey(Client::TestType::WITH_API_KEY, this->client.getApiKey());
 
-			alertLabel->setText(message);
-			alertChildWindow->setVisible(true);
+	//		alertLabel->setText(message);
+	//		alertChildWindow->setVisible(true);
 
-			if(result) {
+	//		if(result) {
 
-			} else {
-				
-			}
-		}
-	});
-	settingsLabel->onClick([=, &gui] {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewManager->changeView(ViewManager::ViewType::SETTINGS_VIEW);
-	});
-	exitLabel->onClick([=] { 
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		exitGroup->setVisible(true); 
-	});
+	//		} else {
+	//			
+	//		}
+	//	}
+	//});
+	//settingsLabel->onClick([=, &gui] {
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	this->viewController->changeView(ViewController::ViewType::SETTINGS_VIEW);
+	//});
+	//exitLabel->onClick([=] { 
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	exitGroup->setVisible(true); 
+	//});
 
 	
 	mainPanel->add(titleLabel);

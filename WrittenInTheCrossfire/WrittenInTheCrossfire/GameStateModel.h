@@ -1,0 +1,30 @@
+#pragma once
+
+#include "Model.h"
+#include "Stats.h"
+#include <string>
+#include <tuple>
+#include <vector>
+#include <nlohmann/json.hpp>
+
+class GameStateModel : Model {
+    private:
+        std::vector<json> chatHistory;
+        int checkpoint;
+        Stats currentStats;
+
+    public:
+        GameStateModel();
+        
+        void init() override;
+        std::vector<json> getChatHistory();
+        void setChatHistory(std::vector<json> chatHistory);
+        int getCheckpoint();
+        void setCheckpoint(int checkpoint);
+        Stats getCurrentStats();
+        void setCurrentStats(Stats currentStats);
+        std::tuple<bool, std::string> save() override;
+        std::tuple<bool, std::string> load() override;
+
+        NLOHMANN_DEFINE_TYPE_INTRUSIVE(GameStateModel, chatHistory, checkpoint, currentStats) // Creates to_json() and from_json() for GameStateModel
+};

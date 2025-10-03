@@ -1,9 +1,8 @@
 #pragma once
 
-#include "Client.h"
 #include "GameModel.h"
 #include "View.h"
-#include "ViewManager.h"
+#include "ViewController.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -11,9 +10,6 @@
 class MenuView : public View
 {
 	private:
-		Client& client;
-		GameModel gameModel;
-
 		tgui::Group::Ptr exitGroup;
 		tgui::MessageBox::Ptr exitMessageBox;
 		tgui::Panel::Ptr exitPanel;
@@ -36,5 +32,5 @@ class MenuView : public View
 		tgui::Label::Ptr exitLabel;
 
 	public:
-		MenuView(Client& client, tgui::Gui& gui, ViewManager* viewManager);
+		MenuView(ViewController* viewController, GameModel& gameModel);
 };

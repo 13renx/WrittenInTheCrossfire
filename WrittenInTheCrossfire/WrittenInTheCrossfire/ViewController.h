@@ -1,20 +1,19 @@
 #pragma once
 
-#include "Client.h"
+#include "GameModel.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 class View;
 
-class ViewManager {
+class ViewController {
 	private:
-		Client client;
-		tgui::Gui& gui;
+		GameModel& gameModel;
 		std::shared_ptr<View> activeView;
 
 	public:
-		ViewManager(tgui::Gui& gui);
+		ViewController(GameModel& gameModel);
 
 		enum class ViewType {
 			MENU_VIEW,

@@ -191,3 +191,7 @@ std::tuple<bool, std::string> Client::setApiKey(const std::string& apiKey) {
 
 	return { result, message };
 }
+
+void Client::setGamePrompt() {
+
+}

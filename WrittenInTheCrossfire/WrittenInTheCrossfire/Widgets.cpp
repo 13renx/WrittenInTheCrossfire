@@ -15,15 +15,15 @@ tgui::Label::Ptr Widgets::Labels::createLabel(std::string text, unsigned int tex
 	return label;
 }
 
-tgui::Label::Ptr Widgets::Labels::createButtonLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y, sf::Window* window) {
+tgui::Label::Ptr Widgets::Labels::createButtonLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y, sf::RenderWindow& window) {
 	tgui::Label::Ptr label = createLabel(text, textSize, x, y);
 
-	label->onMouseEnter([=]() {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Hand));
+	label->onMouseEnter([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Hand));
 		label->getRenderer()->setTextColor(tgui::Color::White);
 	});
-	label->onMouseLeave([=]() {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	label->onMouseLeave([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		label->getRenderer()->setTextColor(Macros::Colors::Redwood);
 	});
 	

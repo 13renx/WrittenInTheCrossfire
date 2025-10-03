@@ -1,8 +1,9 @@
 #include "CampView.h"
 #include "Client.h"
+#include "GameModel.h"
 #include "Macros.h"
 #include "View.h"
-#include "ViewManager.h"
+#include "ViewController.h"
 #include "Widgets.h"
 #include <fstream>
 #include <memory>
@@ -10,9 +11,9 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-CampView::CampView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")), client(client) {
-	gameModel = GameModel();
-	sf::Window* window = gui.getWindow();
+CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")) {
+	sf::RenderWindow& window = this->gameModel.getWindow();
+	tgui::Gui& gui = this->gameModel.getGui();
 
     buttonLayoutOne = tgui::HorizontalLayout::create({ 500, 100 });
     writeButton = tgui::Button::create("WRITE A LETTER");
@@ -26,10 +27,10 @@ CampView::CampView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : V
     buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     buttonLayoutTwo->setVisible(false);
 
-	writeButton->onClick([=, &gui] {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewManager->changeView(ViewManager::ViewType::TABLE_VIEW);
-	});
+	//writeButton->onClick([=, &gui] {
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	this->viewController->changeView(ViewController::ViewType::TABLE_VIEW);
+	//});
 
 	mainPanel->add(buttonLayoutOne);
 	mainPanel->add(buttonLayoutTwo);

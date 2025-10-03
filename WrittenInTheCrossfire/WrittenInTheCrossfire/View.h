@@ -1,23 +1,25 @@
 #pragma once
 
+#include "GameModel.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class ViewManager;
+class ViewController;
 
 class View
 {
 	protected:
-		tgui::Gui& gui;
+		ViewController* viewController;
+		GameModel& gameModel;
+
 		tgui::Panel::Ptr mainPanel;
-		ViewManager* viewManager;
 		tgui::ChildWindow::Ptr alertChildWindow;
 		tgui::Label::Ptr alertLabel;
 
 	public:
-		View(tgui::Gui& gui, ViewManager* viewManager, tgui::Texture mainPanelTexture);
-		View(tgui::Gui& gui, ViewManager* viewManager, tgui::Color mainPanelColor);
+		View(ViewController* viewController, GameModel& gameModel, tgui::Texture mainPanelTexture);
+		View(ViewController* viewController, GameModel& gameModel, tgui::Color mainPanelColor);
 
 		void init();
 };

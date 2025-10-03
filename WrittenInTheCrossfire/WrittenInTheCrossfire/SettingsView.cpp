@@ -1,18 +1,20 @@
 #include "SettingsView.h"
 #include "SettingsModel.h"
+#include "GameModel.h"
 #include "Widgets.h"
 #include "View.h"
-#include "ViewManager.h"
+#include "ViewController.h"
 #include <memory>
 #include <fmt/core.h>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-SettingsView::SettingsView(tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")) {
+SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")) {
 	settingsModel = SettingsModel();
 	settingsModel.load();
 
-	sf::Window* window = gui.getWindow();
+	sf::RenderWindow& window = this->gameModel.getWindow();
+	tgui::Gui& gui = this->gameModel.getGui();
 
 	titleLabel = Widgets::Labels::createLabel("SETTINGS", 100, 700, 70);
 	audioLabel = Widgets::Labels::createLabel("AUDIO", 75, 0, 0);
@@ -38,37 +40,37 @@ SettingsView::SettingsView(tgui::Gui& gui, ViewManager* viewManager) : View(gui,
 	buttonsLayout->setPosition(120, 930);
 	buttonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
 
-	backLabel->onClick([=, &gui] {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewManager->changeView(ViewManager::ViewType::MENU_VIEW);
-	});
-	resetLabel->onClick([=] {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		settingsModel.init();
-		masterVolumeValueLabel->setText(std::to_string(settingsModel.getMasterVolume()));
-		masterVolumeSlider->setValue(settingsModel.getMasterVolume());
-		sfxVolumeValueLabel->setText(std::to_string(settingsModel.getSfxVolume()));
-		sfxVolumeSlider->setValue(settingsModel.getSfxVolume());
-		musicVolumeValueLabel->setText(std::to_string(settingsModel.getMusicVolume()));
-		musicVolumeSlider->setValue(settingsModel.getMusicVolume());
-		
-		alertLabel->setText("Settings reset successfully.");
-		alertChildWindow->setVisible(true);
-	});
-	saveLabel->onClick([=] {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		
-		auto [result, message] = settingsModel.save();
-		
-		if(result) {
-		    settingsModel.setMasterVolume(std::stoi(masterVolumeValueLabel->getText().toStdString()));
-		    settingsModel.setSfxVolume(std::stoi(sfxVolumeValueLabel->getText().toStdString()));
-		    settingsModel.setMusicVolume(std::stoi(musicVolumeValueLabel->getText().toStdString()));
-		}
-		
-		alertLabel->setText(message);
-		alertChildWindow->setVisible(true);
-	});
+	//backLabel->onClick([=, &gui] {
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
+	//});
+	//resetLabel->onClick([=] {
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	settingsModel.init();
+	//	masterVolumeValueLabel->setText(std::to_string(settingsModel.getMasterVolume()));
+	//	masterVolumeSlider->setValue(settingsModel.getMasterVolume());
+	//	sfxVolumeValueLabel->setText(std::to_string(settingsModel.getSfxVolume()));
+	//	sfxVolumeSlider->setValue(settingsModel.getSfxVolume());
+	//	musicVolumeValueLabel->setText(std::to_string(settingsModel.getMusicVolume()));
+	//	musicVolumeSlider->setValue(settingsModel.getMusicVolume());
+	//	
+	//	alertLabel->setText("Settings reset successfully.");
+	//	alertChildWindow->setVisible(true);
+	//});
+	//saveLabel->onClick([=] {
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	
+	//	auto [result, message] = settingsModel.save();
+	//	
+	//	if(result) {
+	//	    settingsModel.setMasterVolume(std::stoi(masterVolumeValueLabel->getText().toStdString()));
+	//	    settingsModel.setSfxVolume(std::stoi(sfxVolumeValueLabel->getText().toStdString()));
+	//	    settingsModel.setMusicVolume(std::stoi(musicVolumeValueLabel->getText().toStdString()));
+	//	}
+	//	
+	//	alertLabel->setText(message);
+	//	alertChildWindow->setVisible(true);
+	//});
 
 	mainPanel->add(titleLabel);
 	mainPanel->add(leftLayout);

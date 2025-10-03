@@ -1,14 +1,16 @@
 #include "App.h"
-#include "ViewManager.h"
+#include "GameModel.h"
+#include "ViewController.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-App::App() : window(sf::VideoMode({ 1920, 1080 }), "Written In The Crossfire", sf::State::Fullscreen), gui(window) , viewManager(gui) {
-	window.setFramerateLimit(60);
-}
+App::App() : gameModel(GameModel()), viewController(ViewController(gameModel)) {}
 
 void App::run() {
+	sf::RenderWindow& window = gameModel.getWindow();
+	tgui::Gui& gui = gameModel.getGui();
+
 	while(window.isOpen()) {
 		while(const std::optional event = window.pollEvent()) {
 			if(event->is<sf::Event::Closed>()) {

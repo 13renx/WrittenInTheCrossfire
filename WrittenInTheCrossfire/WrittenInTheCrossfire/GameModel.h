@@ -1,30 +1,22 @@
 #pragma once
 
-#include "Model.h"
-#include "Stats.h"
-#include <string>
-#include <tuple>
-#include <vector>
-#include <nlohmann/json.hpp>
+#include "Client.h"
+#include "GameStateModel.h"
+#include <TGUI/TGUI.hpp>
+#include <TGUI/Backend/SFML-Graphics.hpp>
 
-class GameModel : Model {
-    private:
-        std::vector<json> chatHistory;
-        int checkpoint;
-        Stats currentStats;
+class GameModel {
+	private:
+		sf::RenderWindow window;
+		tgui::Gui gui;
+		Client client;
+		GameStateModel gameStateModel;
 
-    public:
-        GameModel();
-        
-        void init() override;
-        std::vector<json> getChatHistory();
-        void setChatHistory(std::vector<json> chatHistory);
-        int getCheckpoint();
-        void setCheckpoint(int checkpoint);
-        Stats getCurrentStats();
-        void setCurrentStats(Stats currentStats);
-        std::tuple<bool, std::string> save() override; // Saves game model to save file (game.json)
-        std::tuple<bool, std::string> load() override; // Loads game model from save file (game.json)
+	public:
+		GameModel();
 
-        NLOHMANN_DEFINE_TYPE_INTRUSIVE(GameModel, chatHistory, checkpoint, currentStats) // Creates to_json() and from_json() for GameModel
+		sf::RenderWindow& getWindow();
+		tgui::Gui& getGui();
+		Client& getClient();
+		GameStateModel& getGameStateModel();
 };

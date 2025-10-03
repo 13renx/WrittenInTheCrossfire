@@ -1,8 +1,9 @@
 #include "TableView.h"
 #include "Client.h"
+#include "GameModel.h"
 #include "Macros.h"
 #include "View.h"
-#include "ViewManager.h"
+#include "ViewController.h"
 #include "Widgets.h"
 #include <fstream>
 #include <memory>
@@ -10,9 +11,8 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-TableView::TableView(Client& client, tgui::Gui& gui, ViewManager* viewManager) : View(gui, viewManager, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")), client(client) {
-	gameModel = GameModel();
-	sf::Window* window = gui.getWindow();
+TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")) {
+	tgui::Gui& gui = this->gameModel.getGui();
 
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0);
 	letterTextArea = tgui::TextArea::create();
@@ -29,13 +29,13 @@ TableView::TableView(Client& client, tgui::Gui& gui, ViewManager* viewManager) :
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 
-	cancelButton->onClick([=, &gui] {
-		window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewManager->changeView(ViewManager::ViewType::CAMP_VIEW);
-	});
-	sendButton->onClick([] {
-
-	});
+	//cancelButton->onClick([=, &gui] {
+	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	//	this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
+	//});
+	//sendButton->onClick([=] {
+	//	this->viewController.getClient().fetchResponse();
+	//});
 
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);

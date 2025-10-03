@@ -12,6 +12,7 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")) {
+	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0);
@@ -29,13 +30,13 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 
-	//cancelButton->onClick([=, &gui] {
-	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-	//	this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
-	//});
-	//sendButton->onClick([=] {
-	//	this->viewController.getClient().fetchResponse();
-	//});
+	cancelButton->onClick([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
+	});
+	sendButton->onClick([=] {
+		
+	});
 
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);

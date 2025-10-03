@@ -168,7 +168,6 @@
     <ClInclude Include="Widgets.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Assets\Themes\MainTheme.txt" />
     <Text Include="MainTheme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

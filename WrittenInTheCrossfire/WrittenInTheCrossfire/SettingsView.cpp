@@ -10,11 +10,10 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")) {
-	settingsModel = SettingsModel();
-	settingsModel.load();
-
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	settingsModel = SettingsModel();
+	settingsModel.load();
 
 	titleLabel = Widgets::Labels::createLabel("SETTINGS", 100, 700, 70);
 	audioLabel = Widgets::Labels::createLabel("AUDIO", 75, 0, 0);
@@ -40,37 +39,37 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 	buttonsLayout->setPosition(120, 930);
 	buttonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
 
-	//backLabel->onClick([=, &gui] {
-	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-	//	this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
-	//});
-	//resetLabel->onClick([=] {
-	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-	//	settingsModel.init();
-	//	masterVolumeValueLabel->setText(std::to_string(settingsModel.getMasterVolume()));
-	//	masterVolumeSlider->setValue(settingsModel.getMasterVolume());
-	//	sfxVolumeValueLabel->setText(std::to_string(settingsModel.getSfxVolume()));
-	//	sfxVolumeSlider->setValue(settingsModel.getSfxVolume());
-	//	musicVolumeValueLabel->setText(std::to_string(settingsModel.getMusicVolume()));
-	//	musicVolumeSlider->setValue(settingsModel.getMusicVolume());
-	//	
-	//	alertLabel->setText("Settings reset successfully.");
-	//	alertChildWindow->setVisible(true);
-	//});
-	//saveLabel->onClick([=] {
-	//	window->setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-	//	
-	//	auto [result, message] = settingsModel.save();
-	//	
-	//	if(result) {
-	//	    settingsModel.setMasterVolume(std::stoi(masterVolumeValueLabel->getText().toStdString()));
-	//	    settingsModel.setSfxVolume(std::stoi(sfxVolumeValueLabel->getText().toStdString()));
-	//	    settingsModel.setMusicVolume(std::stoi(musicVolumeValueLabel->getText().toStdString()));
-	//	}
-	//	
-	//	alertLabel->setText(message);
-	//	alertChildWindow->setVisible(true);
-	//});
+	backLabel->onClick([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
+	});
+	resetLabel->onClick([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		settingsModel.init();
+		masterVolumeValueLabel->setText(std::to_string(settingsModel.getMasterVolume()));
+		masterVolumeSlider->setValue(settingsModel.getMasterVolume());
+		sfxVolumeValueLabel->setText(std::to_string(settingsModel.getSfxVolume()));
+		sfxVolumeSlider->setValue(settingsModel.getSfxVolume());
+		musicVolumeValueLabel->setText(std::to_string(settingsModel.getMusicVolume()));
+		musicVolumeSlider->setValue(settingsModel.getMusicVolume());
+		
+		alertLabel->setText("Settings reset successfully.");
+		alertChildWindow->setVisible(true);
+	});
+	saveLabel->onClick([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		
+		auto [result, message] = settingsModel.save();
+		
+		if(result) {
+		    settingsModel.setMasterVolume(std::stoi(masterVolumeValueLabel->getText().toStdString()));
+		    settingsModel.setSfxVolume(std::stoi(sfxVolumeValueLabel->getText().toStdString()));
+		    settingsModel.setMusicVolume(std::stoi(musicVolumeValueLabel->getText().toStdString()));
+		}
+		
+		alertLabel->setText(message);
+		alertChildWindow->setVisible(true);
+	});
 
 	mainPanel->add(titleLabel);
 	mainPanel->add(leftLayout);

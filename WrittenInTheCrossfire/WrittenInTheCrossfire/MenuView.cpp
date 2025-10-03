@@ -15,6 +15,7 @@ MenuView::MenuView(ViewController* viewController, GameModel& gameModel) : View(
 	tgui::Gui& gui = this->gameModel.getGui();
 	Client& client = this->gameModel.getClient();
 	
+	// Initialize widgets
 	exitGroup = tgui::Group::create();
 	exitMessageBox = tgui::MessageBox::create("", "ARE YOU SURE YOU WANT TO EXIT?", { "NO", "YES" });
 	exitPanel = tgui::Panel::create();

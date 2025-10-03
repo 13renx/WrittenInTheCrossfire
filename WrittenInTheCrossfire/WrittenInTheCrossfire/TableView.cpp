@@ -15,6 +15,7 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 
+	// Initialize widgets
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0);
 	letterTextArea = tgui::TextArea::create();
 	buttonLayout = tgui::VerticalLayout::create({ 240, 220 });

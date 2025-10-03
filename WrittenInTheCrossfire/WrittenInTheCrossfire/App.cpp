@@ -7,6 +7,7 @@
 
 App::App() : gameModel(GameModel()), viewController(ViewController(gameModel)) {}
 
+// Game loop
 void App::run() {
 	sf::RenderWindow& window = gameModel.getWindow();
 	tgui::Gui& gui = gameModel.getGui();

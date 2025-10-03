@@ -15,6 +15,7 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 	settingsModel = SettingsModel();
 	settingsModel.load();
 
+	// Initialize widgets
 	titleLabel = Widgets::Labels::createLabel("SETTINGS", 100, 700, 70);
 	audioLabel = Widgets::Labels::createLabel("AUDIO", 75, 0, 0);
 	leftLayout = tgui::GrowVerticalLayout::create(1000);

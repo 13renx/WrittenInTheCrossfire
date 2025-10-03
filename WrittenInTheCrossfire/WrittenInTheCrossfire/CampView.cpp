@@ -15,6 +15,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 
+	// Initialize widgets
     buttonLayoutOne = tgui::HorizontalLayout::create({ 500, 100 });
     writeButton = tgui::Button::create("WRITE A LETTER");
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");

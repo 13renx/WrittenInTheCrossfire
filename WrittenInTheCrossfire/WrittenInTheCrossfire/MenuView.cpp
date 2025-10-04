@@ -117,6 +117,10 @@ MenuView::MenuView(ViewController* viewController, GameModel& gameModel) : View(
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::SETTINGS_VIEW);
 	});
+	aboutLabel->onClick([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		this->viewController->changeView(ViewController::ViewType::ABOUT_VIEW);
+		});
 	exitLabel->onClick([=, &window] { 
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		exitGroup->setVisible(true); 

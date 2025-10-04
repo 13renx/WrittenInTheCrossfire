@@ -18,6 +18,7 @@ class ViewController {
 		enum class ViewType {
 			MENU_VIEW,
 			SETTINGS_VIEW,
+			ABOUT_VIEW,
 			CAMP_VIEW,
 			TABLE_VIEW
 		};

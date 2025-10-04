@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AboutView.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="CampView.cpp" />
     <ClCompile Include="Client.cpp" />
@@ -151,6 +152,7 @@
     <None Include=".env" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AboutView.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="CampView.h" />
     <ClInclude Include="Client.h" />

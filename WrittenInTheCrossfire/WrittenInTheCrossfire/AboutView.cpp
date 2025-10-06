@@ -14,13 +14,17 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 
 	// Initialize widgets
 	titleLabel = Widgets::Labels::createLabel("ABOUT", 100, 700, 70);
-	leftLayout = tgui::GrowVerticalLayout::create(1000);
+	textLabel = Widgets::Labels::createLabel("Written In the Crossfire follows the narrative of a soldier during war, writing letters to home,", 30, 0, 0);
+	textLabel2 = Widgets::Labels::createLabel("and uncovering the human cost of conflict.", 30, 0, 0);
+	textLabel3 = Widgets::Labels::createLabel("Created by Angela Miguel, Joaquin Panganiban, Brent Soan, Ana Veron", 30, 0, 0);
+	leftLayout = tgui::GrowVerticalLayout::create(1500);
+	spacer = tgui::Label::create();
+	spacer->setHeight(500);
 	backLabel = Widgets::Labels::createButtonLabel("BACK", 50, 0, 0, window);
 	buttonsLayout = tgui::GrowHorizontalLayout::create();
 
 	leftLayout->setPosition(120, 200);
 	buttonsLayout->setPosition(120, 930);
-	buttonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
 
 	backLabel->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
@@ -29,6 +33,10 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 
 	mainPanel->add(titleLabel);
 	mainPanel->add(leftLayout);
+	leftLayout->add(textLabel);
+	leftLayout->add(textLabel2);
+	leftLayout->add(spacer);
+	leftLayout->add(textLabel3);
 	mainPanel->add(buttonsLayout);
 	buttonsLayout->add(backLabel);
 	gui.add(mainPanel);

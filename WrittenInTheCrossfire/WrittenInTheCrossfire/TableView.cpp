@@ -11,9 +11,13 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
+using json = nlohmann::json;
+
 TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	Client& client = this->gameModel.getClient();
+	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
 
 	// Initialize widgets
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0);
@@ -35,8 +39,28 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
-	sendButton->onClick([=] {
-		
+	sendButton->onClick([=, &client, &gameStateModel] {
+		client.setApiKey("AIzaSyDcHPvdDL0qpjpINcoz-aElD8q4eZGKIls");
+		auto j = json::parse(R"(
+			{
+				"role": "user",
+				"parts": []
+			}
+		)");
+		j["parts"][0]["text"] = letterTextArea->getText().toStdString();
+		std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
+		tempChatHistory.push_back(j);
+		client.setGamePromptContents(tempChatHistory);
+
+		json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+
+		std::cout << res.dump(4) << std::endl;
+		//if(!res.contains("error")) {
+		//	tempChatHistory.push_back(res);
+		//	std::cout << tempChatHistory << std::endl;
+		//	//gameStateModel.setChatHistory(tempChatHistory);
+		//} else {
+		//}
 	});
 
 	mainPanel->add(dearLabel);

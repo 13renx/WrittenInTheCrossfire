@@ -10,7 +10,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), activeView(std::make_shared<MenuView>(this, this->gameModel)) {}
+ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), activeView(std::make_shared<TableView>(this, this->gameModel)) {}
 
 std::shared_ptr<View> ViewController::getActiveView() {
 	return activeView;

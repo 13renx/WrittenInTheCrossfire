@@ -57,8 +57,8 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 		std::cout << res.dump(4) << std::endl;
 		//if(!res.contains("error")) {
 		//	tempChatHistory.push_back(res);
-		//	std::cout << tempChatHistory << std::endl;
-		//	//gameStateModel.setChatHistory(tempChatHistory);
+		//	/*std::cout << tempChatHistory << std::endl;*/
+		//	gameStateModel.setChatHistory(tempChatHistory);
 		//} else {
 		//}
 	});

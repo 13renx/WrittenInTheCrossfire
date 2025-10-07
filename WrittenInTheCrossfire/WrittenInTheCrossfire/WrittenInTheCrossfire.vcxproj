@@ -139,6 +139,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="GameModel.cpp" />
     <ClCompile Include="GameStateModel.cpp" />
+    <ClCompile Include="GlobalWidgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuView.cpp" />
     <ClCompile Include="SceneView.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="GameModel.h" />
     <ClInclude Include="GameStateModel.h" />
+    <ClInclude Include="GlobalWidgets.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MenuView.h" />
     <ClInclude Include="Model.h" />

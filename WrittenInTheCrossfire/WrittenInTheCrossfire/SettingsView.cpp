@@ -91,5 +91,4 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 	buttonsLayout->add(backLabel);
 	buttonsLayout->add(resetLabel);
 	buttonsLayout->add(saveLabel);
-	gui.add(mainPanel);
 }

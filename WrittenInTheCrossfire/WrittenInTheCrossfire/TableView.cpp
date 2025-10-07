@@ -6,6 +6,7 @@
 #include "ViewController.h"
 #include "Widgets.h"
 #include <fstream>
+#include <thread>
 #include <memory>
 #include <Windows.h>
 #include <fmt/core.h>
@@ -62,7 +63,7 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 			if(res.contains("error")) {
 				alertLabel->setText("API key is not working.");
 				alertChildWindow->setVisible(true);
-
+				this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
 				return;
 			}
 		}
@@ -81,9 +82,6 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(buttonLayout);
-	mainPanel->add(alertChildWindow);
-	alertChildWindow->add(alertLabel);
 	buttonLayout->add(cancelButton);
 	buttonLayout->add(sendButton);
-	gui.add(mainPanel);
 }

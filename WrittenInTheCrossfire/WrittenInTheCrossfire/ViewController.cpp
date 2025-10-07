@@ -1,6 +1,7 @@
 #include "ViewController.h"
 #include "CampView.h"
 #include "GameModel.h"
+#include "GlobalWidgets.h"
 #include "MenuView.h"
 #include "SettingsView.h"
 #include "AboutView.h"
@@ -10,7 +11,11 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), activeView(std::make_shared<TableView>(this, this->gameModel)) {}
+ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(GlobalWidgets(this->gameModel.getGui())), activeView(std::make_shared<TableView>(this, this->gameModel)) {}
+
+GlobalWidgets& ViewController::getGlobalWidgets() {
+	return globalWidgets;
+}
 
 std::shared_ptr<View> ViewController::getActiveView() {
 	return activeView;
@@ -21,7 +26,7 @@ void ViewController::setActiveView(std::shared_ptr<View> view) {
 }
 
 void ViewController::changeView(ViewType viewType) {
-	this->gameModel.getGui().removeAllWidgets();
+	this->globalWidgets.getMainPanel()->removeAllWidgets();
 
 	switch(viewType) {
 		case ViewType::MENU_VIEW:

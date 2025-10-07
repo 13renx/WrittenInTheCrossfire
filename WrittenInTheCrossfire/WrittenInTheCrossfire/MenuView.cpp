@@ -133,8 +133,6 @@ MenuView::MenuView(ViewController* viewController, GameModel& gameModel) : View(
 	mainPanel->add(apiGroup);
 	exitGroup->add(exitPanel);
 	exitGroup->add(exitMessageBox);
-	mainPanel->add(alertChildWindow);
-	alertChildWindow->add(alertLabel);
 	apiGroup->add(apiPanel);
 	apiGroup->add(apiChildWindow);
 	apiChildWindow->add(apiMainLayout);
@@ -149,5 +147,4 @@ MenuView::MenuView(ViewController* viewController, GameModel& gameModel) : View(
 	optionsLayout->add(settingsLabel);
 	optionsLayout->add(aboutLabel);
 	optionsLayout->add(exitLabel);
-	gui.add(mainPanel);
 }

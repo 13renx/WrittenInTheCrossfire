@@ -29,7 +29,7 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 	backLabel->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
-		});
+	});
 
 	mainPanel->add(titleLabel);
 	mainPanel->add(leftLayout);
@@ -39,5 +39,4 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 	leftLayout->add(textLabel3);
 	mainPanel->add(buttonsLayout);
 	buttonsLayout->add(backLabel);
-	gui.add(mainPanel);
 }

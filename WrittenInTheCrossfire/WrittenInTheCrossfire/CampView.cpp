@@ -39,5 +39,4 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	buttonLayoutOne->add(dontWriteButton);
 	buttonLayoutTwo->add(cancelButton);
 	buttonLayoutTwo->add(selectButton);
-	gui.add(mainPanel);
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Client.h"
 #include "GameModel.h"
 #include "View.h"
 #include "ViewController.h"
@@ -10,10 +9,6 @@
 
 class SceneView : public View
 {
-	private:
-		Client& client;
-		std::unique_ptr<GameModel> gameModel;
-
 	public:
-		SceneView(Client& client, tgui::Gui& gui, ViewController* viewManager);
+		SceneView(ViewController* viewController, GameModel& gameModel);
 };

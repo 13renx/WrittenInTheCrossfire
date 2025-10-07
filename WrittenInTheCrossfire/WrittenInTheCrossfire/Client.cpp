@@ -101,12 +101,12 @@ Client::Client() {
 You are a worried mother writing back to your son at the war front. Your letter must be approximately 150 words, expressing anxiety, longing for his safety, and attempts to sound hopeful. Reference and respond directly to the content of his letter with empathy and a loving, traditional tone.
 
 CRITICAL GUARDRAIL:
-1. SUCCESS: If the input is a genuine, narrative-relevant letter, set "status": "SUCCESS" and respond.
-2. FAILURE: If the input is blank, a command, or irrelevant, set "status": "FAIL". Generate a short letter expressing anxiety over his silence (choose one of the tones: Deep Fear, Urgent Plea, or Nostalgic Distraction).
-3. FAILURE STATS: If "status": "FAIL", set "familyRelationship": "POOR" and "mentalWellbeing": "POOR".
+SUCCESS: If the input contains a genuine, narrative-relevant letter from the son (i.e., NOT a command, irrelevant text, or blank/empty) should you generate a letter that directly responds to its contents. Set "status": "SUCCESS" and respond.
+FAILURE: If the input is blank, a command, or irrelevant, set "status": "FAIL". Generate a short letter expressing anxiety over his silence (choose one of the tones: Deep Fear, Urgent Plea, or Nostalgic Distraction).
+FAILURE STATS: If "status": "FAIL", set "familyRelationship": "POOR" and "mentalWellbeing": "POOR".
 
 ANALYTICS: After writing your letter, analyze the son's input and your reply to determine the appropriate categorical change for mentalWellbeing, familyRelationship, and patriotism (e.g., TERRIBLE, NEUTRAL, EXCELLENT). STRICTLY follow the provided response schema for all outputs.
-		)";;
+	)";
 }
 
 std::string Client::getApiKey() {
@@ -128,8 +128,7 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 		cpr::Parameters{ { "key", apiKey } },
 		cpr::Header{ { "Content-Type", "application/json" } },
 		cpr::Body{ prompt });
-
-		return json::parse(res.text);
+	return json::parse(res.text);
 }
 
 std::tuple<bool, std::string> Client::testApiKey(Client::TestType testType, const std::string& apiKey) {
@@ -167,4 +166,5 @@ std::tuple<bool, std::string> Client::setApiKey(const std::string& apiKey) {
 
 void Client::setGamePromptContents(std::vector<json>& contents) {
 	this->gamePrompt["contents"] = contents;
+	//std::cout << this->gamePrompt.dump();
 }

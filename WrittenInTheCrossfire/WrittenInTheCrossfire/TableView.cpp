@@ -7,6 +7,7 @@
 #include "Widgets.h"
 #include <fstream>
 #include <memory>
+#include <Windows.h>
 #include <fmt/core.h>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -39,33 +40,49 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
-	sendButton->onClick([=, &client, &gameStateModel] {
-		client.setApiKey("AIzaSyDcHPvdDL0qpjpINcoz-aElD8q4eZGKIls");
-		auto j = json::parse(R"(
+	sendButton->onClick([=, &window, &client, &gameStateModel] {
+		auto prompt = json::parse(R"(
 			{
 				"role": "user",
 				"parts": []
 			}
 		)");
-		j["parts"][0]["text"] = letterTextArea->getText().toStdString();
+		prompt["parts"][0]["text"] = letterTextArea->getText().toStdString();
 		std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
-		tempChatHistory.push_back(j);
+		tempChatHistory.push_back(prompt);
 		client.setGamePromptContents(tempChatHistory);
 
 		json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+		std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
 
-		std::cout << res.dump(4) << std::endl;
-		//if(!res.contains("error")) {
-		//	tempChatHistory.push_back(res);
-		//	/*std::cout << tempChatHistory << std::endl;*/
-		//	gameStateModel.setChatHistory(tempChatHistory);
-		//} else {
-		//}
+		if(res.contains("error")) {
+			res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+			std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
+
+			if(res.contains("error")) {
+				alertLabel->setText("API key is not working.");
+				alertChildWindow->setVisible(true);
+
+				return;
+			}
+		}
+
+		std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
+		std::string letter = json::parse(text)["letter"];
+
+		json newRes;
+		newRes["role"] = "model";
+		newRes["parts"][0]["text"] = letter;
+
+		tempChatHistory.push_back(newRes);
+		gameStateModel.setChatHistory(tempChatHistory);
 	});
 
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(buttonLayout);
+	mainPanel->add(alertChildWindow);
+	alertChildWindow->add(alertLabel);
 	buttonLayout->add(cancelButton);
 	buttonLayout->add(sendButton);
 	gui.add(mainPanel);

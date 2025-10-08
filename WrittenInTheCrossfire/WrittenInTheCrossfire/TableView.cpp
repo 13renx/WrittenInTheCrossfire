@@ -47,13 +47,13 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 				"parts": []
 			}
 		)");
-		prompt["parts"][0]["text"] = letterTextArea->getText().toStdString();
+		prompt["parts"][0]["text"] = fmt::format("Dear Mom,\n{}",letterTextArea->getText().toStdString());
 		std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
 		tempChatHistory.push_back(prompt);
 		client.setGamePromptContents(tempChatHistory);
 
 		json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
-		std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
+		std::cout << "RES: " << res.dump(4) << std::endl << std::endl; // Log LLM response
 
 		if(res.contains("error")) {
 			res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
@@ -74,7 +74,7 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 		gameStateModel.updateCurrentStats(parsedText["stats"]);
 			
 		Stats stats = gameStateModel.getCurrentStats();
-		std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl;
+		std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
 
 		json newRes;
 		newRes["role"] = "model";

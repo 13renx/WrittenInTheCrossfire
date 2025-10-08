@@ -1,7 +1,7 @@
 #include "TableView.h"
 #include "Client.h"
 #include "GameModel.h"
-#include "Macros.h"
+#include "Stats.h"
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
@@ -69,7 +69,14 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 		}
 
 		std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
-		std::string letter = json::parse(text)["letter"];
+		json parsedText = json::parse(text);
+		std::string letter = parsedText["letter"];
+
+		Stats newStats = gameStateModel.calculateNewStats(parsedText["stats"]);
+		gameStateModel.setCurrentStats(newStats);
+
+		Stats currentStats = gameStateModel.getCurrentStats();
+		std::cout << "STATS: " << std::endl << "familyRelationship: " << currentStats.familyRelationship << std::endl << "mentalWellbeing: " << currentStats.mentalWellbeing << std::endl << "patriotism: " << currentStats.patriotism << std::endl << std::endl;
 
 		json newRes;
 		newRes["role"] = "model";

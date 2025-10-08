@@ -9,7 +9,7 @@
 using json = nlohmann::json;
 
 Client::Client() {
-	apiKey = "";
+	apiKey = "AIzaSyDcHPvdDL0qpjpINcoz-aElD8q4eZGKIls";
 	testPrompt = json::parse(R"(
 		{ 
 			"contents": [

@@ -1,5 +1,6 @@
 #include "GameStateModel.h"
 #include "Stats.h"
+#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <tuple>
@@ -74,4 +75,47 @@ std::tuple<bool, std::string> GameStateModel::load() {
 
 		return { false, "Failed to load save." };
 	}
+}
+
+Stats GameStateModel::calculateNewStats(json sentiments) {
+	Stats newStats = { 0, 0, 0 };
+	srand(time(0));
+
+	for(auto& item : sentiments.items()) {
+		if(item.value() != "NEUTRAL") {
+			int statChanges = rand() % 8; // Generates a random value between 0 and 7
+
+			if(item.value() == "EXCELLENT") {
+				statChanges += 14;
+			} else if(item.value() == "GOOD") {
+				statChanges += 7;
+			} else if(item.value() == "POOR") {
+				statChanges *= -1;
+			} else if(item.value() == "BAD") {
+				statChanges = statChanges * -1 - 7;
+			} else if(item.value() == "TERRIBLE") {
+				statChanges = statChanges * -1 - 14;
+			}
+
+			if(item.key() == "familyRelationship") {
+				newStats.familyRelationship += statChanges;
+			} else if(item.key() == "mentalWellbeing") {
+				newStats.mentalWellbeing += statChanges;
+			} else if(item.key() == "patriotism") {
+				newStats.patriotism += statChanges;
+			}
+		}
+	}
+
+	if(newStats.familyRelationship > 100) {
+		newStats.familyRelationship = 100;
+	}
+	if(newStats.mentalWellbeing > 100) {
+		newStats.mentalWellbeing = 100;
+	}
+	if(newStats.patriotism > 100) {
+		newStats.patriotism = 100;
+	}
+
+	return newStats;
 }

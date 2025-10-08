@@ -33,7 +33,6 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	letterTextArea->setTextSize(30);
 	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea));
 	letterTextArea->setMaximumCharacters(1500);
-	//letterTextArea->setVisible(false);
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 
@@ -72,11 +71,10 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 		json parsedText = json::parse(text);
 		std::string letter = parsedText["letter"];
 
-		Stats newStats = gameStateModel.calculateNewStats(parsedText["stats"]);
-		gameStateModel.setCurrentStats(newStats);
-
-		Stats currentStats = gameStateModel.getCurrentStats();
-		std::cout << "STATS: " << std::endl << "familyRelationship: " << currentStats.familyRelationship << std::endl << "mentalWellbeing: " << currentStats.mentalWellbeing << std::endl << "patriotism: " << currentStats.patriotism << std::endl << std::endl;
+		gameStateModel.updateCurrentStats(parsedText["stats"]);
+			
+		Stats stats = gameStateModel.getCurrentStats();
+		std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl;
 
 		json newRes;
 		newRes["role"] = "model";

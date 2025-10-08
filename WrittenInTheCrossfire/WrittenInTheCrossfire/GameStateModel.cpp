@@ -36,11 +36,11 @@ void GameStateModel::setCheckpoint(int checkpoint) {
 	this->checkpoint = checkpoint;
 }
 
-Stats GameStateModel::getCurrentStats() {
+Stats& GameStateModel::getCurrentStats() {
 	return currentStats;
 }
 
-void GameStateModel::setCurrentStats(Stats currentStats) {
+void GameStateModel::setCurrentStats(Stats& currentStats) {
 	this->currentStats = currentStats;
 }
 
@@ -77,7 +77,25 @@ std::tuple<bool, std::string> GameStateModel::load() {
 	}
 }
 
-Stats GameStateModel::calculateNewStats(json sentiments) {
+void GameStateModel::updateCurrentStats(json& sentiments) {
+	Stats& newStats = calculateStatChanges(sentiments);
+
+	currentStats.familyRelationship += newStats.familyRelationship;
+	currentStats.mentalWellbeing += newStats.mentalWellbeing;
+	currentStats.patriotism += newStats.patriotism;
+
+	if(currentStats.familyRelationship > 100) {
+		currentStats.familyRelationship = 100;
+	}
+	if(currentStats.mentalWellbeing > 100) {
+		currentStats.mentalWellbeing = 100;
+	}
+	if(currentStats.patriotism > 100) {
+		currentStats.patriotism = 100;
+	}
+}
+
+Stats& GameStateModel::calculateStatChanges(json& sentiments) {
 	Stats newStats = { 0, 0, 0 };
 	srand(time(0));
 
@@ -105,16 +123,6 @@ Stats GameStateModel::calculateNewStats(json sentiments) {
 				newStats.patriotism += statChanges;
 			}
 		}
-	}
-
-	if(newStats.familyRelationship > 100) {
-		newStats.familyRelationship = 100;
-	}
-	if(newStats.mentalWellbeing > 100) {
-		newStats.mentalWellbeing = 100;
-	}
-	if(newStats.patriotism > 100) {
-		newStats.patriotism = 100;
 	}
 
 	return newStats;

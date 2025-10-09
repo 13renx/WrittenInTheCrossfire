@@ -11,4 +11,7 @@ class SceneView : public View
 {
 	public:
 		SceneView(ViewController* viewController, GameModel& gameModel);
+
+		tgui::Panel::Ptr dialoguePanel;
+		tgui::Label::Ptr dialogueText;
 };

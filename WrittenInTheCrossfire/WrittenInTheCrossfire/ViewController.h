@@ -21,6 +21,7 @@ class ViewController {
 			MENU_VIEW,
 			SETTINGS_VIEW,
 			ABOUT_VIEW,
+			SCENE_VIEW,
 			CAMP_VIEW,
 			TABLE_VIEW
 		};

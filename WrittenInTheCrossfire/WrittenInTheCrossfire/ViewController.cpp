@@ -3,6 +3,7 @@
 #include "GameModel.h"
 #include "GlobalWidgets.h"
 #include "MenuView.h"
+#include "SceneView.h"
 #include "SettingsView.h"
 #include "AboutView.h"
 #include "TableView.h"
@@ -37,6 +38,9 @@ void ViewController::changeView(ViewType viewType) {
 			break;
 		case ViewType::ABOUT_VIEW:
 			setActiveView(std::make_shared<AboutView>(this, this->gameModel));
+			break;
+		case ViewType::SCENE_VIEW:
+			setActiveView(std::make_shared<SceneView>(this, this->gameModel));
 			break;
 		case ViewType::CAMP_VIEW:
 			setActiveView(std::make_shared<CampView>(this, this->gameModel));

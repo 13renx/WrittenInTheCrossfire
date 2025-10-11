@@ -11,12 +11,17 @@
 class TableView : public View
 {
 	private:
+		Client& client;
+		GameStateModel& gameStateModel;
 		tgui::Label::Ptr dearLabel;
 		tgui::TextArea::Ptr letterTextArea;
 		tgui::VerticalLayout::Ptr buttonLayout;
 		tgui::Button::Ptr cancelButton;
 		tgui::Button::Ptr sendButton;
+		bool isSendClicked;
 
 	public:
 		TableView(ViewController* viewController, GameModel& gameModel);
+
+		void send();
 };

@@ -15,11 +15,12 @@
 
 using json = nlohmann::json;
 
-TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")) {
+TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")), client(this->gameModel.getClient()), gameStateModel(this->gameModel.getGameStateModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
-	Client& client = this->gameModel.getClient();
-	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
+	isSendClicked = false;
+	std::thread sendThread(&TableView::send, this);
+	sendThread.detach();
 
 	// Initialize widgets
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0);
@@ -40,53 +41,66 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
-	sendButton->onClick([=, &window, &client, &gameStateModel] {
-		auto prompt = json::parse(R"(
-			{
-				"role": "user",
-				"parts": []
-			}
-		)");
-		prompt["parts"][0]["text"] = fmt::format("Dear Mom,\n{}",letterTextArea->getText().toStdString());
-		std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
-		tempChatHistory.push_back(prompt);
-		client.setGamePromptContents(tempChatHistory);
-
-		json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
-		std::cout << "RES: " << res.dump(4) << std::endl << std::endl; // Log LLM response
-
-		if(res.contains("error")) {
-			res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
-			std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
-
-			if(res.contains("error")) {
-				alertLabel->setText("API key is not working.");
-				alertChildWindow->setVisible(true);
-				this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
-				return;
-			}
-		}
-
-		std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
-		json parsedText = json::parse(text);
-		std::string letter = parsedText["letter"];
-
-		gameStateModel.updateCurrentStats(parsedText["stats"]);
-			
-		Stats stats = gameStateModel.getCurrentStats();
-		std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
-
-		json newRes;
-		newRes["role"] = "model";
-		newRes["parts"][0]["text"] = letter;
-
-		tempChatHistory.push_back(newRes);
-		gameStateModel.setChatHistory(tempChatHistory);
+	sendButton->onClick([=] {
+		this->isSendClicked = true;
 	});
-
+	 
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(buttonLayout);
 	buttonLayout->add(cancelButton);
 	buttonLayout->add(sendButton);
+}
+
+void TableView::send() {
+	while(true) {
+		if(isSendClicked) {
+			auto prompt = json::parse(R"(
+				{
+					"role": "user",
+					"parts": []
+				}
+			)");
+			prompt["parts"][0]["text"] = fmt::format("Dear Mom,\n{}", letterTextArea->getText().toStdString());
+			std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
+			tempChatHistory.push_back(prompt);
+			client.setGamePromptContents(tempChatHistory);
+
+			json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+			std::cout << "RES: " << res.dump(4) << std::endl << std::endl; // Log LLM response
+
+			// Error handling
+			if(res.contains("error")) {
+				res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+				std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
+
+				if(res.contains("error")) {
+					alertLabel->setText("API key is not working.");
+					alertChildWindow->setVisible(true);
+					this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
+					break;
+				}
+			}
+
+			std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
+			json parsedText = json::parse(text);
+
+			// Update stats
+			gameStateModel.updateCurrentStats(parsedText["stats"]);
+			Stats stats = gameStateModel.getCurrentStats();
+			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
+
+			// Update chat history
+			std::string letter = parsedText["letter"];
+			json newRes;
+			newRes["role"] = "model";
+			newRes["parts"][0]["text"] = letter;
+			tempChatHistory.push_back(newRes);
+			gameStateModel.setChatHistory(tempChatHistory);
+
+			isSendClicked = false;
+			this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+			break;
+		}
+	}
 }

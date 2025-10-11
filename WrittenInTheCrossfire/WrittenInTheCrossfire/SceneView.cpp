@@ -8,5 +8,5 @@
 
 SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("")) {
 	dialoguePanel = tgui::Panel::create();
-	dialogueText = Widgets::Labels::createLabel("", 24, 0, 0);
+	dialogueText = Widgets::Labels::createLabel("", 25, 0, 0);
 }

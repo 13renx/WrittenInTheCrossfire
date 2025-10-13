@@ -18,20 +18,8 @@ std::shared_ptr<GlobalWidgets> ViewController::getGlobalWidgets() {
 	return globalWidgets;
 }
 
-std::shared_ptr<View> ViewController::getActiveView() {
-	return activeView;
-}
-
 ViewController::ViewType& ViewController::getActiveViewType() {
 	return activeViewType;
-}
-
-void ViewController::setActiveView(std::shared_ptr<View> view) {
-	activeView = view;
-}
-
-void ViewController::setActiveViewType(ViewType viewType) {
-	activeViewType = viewType;
 }
 
 void ViewController::changeView(ViewType viewType) {
@@ -40,22 +28,22 @@ void ViewController::changeView(ViewType viewType) {
 
 	switch(activeViewType) {
 		case ViewType::MAIN_MENU_VIEW:
-			setActiveView(std::make_shared<MainMenuView>(this, this->gameModel));
+			activeView = std::make_shared<MainMenuView>(this, this->gameModel);
 			break;
 		case ViewType::SETTINGS_VIEW:
-			setActiveView(std::make_shared<SettingsView>(this, this->gameModel));
+			activeView = std::make_shared<SettingsView>(this, this->gameModel);
 			break;
 		case ViewType::ABOUT_VIEW:
-			setActiveView(std::make_shared<AboutView>(this, this->gameModel));
+			activeView = std::make_shared<AboutView>(this, this->gameModel);
 			break;
 		case ViewType::SCENE_VIEW:
-			setActiveView(std::make_shared<SceneView>(this, this->gameModel));
+			activeView = std::make_shared<SceneView>(this, this->gameModel);
 			break;
 		case ViewType::CAMP_VIEW:
-			setActiveView(std::make_shared<CampView>(this, this->gameModel));
+			activeView = std::make_shared<CampView>(this, this->gameModel);
 			break;
 		case ViewType::TABLE_VIEW:
-			setActiveView(std::make_shared<TableView>(this, this->gameModel));
+			activeView = std::make_shared<TableView>(this, this->gameModel);
 			break;
 	}
 }

@@ -29,9 +29,6 @@ class ViewController {
 		ViewController(GameModel& gameModel);
 
 		std::shared_ptr<GlobalWidgets> getGlobalWidgets();
-		std::shared_ptr<View> getActiveView();
 		ViewType& getActiveViewType();
-		void setActiveView(std::shared_ptr<View> view);
-		void setActiveViewType(ViewType viewType);
 		void changeView(ViewType viewType);
 };

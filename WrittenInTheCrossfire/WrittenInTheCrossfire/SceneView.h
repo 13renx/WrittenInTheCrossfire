@@ -9,9 +9,11 @@
 
 class SceneView : public View
 {
+	private:
+		GameStateModel& gameStateModel;
+
+		tgui::TextArea::Ptr dialogTextArea;
+
 	public:
 		SceneView(ViewController* viewController, GameModel& gameModel);
-
-		tgui::Panel::Ptr dialoguePanel;
-		tgui::Label::Ptr dialogueText;
 };

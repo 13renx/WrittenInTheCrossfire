@@ -1,6 +1,7 @@
 #include "TableView.h"
 #include "Client.h"
 #include "GameModel.h"
+#include "Macros.h"
 #include "Stats.h"
 #include "View.h"
 #include "ViewController.h"
@@ -23,11 +24,26 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	sendThread.detach();
 
 	// Initialize widgets
+	dialogPanel = tgui::Panel::create();
+	dialogTextArea = tgui::TextArea::create();
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0);
 	letterTextArea = tgui::TextArea::create();
 	buttonLayout = tgui::VerticalLayout::create({ 240, 220 });
 	cancelButton = tgui::Button::create("CANCEL WRITING");
 	sendButton = tgui::Button::create("SEND LETTER");
+
+	dialogPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
+	dialogPanel->setSize(1920, 1080);
+	dialogPanel->setVisible(false);
+	dialogTextArea->setText("What would mom think if I send this letter?");
+	dialogTextArea->setReadOnly();
+	dialogTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
+	dialogTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);
+	dialogTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
+	dialogTextArea->setSize(1200, 300);
+	dialogTextArea->setTextSize(30);
+	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
+	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 
 	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 40);
 	letterTextArea->setSize(730, 647);
@@ -37,6 +53,9 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 
+	dialogPanel->onClick([=] {
+		dialogPanel->setVisible(false);
+	});
 	cancelButton->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
@@ -44,10 +63,12 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	sendButton->onClick([=] {
 		this->isSendClicked = true;
 	});
-	 
+	
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(buttonLayout);
+	mainPanel->add(dialogPanel);
+	dialogPanel->add(dialogTextArea);
 	buttonLayout->add(cancelButton);
 	buttonLayout->add(sendButton);
 }
@@ -55,52 +76,61 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 void TableView::send() {
 	while(true) {
 		if(isSendClicked) {
-			auto prompt = json::parse(R"(
-				{
-					"role": "user",
-					"parts": []
-				}
-			)");
-			prompt["parts"][0]["text"] = fmt::format("Dear Mom,\n{}", letterTextArea->getText().toStdString());
-			std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
-			tempChatHistory.push_back(prompt);
-			client.setGamePromptContents(tempChatHistory);
+			std::string textAreaText = letterTextArea->getText().toStdString();
 
-			json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
-			std::cout << "RES: " << res.dump(4) << std::endl << std::endl; // Log LLM response
+			if(textAreaText.length() == 0) {
+				dialogPanel->setVisible(true);
+				isSendClicked = false;
+			} else {
+				letterTextArea->setReadOnly();
 
-			// Error handling
-			if(res.contains("error")) {
-				res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
-				std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
+				auto prompt = json::parse(R"(
+					{
+						"role": "user",
+						"parts": []
+					}
+				)");
+				prompt["parts"][0]["text"] = fmt::format("Dear Mom,\n{}", textAreaText);
+				std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
+				tempChatHistory.push_back(prompt);
+				client.setGamePromptContents(tempChatHistory);
 
+				json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+				std::cout << "RES: " << res.dump(4) << std::endl << std::endl; // Log LLM response
+
+				// Error handling
 				if(res.contains("error")) {
-					alertLabel->setText("API key is not working.");
-					alertChildWindow->setVisible(true);
-					this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
-					break;
+					res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+					std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
+
+					if(res.contains("error")) {
+						alertLabel->setText("API key is not working.");
+						alertChildWindow->setVisible(true);
+						viewController->changeView(ViewController::ViewType::MENU_VIEW);
+						break;
+					}
 				}
+
+				std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
+				json parsedText = json::parse(text);
+
+				// Update stats
+				gameStateModel.updateCurrentStats(parsedText["stats"]);
+				Stats stats = gameStateModel.getCurrentStats();
+				std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
+
+				// Update chat history
+				std::string letter = parsedText["letter"];
+				json newRes;
+				newRes["role"] = "model";
+				newRes["parts"][0]["text"] = letter;
+				tempChatHistory.push_back(newRes);
+				gameStateModel.setChatHistory(tempChatHistory);
+
+				isSendClicked = false;
+				viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+				break;
 			}
-
-			std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
-			json parsedText = json::parse(text);
-
-			// Update stats
-			gameStateModel.updateCurrentStats(parsedText["stats"]);
-			Stats stats = gameStateModel.getCurrentStats();
-			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
-
-			// Update chat history
-			std::string letter = parsedText["letter"];
-			json newRes;
-			newRes["role"] = "model";
-			newRes["parts"][0]["text"] = letter;
-			tempChatHistory.push_back(newRes);
-			gameStateModel.setChatHistory(tempChatHistory);
-
-			isSendClicked = false;
-			this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
-			break;
 		}
 	}
 }

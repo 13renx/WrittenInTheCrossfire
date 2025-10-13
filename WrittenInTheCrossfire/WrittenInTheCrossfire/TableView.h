@@ -13,6 +13,9 @@ class TableView : public View
 	private:
 		Client& client;
 		GameStateModel& gameStateModel;
+
+		tgui::Panel::Ptr dialogPanel;
+		tgui::TextArea::Ptr dialogTextArea;
 		tgui::Label::Ptr dearLabel;
 		tgui::TextArea::Ptr letterTextArea;
 		tgui::VerticalLayout::Ptr buttonLayout;

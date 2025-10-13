@@ -142,7 +142,7 @@
     <ClCompile Include="GameStateModel.cpp" />
     <ClCompile Include="GlobalWidgets.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MenuView.cpp" />
+    <ClCompile Include="MainMenuView.cpp" />
     <ClCompile Include="SceneView.cpp" />
     <ClCompile Include="SettingsModel.cpp" />
     <ClCompile Include="SettingsView.cpp" />
@@ -164,7 +164,7 @@
     <ClInclude Include="GameStateModel.h" />
     <ClInclude Include="GlobalWidgets.h" />
     <ClInclude Include="Macros.h" />
-    <ClInclude Include="MenuView.h" />
+    <ClInclude Include="MainMenuView.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="SceneView.h" />
     <ClInclude Include="SettingsModel.h" />

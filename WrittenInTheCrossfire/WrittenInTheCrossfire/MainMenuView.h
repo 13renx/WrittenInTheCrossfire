@@ -7,7 +7,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class MenuView : public View
+class MainMenuView : public View
 {
 	private:
 		tgui::Group::Ptr exitGroup;
@@ -32,5 +32,5 @@ class MenuView : public View
 		tgui::Label::Ptr exitLabel;
 
 	public:
-		MenuView(ViewController* viewController, GameModel& gameModel);
+		MainMenuView(ViewController* viewController, GameModel& gameModel);
 };

@@ -28,7 +28,7 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 
 	backLabel->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewController->changeView(ViewController::ViewType::MENU_VIEW);
+		this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 	});
 
 	mainPanel->add(titleLabel);

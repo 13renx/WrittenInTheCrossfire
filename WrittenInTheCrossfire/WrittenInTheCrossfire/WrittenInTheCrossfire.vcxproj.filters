@@ -21,7 +21,7 @@
     <ClCompile Include="App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuView.cpp">
+    <ClCompile Include="MainMenuView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SettingsView.cpp">
@@ -77,7 +77,7 @@
     <ClInclude Include="App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuView.h">
+    <ClInclude Include="MainMenuView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SettingsView.h">

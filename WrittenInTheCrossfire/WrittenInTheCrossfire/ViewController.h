@@ -18,7 +18,7 @@ class ViewController {
 		ViewController(GameModel& gameModel);
 
 		enum class ViewType {
-			MENU_VIEW,
+			MAIN_MENU_VIEW,
 			SETTINGS_VIEW,
 			ABOUT_VIEW,
 			SCENE_VIEW,

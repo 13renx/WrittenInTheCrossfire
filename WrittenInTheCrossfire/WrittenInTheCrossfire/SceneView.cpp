@@ -19,7 +19,6 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : Vie
 
 	dialogTextArea = tgui::TextArea::create();
 
-	dialogTextArea->setText("dialog");
 	dialogTextArea->setReadOnly();
 	dialogTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
 	dialogTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);

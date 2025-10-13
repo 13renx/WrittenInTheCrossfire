@@ -1,4 +1,4 @@
-#include "MenuView.h"
+#include "MainMenuView.h"
 #include "Client.h"
 #include "Macros.h"
 #include "View.h"
@@ -10,7 +10,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MenuView::MenuView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Main Menu.PNG")) {
+MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Main Menu.PNG")) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	Client& client = this->gameModel.getClient();

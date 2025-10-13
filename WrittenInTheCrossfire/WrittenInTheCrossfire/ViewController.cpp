@@ -2,7 +2,7 @@
 #include "CampView.h"
 #include "GameModel.h"
 #include "GlobalWidgets.h"
-#include "MenuView.h"
+#include "MainMenuView.h"
 #include "SceneView.h"
 #include "SettingsView.h"
 #include "AboutView.h"
@@ -30,8 +30,8 @@ void ViewController::changeView(ViewType viewType) {
 	this->globalWidgets.getMainPanel()->removeAllWidgets();
 
 	switch(viewType) {
-		case ViewType::MENU_VIEW:
-			setActiveView(std::make_shared<MenuView>(this, this->gameModel));
+		case ViewType::MAIN_MENU_VIEW:
+			setActiveView(std::make_shared<MainMenuView>(this, this->gameModel));
 			break;
 		case ViewType::SETTINGS_VIEW:
 			setActiveView(std::make_shared<SettingsView>(this, this->gameModel));

@@ -11,7 +11,7 @@ class GlobalWidgets
 		tgui::ChildWindow::Ptr alertChildWindow;
 		tgui::Label::Ptr alertLabel;
 		tgui::Panel::Ptr mainPanel;
-
+		
 	public:
 		GlobalWidgets(tgui::Gui& gui);
 

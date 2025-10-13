@@ -107,7 +107,7 @@ void TableView::send() {
 					if(res.contains("error")) {
 						alertLabel->setText("API key is not working.");
 						alertChildWindow->setVisible(true);
-						viewController->changeView(ViewController::ViewType::MENU_VIEW);
+						viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 						break;
 					}
 				}

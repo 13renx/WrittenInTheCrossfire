@@ -1,4 +1,6 @@
 #include "SceneView.h"
+#include "GameModel.h"
+#include "GameStateModel.h"
 #include "Macros.h"
 #include "View.h"
 #include "ViewController.h"
@@ -10,6 +12,9 @@
 SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("")), gameStateModel(this->gameModel.getGameStateModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
+
+	gameStateModel.save();
 
 	if(gameStateModel.getCheckpoint() == 1 || gameStateModel.getCheckpoint() == 22) {
 		

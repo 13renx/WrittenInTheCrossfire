@@ -16,8 +16,12 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	mainPanel = tgui::Panel::create();
 
 	menuParentPanel->setVisible(false);
-	menuChildPanel->setSize(500, 500);
+	menuChildPanel->setSize(450, 450);
 	menuChildPanel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(menuChildPanel)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(menuChildPanel)) / 2.0f);
+	menuLayout->setPosition(0, (tgui::bindHeight(menuChildPanel) - tgui::bindHeight(menuLayout)) / 2.0f);
+	menuLayout->getRenderer()->setSpaceBetweenWidgets(20);
+	menuResumeLabel->setHorizontalAlignment(tgui::HorizontalAlignment::Center);
+	menuExitLabel->setHorizontalAlignment(tgui::HorizontalAlignment::Center);
 	alertChildWindow->setSize(400, 100);
 	alertChildWindow->setCloseBehavior(tgui::ChildWindow::CloseBehavior::Hide);
 	alertChildWindow->setPositionLocked(true);

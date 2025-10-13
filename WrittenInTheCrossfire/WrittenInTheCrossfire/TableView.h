@@ -21,11 +21,12 @@ class TableView : public View
 		tgui::VerticalLayout::Ptr buttonLayout;
 		tgui::Button::Ptr cancelButton;
 		tgui::Button::Ptr sendButton;
-		bool isSendRunning;
+		bool isRunning;
 		bool isSendClicked;
 
 	public:
 		TableView(ViewController* viewController, GameModel& gameModel);
+		~TableView();
 
 		void send();
 };

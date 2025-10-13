@@ -32,6 +32,10 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::TABLE_VIEW);
 	});
+	dontWriteButton->onClick([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+	});
 
 	mainPanel->add(buttonLayoutOne);
 	mainPanel->add(buttonLayoutTwo);

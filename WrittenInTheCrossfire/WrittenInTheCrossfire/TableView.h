@@ -21,6 +21,7 @@ class TableView : public View
 		tgui::VerticalLayout::Ptr buttonLayout;
 		tgui::Button::Ptr cancelButton;
 		tgui::Button::Ptr sendButton;
+		bool isSendRunning;
 		bool isSendClicked;
 
 	public:

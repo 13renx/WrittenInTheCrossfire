@@ -25,11 +25,11 @@ class MainMenuView : public View
 		tgui::Button::Ptr apiCancelButton;
 		tgui::Label::Ptr titleLabel;
 		tgui::GrowVerticalLayout::Ptr optionsLayout;
-		tgui::Label::Ptr newGameLabel;
-		tgui::Label::Ptr continueLabel;
-		tgui::Label::Ptr settingsLabel;
-		tgui::Label::Ptr aboutLabel;
-		tgui::Label::Ptr exitLabel;
+		tgui::Label::Ptr optionsNewGameLabel;
+		tgui::Label::Ptr optionsContinueLabel;
+		tgui::Label::Ptr optionsSettingsLabel;
+		tgui::Label::Ptr optionsAboutLabel;
+		tgui::Label::Ptr optionsExitLabel;
 
 	public:
 		MainMenuView(ViewController* viewController, GameModel& gameModel);

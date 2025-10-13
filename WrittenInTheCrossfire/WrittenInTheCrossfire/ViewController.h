@@ -1,22 +1,15 @@
 #pragma once
 
 #include "GameModel.h"
-#include "GlobalWidgets.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
+class GlobalWidgets;
 class View;
 
 class ViewController {
-	private:
-		GameModel& gameModel;
-		GlobalWidgets globalWidgets;
-		std::shared_ptr<View> activeView;
-
 	public:
-		ViewController(GameModel& gameModel);
-
 		enum class ViewType {
 			MAIN_MENU_VIEW,
 			SETTINGS_VIEW,
@@ -26,8 +19,19 @@ class ViewController {
 			TABLE_VIEW
 		};
 
-		GlobalWidgets& getGlobalWidgets();
+	private:
+		GameModel& gameModel;
+		std::shared_ptr<GlobalWidgets> globalWidgets;
+		std::shared_ptr<View> activeView;
+		ViewType activeViewType;
+
+	public:
+		ViewController(GameModel& gameModel);
+
+		std::shared_ptr<GlobalWidgets> getGlobalWidgets();
 		std::shared_ptr<View> getActiveView();
+		ViewType& getActiveViewType();
 		void setActiveView(std::shared_ptr<View> view);
+		void setActiveViewType(ViewType viewType);
 		void changeView(ViewType viewType);
 };

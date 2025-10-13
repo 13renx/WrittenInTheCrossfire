@@ -19,6 +19,7 @@ using json = nlohmann::json;
 TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")), client(this->gameModel.getClient()), gameStateModel(this->gameModel.getGameStateModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	isSendRunning = true;
 	isSendClicked = false;
 	std::thread sendThread(&TableView::send, this);
 	sendThread.detach();
@@ -56,10 +57,12 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	});
 	cancelButton->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		isSendRunning = false;
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 	sendButton->onClick([=] {
 		this->isSendClicked = true;
+		cancelButton->setEnabled(false);
 	});
 	
 	mainPanel->add(dearLabel);
@@ -72,7 +75,7 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 }
 
 void TableView::send() {
-	while(true) {
+	while(isSendRunning) {
 		if(isSendClicked) {
 			std::string textAreaText = letterTextArea->getText().toStdString();
 

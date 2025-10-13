@@ -31,11 +31,11 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	apiCancelButton = tgui::Button::create("CANCEL");
 	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 100, 700, 100);
 	optionsLayout = tgui::GrowVerticalLayout::create();
-	newGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0, window);
-	continueLabel = Widgets::Labels::createButtonLabel("CONTINUE", 50, 0, 0, window);
-	settingsLabel = Widgets::Labels::createButtonLabel("SETTINGS", 50, 0, 0, window);
-	aboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0, window);
-	exitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
+	optionsNewGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0, window);
+	optionsContinueLabel = Widgets::Labels::createButtonLabel("CONTINUE", 50, 0, 0, window);
+	optionsSettingsLabel = Widgets::Labels::createButtonLabel("SETTINGS", 50, 0, 0, window);
+	optionsAboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0, window);
+	optionsExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
 
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(exitMessageBox)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(exitMessageBox)) / 2.0f);
@@ -54,16 +54,16 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	apiButtonsLayout->setSize(0, 25);
 	apiButtonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	apiFillerGroup->setSize(190, 0);
-	
 	optionsLayout->setPosition(1570, 500);
 	{
 		std::ifstream file = std::ifstream("game.json");
 
 		if(!file.is_open()) {
-			continueLabel->setEnabled(false);
-			continueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
+			optionsContinueLabel->setEnabled(false);
+			optionsContinueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
 		}
 	}
+	
 	exitPanel->onClick([=] { exitGroup->setVisible(false); });
 	exitMessageBox->onButtonPress([=](const tgui::String& button) {
 		if(button == "YES") {
@@ -95,7 +95,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 
 		alertChildWindow->setVisible(true);
 	});
-	newGameLabel->onClick([=, &window, &client] { 
+	optionsNewGameLabel->onClick([=, &window, &client] { 
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
 		if(client.getApiKey() == "") {
@@ -111,15 +111,15 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 			}
 		}
 	});
-	settingsLabel->onClick([=, &window] {
+	optionsSettingsLabel->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::SETTINGS_VIEW);
 	});
-	aboutLabel->onClick([=, &window] {
+	optionsAboutLabel->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::ABOUT_VIEW);
 		});
-	exitLabel->onClick([=, &window] { 
+	optionsExitLabel->onClick([=, &window] { 
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		exitGroup->setVisible(true); 
 	});
@@ -140,9 +140,9 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	apiButtonsLayout->add(apiFillerGroup);
 	apiButtonsLayout->add(apiEnterButton);
 	apiButtonsLayout->add(apiCancelButton);
-	optionsLayout->add(newGameLabel);
-	optionsLayout->add(continueLabel);
-	optionsLayout->add(settingsLabel);
-	optionsLayout->add(aboutLabel);
-	optionsLayout->add(exitLabel);
+	optionsLayout->add(optionsNewGameLabel);
+	optionsLayout->add(optionsContinueLabel);
+	optionsLayout->add(optionsSettingsLabel);
+	optionsLayout->add(optionsAboutLabel);
+	optionsLayout->add(optionsExitLabel);
 }

@@ -35,7 +35,6 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	dialogPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	dialogPanel->setSize(1920, 1080);
 	dialogPanel->setVisible(false);
-	dialogTextArea->setText("What would mom think if I send this letter?");
 	dialogTextArea->setReadOnly();
 	dialogTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
 	dialogTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);
@@ -44,7 +43,6 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	dialogTextArea->setTextSize(30);
 	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
-
 	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 40);
 	letterTextArea->setSize(730, 647);
 	letterTextArea->setTextSize(30);
@@ -79,8 +77,11 @@ void TableView::send() {
 			std::string textAreaText = letterTextArea->getText().toStdString();
 
 			if(textAreaText.length() == 0) {
+				dialogTextArea->setText("What would Mom think if I sent an empty letter?");
 				dialogPanel->setVisible(true);
-				isSendClicked = false;
+			} else if(textAreaText.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()&\"':;/@#$%-\n ") != std::string::npos) {
+				dialogTextArea->setText("What would Mom think if I sent a letter that contains unusual characters?");
+				dialogPanel->setVisible(true);
 			} else {
 				letterTextArea->setReadOnly();
 
@@ -127,10 +128,11 @@ void TableView::send() {
 				tempChatHistory.push_back(newRes);
 				gameStateModel.setChatHistory(tempChatHistory);
 
-				isSendClicked = false;
 				viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 				break;
 			}
+
+			isSendClicked = false;
 		}
 	}
 }

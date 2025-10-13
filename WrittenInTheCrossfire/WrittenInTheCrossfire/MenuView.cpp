@@ -107,9 +107,7 @@ MenuView::MenuView(ViewController* viewController, GameModel& gameModel) : View(
 			alertChildWindow->setVisible(true);
 
 			if(result) {
-
-			} else {
-				
+				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 			}
 		}
 	});

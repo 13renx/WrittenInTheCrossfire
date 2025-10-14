@@ -27,12 +27,13 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : Vie
 	}
 
 	// Initialize widgets
+	scenePanel = tgui::Panel::create();
 	dialogTextArea = tgui::TextArea::create();
 
 	{
 		tgui::Texture texture(std::get<1>(this->assets.at(0)));
 		std::string text = std::get<2>(this->assets.at(0));
-		mainPanel->getRenderer()->setTextureBackground(texture);
+		scenePanel->getRenderer()->setTextureBackground(texture);
 		dialogTextArea->setText(text);
 	}
 	dialogTextArea->setReadOnly();
@@ -44,11 +45,11 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : Vie
 	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 
-	mainPanel->onClick([=] {
+	scenePanel->onClick([=] {
 		if(assetIndex < assets.size()) {
 			tgui::Texture texture(std::get<1>(this->assets.at(assetIndex)));
 			std::string text = std::get<2>(this->assets.at(assetIndex));
-			mainPanel->getRenderer()->setTextureBackground(texture);
+			scenePanel->getRenderer()->setTextureBackground(texture);
 			dialogTextArea->setText(text);
 			assetIndex++;
 		} else {
@@ -56,5 +57,6 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : Vie
 		}
 	});
 
-	mainPanel->add(dialogTextArea);
+	scenePanel->add(dialogTextArea);
+	mainPanel->add(scenePanel);
 }

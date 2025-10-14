@@ -19,6 +19,7 @@ class SceneView : public View
 		std::vector<std::tuple<int, std::string, std::string>> assets;
 		size_t assetIndex;
 
+		tgui::Panel::Ptr scenePanel;
 		tgui::TextArea::Ptr dialogTextArea;
 
 	public:

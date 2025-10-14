@@ -3,6 +3,7 @@
 #include "GameModel.h"
 #include "GlobalWidgets.h"
 #include "MainMenuView.h"
+#include "SceneModel.h"
 #include "SceneView.h"
 #include "SettingsView.h"
 #include "AboutView.h"
@@ -12,7 +13,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), activeView(std::make_shared<TableView>(this, this->gameModel)), activeViewType(ViewController::ViewType::TABLE_VIEW) {}
+ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), sceneModel(SceneModel()), activeView(std::make_shared<SceneView>(this, this->gameModel, sceneModel)), activeViewType(ViewController::ViewType::SCENE_VIEW) {}
 
 std::shared_ptr<GlobalWidgets> ViewController::getGlobalWidgets() {
 	return globalWidgets;
@@ -37,7 +38,7 @@ void ViewController::changeView(ViewType viewType) {
 			activeView = std::make_shared<AboutView>(this, this->gameModel);
 			break;
 		case ViewType::SCENE_VIEW:
-			activeView = std::make_shared<SceneView>(this, this->gameModel);
+			activeView = std::make_shared<SceneView>(this, this->gameModel, sceneModel);
 			break;
 		case ViewType::CAMP_VIEW:
 			activeView = std::make_shared<CampView>(this, this->gameModel);

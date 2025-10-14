@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameModel.h"
+#include "SceneModel.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -22,6 +23,7 @@ class ViewController {
 	private:
 		GameModel& gameModel;
 		std::shared_ptr<GlobalWidgets> globalWidgets;
+		SceneModel sceneModel;
 		std::shared_ptr<View> activeView;
 		ViewType activeViewType;
 

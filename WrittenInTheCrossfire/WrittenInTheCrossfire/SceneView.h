@@ -14,7 +14,7 @@
 class SceneView : public View
 {
 	private:
-		SceneModel sceneModel;
+		SceneModel& sceneModel;
 		GameStateModel& gameStateModel;
 		std::vector<std::tuple<int, std::string, std::string>> assets;
 		size_t assetIndex;
@@ -23,5 +23,5 @@ class SceneView : public View
 		tgui::TextArea::Ptr dialogTextArea;
 
 	public:
-		SceneView(ViewController* viewController, GameModel& gameModel);
+		SceneView(ViewController* viewController, GameModel& gameModel, SceneModel& sceneModel);
 };

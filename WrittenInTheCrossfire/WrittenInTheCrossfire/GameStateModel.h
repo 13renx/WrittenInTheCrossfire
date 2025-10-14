@@ -25,6 +25,7 @@ class GameStateModel : Model {
         void setCurrentStats(Stats& currentStats);
         std::tuple<bool, std::string> save() override;
         std::tuple<bool, std::string> load() override;
+        void updateCheckpoint();
 		Stats& calculateStatChanges(json& sentiments);
         void updateCurrentStats(json& sentiments);
 

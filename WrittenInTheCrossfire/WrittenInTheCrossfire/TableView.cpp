@@ -9,7 +9,6 @@
 #include <fstream>
 #include <thread>
 #include <memory>
-#include <Windows.h>
 #include <fmt/core.h>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -55,13 +54,14 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	dialogPanel->onClick([=] {
 		dialogPanel->setVisible(false);
 	});
-	cancelButton->onClick([=, &window] {
-		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	cancelButton->onClick([=] {
+		letterTextArea->setReadOnly();
+		cancelButton->setEnabled(false);
+		sendButton->setEnabled(false);
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 	sendButton->onClick([=] {
 		this->isSendClicked = true;
-		cancelButton->setEnabled(false);
 	});
 	
 	mainPanel->add(dearLabel);
@@ -89,8 +89,6 @@ void TableView::send() {
 				dialogTextArea->setText("What would Mom think if I sent a letter that contains unusual characters?");
 				dialogPanel->setVisible(true);
 			} else {
-				letterTextArea->setReadOnly();
-
 				auto prompt = json::parse(R"(
 					{
 						"role": "user",
@@ -98,6 +96,7 @@ void TableView::send() {
 					}
 				)");
 				prompt["parts"][0]["text"] = fmt::format("Dear Mom,\n{}", textAreaText);
+
 				std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
 				tempChatHistory.push_back(prompt);
 				client.setGamePromptContents(tempChatHistory);
@@ -120,6 +119,9 @@ void TableView::send() {
 
 				std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
 				json parsedText = json::parse(text);
+
+				// Update checkpoint
+				gameStateModel.updateCheckpoint();
 
 				// Update stats
 				gameStateModel.updateCurrentStats(parsedText["stats"]);

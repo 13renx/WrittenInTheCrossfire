@@ -127,3 +127,7 @@ Stats& GameStateModel::calculateStatChanges(json& sentiments) {
 
 	return newStats;
 }
+
+void GameStateModel::updateCheckpoint() {
+	checkpoint++;
+}

@@ -6,14 +6,19 @@
 #include "ViewController.h"
 #include "Widgets.h"
 #include <fstream>
+#include <thread>
 #include <memory>
 #include <fmt/core.h>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")) {
+CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameStateModel(this->gameModel.getGameStateModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	isRunning = true;
+	isDontWriteClicked = false;
+	std::thread dontWriteThread(&CampView::dontWrite, this);
+	dontWriteThread.detach();
 
 	// Initialize widgets
     buttonLayoutOne = tgui::HorizontalLayout::create({ 500, 100 });
@@ -28,13 +33,15 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     buttonLayoutTwo->setVisible(false);
 
-	writeButton->onClick([=, &window] {
-		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	writeButton->onClick([=] {
+		writeButton->setEnabled(false);
+		dontWriteButton->setEnabled(false);
 		this->viewController->changeView(ViewController::ViewType::TABLE_VIEW);
 	});
-	dontWriteButton->onClick([=, &window] {
-		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+	dontWriteButton->onClick([=] {
+		writeButton->setEnabled(false);
+		dontWriteButton->setEnabled(false);
+		this->isDontWriteClicked = true;
 	});
 
 	mainPanel->add(buttonLayoutOne);
@@ -43,4 +50,68 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	buttonLayoutOne->add(dontWriteButton);
 	buttonLayoutTwo->add(cancelButton);
 	buttonLayoutTwo->add(selectButton);
+}
+
+CampView::~CampView() {
+	isRunning = false;
+}
+
+void CampView::dontWrite() {
+	while(isRunning) {
+		if(isDontWriteClicked) {
+			auto prompt = json::parse(R"(
+				{
+					"role": "user",
+					"parts": [
+						{
+							"text": "NO_LETTER_SENT"
+						}
+					]
+				}
+			)");
+
+			std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
+			tempChatHistory.push_back(prompt);
+			client.setGamePromptContents(tempChatHistory);
+
+			json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+			std::cout << "RES: " << res.dump(4) << std::endl << std::endl; // Log LLM response
+
+			// Error handling
+			if(res.contains("error")) {
+				res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
+				std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
+
+				if(res.contains("error")) {
+					alertLabel->setText("API key is not working.");
+					alertChildWindow->setVisible(true);
+					viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
+					break;
+				}
+			}
+
+			std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
+			json parsedText = json::parse(text);
+
+			// Update checkpoint
+			gameStateModel.updateCheckpoint();
+
+			// Update stats
+			gameStateModel.updateCurrentStats(parsedText["stats"]);
+			Stats stats = gameStateModel.getCurrentStats();
+			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
+
+			// Update chat history
+			std::string letter = parsedText["letter"];
+			json newRes;
+			newRes["role"] = "model";
+			newRes["parts"][0]["text"] = letter;
+			tempChatHistory.push_back(newRes);
+			gameStateModel.setChatHistory(tempChatHistory);
+
+			viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+
+			isDontWriteClicked = false;
+		}
+	}
 }

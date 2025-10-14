@@ -13,7 +13,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("")), sceneModel(SceneModel()), gameStateModel(this->gameModel.getGameStateModel()) {/*, assets(this->sceneModel.getCheckpointAssets(this->gameStateModel.getCheckpoint())) {*/
+SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("")), sceneModel(SceneModel()), gameStateModel(this->gameModel.getGameStateModel()), assets(this->sceneModel.getCheckpointAssets(this->gameStateModel.getCheckpoint())) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
@@ -29,8 +29,12 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : Vie
 	// Initialize widgets
 	dialogTextArea = tgui::TextArea::create();
 
-	//mainPanel->getRenderer()->setTextureBackground(tgui::Texture(std::get<1>(this->assets.at(0))));
-	//dialogTextArea->setText(std::get<2>(this->assets.at(0)));
+	{
+		tgui::Texture texture(std::get<1>(this->assets.at(0)));
+		std::string text = std::get<2>(this->assets.at(0));
+		mainPanel->getRenderer()->setTextureBackground(texture);
+		dialogTextArea->setText(text);
+	}
 	dialogTextArea->setReadOnly();
 	dialogTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
 	dialogTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);
@@ -40,17 +44,17 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel) : Vie
 	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 
-	/*mainPanel->onClick([=] {
+	mainPanel->onClick([=] {
 		if(assetIndex < assets.size()) {
-			//tgui::Texture texture(std::get<1>(this->assets.at(assetIndex)));
+			tgui::Texture texture(std::get<1>(this->assets.at(assetIndex)));
 			std::string text = std::get<2>(this->assets.at(assetIndex));
-			//mainPanel->getRenderer()->setTextureBackground(texture);
+			mainPanel->getRenderer()->setTextureBackground(texture);
 			dialogTextArea->setText(text);
 			assetIndex++;
 		} else {
 			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 		}
-	});*/
+	});
 
 	mainPanel->add(dialogTextArea);
 }

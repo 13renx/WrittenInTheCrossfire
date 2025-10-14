@@ -12,5 +12,5 @@ class SceneModel
 	public:
 		SceneModel();
 
-		std::vector<std::tuple<int, std::string, std::string>>& getCheckpointAssets(int checkpoint);
+		std::vector<std::tuple<int, std::string, std::string>> getCheckpointAssets(int checkpoint);
 };

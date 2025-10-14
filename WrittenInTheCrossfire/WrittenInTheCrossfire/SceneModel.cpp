@@ -10,7 +10,7 @@ SceneModel::SceneModel() {
 	assets.push_back(std::make_tuple(2, "", "\"Attention! You\'re soldiers now, not lost sheep. You all are to address me as Sergeant Chaves, and you\'ll be following my orders from now on.\""));
 }
 
-std::vector<std::tuple<int, std::string, std::string>>& SceneModel::getCheckpointAssets(int checkpoint) {
+std::vector<std::tuple<int, std::string, std::string>> SceneModel::getCheckpointAssets(int checkpoint) {
     std::vector<std::tuple<int, std::string, std::string>> ret;
 
     for(const auto& asset : assets) {

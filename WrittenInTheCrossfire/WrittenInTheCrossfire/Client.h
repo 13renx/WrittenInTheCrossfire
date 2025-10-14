@@ -18,17 +18,12 @@ class Client {
             GAME
         };
 
-        enum class TestType {
-            NO_API_KEY,
-            WITH_API_KEY
-        };
-
     public:
         Client();
 
         std::string getApiKey();
         json fetchResponse(PromptType promptType, const std::string& apiKey);
-        std::tuple<bool, std::string>  testApiKey(TestType testType, const std::string& apiKey);
+        std::tuple<bool, std::string> testApiKey(const std::string& apiKey);
         std::tuple<bool, std::string> setApiKey(const std::string& apiKey);
         void setGamePromptContents(std::vector<json>& j);
 };

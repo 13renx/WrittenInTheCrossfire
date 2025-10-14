@@ -18,6 +18,7 @@ using json = nlohmann::json;
 TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")), client(this->gameModel.getClient()), gameStateModel(this->gameModel.getGameStateModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	this->gameModel.getAudio().stopMusic();
 	isRunning = true;
 	isSendClicked = false;
 	std::thread sendThread(&TableView::send, this);
@@ -85,7 +86,9 @@ void TableView::send() {
 			if(textAreaText.length() == 0) {
 				dialogTextArea->setText("What would Mom think if I sent an empty letter?");
 				dialogPanel->setVisible(true);
-			} else if(textAreaText.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()&\"':;/@#$%-\n ") != std::string::npos) {
+			} /*else if() {
+
+			}*/ else if(textAreaText.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()&\"':;/@#$%-\n ") != std::string::npos) {
 				dialogTextArea->setText("What would Mom think if I sent a letter that contains unusual characters?");
 				dialogPanel->setVisible(true);
 			} else {
@@ -136,6 +139,7 @@ void TableView::send() {
 				tempChatHistory.push_back(newRes);
 				gameStateModel.setChatHistory(tempChatHistory);
 
+				gameStateModel.save();
 				viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 			}
 

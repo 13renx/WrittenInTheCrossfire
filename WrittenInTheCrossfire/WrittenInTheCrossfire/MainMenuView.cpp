@@ -1,5 +1,7 @@
 #include "MainMenuView.h"
 #include "Client.h"
+#include "GameModel.h"
+#include "GameStateModel.h"
 #include "Macros.h"
 #include "View.h"
 #include "ViewController.h"
@@ -14,6 +16,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	Client& client = this->gameModel.getClient();
+	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
 	this->gameModel.getAudio().playMusic();
 	
 	// Initialize widgets
@@ -80,7 +83,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		const std::string apiKey = apiEditBox->getText().toStdString();
 		
 		if(apiKey != "") {
-			auto [result, message] = client.testApiKey(Client::TestType::NO_API_KEY, apiKey);
+			auto [result, message] = client.testApiKey(apiKey);
 
 			if(result) {
 				client.setApiKey(apiKey);
@@ -102,7 +105,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		if(client.getApiKey() == "") {
 			apiGroup->setVisible(true);
 		} else {
-			auto[result, message] = client.testApiKey(Client::TestType::WITH_API_KEY, client.getApiKey());
+			auto[result, message] = client.testApiKey(client.getApiKey());
 
 			alertLabel->setText(message);
 			alertChildWindow->setVisible(true);
@@ -110,6 +113,26 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 			if(result) {
 				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 			}
+		}
+	});
+	optionsContinueLabel->onClick([=, &window, &client, &gameStateModel] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		auto [result, message] = gameStateModel.load();
+		
+		if(result) {
+			auto [result, message] = client.testApiKey(client.getApiKey());
+
+			alertLabel->setText(message);
+			alertChildWindow->setVisible(true);
+
+			if(result) {
+				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+			}
+		} else {
+			alertLabel->setText(message);
+			alertChildWindow->setVisible(true);
+			optionsContinueLabel->setEnabled(false);
+			optionsContinueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
 		}
 	});
 	optionsSettingsLabel->onClick([=, &window] {
@@ -125,7 +148,6 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		exitGroup->setVisible(true); 
 	});
 
-	
 	mainPanel->add(titleLabel);
 	mainPanel->add(optionsLayout);
 	mainPanel->add(exitGroup);

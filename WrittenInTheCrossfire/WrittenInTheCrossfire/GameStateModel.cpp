@@ -14,7 +14,7 @@ GameStateModel::GameStateModel() : Model() {
 }
 
 void GameStateModel::init() {
-	checkpoint = 1;
+	checkpoint = 2;
 	currentStats.mentalWellbeing = 100;
 	currentStats.familyRelationship = 100;
 	currentStats.patriotism = 100;
@@ -70,10 +70,7 @@ std::tuple<bool, std::string> GameStateModel::load() {
 
 		return { true, "Save loaded successfully." };
 	} else {
-		init();
-		save();
-
-		return { false, "Failed to load save." };
+		return { false, "No save found." };
 	}
 }
 

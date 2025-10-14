@@ -67,7 +67,13 @@ SceneModel::SceneModel() {
     assets.push_back(std::make_tuple(3, "", "You both chatted about how rough it has been and how much you both miss your homes."));
     assets.push_back(std::make_tuple(3, "", "\"Once we are out of this mess, let's get a few drinks together. How about it?\""));
     assets.push_back(std::make_tuple(3, "", "The optimism and kindness Ramos has filled you with joy as you find yourself making a friend amidst the war."));
-
+    assets.push_back(std::make_tuple(3, "", "\"Attention!\""));
+    assets.push_back(std::make_tuple(3, "", "And before you know it, it's back to training."));
+    assets.push_back(std::make_tuple(3, "", "Night fell over the camp, the air was thick with the smell of sweat. Sergeant Chaves let everyone rest earlier than usual."));
+    assets.push_back(std::make_tuple(3, "", "Ramos visited you and you both chatted."));
+    assets.push_back(std::make_tuple(3, "", "\"Quiet down, I'm trying to catch some sleep.\""));
+    assets.push_back(std::make_tuple(3, "", "\"Sorry about that.\" Ramos said calmingly."));
+    assets.push_back(std::make_tuple(3, "", ""));
 }
 
 std::vector<std::tuple<int, std::string, std::string>> SceneModel::getCheckpointAssets(int checkpoint) {

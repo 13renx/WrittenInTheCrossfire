@@ -30,10 +30,13 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	scenePanel = tgui::Panel::create();
 	dialogTextArea = tgui::TextArea::create();
 
+	scenePanel->getRenderer()->setBackgroundColor(tgui::Color::Black);
 	{
-		tgui::Texture texture(std::get<1>(this->assets.at(0)));
+		if(std::get<1>(this->assets.at(0)) != "") {
+			tgui::Texture texture(std::get<1>(this->assets.at(0)));
+			scenePanel->getRenderer()->setTextureBackground(texture);
+		}
 		std::string text = std::get<2>(this->assets.at(0));
-		scenePanel->getRenderer()->setTextureBackground(texture);
 		dialogTextArea->setText(text);
 	}
 	dialogTextArea->setReadOnly();
@@ -47,9 +50,13 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 
 	scenePanel->onClick([=] {
 		if(assetIndex < assets.size()) {
-			tgui::Texture texture(std::get<1>(this->assets.at(assetIndex)));
+			if(std::get<1>(this->assets.at(assetIndex)) != "") {
+				tgui::Texture texture(std::get<1>(this->assets.at(assetIndex)));
+				scenePanel->getRenderer()->setTextureBackground(texture);
+			} else {
+				scenePanel->getRenderer()->setTextureBackground("");
+			}
 			std::string text = std::get<2>(this->assets.at(assetIndex));
-			scenePanel->getRenderer()->setTextureBackground(texture);
 			dialogTextArea->setText(text);
 			assetIndex++;
 		} else {

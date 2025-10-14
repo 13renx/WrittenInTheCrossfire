@@ -16,6 +16,7 @@
 SceneView::SceneView(ViewController* viewController, GameModel& gameModel, SceneModel& sceneModel) : View(viewController, gameModel, tgui::Texture::Texture("")), sceneModel(sceneModel), gameStateModel(this->gameModel.getGameStateModel()), assets(this->sceneModel.getCheckpointAssets(this->gameStateModel.getCheckpoint())) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	this->gameModel.getAudio().stopMusic();
 	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
 	gameStateModel.save();
 	assetIndex = 1;

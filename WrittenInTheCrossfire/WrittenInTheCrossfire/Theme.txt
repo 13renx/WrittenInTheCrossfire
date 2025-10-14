@@ -9,7 +9,6 @@ ArrowBackgroundColor = rgba(160, 160, 160, 215);
 ArrowBackgroundColorHover = rgba(170, 170, 170, 215);
 ArrowColor = rgba(200, 200, 200, 215);
 ArrowColorHover = rgba(225, 225, 225, 215);
-Borders = 1;
 
 Button {
     BackgroundColorDown = rgba(150, 150, 150, 215);

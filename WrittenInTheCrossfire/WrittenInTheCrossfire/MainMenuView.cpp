@@ -14,6 +14,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	Client& client = this->gameModel.getClient();
+	this->gameModel.getAudio().playMusic();
 	
 	// Initialize widgets
 	exitGroup = tgui::Group::create();
@@ -118,7 +119,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	optionsAboutLabel->onClick([=, &window] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::ABOUT_VIEW);
-		});
+	});
 	optionsExitLabel->onClick([=, &window] { 
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		exitGroup->setVisible(true); 

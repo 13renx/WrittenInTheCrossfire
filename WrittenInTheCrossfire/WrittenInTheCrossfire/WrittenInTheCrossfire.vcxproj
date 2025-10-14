@@ -136,6 +136,7 @@
     <ClCompile Include="AboutView.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="CampView.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="GameModel.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="AboutView.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="App.h" />
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="CampView.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="GameModel.h" />
@@ -178,7 +180,7 @@
     <ClInclude Include="Widgets.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="MainTheme.txt" />
+    <Text Include="Theme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

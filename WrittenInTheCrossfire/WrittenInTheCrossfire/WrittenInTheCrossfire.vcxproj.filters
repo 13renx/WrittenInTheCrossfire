@@ -69,6 +69,9 @@
     <ClCompile Include="SceneModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include=".env" />
@@ -134,8 +137,11 @@
     <ClInclude Include="SceneModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="MainTheme.txt" />
+    <Text Include="Theme.txt" />
   </ItemGroup>
 </Project>

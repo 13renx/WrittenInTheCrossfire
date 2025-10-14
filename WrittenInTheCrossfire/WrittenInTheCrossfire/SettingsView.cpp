@@ -12,6 +12,7 @@
 SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")), settingsModel(SettingsModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	this->gameModel.getAudio().playMusic();
 	settingsModel.load();
 
 	// Initialize widgets

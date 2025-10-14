@@ -11,6 +11,7 @@
 AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	this->gameModel.getAudio().playMusic();
 
 	// Initialize widgets
 	titleLabel = Widgets::Labels::createLabel("ABOUT", 100, 700, 70);

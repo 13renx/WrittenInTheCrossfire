@@ -1,9 +1,7 @@
 #include "SceneModel.h"
-
 #include <string>
 #include <tuple>
 #include <vector>
-
 
 SceneModel::SceneModel() {
     // 1

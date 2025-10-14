@@ -3,6 +3,7 @@
 #include "GlobalWidgets.h"
 #include "ViewController.h"
 #include <memory>
+#include <SFML/Audio.hpp>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -13,6 +14,8 @@ void App::run() {
 	tgui::Gui& gui = gameModel.getGui();
 	tgui::Panel::Ptr menuParentPanel = viewController.getGlobalWidgets()->getMenuParentPanel();
 	ViewController::ViewType& activeViewType = viewController.getActiveViewType();
+	//sf::Music music("Assets/Audio/witcmenu.mp3");
+	//music.play();
 
 	while(window.isOpen()) {
 		while(const std::optional event = window.pollEvent()) {
@@ -33,6 +36,8 @@ void App::run() {
 
 			gui.handleEvent(*event);
 		}
+
+		//if(activeViewType == ViewController::ViewType::MAIN_MENU_VIEW || activeViewType == ViewController::ViewType::ABOUT_VIEW || activeViewType == ViewController::ViewType::SETTINGS_VIEW) {
 
 		window.clear();
 		gui.draw();

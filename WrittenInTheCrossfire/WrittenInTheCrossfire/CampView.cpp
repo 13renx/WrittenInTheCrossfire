@@ -15,6 +15,7 @@
 CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameStateModel(this->gameModel.getGameStateModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	this->gameModel.getAudio().stopMusic();
 	isRunning = true;
 	isDontWriteClicked = false;
 	std::thread dontWriteThread(&CampView::dontWrite, this);

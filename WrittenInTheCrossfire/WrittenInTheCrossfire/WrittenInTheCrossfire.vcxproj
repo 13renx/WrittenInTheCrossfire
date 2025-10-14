@@ -143,6 +143,7 @@
     <ClCompile Include="GlobalWidgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuView.cpp" />
+    <ClCompile Include="SceneModel.cpp" />
     <ClCompile Include="SceneView.cpp" />
     <ClCompile Include="SettingsModel.cpp" />
     <ClCompile Include="SettingsView.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MainMenuView.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="SceneModel.h" />
     <ClInclude Include="SceneView.h" />
     <ClInclude Include="SettingsModel.h" />
     <ClInclude Include="SettingsView.h" />

@@ -9,10 +9,9 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")) {
+SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Settings Page with other stuff.png")), settingsModel(SettingsModel()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
-	settingsModel = SettingsModel();
 	settingsModel.load();
 
 	// Initialize widgets

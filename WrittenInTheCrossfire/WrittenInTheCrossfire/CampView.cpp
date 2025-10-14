@@ -110,7 +110,6 @@ void CampView::dontWrite() {
 			gameStateModel.setChatHistory(tempChatHistory);
 
 			viewController->changeView(ViewController::ViewType::SCENE_VIEW);
-
 			isDontWriteClicked = false;
 		}
 	}

@@ -12,7 +12,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameStateModel(this->gameModel.getGameStateModel()) {
+CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
@@ -71,7 +71,7 @@ void CampView::dontWrite() {
 				}
 			)");
 
-			std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
+			std::vector<json> tempChatHistory = gameState.getChatHistory();
 			tempChatHistory.push_back(prompt);
 			client.setGamePromptContents(tempChatHistory);
 
@@ -95,11 +95,11 @@ void CampView::dontWrite() {
 			json parsedText = json::parse(text);
 
 			// Update checkpoint
-			gameStateModel.updateCheckpoint();
+			gameState.updateCheckpoint();
 
 			// Update stats
-			gameStateModel.updateCurrentStats(parsedText["stats"]);
-			Stats stats = gameStateModel.getCurrentStats();
+			gameState.updateCurrentStats(parsedText["stats"]);
+			Stats stats = gameState.getCurrentStats();
 			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
 
 			// Update chat history
@@ -108,7 +108,7 @@ void CampView::dontWrite() {
 			newRes["role"] = "model";
 			newRes["parts"][0]["text"] = letter;
 			tempChatHistory.push_back(newRes);
-			gameStateModel.setChatHistory(tempChatHistory);
+			gameState.setChatHistory(tempChatHistory);
 
 			viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 			isDontWriteClicked = false;

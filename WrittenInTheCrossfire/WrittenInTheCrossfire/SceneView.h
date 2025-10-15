@@ -15,7 +15,7 @@ class SceneView : public View
 {
 	private:
 		SceneModel& sceneModel;
-		GameStateModel& gameStateModel;
+		GameState& gameState;
 		std::vector<std::tuple<int, std::string, std::string>> assets;
 		size_t assetIndex;
 

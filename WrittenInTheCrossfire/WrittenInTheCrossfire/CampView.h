@@ -12,7 +12,7 @@ class CampView : public View
 {
 	private:
 		Client& client;
-		GameStateModel& gameStateModel;
+		GameState& gameState;
 
 		tgui::HorizontalLayout::Ptr buttonLayoutOne;
 		tgui::Button::Ptr writeButton;

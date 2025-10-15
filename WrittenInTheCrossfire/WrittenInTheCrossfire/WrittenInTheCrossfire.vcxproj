@@ -140,7 +140,7 @@
     <ClCompile Include="CampView.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="GameModel.cpp" />
-    <ClCompile Include="GameStateModel.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GlobalWidgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuView.cpp" />
@@ -164,7 +164,7 @@
     <ClInclude Include="CampView.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="GameModel.h" />
-    <ClInclude Include="GameStateModel.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="GlobalWidgets.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MainMenuView.h" />

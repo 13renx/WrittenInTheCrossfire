@@ -1,4 +1,4 @@
-#include "GameStateModel.h"
+#include "GameState.h"
 #include "Stats.h"
 #include <cstdlib>
 #include <iostream>
@@ -9,42 +9,42 @@
 
 using json = nlohmann::json;
 
-GameStateModel::GameStateModel() : Model() {
+GameState::GameState() : Model() {
 	init();
 }
 
-void GameStateModel::init() {
-	checkpoint = 2;
+void GameState::init() {
+	checkpoint = 1;
 	currentStats.mentalWellbeing = 100;
 	currentStats.familyRelationship = 100;
 	currentStats.patriotism = 100;
 }
 
-std::vector<json> GameStateModel::getChatHistory() {
+std::vector<json> GameState::getChatHistory() {
 	return chatHistory;
 }
 
-void GameStateModel::setChatHistory(std::vector<json> chatHistory) {
+void GameState::setChatHistory(std::vector<json> chatHistory) {
 	this->chatHistory = chatHistory;
 }
 
-int GameStateModel::getCheckpoint() {
+int GameState::getCheckpoint() {
 	return checkpoint;
 }
 
-void GameStateModel::setCheckpoint(int checkpoint) {
+void GameState::setCheckpoint(int checkpoint) {
 	this->checkpoint = checkpoint;
 }
 
-Stats& GameStateModel::getCurrentStats() {
+Stats& GameState::getCurrentStats() {
 	return currentStats;
 }
 
-void GameStateModel::setCurrentStats(Stats& currentStats) {
+void GameState::setCurrentStats(Stats& currentStats) {
 	this->currentStats = currentStats;
 }
 
-std::tuple<bool, std::string> GameStateModel::save() {
+std::tuple<bool, std::string> GameState::save() {
 	json save = *this;
 	std::ofstream file = std::ofstream("game.json");
 
@@ -56,17 +56,17 @@ std::tuple<bool, std::string> GameStateModel::save() {
 	}
 }
 
-std::tuple<bool, std::string> GameStateModel::load() {
+std::tuple<bool, std::string> GameState::load() {
 	json load;
 	std::ifstream file = std::ifstream("game.json");
     
 	if(file.is_open()) {
 		file >> load;
-		auto gameStateModel = load.template get<GameStateModel>();
+		auto gameState = load.template get<GameState>();
 
-		setChatHistory(gameStateModel.getChatHistory());
-		setCheckpoint(gameStateModel.getCheckpoint());
-		setCurrentStats(gameStateModel.getCurrentStats());
+		setChatHistory(gameState.getChatHistory());
+		setCheckpoint(gameState.getCheckpoint());
+		setCurrentStats(gameState.getCurrentStats());
 
 		return { true, "Save loaded successfully." };
 	} else {
@@ -74,7 +74,7 @@ std::tuple<bool, std::string> GameStateModel::load() {
 	}
 }
 
-void GameStateModel::updateCurrentStats(json& sentiments) {
+void GameState::updateCurrentStats(json& sentiments) {
 	Stats& newStats = calculateStatChanges(sentiments);
 
 	currentStats.familyRelationship += newStats.familyRelationship;
@@ -92,7 +92,7 @@ void GameStateModel::updateCurrentStats(json& sentiments) {
 	}
 }
 
-Stats& GameStateModel::calculateStatChanges(json& sentiments) {
+Stats& GameState::calculateStatChanges(json& sentiments) {
 	Stats newStats = { 0, 0, 0 };
 	srand(time(0));
 
@@ -125,6 +125,6 @@ Stats& GameStateModel::calculateStatChanges(json& sentiments) {
 	return newStats;
 }
 
-void GameStateModel::updateCheckpoint() {
+void GameState::updateCheckpoint() {
 	checkpoint++;
 }

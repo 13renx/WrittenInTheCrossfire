@@ -1,7 +1,7 @@
 #include "MainMenuView.h"
 #include "Client.h"
 #include "GameModel.h"
-#include "GameStateModel.h"
+#include "GameState.h"
 #include "Macros.h"
 #include "View.h"
 #include "ViewController.h"
@@ -16,7 +16,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	Client& client = this->gameModel.getClient();
-	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
+	GameState& gameState = this->gameModel.getGameState();
 	this->gameModel.getAudio().playMusic();
 	
 	// Initialize widgets
@@ -115,9 +115,9 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 			}
 		}
 	});
-	optionsContinueLabel->onClick([=, &window, &client, &gameStateModel] {
+	optionsContinueLabel->onClick([=, &window, &client, &gameState] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		auto [result, message] = gameStateModel.load();
+		auto [result, message] = gameState.load();
 		
 		if(result) {
 			auto [result, message] = client.testApiKey(client.getApiKey());

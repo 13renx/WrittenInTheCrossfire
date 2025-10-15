@@ -26,5 +26,5 @@ class SettingsModel : Model
 		std::tuple<bool, std::string> save() override;
 		std::tuple<bool, std::string> load() override;
 
-		NLOHMANN_DEFINE_TYPE_INTRUSIVE(SettingsModel, masterVolume, sfxVolume, musicVolume) // Creates to_json() and from_json() for GameStateModel
+		NLOHMANN_DEFINE_TYPE_INTRUSIVE(SettingsModel, masterVolume, sfxVolume, musicVolume) // Creates to_json() and from_json() for GameState
 };

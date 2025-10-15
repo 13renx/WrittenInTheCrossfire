@@ -39,7 +39,7 @@
     <ClCompile Include="SettingsModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameStateModel.cpp">
+    <ClCompile Include="GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client.cpp">
@@ -107,7 +107,7 @@
     <ClInclude Include="Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameStateModel.h">
+    <ClInclude Include="GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Client.h">

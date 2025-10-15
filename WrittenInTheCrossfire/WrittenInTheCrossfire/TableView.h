@@ -12,7 +12,7 @@ class TableView : public View
 {
 	private:
 		Client& client;
-		GameStateModel& gameStateModel;
+		GameState& gameState;
 
 		tgui::Panel::Ptr dialogPanel;
 		tgui::TextArea::Ptr dialogTextArea;

@@ -1,7 +1,7 @@
 #include "SceneView.h"
 #include "SceneModel.h"
 #include "GameModel.h"
-#include "GameStateModel.h"
+#include "GameState.h"
 #include "Macros.h"
 #include "View.h"
 #include "ViewController.h"
@@ -13,15 +13,15 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-SceneView::SceneView(ViewController* viewController, GameModel& gameModel, SceneModel& sceneModel) : View(viewController, gameModel, tgui::Texture::Texture("")), sceneModel(sceneModel), gameStateModel(this->gameModel.getGameStateModel()), assets(this->sceneModel.getCheckpointAssets(this->gameStateModel.getCheckpoint())) {
+SceneView::SceneView(ViewController* viewController, GameModel& gameModel, SceneModel& sceneModel) : View(viewController, gameModel, tgui::Texture::Texture("")), sceneModel(sceneModel), gameState(this->gameModel.getGameState()), assets(this->sceneModel.getCheckpointAssets(this->gameState.getCheckpoint())) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
-	GameStateModel& gameStateModel = this->gameModel.getGameStateModel();
-	gameStateModel.save();
+	GameState& gameState = this->gameModel.getGameState();
+	gameState.save();
 	assetIndex = 1;
 
-	if(gameStateModel.getCheckpoint() == 0 || gameStateModel.getCheckpoint() == 22) {
+	if(gameState.getCheckpoint() == 0 || gameState.getCheckpoint() == 22) {
 		
 	} else {
 

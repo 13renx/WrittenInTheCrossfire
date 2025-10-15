@@ -15,7 +15,7 @@
 
 using json = nlohmann::json;
 
-TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")), client(this->gameModel.getClient()), gameStateModel(this->gameModel.getGameStateModel()) {
+TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
@@ -100,7 +100,7 @@ void TableView::send() {
 				)");
 				prompt["parts"][0]["text"] = fmt::format("Dear Mom,\n{}", textAreaText);
 
-				std::vector<json> tempChatHistory = gameStateModel.getChatHistory();
+				std::vector<json> tempChatHistory = gameState.getChatHistory();
 				tempChatHistory.push_back(prompt);
 				client.setGamePromptContents(tempChatHistory);
 
@@ -124,11 +124,11 @@ void TableView::send() {
 				json parsedText = json::parse(text);
 
 				// Update checkpoint
-				gameStateModel.updateCheckpoint();
+				gameState.updateCheckpoint();
 
 				// Update stats
-				gameStateModel.updateCurrentStats(parsedText["stats"]);
-				Stats stats = gameStateModel.getCurrentStats();
+				gameState.updateCurrentStats(parsedText["stats"]);
+				Stats stats = gameState.getCurrentStats();
 				std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
 
 				// Update chat history
@@ -137,9 +137,9 @@ void TableView::send() {
 				newRes["role"] = "model";
 				newRes["parts"][0]["text"] = letter;
 				tempChatHistory.push_back(newRes);
-				gameStateModel.setChatHistory(tempChatHistory);
+				gameState.setChatHistory(tempChatHistory);
 
-				gameStateModel.save();
+				gameState.save();
 				viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 			}
 

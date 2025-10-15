@@ -2,7 +2,7 @@
 
 #include "Audio.h"
 #include "Client.h"
-#include "GameStateModel.h"
+#include "GameState.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -12,7 +12,7 @@ class GameModel {
 		tgui::Gui gui;
 		Audio audio;
 		Client client;
-		GameStateModel gameStateModel;
+		GameState gameState;
 
 	public:
 		GameModel();
@@ -21,5 +21,5 @@ class GameModel {
 		tgui::Gui& getGui();
 		Audio& getAudio();
 		Client& getClient();
-		GameStateModel& getGameStateModel();
+		GameState& getGameState();
 };

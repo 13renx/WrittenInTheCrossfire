@@ -105,6 +105,10 @@ void TableView::send() {
 				}
 			}
 
+			if(tempText.at(tempText.size() - 1) == ' ' || tempText.at(tempText.size() - 1) == '\n') {
+				tempText.pop_back();
+			}
+
 			textAreaText = tempText;
 
 			if(textAreaText.length() == 0) { // No input

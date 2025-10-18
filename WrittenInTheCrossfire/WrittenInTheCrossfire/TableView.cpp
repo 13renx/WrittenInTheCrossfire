@@ -82,6 +82,30 @@ void TableView::send() {
 	while(isRunning) {
 		if(isSendClicked) {
 			std::string textAreaText = letterTextArea->getText().toStdString();
+			std::string tempText = "";
+			bool encounteredFirstNonSpace = false; // space and new line
+			size_t spaceCtr = 0;
+
+			// Removes extra whitespaces
+			for(int i = 0; i < textAreaText.size(); i++) {
+				if(encounteredFirstNonSpace) {
+					if(textAreaText.at(i) == ' ' || textAreaText.at(i) == '\n') {
+						if(spaceCtr == 0) {
+							tempText.push_back(textAreaText.at(i));
+						}
+
+						spaceCtr++;
+					} else {
+						tempText.push_back(textAreaText.at(i));
+						spaceCtr = 0;
+					}
+				} else if(textAreaText.at(i) != ' ' || textAreaText.at(i) != '\n') {
+					encounteredFirstNonSpace = true;
+					tempText.push_back(textAreaText.at(i));
+				}
+			}
+
+			textAreaText = tempText;
 
 			if(textAreaText.length() == 0) { // No input
 				dialogTextArea->setText("What would Mom think if I sent an empty letter?");

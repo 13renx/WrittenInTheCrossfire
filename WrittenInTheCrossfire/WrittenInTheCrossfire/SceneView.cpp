@@ -21,12 +21,6 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	gameState.save();
 	assetIndex = 1;
 
-	if(gameState.getCheckpoint() == 0 || gameState.getCheckpoint() == 22) {
-		
-	} else {
-
-	}
-
 	// Initialize widgets
 	scenePanel = tgui::Panel::create();
 	dialogTextArea = tgui::TextArea::create();
@@ -49,8 +43,10 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 
-	scenePanel->onClick([=] {
-		if(assetIndex < assets.size()) {
+	scenePanel->onClick([=, &gameState] {
+		if(gameState.getCheckpoint() == 22 && assetIndex == assets.size()) {
+			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
+		} else if(assetIndex < assets.size()) {
 			if(std::get<1>(this->assets.at(assetIndex)) != "") {
 				tgui::Texture texture(std::get<1>(this->assets.at(assetIndex)));
 				scenePanel->getRenderer()->setTextureBackground(texture);

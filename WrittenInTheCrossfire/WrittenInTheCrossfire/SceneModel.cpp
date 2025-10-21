@@ -3,6 +3,7 @@
 #include <string>
 #include <tuple>
 #include <vector>
+#include <fmt/core.h>
 
 SceneModel::SceneModel() {
     std::ifstream file = std::ifstream("WITC In-game Story.txt");
@@ -44,7 +45,7 @@ SceneModel::SceneModel() {
 
                     line.pop_back(); // Remove semicolon
                     line.append(".png");
-                    texture = line;
+                    texture = fmt::format("Assets/Textures/Scenes/{}", line);
                 }
 
                 dialogue = "EMPTY";

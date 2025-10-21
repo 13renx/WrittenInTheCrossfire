@@ -14,10 +14,11 @@ GameState::GameState() : Model() {
 }
 
 void GameState::init() {
-	checkpoint = 1;
+	checkpoint = 0;
 	currentStats.mentalWellbeing = 100;
 	currentStats.familyRelationship = 100;
 	currentStats.patriotism = 100;
+	chatHistory = std::vector<json>();
 }
 
 std::vector<json> GameState::getChatHistory() {

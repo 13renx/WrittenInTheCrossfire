@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GameModel.h"
+#include "GameState.h"
 #include "View.h"
 #include "ViewController.h"
 #include <memory>
@@ -10,6 +11,8 @@
 class ReadLetterView : public View
 {
 	private:
+		GameState& gameState;
+
 		tgui::TextArea::Ptr letterTextArea;
 		tgui::Button::Ptr finishButton;
 

@@ -10,6 +10,7 @@
 #include <thread>
 #include <memory>
 #include <fmt/core.h>
+#include <nlohmann/json.hpp>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -79,6 +80,8 @@ WriteLetterView::~WriteLetterView() {
 }
 
 void WriteLetterView::send() {
+	bool isGetFailed = false;
+
 	while(isRunning) {
 		if(isSendClicked) {
 			std::string textAreaText = letterTextArea->getText().toStdString();
@@ -105,8 +108,10 @@ void WriteLetterView::send() {
 				}
 			}
 
-			if(tempText.at(tempText.size() - 1) == ' ' || tempText.at(tempText.size() - 1) == '\n') {
-				tempText.pop_back();
+			if(tempText.size() > 0) {
+				if(tempText.at(tempText.size() - 1) == ' ' || tempText.at(tempText.size() - 1) == '\n') {
+					tempText.pop_back();
+				}
 			}
 
 			textAreaText = tempText;
@@ -114,12 +119,18 @@ void WriteLetterView::send() {
 			if(textAreaText.length() == 0) { // No input
 				dialogTextArea->setText("What would Mom think if I sent an empty letter?");
 				dialogPanel->setVisible(true);
+				isSendClicked = false;
+				continue;
 			} else if(textAreaText.length() < 10) { // Input contains less than 10 characters
 				dialogTextArea->setText("What would Mom think if I sent a letter with such few characters?");
 				dialogPanel->setVisible(true);
+				isSendClicked = false;
+				continue;
 			} else if(textAreaText.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()&\"':;/@#$%-\n ") != std::string::npos) { // Input contains characters that are not part of "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()&\"':;/@#$%-\n "
 				dialogTextArea->setText("What would Mom think if I sent a letter that contains unusual characters?");
 				dialogPanel->setVisible(true);
+				isSendClicked = false;
+				continue;
 			} else {
 				auto prompt = json::parse(R"(
 					{
@@ -144,7 +155,7 @@ void WriteLetterView::send() {
 					if(res.contains("error")) {
 						alertLabel->setText("API key is not working.");
 						alertChildWindow->setVisible(true);
-						viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
+						isGetFailed = true;
 						break;
 					}
 				}
@@ -169,10 +180,14 @@ void WriteLetterView::send() {
 				gameState.setChatHistory(tempChatHistory);
 
 				gameState.save();
-				viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+				break;
 			}
-
-			isSendClicked = false;
 		}
+	}
+
+	if(isGetFailed) {
+		viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
+	} else if(isSendClicked) {
+		viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 	}
 }

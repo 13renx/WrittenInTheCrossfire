@@ -3,16 +3,24 @@
 #include "Macros.h"
 #include "View.h"
 #include "ViewController.h"
+#include <nlohmann/json.hpp>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, "Assets/Textures/Backgrounds/ReadLetterView.PNG") {
+using json = nlohmann::json;
+
+ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, "Assets/Textures/Backgrounds/ReadLetterView.PNG"), gameState(this->gameModel.getGameState()) {
 	tgui::Gui& gui = this->gameModel.getGui();
 
 	// Initialize widgets
 	letterTextArea = tgui::TextArea::create();
 	finishButton = tgui::Button::create("FINISH READING");
 
+	{
+		std::vector<json> chatHistory = gameState.getChatHistory();
+		json j = chatHistory.at(chatHistory.size() - 1);
+		letterTextArea->setText(j["parts"][0]["text"].dump());
+	}
 	letterTextArea->setReadOnly();
 	letterTextArea->setSize(822, 995);
 	letterTextArea->setTextSize(30);

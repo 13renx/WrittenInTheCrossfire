@@ -44,7 +44,11 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 
 	scenePanel->onClick([=, &gameState] {
-		if(gameState.getCheckpoint() == 22 && assetIndex == assets.size()) {
+		int checkpoint = gameState.getCheckpoint();
+
+		if(checkpoint == 0 && assetIndex == assets.size()) {
+			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
+		} else if(checkpoint == 22 && assetIndex == assets.size()) {
 			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 		} else if(assetIndex < assets.size()) {
 			if(std::get<1>(this->assets.at(assetIndex)) != "") {

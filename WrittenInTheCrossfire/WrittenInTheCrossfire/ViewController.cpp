@@ -14,7 +14,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), sceneModel(SceneModel()), activeViewType(ViewController::ViewType::READ_LETTER_VIEW), activeView(std::make_shared<ReadLetterView>(this, this->gameModel)) {}
+ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), sceneModel(SceneModel()), activeViewType(ViewController::ViewType::SCENE_VIEW), activeView(std::make_shared<SceneView>(this, this->gameModel, sceneModel)) {}
 
 std::shared_ptr<GlobalWidgets> ViewController::getGlobalWidgets() {
 	return globalWidgets;

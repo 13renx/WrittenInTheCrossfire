@@ -9,8 +9,11 @@
 #include <thread>
 #include <memory>
 #include <fmt/core.h>
+#include <nlohmann/json.hpp>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
+
+using json = nlohmann::json;
 
 CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
@@ -74,6 +77,8 @@ CampView::~CampView() {
 }
 
 void CampView::dontWrite() {
+	bool isGetFailed = false;
+
 	while(isRunning) {
 		if(isDontWriteClicked) {
 			auto prompt = json::parse(R"(
@@ -102,7 +107,7 @@ void CampView::dontWrite() {
 				if(res.contains("error")) {
 					alertLabel->setText("API key is not working.");
 					alertChildWindow->setVisible(true);
-					viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
+					isGetFailed = true;
 					break;
 				}
 			}
@@ -125,9 +130,13 @@ void CampView::dontWrite() {
 			newRes["parts"][0]["text"] = letter;
 			tempChatHistory.push_back(newRes);
 			gameState.setChatHistory(tempChatHistory);
-
-			viewController->changeView(ViewController::ViewType::SCENE_VIEW);
-			isDontWriteClicked = false;
+			break;
 		}
+	}
+
+	if(isGetFailed) {
+		viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
+	} else if(isDontWriteClicked) {
+		viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 	}
 }

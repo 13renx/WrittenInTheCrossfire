@@ -57,7 +57,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 			dialogTextArea->setText(text);
 			assetIndex++;
 		} else {
-			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
+			this->viewController->changeView(ViewController::ViewType::READ_LETTER_VIEW);
 		}
 	});
 

@@ -16,6 +16,7 @@ class ViewController {
 			SETTINGS_VIEW,
 			ABOUT_VIEW,
 			SCENE_VIEW,
+			READ_LETTER_VIEW,
 			CAMP_VIEW,
 			WRITE_LETTER_VIEW
 		};

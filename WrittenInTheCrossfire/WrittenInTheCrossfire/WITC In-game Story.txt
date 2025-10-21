@@ -1,140 +1,168 @@
 ﻿! These are all based off of the actual story line in the story bible !
 Prologue
-
-
+Week 0
+Slides (in order):
+1. Black Screen:
+   1. The uneasy peace after the last great war left scars that never healed.
+2. War Lore:
+   1. Two countries, hungry for domination.
+   2. Obersreich, a nation on the west. Once was defeated, its flags torn and soldiers disbanded, now rises again.
+   3. Factories roar to life in secret. Uniforms return. The silence now replaced by the noise of ambition.
+   4. The Helion Empire, a nation on the east. Pursuing their own ambitions, seizing lands.
+   5. Though distant, the two nations found a common cause.
+   6. Both eager to carve an empire that would stretch the boundaries.
+   7. A power stronger than the Vanguards.
+   8. The two forged a pact in conquest.
+   9. Thus the Legion was born.
+3. Black Screen:
+   1. Their first victim, Marivelle.
+   2. The towns nearest to the coast fell, smoke began to fill the air, and the calm waves were now disturbed by the ground shaking.
+   3. And so the government declared that all able-bodied men are called to serve.
+4. MC n Mom:
+   1. In a small town, far from the front, lies a mother and her only son.
+   2. "Don't forget the plates, baby!"
+   3. The two, smiling, preserving what little happiness they have left.
+5. Black Screen:
+   1. That is, until a knock on the door.
+   2. The mother answered and came back to the son.
+6. Mom Crying:
+   1. "I believe this is for you," says the mother with tears running down her eyes, hands trembling in fear.
+   2. Hands the letter over to her son.
+   3. "Oh, my dear boy," as she continues to sob.
+7. Letter:
+   1. The son, confused, stares at the letter, as they sit down to eat.
+8. Conscription Letter:
+   1. Until it hit him, the realization of duty has finally come.
+   2. "You are hereby called to serve."
+   3. The boy reads in silence. His mother continues to cry softly.
+9. Black Screen:
+   1. "Promise me you'll come back," she says.
+   2. He nods.
+   3. The next morning, he had his bag and left.
+   4. Now begins a journey at Camp San Aurelio.
 Act 1
 Week 1
 Slides (in order):
 1. Black Screen:
-   1. The convoy came to a stop before the camp. The men spilled out, half-dazed from the ride, greeted not by welcome but by shouting.
-2. Chaves Pic:
-   1. "Attention! You're soldiers now, not lost sheep. You all are to address me as Sergeant Chaves, and you'll be following my orders from now on."
-3. Chaves Pic:
-   1. Sergeant Chaves' voice cut through the wind, sharp and unyielding. The air smelled of rust and mud. Somewhere in the distance, the sound of gunfire echoed faintly. The war felt closer than you expected.
-4. Chaves Pic:
-   1. Sergeant Chaves performed a roll call. One man stammered when called and earned a daunting glare. You kept your eyes forward. Behind you, someone coughed. Another whispered a prayer.
-5. Camp Area:
-   1. Everyone arrived at the camp. Rows of iron bunks, the stench of damp uniforms, and the lack of any sanitary equipment. 
-6. Camp Area:
-   1. You dropped your stuff at your assigned area, surrounded by strangers who all wore the same expression: uncertainty masked as silence.
-7. Camp Area:
-   1. One of them laughed under his breath. Another muttered that the place looked more like a prison than a camp.
-8. Camp Area:
-   1. You stayed quiet. You didn't join in. You just watched the smoke curl toward the ceiling until the whistle blew for lights out.
-9. Black Screen:
-   1. The next day, dawn brought shouting. Everyone gathered to eat their meal.
-10. Meal Area:
-   1. "Finish up quickly. We will be proceeding with drills in a few minutes." Sergeant Chaves yelled.
-11. Meal Area:
-   1. As soon as the whistle blew, everyone made their way to the training grounds.
-12. Training Grounds:
-   1. Everyone trained on the mud, performing several drills that tired everyone out. Sergeant Chaves' commands cut through the haze.
-13. Training Grounds:
-   1. Running, crawling, pushups, sit-ups, rifle handling. All happening with little to no breaks in between.
-14. Training Grounds:
-   1. "You'll learn to fight tired, because the enemy won't wait for you to rest!"
-15. Training Grounds:
-   1. You stumbled once, earning a boot to the heel and a growl of "Keep moving." By the end of it, your arms shook too much to hold the rifle steady, but you didn't dare to drop it.
-16. Camp Area:
-   1. The camp quieted. Occasional murmur from nearby bunks, someone passing around leftover food, another hummed a tune, low and sad.
-17. Black Screen:
-   1. This vicious cycle of the campgrounds continues over and over again. This is the new reality for everyone here.
-18. Camp Area:
-   1. One fateful evening, papers were being handed out, and it was announced that everyone was given an opportunity to write to their loved ones. 
-19. Camp Area:
-   1. You sat in your bunk, staring at a blank sheet of paper. Thinking of home, of your Mom you left behind, of how she will feel knowing the circumstances of your situation.
+   1. The convoy comes to a stop before the camp. Other young men spill out, half-dazed from the ride, greeted not by welcome but by shouting.
+2. Sgt Chaves:
+   1. "Attention! You're soldiers now, not lost sheep. You will address me as Sergeant Chaves or sir, and you'll be following my orders from now on."
+   2. Sergeant Chaves' voice cuts through the wind, sharp and unyielding. The air smells of rust and mud. Somewhere in the distance, the sound of gunfire echoes faintly. The war feels closer than you expected.
+   3. Sergeant Chaves performs a roll call. One man stammers when called and earns a daunting glare from your superior officer. You keep your eyes forward. Behind you, someone coughs. Another whispers a prayer.
+3. Overcrowded Camp:
+   1. Everyone arrives at the barracks. Along the walls are rows of iron bunks. You smell the musk of damp uniforms and notice the lack of any sanitary equipment.
+   2. You drop off your things at your assigned area. You are surrounded by strangers, all wearing the same expression: uncertainty masked as silence.
+   3. One of them laughs under his breath. Another mutters that the place looked more like a prison than a camp.
+   4. You stay quiet. You don't join in. You just watch the smoke curl toward the ceiling until the whistle blows for lights out.
+4. Black Screen:
+   1. The next day, dawn brings more shouting. Everyone gathers in the mess hall for breakfast.
+5. Meal Time Morning:
+   1. "Finish up quickly. We will be proceeding with drills in a few minutes." Sergeant Chaves barks.
+   2. As soon as the whistle blows, everyone makes their way to the training grounds.
+6. Training:
+   1. You train in the mud with the early morning sun beating down on you. What feels like endless drills and constant shouting from Sergeant Chaves brought you and your fellow young men to heel.
+   2. Running, crawling, pushups, sit-ups, rifle handling. All with little to no breaks in between.
+   3. "You'll learn to fight tired! The enemy won't wait for you to rest!"
+   4. You stumbled once, earning a boot to the heel and a growl of "Keep moving!" By the end of it all, your arms shake too much to hold a rifle steady, but you don't dare to drop it.
+7. Overcrowded Camp:
+   1. The camp winds down to a quiet. Occasional murmurs from nearby bunks, someone passing around leftover food, another hums a tune, low and sad.
+8. Black Screen:
+   1. This vicious cycle of the campgrounds continues day after day. This is the new reality for everyone here.
+9. Overcrowded Camp:
+   1. One fateful evening, papers are handed out, and it is announced that everyone is given an opportunity to write to their loved ones. 
+   2. You sit in your bunk, staring at a blank sheet of paper. Thinking of home, of your Mom you left behind, of how she will feel knowing the circumstances of your situation.
 
 
 Week 2
 Slides (in order):
 1. Black Screen:
-   1. The days began to blur. The same whistle, the same mud, the same shouts echoing through the camp.
-2. Meal Area:
-   1. Breakfast came late. Someone joked about the food tasting worse every day. Another recruit replied, "You'll eat anything when you're hungry enough." A few chuckled.
-   2. The fragments of laughter that sounded out of place in this world of blood, sweat, and tears.
-   3. "Attention! I want everyone outside by the training grounds in 5 minutes. Latecomers have a punishment." Sergeant Chaves yelled.
+   1. The days begin to blur. The same whistle, the same mud, the same yelling ringing throughout the camp.
+2. Meal Time Morning:
+   1. Breakfast comes late. Someone jokes about the food tasting worse every day. Another recruit replies, "You'll eat anything when you're hungry enough." A few chuckle.
+   2. The fragments of laughter sound out of place in this new world of blood, sweat, and tears.
+   3. "Attention! I want everyone outside by the training grounds in 5 minutes. Latecomers will be punished." Sergeant Chaves announces.
 3. Black Screen:
-   1. No one was late. Sergeant Chaves stood by with his arms crossed as everyone did their drills.
-4. Chaves Pic:
-   1. "You're not here to enjoy the breeze!" he barked.
+   1. No one is late. Sergeant Chaves stands by with his arms crossed as everyone does their drills.
+4. Sgt Chaves:
+   1. "You're not here to enjoy the breeze!" he barks.
    2. The dirt kicked up by boots turned to dust in the air, coating every breath.
-   3. One recruit stumbled and nearly collapsed. Chaves yelled for two others to drag him up.
+   3. One recruit stumbles and nearly collapses. Chaves yells for two others to drag him up.
    4. "If one man falls, all of you fall!"
-   5. Your body ached, but the drills didn't stop. You forced yourself to keep moving, jaw clenched, lungs on fire.
-5. Camp Area:
-   1. That night, the barracks were quieter than usual. The harsh training that day put a toll on everyone.
-   2. But you overhear the chatters of someone speaking of their background. A few men traded short words about home. Their distant towns, families, and half-remembered meals.
+   5. Your body aches, but the drills don't stop. You force yourself to keep moving, jaw clenched, lungs on fire.
+5. Overcrowded Camp:
+   1. That night, the barracks are quieter than usual. The harsh training that day put a toll on everyone.
+   2. But you overhear the chatters of someone speaking of their background. A few men trade short words about home. Their distant towns, families, and half-remembered meals.
 6. Black Screen:
-   1. Hearing those words makes you wonder the same. You think about these thoughts as you fall to sleep.
-   2. The next morning brought new orders. It's time for live-fire exercises.
-7. Training Grounds:
-   1. Rifles cracked through the fields. The smell of gunpowder filled the air.
-   2. Chaves shouted commands between bursts of noise.
-   3. One man's rifle jammed, another flinched too early. Everyone wavered, but no one stopped.
-   4. The chaos of men shooting rifles. This was the first time you ever shot a gun, and it may be the same for many.
-   5. Sergeant Chaves inspected the field, silent for once, only nodding slightly before ordering everyone to clean their rifles.
+   1. Hearing them speak makes you wonder the same. You think about these thoughts as you fall to sleep.
+   2. The next morning brings new orders. It's time for live-fire exercises.
+7. Training:
+   1. Rifles crack through the fields. The smell of gunpowder fills the air.
+   2. Chaves shouts commands between bursts of noise.
+   3. One man's rifle jams, another flinches too early. Everyone wavers, but no one stops.
+   4. The chaos of men shooting rifles. This was the first time you ever shot a gun, as it was for many others.
+   5. Sergeant Chaves inspects the field, silent for once, only nodding slightly before ordering everyone to clean their rifles.
 8. Black Screen:
-   1. Another set of exhausting days of training has passed. You lose count of how long it's been. 
-   2. Yet another quiet night and everyone was given a new piece of paper. Another opportunity to write again.
+   1. Another set of exhausting days passes. You lose count of how long it's been. 
+   2. Yet another quiet night and everyone is given a new piece of paper. Another opportunity to write again.
 
 
 Week 3
 Slides (in order):
 1. Black Screen:
-   1. The days pressed on, each one carving away a little more of who you were before you left home.
-   2. Routine had turned into instinct. You woke before the whistle now.
-2. Training Grounds:
+   1. The days press on, each one carving away a little more of who you were before you left home.
+   2. Routine has turned into instinct. You wake before the whistle now.
+2. Training:
    1. "Move, move, move!" Sergeant Chaves' voice carried across the perimeter.
-   2. You ducked, crawled, and rolled through the mud, feeling the weight of your rifle press into your chest.
-   3. The men no longer groaned out loud, instead they just endured.
-   4. During a drill, you tripped and fell. But someone beside you offered you their hand.
+   2. You duck, crawl, and roll through the mud, feeling the weight of your rifle press into your chest.
+   3. The men no longer groan out loud, instead they just endure.
+   4. During a drill, you trip and fall. But someone beside you offers their hand.
    5. "Careful, man. The Sergeant is watching."
-   6. You nodded your thanks and he grinned faintly before continuing.
+   6. You nod your thanks, and he grins faintly before continuing.
 3. Black Screen:
    1. "That's enough for now. Enjoy your meal."
-4. Meal Area:
-   1. You got your portions, started chowing down your food.
+4. Meal Time Early Afternoon:
+   1. You get your portions and eat your fill.
    2. A familiar figure approaches you.
-   3. It was the person that lent you a hand earlier during training.
+   3. It's the recruit that lent you a hand earlier during drills.
    4. "Hey, mind if I stay here?"
-   5. The two of you ate together.
+   5. You eat together.
    6. "The name's Ramos. Not that it matters, but it's nice to see a friendly face out here."
-   7. You both chatted about how rough it has been and how much you both miss your homes.
-   8. "Once we are out of this mess, let's get a few drinks together. How about it?"
-   9. The optimism and kindness Ramos has filled you with joy as you find yourself making a friend amidst the war.
+   7. You chat about how rough it has been and how much you both miss home.
+   8. "Once we are out of this mess, let's get a few drinks together. How about it?" he propositions with a bright smile.
+   9. You are grateful to see a kind smile in the midst of it all.
 5. Black Screen:
    1. "Attention!"
    2. And before you know it, it's back to training.
-6. Camp Area:
-   1. Night fell over the camp, the air was thick with the smell of sweat. Sergeant Chaves let everyone rest earlier than usual.
-   2. Ramos visited you and you both chatted.
-   3. "Quiet down, I'm trying to catch some sleep."
-   4. "Sorry about that." Ramos said calmingly.
+6. Overcrowded Camp:
+   1. Night falls over the camp, the air is thick with the smell of sweat. Sergeant Chaves lets everyone rest earlier than usual.
+   2. Ramos visits your barracks and you both reminisce about the difference in you schoolboy days.
+   3. "Quiet down, I'm trying to catch some sleep," a half-asleep recruit grumbles in a nearby bunk.
+   4. "Sorry about that, man. You go right back to sleep" Ramos says calmingly.
 7. Black Screen:
-   1. And soon enough, everyone went to sleep.
-   2. The next following days feel like a drag. Despite the struggles, you cling on to hope.
+   1. Soon enough, Ramos leaves. You, too, tuck in for the night.
+   2. The next following days feel like a drag, but despite the struggles, you cling on to hope.
 
 
 Week 4
 Slides (in order):
 1. Black Screen:
    1. These routines feel more natural to you.
-   2. The mud, the noise, the orders. They all blurred into something almost bearable.
-   3. You moved with the others now, not as strangers, but as one body that knew when to stand, march, or breathe.
-2. Chaves Pic:
-   1. "Formations!" Sergeant Chaves barked.
+   2. The mud, the noise, the orders. All muddled into something almost bearable.
+   3. You move with the others now, not as strangers, but as one body that knew when to stand, march, and breathe.
+2. Sgt Chaves:
+   1. "Formations!" Sergeant Chaves roars.
    2. No one flinched this time. The line straightened, movements in sync.
    3. "Not bad," he muttered. "Maybe soon you all will be real soldiers."
    4. It wasn't the praise everyone had hoped for, but it felt close enough.
-3. Training Grounds:
-   1. During training, Ramos approached beside you.
+3. Training:
+   1. During training, Ramos approaches beside you.
    2. His steps were steady, breath calm.
    3. "You're getting faster," he said.
    4. You glanced at him and joked about him getting slower.
 4. Black Screen:
    1. He grinned.
    2. Soon enough, a break was called.
-5. Meal Area:
+5. Meal Time Early Afternoon:
    1. You and Ramos sat beside each other.
    2. "The same old, same old huh?" Ramos said.
    3. Not like you enjoyed the food here, nor did you hate it.
@@ -154,7 +182,7 @@ Slides (in order):
 6. Black Screen:
    1. Later that day, Sergeant Chaves made the men dig trenches for discipline.
    2. Ramos tagged alongside you, and before you knew it, Diaz had already become a member in your circle.
-7. Camp Area:
+7. Overcrowded Camp:
    1. As the sun dipped low, a rare breeze swept through the camp. Someone had been using the paper given to him to create a makeshift set of playing cards.
    2. It wasn't the best, a source of entertainment was relieving.
    3. The game didn't have clear rules, but it didn't matter.
@@ -176,10 +204,10 @@ Slides (in order):
 
 Week 5
 Slides (in order):
-1. Chaves Pic:
+1. Sgt Chaves:
    1. "Live rounds today," Sergeant Chaves announced, voice low but firm. "You miss the target, you don't eat."
    2. He wasn't joking.
-2. Shooting Pic:
+2. Few Battles:
    1. You raised your rifle, hands steady. The first shot cracked through the air, sharp and deafening. But the recoil bit your shoulder. 
    2. Next to you, Ramos fired clean and calm. Diaz flinched, cursed under his breath, and tried again.
    3. "You got this Diaz. You'll learn," Ramos said.
@@ -194,13 +222,13 @@ Slides (in order):
    12. When the smoke cleared, Chaves walked the line, inspecting each shot.
    13. He stopped in front of you, looked at your target, then nodded, almost approvingly.
    14. You surprised even yourself for that.
-3. Camp Area:
+3. Overcrowded Camp:
    1. Later that day, the men cleaned their rifles in silence. The smell of oil, sweat, and metal filled the air.
    2. Diaz broke it first. "So… when do we stop pretending this is training?"
    3. "When the bullets start firing back." Ramos said.
    4. "Wowie, can't wait," Diaz replied.
    5. You said nothing and stared at your rifle.
-4. Meal Area:
+4. Meal Time Night:
    1. That evening, the meal was unusually quiet. Chaves stood near the entrance, arms crossed.
    2. The atmosphere felt heavier as the growing fear of conflict continued to haunt the minds of everyone.
    3. "Orders will be here soon," Sergeant Chaves said "Be sure to be ready."
@@ -224,7 +252,7 @@ Slides (in order):
    21. You smiled the whole time and thought to yourself of what a lucky and great guy Ramos is.
    22. "Wow, you really got the stuff," Diaz said.
    23. "I'm happy for you, I guess. Even if I don't have a special someone like you."
-5. Gang Pic (Ramos and Diaz):
+5. Ramos n Diaz:
    1. "It's okay Diaz, there's a special someone for everybody."
    2. "Even for the likes of you!" Ramos said laughingly.
    3. "Hey, what's that supposed to mean?"
@@ -242,11 +270,11 @@ Slides (in order):
 
 Week 6
 Slides (in order):
-1. Camp Area:
+1. Overcrowded Camp:
    1. Days went on, same routines, same meals, same faces.
    2. Until Sergeant Chaves called everyone in earlier than expected.
    3. The expression of the camp shifted.
-2. Chaves Pic:
+2. Sgt Chaves:
    1. Sergeant Chaves stood before the regiment, hands clasped behind his back. His voice was steady.
    2. "Orders came in today. The front needs bodies."
    3. "You all are to prepare yourself, pack light and do as you're told."
@@ -257,7 +285,7 @@ Slides (in order):
    8. You nodded silently. The camp that was once felt as miserable had started to feel almost safe.
 3. Black Screen:
    1. Not much training happened in preparation for the upcoming juncture.
-4. Camp Area:
+4. Overcrowded Camp:
    1. The night had become more quiet than usual.
    2. Rumors started to spread about the Legion.
    3. Some said there were spies. Some said they terrorized the innocents.
@@ -267,7 +295,7 @@ Slides (in order):
    1. The day approaches bit by bit.
    2. The whistle blew a bit later than usual.
    3. One more day left.
-6. Mission Brief Image:
+6. Mission Briefings:
    1. "You will be making a steady approach."
    2. "You cannot afford to give away your position and yourself very easily."
    3. "And so you will be moving by foot until the destination."
@@ -281,7 +309,7 @@ Slides (in order):
 7. Black Screen:
    1. "One last drill. Just a march of endurance."
    2. "Don't worry it won't be long."
-8. Chaves Pic
+8. Sgt Chaves:
    1. Chaves barked orders, but there was no edge to it anymore.
    2. At the end, he stood before the line.
    3. "You've learned what you can here. Out there, you'll learn the rest. Keep your head down. Watch each others' backs."
@@ -289,7 +317,7 @@ Slides (in order):
    5. "Don't waste what you've been given."
    6. He dismissed you with a nod. 
    7. Not the usual yell, not the usual scowl.
-9. Camp Area:
+9. Overcrowded Camp:
    1. Everyone gathered their gear, boots laced up, a few trembling hands.
    2. "Best you'll prepare now rather than later," said the Sergeant.
    3. Back at the bunks, Ramos passed around a small token to you and Diaz.
@@ -307,16 +335,17 @@ Slides (in order):
    15. Courage, dedication, and determination.
    16. With everyone writing, you wonder what it's like back at home. You take a moment to reflect.
 
+
 Week 7
 Slides (in order):
 1. Black Screen:
    1. The whistle blew.
-2. Camp Area:
+2. Overcrowded Camp:
    1. "Onwards, my soldiers!"
    2. Before dawn broke, the men marched.
 3. Black Screen:
    1. The camp shrank in the distance. The mud, the bunks, the drills, all of it swallowed by dust.
-4. *If there is a marching drawing (if not I guess a black screen?):
+4. Marching:
    1. "How much longer do you think this will take?"
    2. "Not too far long from now."
    3. "Do you think there'll be a lot?"
@@ -327,7 +356,7 @@ Slides (in order):
 5. Black Screen:
    1. "Time for the main event," said Ramos.
    2. The regiment has arrived at their destination.
-6. Fight Screen:
+6. MC squad fighting:
    1. The men unloaded their gear by the sandbags, the trenches. It was real now.
    2. As everyone prepares for the fight, tension rises up with Diaz.
    3. "I was never ready! I just want to run away," Diaz said scaringly.
@@ -338,59 +367,1307 @@ Slides (in order):
    8. The atmosphere gets filled with gunfire, shouting, smoke.
    9. Chaos ensued.
    10. "Fire! Fire! Fire!"
-   11. Artillery screamed across the sky. Men shouted, orders blurred into chaos. The ground shook.
+   11. Artillery screamed across the sky. Men shouted, orders blurred into havoc. The ground shook.
+   12. You barely had time to think. You just aim, fire, move.
+   13. Someone yelled. Someone fell. The smell of blood and dirt filled your lungs.
+   14. Ramos was there, shouting to you and Diaz, pulling you down behind cover.
+   15. The shooting died down for a moment. Too soon, too quiet.
+   16. Someone yelled, "They're regrouping."
+   17. You caught a glimpse of the horizon. Black smoke and flashes of light.
+   18. Then came the second wave. Louder. Closer.
+   19. "Hold the line!" shouted a voice.
+   20. A shell hit somewhere near the front. The blast threw you and Diaz to the ground.
+   21. When you opened your eyes, everything rang. Ramos was shouting, dragging someone by the arm, someone who didn't move.
+   22. You didn't ask who. You just kept firing.
+7. Black Screen:
+   1. By the time it ended, the sun was already high.
+   2. The lieutenant called for retreat. No victory, just survival.
+   3. The rescue convoys came, and assisted everyone back to the camp.
+   4. The ride back to camp was quiet. No one mentioned the ones who didn't climb aboard.
+8. Overcrowded Camp:
+   1. When the trucks rolled into camp, it didn't feel like homecoming. The air was thick with smoke and exhaustion.
+   2. A few men were injured, some didn't make it back.
+9. Sgt Chaves:
+   1. The Sergeant had this look on his face. He didn't seem happy or relieved.
+   2. He just stared, knowingly, he remembered the faces of those who weren't present.
+   3. The bunks were still there, the mud still waiting, but the laughter that once filled the camp was gone.
+   4. After a short rollcall, he said softly, "Rest. You all need it."
+10. Black Screen:
+   1. Before long, came the night. Stars shined less bright that night. The air felt colder than usual.
+11. Overcrowded Camp:
+   1. The lamps burned low. No one spoke much. A few men cleaned their rifles out of habit. Others just stared at the floor.
+   2. You sat on your bunk, the same one as before, but it felt smaller somehow.
+   3. "You alright?" asked Ramos.
+   4. You don't know how to respond. You just shrugged.
+   5. You told him about the ear ringing when the shell hit.
+   6. You told him about the ground shaking, the shouting, the endless gunfire.
+   7. You told him about how scared you were.
+   8. You told him about how you didn't want to die.
+   9. "And yet you still remain here," he said.
+   10. For a while, neither of you spoke. The silence between you wasn't empty. It was full of what couldn't be said.
+   11. Diaz sat on the other side, staring at his boots.
+   12. "Can't sleep," he muttered. "Every time I close my eyes, it's like I'm replaying the whole thing."
+   13. "Well, let loose with us. Not like we could sleep either," Ramos replied.
+   14. You told them both how strange and different the camp felt when you returned. It's almost as if it changed in a way.
+   15. "Nothing changed, perhaps we did."
+   16. "Don't get poetic on us, Ramos!"
+   17. "Just saying we made it. That has to count for something," Ramos chuckled slightly.
+   18. A pause. And the laughter faded away.
+   19. "I thought I'd never see this place again. Never thought I would miss it so bad," Diaz said.
+   20. "Wonder when we will be sent out again."
+   21. "Maybe soon? Who knows," Ramos said.
+   22. "Maybe next time I won't come back," Diaz said quietly.
+   23. "Don't say that Diaz, you will make it back alive. You just have to keep moving"
+   24. "That's not what I mean, Ramos."
+   25. Another brief moment of silence.
+   26. "I heard papers are coming in tonight. What are you going to tell Maria?"
+   27. "I don't know Diaz. Might not even tell her to be honest."
+   28. "You won't tell her what happened?"
+   29. "No. She deserves peace, not this. I'll just tell her I was able to come back."
+   30. You told him that Maria deserves your honesty.
+   31. "I know. A girl like her deserves more than that, the whole world."
+   32. "But some things are just better left unsaid."
+   33. To an extent, you find yourself agreeing with him.
+   34. You think to yourself that worrying others might do more harm than good.
+   35. "What about you? What will you tell your mom?" Diaz asked you.
+   36. You shrugged, unsure of what to reply.
+   37. You think about what you should write next.
 Act 2
 Week 8
 Slides (in order):
-1. 
+1. Black Screen:
+   1. It feels like almost two years have passed since the war began.
+   2. Time no longer feels like something that moves. More so only something that repeats.
+   3. The war hasn't ended, only changed shape.
+   4. The regiment still marches forward.
+2. Training:
+   1. The whistle blows.
+   2. You rise with the others, boots scraping against the dirt, rifles clattering into position.
+   3. The old crew doesn't complain anymore. The shouting, the drills, they're just part of breathing now.
+   4. However, some of the new recruits seem to have a rougher time.
+   5. "We got a lot more work to do for some of the newbies."
+   6. Some of the old recruits chuckle, while the new recruits stay silent.
+3. Sgt Chaves:
+   1. "Attention, everyone. Don't forget your role and purpose for this nation."
+   2. "Some of the people here have seen it first hand. The true horrors of war."
+   3. "They have realized it, and are now working towards a brighter future."
+   4. "Now, new soldiers, I want you to do the same."
+   5. "I don't want to see you covered in blood and wounds."
+   6. "All of you."
+   7. "You are better than those monsters, beasts, those heels and sinners."
+   8. The Sergeant, still barking as always, but with a firmer tone.
+   9. "Yes sir!"
+   10. The new recruits still shake. The old ones don't.
+   11. "Hey, don't get too worked up about it. You will get there eventually," Ramos whispers.
+   12. You look over to Ramos, still kind and optimistic as always.
+   13. "But don't get too excited. War is not a kind place," Diaz whispers back.
+   14. You look over to Diaz, still the same person as well.
+   15. Sergeant Chaves walks the line, his face cut deep with exhaustion.
+   16. He still carries his voice like a hammer.
+   17. "Form up! Eyes forward! Keep your heads straight, soldiers!"
+   18. The echo bounces throughout the camp, swallowed by the wind.
+4. Black Screen:
+   1. Camp San Aurelio seems to be tougher than it was way back.
+   2. The same drills, the same meals, but different faces. Some new, some old, some gone.
+5. Meal Time Late Afternoon:
+   1. "Doesn't feel the same anymore, huh.."
+   2. "Yeah, the Sergeant seems more strict now."
+   3. "The drills have gotten tougher as well."
+   4. "I wonder when this will be over."
+   5. "Same here, brother."
+   6. The camp, still full of chatter, still full of uncertainty.
+   7. "Still the same slop? Well, as long as they keep feeding us," Diaz mutters.
+   8. "If not, I would've just left by now."
+   9. You stare at him.
+   10. "What? Can you really blame me? Anybody with a right mind would ditch this place."
+   11. "We get it Diaz, we can't blame you. I, for one, still fight for my future, my Maria, and my country."
+   12. "Maria this, Maria that. I don't have that so.."
+   13. "If I could leave, you know I would."
+   14. Ramos chuckles. "That's very like you, Diaz. But you cried missing this place in our first battle."
+   15. You laugh, but you don't agree or disagree with what Diaz said..
+6. Overcrowded Camp:
+   1. Night falls. Ramos leans against you, letter in hand. He smiles slightly.
+   2. "You think she'll still be waiting?" Diaz asks, wiping his rifle clean.
+   3. Ramos laughs. "Maria's stubborn. She'll wait even if it takes ten years."
+   4. You can't tell if it's hope or denial that keeps his pen moving.
+   5. But you still smile faintly, knowing that he looks forward to the future. A future even ten years from now.
+   6. But it's got you thinking about your mother again.
+   7. The fire burns low, throwing orange light over tired faces.
+   8. Ramos hums softly while Diaz is fast asleep.
+   9. Chaves stands watch near the perimeter, shoulders squared despite the weight he carries.
+   10. You glance at the stars.
+   11. They look duller now, smothered by the haze of gunfire and smoke that never quite leaves the sky.
+
 
 Week 9
 Slides (in order):
-1. 
+1. Black Screen:
+   1. The war has turned into rhythm.
+   2. A pattern of sound and silence, breath and gunfire.
+   3. You march when told, eat when told, fight when told.
+   4. You've become used to these conditions.
+   5. And when morning comes again, you rise and so does everyone else.
+   6. Another morning. Another set of drills.
+2. Sgt Chaves:
+   1. "We will be crossing a different route for the march for today."
+   2. "As always, I want everyone to be wary of their surroundings."
+   3. Sergeant Chaves' voice cuts through the air, sharp as ever. Orders were given.
+3. Training:
+   1. The sky is pale and thin, the kind that makes the world feel quiet before the noise begins.
+   2. "Formation, left flank!"
+   3. You fall in line with Ramos and Diaz, rifles raised, boots sinking into the dirt.
+   4. Ramos whispers under his breath, "Feels too calm today."
+   5. Diaz scoffs. "You'd rather it not be?"
+   6. You don't answer. You just keep moving.
+   7. "Positions, everyone! Let's get going."
+4. Ambush:
+   1. The sound of marching echoes its steady and rhythmic beat.
+   2. And then, a sudden noise.
+   3. Not the whistle. Not the Sergeant's call. A distant rumble, like thunder, but wrong.
+   4. Then the world around you explodes.
+   5. Dirt erupts, men scatter. The air fills with screams and smoke.
+   6. "AMBUSH! TAKE COVER!"
+   7. Sergeant Chaves' orders are drowned by the roar of gunfire.
+   8. The noise feels endless, bullets tearing through the air, the smell of iron and earth mixing thick in your lungs.
+5. Black Screen:
+   1. You can't see the others.
+   2. You can't even tell where the line is anymore.
+   3. You got lost in the chaos.
+   4. Someone yells, "Fall back! FALL BACK!"
+   5. You run. Branches hit your face, your boots drag through mud.
+   6. But you don't know where you need to go.
+   7. You run. You don't know how far you've gone.
+   8. The smoke hangs low.
+   9. You lean against a tree, wounded, rifle jammed, trying to listen past the ringing in your ears. You breathe, even if the air is filled with smoke.
+   10. That's when you hear footsteps.
+   11. Slow, dragging, uncertain.
+6. Leo n MC injured:
+   1. A soldier steps out, but he's not one of yours.
+   2. His uniform, torn and foreign, marks him as the enemy.
+   3. Blood stains his arm, on his stomach. His rifle is gone.
+   4. In a worse condition than you are.
+   5. Both of you freeze.
+   6. Two men. Two sides.
+   7. One moment that could end either way.
+   8. "Look, I'm not going to hurt you. We are both in no condition to fight anyway."
+   9. "I lost my team, it seems like you are the same."
+   10. You can't trust him. He's part of the enemy.
+   11. But you are exhausted, you don't have the capacity to deal with him.
+   12. You both stare at each other in silence, neither raise a hand.
+   13. There's no handshake, no trust, just survival.
+   14. Just a nod and a silent truce.
+   15. Two men. Brought together by instinct.
+   16. You gesture towards the direction opposite of the gunfire. 
+   17. The both of you traverse westwards. You, guiding the way, the other limping, trailing behind you.
+   18. It wasn't long until you met your battalion.
+   19. They saw who you were with, and it was an enemy, a member of the Legion.
+   20. You explain what happened and the Legion soldier was detained in chains.
+7. Black Screen:
+   1. You arrive back at camp and you get your wounds taken care of.
+   2. Tonight's topic is you and the Legion soldier.
+8. Overcrowded Camp:
+   1. Ramos rushes to you, "Holy hell! You're alive! I thought you were a goner back there."
+   2. "You look like you've been through a lot. What happened?"
+   3. You tell him about the adventure you had getting lost and the enemy that stumbled upon you.
+   4. "And so I've heard. Did you beat ‘em? Did he try anything on you?"
+   5. "Oh, I see. You were both wounded."
+   6. "Nice to see you have a kind heart."
+   7. "Even if he was an enemy and all that."
+   8. You tell him it was out of instinct and pure survival at that point.
+   9. You tell him there was no reason to fight.
+   10. "I understand, okay."
+   11. "Well, anyway. Glad to have you back, brother."
+   12. The camp bursts with suspicion. 
+   13. Some mutter he should be killed outright.
+   14. Others whisper about intel he might yield.
+   15. That night, your mind drifts and it starts to relive your encounter.
+   16. You still feel tense about the whole situation.
+
 
 Week 10
 Slides (in order):
-1. 
+1. Black Screen:
+   1. The next day came. The whistle blows loud.
+   2. "I have an important announcement to make. Everyone, outside."
+2. Sgt Chaves:
+   1. "This soldier, his name is Leo."
+   2. "He is not one of our allies. In fact, he is a member of the Legion."
+   3. "However, I do not see a need to kill just one member of the Legion."
+   4. "After a thorough chat with him, I have decided..."
+   5. "Leo would live, guarded, forced to labor under watch."
+   6. "The extra manpower will be handy around these parts."
+   7. "Do not lower your guard. He is still a member of the fiends of this calamity."
+   8. "Understood?"
+   9. He steps closer to Leo, lowering his voice.
+   10. "Be grateful for your life while you have it."
+   11. "Otherwise, you would've died where you stood."
+   12. Leo is just standing there, calmly. He doesn't say a word and you both make eye contact.
+   13. "You really brought one of them back," Diaz mutters to you.
+   14. You nod quietly.
+   15. "You know, if he bites back, I'll never forgive you." Followed by a brief moment of silence.
+   16. "Alright, back to the drills everyone."
+   17. "We are called for yet another operation a few days from now."
+   18. "Leo, you will have a special assignment."
+3. Few Battles:
+   1. Another round of gunshots, another round of smoke.
+   2. You feel used to it already.
+   3. "A few more rounds then another march!"
+   4. The whistle blows and it's finally time to eat.
+4. Meal Time Late Afternoon:
+   1. "He doesn't seem like a bad guy."
+   2. "You don't think anyone is a bad guy, Ramos."
+   3. "Haha, Diaz! That's not always true. I just feel it with this one."
+   4. "He's got this honest look to him."
+   5. You and Diaz don't fully understand Ramos, but in a way, you get what he is trying to say.
+   6. "It's still crazy you brought him in here," Diaz mutters. "He is an enemy! He was part of that ambush!" 
+   7. "I'm still scared and restless, you know."
+   8. "Things haven't gotten better, at least in my eyes."
+   9. "Man, I really should've used that opportunity to ditch."
+   10. "I feel very uneasy nowadays, and it only gets worse with Leo around."
+   11. You all sit in silence.
+   12. Ramos speaks up. "Well, he seems to be fully watched so I don't think anything major will happen between us and him."
+   13. "Don't worry too much, Diaz. We will be here for you."
+   14. "Isn't it better to face it together than alone?"
+   15. "I guess not," he replies back. "I'm just scared, that's all. I still really, really want to ditch this place goodbye."
+   16. He scoffs. "I wonder what Leo thinks about the slop we get served."
+   17. The three of you finish your meals before heading back to the bunks.
+   18. You stop halfway and see Leo.
+5. Leo Helping:
+   1. Leo is moving supplies around the camp.
+   2. He is guarded, everyone is looking at him.
+   3. Some glare, some whisper.
+   4. But he continues to work in silence.
+   5. No complaint, no hesitation. A true hard worker.
+   6. For a second, you think he looks almost like one of you. Almost.
+   7. Leo notices you and nods with a faint smile.
+   8. You nod back at him.
+   9. "Don't get soft," Diaz says, half-serious.
+   10. "Just because he's helping doesn't mean he's forgiven."
+   11. You don't reply and continue towards the bunk.
+   12. A short rest before you get sent out on another mission.
+6. Mission Briefings:
+   1. A few days pass.
+   2. "I don't expect any less from you folks."
+   3. "Some of you have grown to be stronger than ever."
+   4. "On my command, one hour south, you will aid fellow soldiers for lookout duty."
+7. Black Screen:
+   1. Before you know it, the mission is already over. 
+   2. No one was injured and everyone involved made it back.
+8. Overcrowded Camp:
+   1. Night falls.
+   2. And you see a small isolated tent and it's guarded.
+   3. This makes it Leo's tent.
+   4. He sleeps near the supply shelter, still alone.
+   5. You wonder if he dreams the same war you do.
+   6. You wonder if he dreams at all.
+
 
 Week 11
 Slides (in order):
-1. 
+1. Black Screen:
+   1. Days pass by quietly.
+   2. The camp is filled with a strange presence. An enemy living alongside his enemies.
+2. Sgt Chaves:
+   1. Sergeant Chaves' voice cuts across the field.
+   2. "Positions! Eyes forward! No excuses for slacking!"
+   3. "From now on, Leo will be alongside you soldiers."
+   4. "He will be doing basic drills, no rifles yet."
+   5. "If he ever dares cross the line with us, he knows what's coming to him."
+   6. "He may have proven himself useful outside of combat."
+   7. "But the real question is how well he would perform amidst conflict."
+   8. "As I have mentioned, he will be joining you all."
+   9. He chuckles, "Be it a soldier or as bait!"
+   10. Leo still remains quiet, understanding the situation he is in. 
+   11. He stands there, in front of everyone while wearing a uniform similar to that of your own.
+   12. Diaz whispers, "Haha! I think bait will be a great idea."
+3. Training:
+   1. The usual drills occur.
+   2. Leo is isolated from the rest of the battalion, but still being watched.
+   3. "Hey, don't you think he's starting to.. blend in?" Ramos asks you.
+   4. You think about it and nod slightly.
+   5. "I feel like it would seal the deal if he wore our uniforms."
+   6. You look over to Leo and he is doing the drills like no other in your battalion.
+   7. Swift, precise, vigorous.
+   8. A man strong enough to take down half of your battalion in hand-to-hand combat alone.
+   9. Diaz doesn't fully agree. "I don't know about blending in. I still don't trust him."
+   10. "Just don't get too friendly," Diaz mutters, but there's no real anger in his tone.
+   11. "Focus up, everyone!"
+   12. "Yes sir!"
+4. Black Screen:
+   1. Drills carry on until night.
+5. Meal Time Night:
+   1. Ramos nudges you. "Think he eats like us now?"
+   2. You glance toward Leo. Sitting alone, quietly eating.
+   3. Diaz shakes his head. "Doesn't talk, doesn't complain. Just works. I don't get it."
+   4. "What does he have for himself?"
+   5. "Maybe he just wants to live," Ramos shrugs.
+   6. You look at Leo again.
+   7. There's a stillness in him.
+   8. The kind that doesn't come from peace, but from exhaustion.
+   9. And so, you finally got the courage to walk up to him.
+   10. "Hey, wait up!" Ramos hurries.
+   11. Diaz, looking disappointed, "Seriously?"
+   12. As you get close, Leo looks at you. "Hey, if it isn't my guardian?"
+   13. "I haven't done proper introductions to anyone, but I'm Leo."
+   14. "You three seem close."
+   15. "How's camp life been?"
+   16. You were about to say something until Ramos cut you off.
+   17. "Glad you asked! My name is Ramos, you know this guy, and Diaz."
+   18. "We've been through a lot together, that's for sure."
+   19. Leo chuckles, "Well I don't doubt it a bit. It's never easy out here, haha!"
+   20. You ask him if he is okay.
+   21. "It's certainly better than death. You see, I still want to live."
+   22. "But thanks for asking, I guess. I'm thankful I've been given an opportunity like this."
+   23. "Although the Sergeant does seem a lot more harsh than I would've imagined."
+   24. Diaz immediately replies, "That's what I've been saying!"
+   25. "All I get from Ramos is that he is doing it for the greater good of us all."
+   26. "You know, he isn't completely wrong. To an extent, he cares about you folks," Leo replies. "And I am technically still part of the enemy, so I guess that adds up to the aggressiveness."
+6. Black Screen:
+   1. "Leo, meal time is up. You will be on patrol with a few of us tonight. Get ready."
+   2. "Well, see you guys around."
+   3. Leo leaves and the three of you wave goodbye.
+   4. Time for lights out.
+7. Overcrowded Camp:
+   1. "Hey, he doesn't seem like a bad guy.. right guys?" Ramos asks.
+   2. "I guess not.. but who knows for sure anyways?"
+   3. "It was just one interaction, Ramos."
+   4. "Hm, I guess you're right. What do you think?"
+   5. You tell them that you see some good light in Leo.
+   6. You tell them that you want to chat with him again.
+   7. "There will be other opportunities for sure. We just gotta wait for ‘em."
+   8. You think of these thoughts for the rest of the night.
+   9. You wonder if every Legion soldier is just like Leo.
+   10. Or is Leo just part of the very few that are kind.
+   11. You always knew the Legion as monsters, evil.
+   12. But then Leo appeared in your life.
+   13. You think that maybe, just maybe, Leo isn't a monster at all.
+   14. You think this person is genuinely kind and is doing his best to survive.
+   15. That he was never a monster to begin with.
+   16. You think that this may be the case for other Legion soldiers.
+   17. That they can be the same as you, forced to serve, struggling for survival.
+   18. Just like Leo.
+
 
 Week 12
 Slides (in order):
-1. 
+1. Black Screen:
+   1. What feels like weeks have passed.
+   2. The presence of Leo doesn't alarm everyone as much as it did back then.
+   3. Leo has been helping around the camp ever since he was captured.
+   4. Diaz still has his doubts about him, but is slowly starting to accept him.
+   5. Today, new orders have arrived.
+2. Mission Briefings:
+   1. "Listen up. Command has assigned us to secure a nearby supply route. Minimal resistance is to be expected."
+   2. His eyes sweep across the line and they linger a moment on Leo.
+   3. He continues, "Leo will come along. I'll see if his presence can be… useful."
+   4. "Thus, I will tag along in this operation."
+   5. A few soldiers exchange uneasy looks.
+   6. Diaz whispers, "He's bringing the Legion dog with us now? Really?"
+   7. Ramos replies softly, "C'mon, he's earned the chance. Don't you two think so?"
+   8. "I mean, sure I guess. He still needs to be watched though."
+   9. You don't say anything, but you feel the weight of the moment.
+3. Marching:
+   1. The dirt path winds through the woods, quiet except for the shuffle of boots.
+   2. Leo walks behind Ramos, carrying a crate of ammo.
+   3. You keep an eye on him, out of instinct more than mistrust.
+   4. Ramos hums faintly. "It's calm today."
+   5. Diaz mutters, "Not the first time you've said that."
+   6. Chaves raises a hand. "Stop."
+   7. The squad halts.
+   8. You hear the faint rustling of leaves and metallic clatter. Footsteps are almost nearly silent but swift.
+   9. Leo recognizes the pattern of a similar encounter as part of his training with the Legion.
+   10. "This is how they begin their ambush Sergeant."
+   11. "The Legion should have around 10 troops ready for combat."
+   12. "They will be approaching from both sides, left and right, a 5 man split."
+   13. Sergeant Chaves looks at Leo. "You've done this before, haven't you?"
+   14. "How many lives did you take?"
+   15. The atmosphere became slightly filled with animosity.
+   16. Leo doesn't reply, and insists on trusting him so they can avoid conflict.
+   17. Everyone is left with no choice but to do what Leo says to do.
+   18. A tense silence follows as everyone holds their breath.
+   19. Diaz, ready to leave at this very moment, but his legs start to shake.
+   20. Leo signals everyone with a gun to get up and shoot.
+   21. "In three, two, one."
+   22. "FIRE!"
+   23. Gunshots, followed by a short relief.
+   24. Diaz stands up, confused. "We did it?"
+   25. "My intel confirms that these were the only casualties."
+   26. "We are free to head back."
+   27. Ramos claps Leo on the shoulder. "You saved us out there."
+   28. Leo shakes his head. "Just did what anyone would."
+   29. You were amazed by the stunt he pulled and by the fact everyone followed his orders.
+   30. You compliment his tactics.
+   31. "It's nothing really. We learned this all the way back in Obersreich."
+   32. Chaves watches from a distance. His voice is unreadable when he finally speaks.
+   33. "Maybe he's not useless after all."
+   34. Diaz scoffs, but not as sharply as before.
+   35. "He's still Legion," he mutters. "A very useful and smart one at that."
+4. Black Screen:
+   1. The camp is noisier than ever.
+   2. Talks about Leo are spreading from soldier to soldier.
+   3. Leo is roaming around the camp more frequently.
+5. Meal Time Night:
+   1. That night, Leo decides to eat with you and the others.
+   2. "Mind if I eat here?" Leo asked politely.
+   3. "Go for it," Ramos replied.
+   4. "Feels nice to have some company again."
+   5. "I hope you folks don't feel so startled by me anymore."
+   6. "Especially you.. Diaz was it?"
+   7. He nods silently in disappointment.
+   8. "Don't sweat it."
+   9. Ramos laughs at Diaz. "Great catch."
+   10. "By the way, why don't you tell us who you are?"
+   11. "What are you fighting for?"
+   12. "We are all soldiers aren't we?"
+   13. "We all fight for something."
+   14. You are curious as well and ask the same things as Ramos.
+6. Leo Story Tell:
+   1. And shortly after, a small crowd forms around Leo as he begins to chatter.
+   2. "Well, you see.. I would love to see my family again."
+   3. "Family?"
+   4. "Yes, my wife and two kids. The joys of my life."
+   5. "However, my wife has been chronically ill since her mid teens."
+   6. "And things definitely took a turn before I left."
+   7. "My poor boys are looking after her now."
+   8. "So young, yet they love their mother as much as I do."
+   9. "So young, but they have to carry such a heavy burden."
+   10. "Normally, I would be the one to take care of them all."
+   11. "Like a breadwinner?"
+   12. "Yes, precisely."
+   13. "My wife's illness is still to be determined."
+   14. "We don't know yet for sure what it is."
+   15. "But I hope she and the kids are doing alright."
+   16. "My kids, they don't share the same illness as her mother."
+   17. "They seem to be quite healthy in comparison. Perhaps it was from me, haha."
+   18. "This might be a dumb question to ask, but do you miss home?"
+   19. "Of course. I miss every second of it. I miss my homeland in Obersreich."
+   20. "The food there was definitely better than what I've been fed here, haha!"
+   21. "But then again, supplies are rough so I understand that this is the quality of the meals we share."
+   22. "Anyway, Obersreich is where I grew up. In a small city away from the metropolis."
+   23. "Although my life wasn't exactly perfect. The previous war had left my family in a rough spot."
+   24. "There are no winners in war."
+   25. "That's just how it is."
+   26. "Obersreich, huh.. Why were you brought here anyway from so far away?"
+   27. "Well, as part of a special soldier program, I was assigned for an operation overseas which would pay a huge sum of money."
+   28. "A joint conquest with the Helion Empire."
+   29. "And I guess that operation led me here."
+   30. "Special soldier? You must be quite skilled then."
+   31. "Indeed I was, not to brag."
+   32. "I'm sort of ashamed that I ended up lost and wounded that day."
+   33. "As someone of my caliber, I shouldn't have made such a rookie mistake."
+   34. "But we aren't all perfect."
+   35. "Do you regret that?"
+   36. "It's hard to say."
+   37. "I would've taken any path that had me alive in it, haha!"
+   38. "It seems like I've shared quite a bit of myself. What about you three?"
+   39. You tell him about how you and your mother lived in a small town as well.
+   40. You tell him about your conscription, how you had to leave her at home so abruptly.
+   41. You tell him about the letters the people send.
+   42. "Letters huh? Very interesting, wish I had that sort of communication at the very least."
+   43. "My family is so far away, haha!"
+   44. "So you send letters to your mother, what a sweet child."
+   45. "It's unfortunate that you two had to separate."
+   46. "What about the two of you? Ramos, Diaz?"
+   47. "I send them to my dear Maria! The love of my life and soon to be wife! Well, hopefully at least."
+   48. "Oh Maria, I miss you very much. I am waiting for your next letter!"
+   49. Leo smiles. "Seems like you have a lot going on with her. I'm happy for you both. I wish you and her nothing but happiness and prosperity."
+   50. "I wonder what my wife is thinking about right now. Perhaps the same as your Maria, haha!"
+   51. "I wish I could exchange letters with my wife and kids. It would mean the world to me to hear from them again after so long."
+   52. "And I'm sure it would mean the world to them if you came back home," Ramos replies.
+   53. Leo nods.
+   54. "What about you, Diaz?"
+   55. "Me? I don't really have anyone to write to."
+   56. "To me, there's no point in doing any of that."
+   57. "It won't make anything in this war better."
+   58. "Food won't get better, battles won't end sooner."
+   59. "I have nothing to look after but myself."
+   60. "So I just use the papers for.. whatever."
+   61. "I just want to leave."
+   62. "I just want to escape."
+   63. "It sounds selfish, I get it."
+   64. "But is it really my fault?"
+   65. "Can you blame me for thinking so? I didn't choose to be here."
+   66. "Do I really need to bear any responsibility?"
+   67. "It's not even my fault."
+   68. "I just want to be somewhere safe and peaceful."
+   69. "I'm scared. Scared of death. Scared of uncertainty."
+   70. Leo looks at Diaz. "Listen, here."
+   71. "You can't be blamed for any of that, Diaz."
+   72. "It's only natural for us humans to want to live."
+   73. "Unfortunately, there are just no good sides to war."
+   74. "Even if you leave now, you may eventually be caught and face even worse consequences."
+   75. "But, I understand what you mean."
+   76. "Running away and being somewhere safe. It sounds ideal."
+   77. "For me, I find safety in the arms of my family."
+   78. "I, too, wish I could run away from this war."
+   79. "I want to run back into their lives."
+   80. "But even if I do, there's still no peace."
+   81. "War leaves no breaks for anyone."
+   82. Ramos asks, "Leo, be honest with me. Why do you intend on helping us?"
+   83. "I'm a bit selfish myself so.. I do it purely to survive."
+   84. "So I continue to fight, to live, until it fully ends."
+   85. "Until I can fully return home to them."
+   86. "But I wonder what they will think of me."
+   87. "Someone who joined forces with the enemy."
+   88. "Or perhaps they will just be glad to see me alive."
+   89. "If this is the path that lets me live another day, I will gladly stay on this path."
+   90. "No good will come from harm in my eyes."
+   91. "My real intentions are to go back home. Be it the easiest way possible."
+   92. "And so far, I have a feeling that helping you guys will be an easy ticket out."
+   93. "But who am I to decide that, haha!"
+7. Overcrowded Camp:
+   1. The conversation kept going.
+   2. Leo kept talking about his wife, his kids, and his home.
+   3. But then orders were made to cut the noise.
+   4. Back at your bunk, you think to yourself about Leo.
+   5. Leo is definitely not a monster.
+   6. The Legion is depicted as cruel, but Leo tells another story.
+   7. Leo, a member of the Legion, is a very caring and honest person.
+   8. Although, not every soldier is like Leo. But that doesn't mean that no one else is.
+   9. For the first time, you wonder. 
+   10. If the enemy laughs, works, and bleeds like you do… then what separates you from them?
+   11. The lines between what is an enemy and what isn't began to blur.
+8. Black Screen:
+   1. Your mind gets hazy with all these thoughts.
+   2. But you are firm with your belief in Leo. That he is inherently a good person.
+
 
 Week 13
 Slides (in order):
-1. 
+1. Black Screen:
+   1. The days pass quietly. Days turn to weeks.
+   2. The fighting slows.
+   3. The camp starts to breathe again even if only for a while.
+2. Training:
+   1. The whistle blows and training begins early in the morning.
+   2. But it doesn't last for long.
+   3. You, Ramos, and Diaz fall in line.
+   4. Leo is there too, carrying supplies across the field.
+   5. His movements are steady. Practiced like someone who's done this his whole life.
+   6. Diaz mutters, "Look at him. He doesn't even flinch when they bark at him."
+   7. Ramos replies, "He's just doing what he can. Maybe he's used to being yelled at."
+   8. You stay quiet.
+3. Meal Time Morning:
+   1. The four of you sit together. A habit that grew, a habit that no one talks about.
+   2. Diaz stirs his soup. "Can't believe we're still eating this sludge."
+   3. Ramos shrugs. "Could be worse. Could be no sludge at all."
+   4. Leo nods. "Yeah, at least there is sludge."
+   5. You ask Leo if he knows anything about cooking.
+   6. "Of course, but nothing beats the meals my wife makes."
+   7. "I can only do some of the basics."
+   8. "And I was taught how to survive in the wilderness so I could probably whip up a small, but nice meal if I come across the ingredients."
+   9. "You know… you're really not what I expected," Diaz says suddenly.
+   10. Leo looks up. "And what did you expect?"
+   11. "Someone I could hate easier," Diaz replies.
+   12. You don't say anything, but somewhat, you agree.
+   13. You never imagined a likeable Legion soldier.
+   14. But you are glad you met someone like Leo.
+   15. Leo doesn't smile this time. "I'm not asking for your kindness. Just your honesty. I could say the same about you folks."
+   16. Diaz exhales, turns away. "Yeah. Guess that's fair. Sorry about that."
+   17. "Not like I could've done anything about your prejudice against the Legion."
+   18. "But I guess I'm glad you don't hate me anymore."
+4. Black Screen:
+   1. Nights fall quieter now.
+   2. The campfire doesn't crackle with much laughter, only quiet talk.
+   3. Stories get traded not as soldiers, but as people remembering they once had lives beyond this place.
+   4. Even Leo.
+   5. In the stillness, you realize how thin the line has become.
+   6. Between enemy and ally, between stranger and brother.
+5. Overcrowded Camp:
+   1. Another restless evening.
+   2. Ramos says quietly, "You're still up?"
+   3. "What got you thinking up late?"
+   4. You ask Ramos what it means to be an enemy.
+   5. "Well, I can't really tell you. It doesn't seem like I am your enemy," he chuckles quietly.
+   6. You tell him about Leo.
+   7. What you've been thinking about and despite what was taught to you, you don't view him as a monster.
+   8. "Glad we're on the same page."
+   9. "I don't view him as a monster either, or someone not human."
+   10. "He is just like us all. We can see that."
+   11. You ask him a question.
+   12. "Why are we fighting? I don't know."
+   13. "Not everyone is like Leo. From what I know, the people with power are hungry for.. well, more power."
+   14. "That's just the reality."
+   15. You ask him what Maria would think.
+   16. "Maria will most likely say the same thing."
+   17. "She sees the good in everyone like I do."
+   18. "What would your mother say?"
+   19. You sit quietly and reflect. You shrug, unsure of what to say.
+
 
 Week 14
 Slides (in order):
-1. Act 3
+1. Black Screen:
+   1. The calm never lasts.
+   2. Orders came down at dawn. Crisp, cold, and final.
+   3. "Prisoner exchange approved."
+   4. The words spread through camp like smoke.
+   5. By noon, everyone knew.
+   6. By dusk, Leo would be gone.
+2. Sgt Chaves:
+   1. Sergeant Chaves stands before everyone. His tone, almost detached.
+   2. "I have received intel that a few men were captured by the Legion."
+   3. "The higher-ups set up a prisoner exchange with the Legion. We give them their man back. They give us ours."
+   4. "It was a tough decision for me to make, but our people are more important than theirs."
+   5. He glances toward Leo.
+   6. "Prepare him. The convoy leaves in two hours."
+   7. Ramos looks like he's been punched in the chest.
+   8. Diaz mutters, "Figures. The one time we get a decent worker around here…"
+   9. You don't say anything.
+   10. You just watch Leo. He was quiet, steady, nodding as if this was always expected.
+   11. "I know some of you enjoyed his presence."
+   12. Sergeant Chaves glances at you, Ramos, and Diaz.
+   13. "But it had to be done."
+   14. You tell yourself it's just another order.
+   15. But it doesn't feel that way.
+3. Overcrowded Camp:
+   1. Leo gathers what little he owns at his bunk.
+   2. Ramos sits on the floor. "Guess that's it, huh?"
+   3. Leo gives a faint smile. "Seems so."
+   4. Diaz scoffs, arms crossed. "Don't look so calm. If I were you, I'd already be running away."
+   5. Leo meets his eyes. "If I wanted to run, I would've done it long ago."
+   6. Silence follows.
+   7. Even Diaz can't come up with an answer.
+   8. You hand Leo a small canteen of water.
+   9. He takes it. "Thanks. For everything."
+   10. Ramos lets out a shaky breath. "You think they'll treat you alright out there?"
+   11. "I don't expect kindness. Just a chance to make it back home."
+   12. "You'll get there. Maria always says.." he stops himself, realizing the name means nothing to Leo, "..she says the good ones always find their way back."
+   13. Leo chuckles softly. "Then I'll hold on to that."
+   14. He turns to you. "You could've let me die that day. You didn't."
+   15. You don't answer right away, but you told him it didn't feel right.
+   16. "War makes right and wrong hard to tell apart. But I'll remember this. All of you."
+   17. Diaz shifts uncomfortably, muttering under his breath. "Just don't make us regret it."
+4. Black Screen:
+   1. And so the convoy arrives.
+   2. The air feels heavier than it should.
+   3. Even the sky looks tired.
+   4. It's just like they said.
+   5. Some of Marivelle's men in exchange for Leo.
+5. Leo Leaving:
+   1. Ramos clasps Leo's hand firmly, muttering a blessing.
+   2. Diaz says nothing, though his eyes follow every step.
+   3. You watch Leo leave every step of the way.
+   4. He glances back once, lets out a faint smile.
+   5. It's almost as if he is trying to say goodbye.
+   6. It's almost as if he makes a promise to go back home.
+   7. You wonder why he had to go.
+   8. Ramos says, "The lives of these soldiers bear the same weight as Leo's."
+   9. "If we were to not exchange, those men would've died."
+   10. "And perhaps in spite of that, Leo would be killed as well."
+   11. "It is unreasonable to let any of them die."
+   12. "They deserve a chance to live."
+   13. You nod, but a part of you feels empty.
+6. Black Screen:
+   1. The engine starts.
+   2. The convoy rolls forward, leaving behind a thin trail of smoke and silence.
+   3. The sound of the trucks fades away.
+   4. The camp feels emptier than before.
+7. Meal Time Night:
+   1. Ramos stares at his food. "Feels quiet tonight."
+   2. Diaz shrugs. "He was just one man."
+   3. But his voice doesn't carry conviction.
+   4. You say nothing.
+   5. Silence falls over the camp tonight.
+8. Overcrowded Camp:
+   1. That night, you can't sleep.
+   2. You think about Leo.
+   3. His last smile.
+   4. You wonder where he is right now.
+   5. You wonder if you'll ever see him again.
+   6. You wonder if any of you will see home.
+9. Black Screen:
+   1. But the stillness ends shortly.
+   2. The whistle blows at dawn.
+   3. Another day. Another drill.
+   4. New orders, new operations.
+   5. The same rhythm that has been piloting the camp since the beginning.
+   6. But a part of that rhythm is missing now.
+   7. The war keeps moving forward.
+Act 3
 Week 15
 Slides (in order):
-1. 
+1. Black Screen:
+   1. Three years. The war has stretched longer than anyone had imagined.
+   2. The regiment is a shadow of what once was.
+   3. The faces you once knew were gone. Voices once heard are silent.
+   4. What remains is routine, survival, and the weight of all that's been lost.
+2. Overcrowded Camp:
+   1. The bunks feel emptier than before.
+   2. New recruits fill the gap left by the fallen, but they don't replace them.
+   3. You sit on your cot, staring at the same walls you've stared at for years.
+   4. The whistle blows. Same as it always has.
+   5. But today it feels different.
+   6. It feels heavier.
+3. War Lore:
+   1. The whispers start that night.
+   2. Rumors spread through the camp like smoke.
+   3. The Legion is weakening. Or maybe the Vanguards are.
+   4. No one knows for sure.
+4. Meal Time Late Afternoon:
+   1. "I heard the western front collapsed," a soldier says.
+   2. "No, it was the eastern line. Legion pushed through."
+   3. "They're running out of men."
+   4. "We're running out of men."
+   5. The conversations turn into noise.
+5. Black Screen
+   1. Something is brewing, but the outcome is unclear.
+   2. Your chest feels heavy.
+   3. Perhaps the weight can be unloaded onto paper.
+
 
 Week 16
 Slides (in order):
-1. 
+1. Overcrowded Camp:
+   1. Even before dawn, the whispers grow louder.
+   2. "They say Helion's bringing everything they have."
+   3. "Heard we lost contact with the northern battalions."
+   4. Rumors are plentiful, but that's all they seem to be.
+   5. The soldiers receive nothing but orders.
+   6. Until the whistle blows.
+2. Mission Briefings:
+   1. Sergeant Chaves stands before the regiment, arms crossed.
+   2. His face has more lines than you remember, worn by years of holding everyone together.
+   3. "Listen up! Final orders have come down."
+   4. His words hang in the air like smoke.
+   5. "Command believes this will be the decisive push against Legion."
+   6. "This is what we've been preparing for."
+   7. He pauses, eyes scanning the faces of the men before him.
+3. Sgt Chaves:
+   1. "I won't lie to you. This will be the hardest fight you've faced."
+   2. "But if we hold the line, we can end this."
+   3. "Get your affairs in order. Write your letters. Say what needs to be said."
+   4. "We move at dawn.," he dismisses, but his voice follows.
+   5. "And survive, soldiers. That's an order."
+4. Black Screen:
+   1. The camp feels different that night.
+   2. Heavier.
+   3. As if the air itself knows what's coming.
+5. Overcrowded Camp:
+   1. Men sit on their bunks, pens in hand, paper before them.
+   2. Some write quickly, desperate to get everything down.
+   3. Others stare at blank pages, unable to find the words.
+   4. Ramos folds his letter carefully.
+   5. "Maria always said to come back to her," he says.
+   6. He takes out a ring from his pocket.
+   7. It was simple but beautiful.
+   8. He waves it at you. "And you can bet I will," he winks.
+   9. Diaz doesn't write. He never does.
+   10. Instead, he sits, head in his hands.
+   11. "I don't want to die out there," he whispers
+   12. Ramos looks over. "Then don't. Stay close. Stay sharp."
+   13. You look to your own blank page, thinking of what to write to your mother.
+   14. What can you say that you haven't already said?
+6. Black Screen:
+   1. The night stretches on, restless and heavy.
+   2. Sleep doesn't come for most.
+
 
 Week 17
 Slides (in order):
-1. 
+1. Black Screen:
+   1. Dawn comes too soon.
+   2. The whistle blows, sharp and final.
+   3. This is it.
+2. Overcrowded Camp:
+   1. "Form up! Move out!"
+   2. Sergeant Chaves' voice cuts through the chilly morning air.
+   3. The regiment gathers their gear in silence.
+   4. Rifles checked, helmets secured, faces grim.
+   5. Ramos clasps your shoulder. "We'll get through this together."
+   6. You nod.
+   7. Diaz stands beside you, trembling slightly.
+   8. "I should've run when I had the chance," he mutters.
+   9. You can't tell if he's joking or if he means it.
+3. Ramos n Diaz:
+   1. "Too late for that now," Ramos says. "We'll make it. All of us."
+   2. You want to believe him.
+4. Marching:
+   1. The march is long and silent.
+   2. The weight of what's coming presses down on everyone.
+   3. The horizon ahead is dark with smoke.
+   4. Artillery echoes in the distance, a constant rumble that shakes the ground.
+   5. "This is bigger than anything we've seen," someone mutters behind you.
+   6. Ramos keeps his eyes forward. "Then we fight bigger."
+   7. You glance at Diaz. His jaw is clenched, eyes wide.
+   8. You give him a reassuring nod.
+   9. He nods back, but the dread in his eyes is transparent.
+5. Black Screen:
+   1. The battlefield comes into view.
+   2. Trenches carved into the earth, barbed wire stretched across no man's land.
+   3. The air is thick with smoke and the smell of gunpowder.
+   4. You feel this is where it ends.
+   5. One way or another.
+6. Few Battles:
+   1. "Take positions!"
+   2. The regiment spreads out along the trench line.
+   3. You crouch beside Ramos and Diaz, rifle ready.
+   4. The waiting is worse than the fighting.
+   5. Then, the whistle blows.
+   6. "HERE THEY COME!
+7. MC squad fighting:
+   1. The world erupts.
+   2. Artillery screams overhead, shells exploding in bursts of fire and earth.
+   3. The ground shakes so violently, you can barely stand.
+   4. "FIRE! FIRE! FIRE!"
+   5. You raise your rifle, aim, fire. Over and over.
+   6. The noise is deafening. Gunfire, shouting, explosions, all blending into chaos.
+   7. Beside you, Ramos is steady. Firing with calm but determined precision.
+   8. Diaz is frantic, ducking and weaving, barely holding his rifle straight.
+   9. "Keep it together, Diaz!" Ramos shouts.
+   10. The first wave crashes against your line.
+   11. Legion soldiers push forward, and the fighting becomes desperate.
+   12. You fire until your rifle is hot. Reload and fire again.
+   13. Someone falls beside you.
+   14. You don't look.
+   15. You can't.
+   16. A shell hits close. Too close.
+   17. The blast throws you to the ground.
+   18. Your ears ring. Everything is muffled, distant.
+   19. You struggle through your feet, vision blurred.
+   20. Through the smoke, you see a figure.
+   21. A soldier in Legion colors.
+   22. He moves through the chaos with practiced precision.
+   23. Something about him is familiar.
+8. Black Screen:
+   1. And then you see his face.
+9. Leo Fighting:
+   1. Leo.
+   2. Your breath catches.
+   3. He's here. On the battlefield. Fighting.
+   4. For the other side.
+   5. His eyes meet yours across the smoke.
+   6. For a moment, the world narrows to just the two of you.
+   7. Recognition flashes in his eyes.
+   8. But there's no time for words.
+10. Black Screen:
+   1. Leo's squad presses forward.
+   2. They're tagging your position.
+   3. "INCOMING!"
+11. MC squad fighting:
+   1. Ramos is beside you, firing at the advancing soldiers.
+   2. "We need to hold this line!" he shouts.
+   3. You see Leo raising his rifle.
+   4. Everything slows.
+   5. The crack of gunfire.
+12. Ramos Shot 1:
+   1. Ramos jerks backward.
+   2. Blood blooms across his chest.
+   3. He falls.
+13. Black Screen:
+   1. You yell his name.
+   2. You scramble to him, pulling behind cover
+14. Ramos Shot 2:
+   1. His breathing is ragged, shallow.
+   2. Blood soaks through his uniform.
+   3. Your head aches. Too many things happening at once.
+   4. Ramos looks up at you, his hand clutching your uniform.
+   5. "Hey, hey," he says weakly. "It's okay."
+   6. You plead with him to stay with you.
+   7. He shakes his head with a smile. "Listen…"
+   8. His voice is fading.
+   9. Survive. Give your mother a warm hug.
+   10. He coughs blood on his lips.
+   11. He takes your hand and places a ring on your palm.
+   12. "Tell Maria…"
+   13. "I'm sorry."
+   14. His eyes close.
+   15. His hand goes limp.
+15. Black Screen:
+   1. The world stops.
+   2. You stare at the ring in your hand. A broken promise.
+   3. Everything around you becomes distant, meaningless.
+16. MC squad fighting:
+   1. You feel a fire in your chest.
+   2. You rise, rifle in hand, eyes scanning the battlefield.
+   3. You see Leo moving through the smoke.
+   4. He's fighting.
+   5. Just like you are. Just like Ramos did.
+   6. But it doesn't matter to you right now.
+   7. You move toward him.
+17. Black Screen:
+   1. The battle rages around you, but you only see him.[a][b]
+   2. Leo turns, as you approach.
+18. Leo Appearing:
+   1. His eyes widen with recognition.
+19. Black Screen:
+   1. You fire.
+20. Leo Shot:
+   1. Leo staggers.
+   2. He drops his weapon, falling to his knees.
+   3. You approach slowly, rifle still raised.
+   4. He looks up at you.
+   5. There is no anger in his eyes.
+   6. Only exhaustion.
+   7. "I…" he starts, voice cracking.
+   8. But there's nothing to say.
+   9. He did what he had to do.
+   10. So did you.
+   11. "My family…" he whispers.
+   12. His eyes close.
+21. Black Screen:
+   1. You stand, surrounded by smoke and gunfire.
+   2. Two men dead.
+   3. One by your hands.
+22. MC squad fighting:
+   1. "FALL BACK! FALL BACK!"
+   2. Someone is shouting orders.
+   3. Legion soldiers are retreating.
+   4. The battle is over.
+   5. They say you've won.
+   6. But it doesn't feel like a victory.
+23. Black Screen:
+   1. The smoke begins to clear.
+   2. Bodies lie scattered across the battlefield.
+   3. Some in your colors. Some in theirs.
+   4. All of them silent.
+
 
 Week 18
 Slides (in order):
-1. 
-
+1. Overcrowded Camp:
+   1. The atmosphere is heavy.
+   2. No one speaks of victory.
+   3. No one celebrates.
+   4. Sergeant Chaves stands near the entrance, watching survivors return.
+   5. His face unreadable.
+   6. When he sees you, he nods once.
+   7. "You made it."
+   8. You don't respond.
+2. Meal Time Late Afternoon:
+   1. There was little eating during dinner.
+   2. You feel the Ramos' ring in your pocket.
+   3. You'll get it to Maria.
+   4. You'll tell her about how he fought bravely.
+   5. You'll make sure of it.
+   6. Diaz sits across from you, staring at nothing.
+   7. "He's really gone," he mutters.
+   8. You nod solemnly.
+   9. "Leo too."
+   10. Another nod.
+   11. "What was the point?" Diaz asks to no one, his voice hollow.
+   12. "All of this and what was the point?"
+   13. You have no answer.
+   14. In the camp, there is an emptiness that nothing can fill.
+3. Black Screen:
+   1. The days blur together once more.
+   2. Rumors spread further.
+   3. The Legion is collapsing.
+   4. Their supply lines are cut.
+   5. Their armies surrendering.
+   6. It's almost over elsewhere, too.
+4. Sgt Chaves:
+   1. One morning, Sergeant Chaves gathers what's left of the regiment.
+   2. His voice has lost its usual fervor.
+   3. "Orders came down this morning."
+   4. "The Legion has formally surrendered."
+   5. "The war is over."
+   6. A collective sigh of relief echos amongst the soldiers. It felt like a breath they've been holding since the war started.
+   7. Men hug each other, grateful it's over.
+   8. Perhaps more grateful they survived.
+   9. But it is a quiet celebration, if it could even be called that.
+   10. Too many were lost.
+   11. "You're dismissed," Sergeant Chaves says simply.
+   12. "Go home."
+   13. He looks at each of you, one by one.
+   14. "Remember those who didn't."
+   15. He salutes.
+   16. You salute back.
+Epilogue
 Week 19
 Slides (in order):
-1. 
-
-Week 20
+1. Black Screen:
+   1. The war ends not with cheers, but with silence.
+   2. No victory march. No grand parade.
+   3. Only the stillness that comes when the guns forget to speak.[c]
+2. War Lore:
+   1. Smoke still clings to the hills.
+   2. The soil is broken and burned, the same color as the uniforms buried beneath it.
+   3. You can almost hear the echoes. The commands, screams, prayers, now carried only by the wind.
+   4. You march with the others who survived.
+   5. Fewer than you remember.
+   6. Each face reminds you of someone missing, each silence of a voice you'll never hear again.
+3. MC n Mom Hug:
+   1. Those who survived made it back to their home.
+   2. When you return home, your mother is waiting at the door.
+   3. Her hands tremble as she reaches for you, her eyes swollen from years of waiting.
+   4. She holds you tightly, as if afraid the war might take you again.
+   5. For a moment, you let yourself believe it's over.
+   6. That you have finally kept your promise.
+4. Black Screen:
+   1. But peace does not quiet the memories burned into your mind.
+   2. You still wake to the echoes of distant shells that no longer exist.
+   3. You still turn your head at every whistle, expecting orders.
+5. MC in Graveyard:
+   1. Weeks later, when the fields begin to bloom, you make your way to the cemetery.
+   2. The graves stretch endlessly, each name a story cut short.
+   3. But you are here for one.
+   4. Ramos.
+6. Ramos Grave:
+   1. It seems like Maria has left flowers and a pendant.
+   2. Someone else has left a small wooden cross tied with string.
+   3. You kneel, tracing his name with your fingers.
+   4. You remember his letters to Maria.
+   5. His laughter.
+   6. His kindness.
+   7. His faith that something beautiful waited beyond the smoke.
+7. Black Screen:
+   1. You keep walking. Past the fences. Past the graves.
+   2. Out where the earth is wild again.
+   3. Here, you stop.
+   4. It's where you imagine Leo might rest.
+   5. No grave. No name. Just wind and sky.
+8. Sky with Birds:
+   1. You stand there for a long time.
+   2. Thinking about the man who should've been your enemy.
+   3. But wasn't.
+   4. You wonder if he was ever buried.
+   5. You wonder if his family ever knew what became of him.
+   6. You wonder if his family still waits by the window for a father who will never return.
+   7. "I'm sorry," you say softly. "You both deserved better."
+   8. The wind carries your voice away.
+   9. The war has ended, but it still lives within you.
+   10. In the faces, the echoes, the empty spaces that peace can't fill.
+   11. You walk towards home, towards a life that no longer fits.
+   12. Behind you, the field lies still.
+   13. The memories of both of them fade beneath the quiet sky.
+9. Black Screen:
+   1. The war is over. But for those who remember, it never truly ends.
+Mental 0[d]
+Week -1
 Slides (in order):
-1. 
-
-Week 21
+1. Black Screen:
+   1. The camp. It's too quiet today.
+   2. You wake up to the sound of your own breathing.
+   3. It's fast, heavy, uneven, uncertain.
+2. Overcrowded Camp:
+   1. The others are gone. Gone by the whistle.
+   2. You just sit there, staring at the floor.
+   3. You can't remember when the drills stopped, or when the shouting faded.
+   4. An unfamiliar figure approaches you.
+   5. "Hey, what are you doing here?"
+   6. An unfamiliar voice. It doesn't disturb you.
+   7. You just stare right back at him. No words, no actions.
+   8. "Hey! Someone deal with this man!"
+3. Black Screen:
+   1. The day continues and you still sit in your bunk.
+   2. But then, you hear the Sergeant come.
+   3. The sound of his footsteps, as it draws it near.
+   4. Your heart begins to pound fast, hands trembling.
+4. Overcrowded Camp:
+   1. Sergeant Chaves and Ramos appear before you.
+   2. "Soldier, tell me. What is wrong?" Sergeant Chaves asks with a firm voice.
+   3. Ramos tries to reach you once. You didn't answer. You couldn't.
+   4. They manage to get you up on your feet.
+5. Black Screen:
+   1. But you don't feel any better.
+   2. The same drills, the same meals. You get so tired of it.
+6. Meal Time Early Afternoon:
+   1. You can't make words with the conversations you hear. It blurs into muffled noises.
+   2. Someone drops their food and they yell.
+   3. The noise, so sudden, so loud.
+   4. It makes you anxious.
+   5. Your heart begins to beat fast again, but nothing serious happens.
+   6. You eat alone and you barely touch your food.
+   7. Then the whistle blows for training.
+7. Training:
+   1. The shouting, the orders. It's loud.
+   2. Louder than you can remember, it sharpens your senses.
+   3. You are quick to respond to the drills. You are quick to lose energy. You sweat profusely.
+   4. Then, the sound of a gunshot rings your ears.
+   5. You can't handle it anymore and you yelled.
+8. Black Screen:
+   1. You run back to your bunk and sit there.
+   2. No one went after you, not even Ramos.
+   3. Stuck in the silence, you become paranoid. Unsure of what is to come next.
+9. Overcrowded Camp:
+   1. Once the day was over, everyone went back to rest.
+   2. You still can't understand what the people around you are saying.
+   3. But you know for sure that it's about you.
+10. Black Screen:
+   1. The camp quiets down, as everyone begins to sleep.
+   2. You rest uneasily in silence.
+11. Mental Health:
+   1. The next day, the Sergeant wakes you up.
+   2. "Get up."
+   3. "I can't fully blame you, soldier. It isn't entirely your fault. Too much time at the front can change a man. But I had hoped you were stronger."
+   4. You get sent away, far from the camp, far from the fighting.
+   5. But somewhere out there, the war still rages.
+   6. You wonder if your mind will ever be quiet again. 
+   7. You wonder if you will ever have peace in your heart.
+Family 0
+Week -2
 Slides (in order):
-1.
+1. Black Screen:
+   1. It's been weeks since your last letter from home.
+   2. You tell yourself that it's just delayed, over and over.
+2. Overcrowded Camp:
+   1. Usually when the letters arrive, there would be smiles, laughter, relief, tears all around you.
+   2. Ramos waves his own letter in excitement. 
+   3. "It's from Maria again."
+   4. You just nod, pretending you didn't notice your mother's letter is missing.
+3. Meal Time Early Afternoon:
+   1. You eat your usual meal and talk with Ramos.
+   2. "Still nothing yet, huh?"
+   3. "Doesn't it worry you? Doesn't it bother you?"
+   4. "I know for a fact that it would worry me if Maria was radio silent."
+   5. You tell him that you are worried, you are bothered.
+   6. You tell him how you want the letters to come back like before.
+   7. "Not much for me to say but, well, I hope you get one soon."
+   8. You thank him for his optimism.
+4. Black Screen:
+   1. That night, you sit in your bunk, filled with constant unease of what is happening to your mother.
+   2. You try to write another letter, but words don't come out.
+   3. You think hard, but nothing. There was no use in writing a letter.
+   4. Your mind is filled with thoughts and emotions, which tires you out.
+   5. You pass out.
+5. Overcrowded Camp:
+   1. The next day, a letter finally is handed to you.
+   2. The handwriting is familiar. It is your mother.
+   3. Your heart fills with slight excitement for a short while.
+   4. As you open the letter and start reading the contents, your smile begins to fade, your heart begins to sink.
+6. Family Relationship:
+   1. "Dear Son,"
+   2. "It feels like I'm not sure who you are anymore."
+   3. "The person who left isn't the one writing back."
+   4. "My son. You don't seem to be like him anymore."
+   5. "Please, stop sending these letters. It only hurts to read them."
+   6. "Whatever it is you are doing, I hope you do well."
+   7. "But please, do not involve me anymore."
+   8. "I'm sorry, this might be selfish."
+   9. "But I just can't take it anymore."
+   10. "It hurts, son."
+   11. "It hurts a mother to imagine what you are right now."
+   12. "I'm sorry. I really am."
+   13. "I love you with all my heart, but please.."
+   14. "Please don't anymore."
+   15. "All with love, Mom."
+   16. You stare at the words until you begin to cry.
+   17. Your vision becomes blurry, you can't make up words.
+   18. This is your mother's goodbye.
+   19. You continue to shed tears. And after a while, you fold the paper, carefully, almost gently like something fragile.
+7. Overcrowded Camp:
+   1. That night, Ramos sits beside you.
+   2. "You finally got a letter."
+   3. "Bad news?"
+   4. You don't answer. You just nod once and look away.
+   5. "I see. Sorry about that."
+   6. You both sit in silence.
+   7. He pats your back before leaving.
+   8. "In any case, don't worry too much about it. The more you think about it, the worse it can get."
+   9. You nod again, and the both of you head to sleep.
+   10. "Goodnight."
+8. Black Screen:
+   1. The next morning, you return to training.
+   2. You move through the drills without thought, without purpose.
+   3. You no longer write.
+   4. Mail is handed out again. Another round of laughter.
+   5. You hope that maybe there was more to what she said.
+   6. But, there was nothing left.
+   7. You don't expect anything anymore.
+   8. The next letter never comes.
+   9. And this time, you stop waiting.
+
+
+Patriotism 0
+Week -3
+Slides (in order):
+1. Black Screen:
+   1. Forceful hands jolt you awake.
+2. Overcrowded Camp:
+   1. Your protests muffled by heavy hands.
+   2. "Quiet, traitor," a low voice whispers.
+   3. You are dragged from your bunk, boots scraping against the floor.
+   4. The camp is dark, with only a few lanterns burning low.
+   5. Other soldiers watch in silence, their faces unreadable.
+   6. No one moves to help you.
+3. Overcrowded Camp:
+   1. They throw you into a small, window-less room.
+   2. Metal doors slam shut.
+   3. You hear a deadbolt lock.
+4. Black Screen:
+   1. Hours pass. Maybe days. You can't tell anymore.
+   2. Finally, the door opens.
+5. Overcrowded Camp:
+   1. Sergeant Chaves enters. His stare pierces through you.
+   2. "You know why you're here."
+   3. You shake your head.
+   4. "Don't play dumb with me, soldier."
+   5. He throws papers on the floor in front of you.
+   6. Letters. Your letters.
+   7. "These were intercepted."
+   8. Your heart sinks.
+6. Patriotism:
+   1. "Defeatist talk. Sympathy for the enemy."
+   2. "Questioning the war. Questioning your duty!"
+   3. "Do you know what we call that?"
+   4. His voice is cold, detached.
+   5. "Treason."
+   6. You begin to defend yourself but–
+   7. "Silence!" Chaves roars.
+   8. He leans close, voice dropping to a whisper.
+   9. "You've forgotten who the enemy is."
+   10. Again, you try to speak, to explain.
+   11. But what can you say?
+7. Overcrowded Camp:
+   1. "You're no longer fit for service."
+   2. "You'll be tried for sedition and spreading defeatist propaganda."
+   3. "May God have mercy on your soul."
+8. Black Screen:
+   1. The door slams again.
+   2. You're left alone in the dark.
+9. Overcrowded Camp:
+   1. Days blur together.
+   2. You're given minimal food and water.
+   3. You think of your mother.
+   4. What will they tell her?
+   5. That her son was a traitor?
+   6. That he betrayed his country?
+10. Black Screen:
+   1. The trial is swift.
+   2. Your letters are read aloud.
+   3. "Guilty," the officer declares.
+   4. "Dishonorably discharged."
+   5. "Stripped of rank and commendations."
+   6. "Sentenced to imprisonment for the duration of the war."
+   7. They lead you away in chains.
+11. Overcrowded Camp:
+   1. They take you to a military prison.
+   2. A place for deserters, cowards, traitors.
+   3. The cell is small, cold, and dark.
+   4. You share it with others who have been condemned.
+   5. You don't talk to them.
+   6. They don't try to speak with you either.
+12. Black Screen:
+   1. Months pass.
+   2. The war continues somewhere beyond these walls.
+   3. You hear rumors from the guards.
+13. War Lore:
+   1. Then one day, "The war's over. Legion surrendered."
+   2. You feel nothing.
+14. Overcrowded Camp:
+   1. Weeks later, they release you.
+   2. No ceremony. No apology.
+   3. Just a guard telling you to leave.
+   4. "You're free."
+   5. You're unsure what that means.
+   6. You walk through the gates.
+   7. The world outside is so bright, it's almost blinding.
+   8. People pass by going about their lives.
+   9. They don't know what you've been through.
+15. Black Screen:
+   1. You make your way back to your hometown.
+   2. The journey is long and lonely.
+   3. You have no money, no papers.
+   4. Just the clothes on your back, and the weight of your disgrace.
+   5. When you reach home, you stand outside for a long time.
+   6. You can see your mother through the window.
+   7. She looks older, worn.
+   8. You raise your had to knock.
+   9. But you can't.
+   10. What would you say?
+   11. You lower your hand.
+   12. Some distances are too far to cross.
+   13. You turn away.
+   14. You walk away from the only home you've ever known.
+   15. Into a world that has no place for you.

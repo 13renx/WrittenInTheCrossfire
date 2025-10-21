@@ -48,7 +48,7 @@
     <ClCompile Include="CampView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TableView.cpp">
+    <ClCompile Include="WriteLetterView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameModel.cpp">
@@ -70,6 +70,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Audio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadLetterView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,7 +119,7 @@
     <ClInclude Include="CampView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TableView.h">
+    <ClInclude Include="WriteLetterView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameModel.h">
@@ -138,6 +141,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Audio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadLetterView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

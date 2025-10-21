@@ -17,15 +17,15 @@ class ViewController {
 			ABOUT_VIEW,
 			SCENE_VIEW,
 			CAMP_VIEW,
-			TABLE_VIEW
+			WRITE_LETTER_VIEW
 		};
 
 	private:
 		GameModel& gameModel;
 		std::shared_ptr<GlobalWidgets> globalWidgets;
 		SceneModel sceneModel;
-		std::shared_ptr<View> activeView;
 		ViewType activeViewType;
+		std::shared_ptr<View> activeView;
 
 	public:
 		ViewController(GameModel& gameModel);

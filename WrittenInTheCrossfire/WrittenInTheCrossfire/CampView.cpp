@@ -25,32 +25,48 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     buttonLayoutOne = tgui::HorizontalLayout::create({ 500, 100 });
     writeButton = tgui::Button::create("WRITE A LETTER");
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");
-	buttonLayoutTwo = tgui::VerticalLayout::create({ 240, 220 });
-    cancelButton = tgui::Button::create("CANCEL");
-	selectButton = tgui::Button::create("SELECT");
+	patriotismPanel = tgui::Panel::create();
+	//buttonLayoutTwo = tgui::VerticalLayout::create({ 240, 220 });
+	//cancelButton = tgui::Button::create("CANCEL");
+	//selectButton = tgui::Button::create("SELECT");
 	
+	{
+		Stats stats = gameState.getCurrentStats();
+
+		// Patriotism
+		if(stats.patriotism > 75) {
+			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Very Good.png");
+		} else if(stats.patriotism > 50) {
+			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Good.png");
+		} else if(stats.patriotism > 25) {
+			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Bad.png");
+		} else if(stats.patriotism < 26) {
+			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Worse.png");
+		}
+	}
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
-    buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
-    buttonLayoutTwo->setVisible(false);
+    //buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
+    //buttonLayoutTwo->setVisible(false);
 
 	writeButton->onClick([=] {
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
-		this->viewController->changeView(ViewController::ViewType::TABLE_VIEW);
+		this->viewController->changeView(ViewController::ViewType::WRITE_LETTER_VIEW);
 	});
 	dontWriteButton->onClick([=] {
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
 		this->isDontWriteClicked = true;
 	});
-
+	
+	mainPanel->add(patriotismPanel);
 	mainPanel->add(buttonLayoutOne);
-	mainPanel->add(buttonLayoutTwo);
+	//mainPanel->add(buttonLayoutTwo);
 	buttonLayoutOne->add(writeButton);
 	buttonLayoutOne->add(dontWriteButton);
-	buttonLayoutTwo->add(cancelButton);
-	buttonLayoutTwo->add(selectButton);
+	//buttonLayoutTwo->add(cancelButton);
+	//buttonLayoutTwo->add(selectButton);
 }
 
 CampView::~CampView() {

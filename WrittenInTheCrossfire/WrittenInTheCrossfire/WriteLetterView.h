@@ -8,7 +8,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class TableView : public View
+class WriteLetterView : public View
 {
 	private:
 		Client& client;
@@ -26,8 +26,8 @@ class TableView : public View
 		bool isSendClicked;
 
 	public:
-		TableView(ViewController* viewController, GameModel& gameModel);
-		~TableView();
+		WriteLetterView(ViewController* viewController, GameModel& gameModel);
+		~WriteLetterView();
 
 		void send();
 };

@@ -17,9 +17,10 @@ class CampView : public View
 		tgui::HorizontalLayout::Ptr buttonLayoutOne;
 		tgui::Button::Ptr writeButton;
 		tgui::Button::Ptr dontWriteButton;
-		tgui::VerticalLayout::Ptr buttonLayoutTwo;
-		tgui::Button::Ptr cancelButton;
-		tgui::Button::Ptr selectButton;
+		tgui::Panel::Ptr patriotismPanel;
+		//tgui::VerticalLayout::Ptr buttonLayoutTwo;
+		//tgui::Button::Ptr cancelButton;
+		//tgui::Button::Ptr selectButton;
 
 		bool isRunning;
 		bool isDontWriteClicked;

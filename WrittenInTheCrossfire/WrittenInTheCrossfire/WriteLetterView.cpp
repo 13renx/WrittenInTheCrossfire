@@ -1,4 +1,4 @@
-#include "TableView.h"
+#include "WriteLetterView.h"
 #include "Client.h"
 #include "GameModel.h"
 #include "Macros.h"
@@ -15,13 +15,13 @@
 
 using json = nlohmann::json;
 
-TableView::TableView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/TableView.PNG")), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
+WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, "Assets/Textures/Backgrounds/WriteLetterView.PNG"), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
 	isRunning = true;
 	isSendClicked = false;
-	std::thread sendThread(&TableView::send, this);
+	std::thread sendThread(&WriteLetterView::send, this);
 	sendThread.detach();
 
 	// Initialize widgets
@@ -74,11 +74,11 @@ TableView::TableView(ViewController* viewController, GameModel& gameModel) : Vie
 	buttonLayout->add(sendButton);
 }
 
-TableView::~TableView() {
+WriteLetterView::~WriteLetterView() {
 	isRunning = false;
 }
 
-void TableView::send() {
+void WriteLetterView::send() {
 	while(isRunning) {
 		if(isSendClicked) {
 			std::string textAreaText = letterTextArea->getText().toStdString();

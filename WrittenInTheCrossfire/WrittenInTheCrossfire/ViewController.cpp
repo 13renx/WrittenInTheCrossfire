@@ -7,13 +7,13 @@
 #include "SceneView.h"
 #include "SettingsView.h"
 #include "AboutView.h"
-#include "TableView.h"
+#include "WriteLetterView.h"
 #include "View.h"
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), sceneModel(SceneModel()), activeView(std::make_shared<MainMenuView>(this, this->gameModel)), activeViewType(ViewController::ViewType::MAIN_MENU_VIEW) {}
+ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), sceneModel(SceneModel()), activeViewType(ViewController::ViewType::CAMP_VIEW), activeView(std::make_shared<CampView>(this, this->gameModel)) {}
 
 std::shared_ptr<GlobalWidgets> ViewController::getGlobalWidgets() {
 	return globalWidgets;
@@ -43,8 +43,8 @@ void ViewController::changeView(ViewType viewType) {
 		case ViewType::CAMP_VIEW:
 			activeView = std::make_shared<CampView>(this, this->gameModel);
 			break;
-		case ViewType::TABLE_VIEW:
-			activeView = std::make_shared<TableView>(this, this->gameModel);
+		case ViewType::WRITE_LETTER_VIEW:
+			activeView = std::make_shared<WriteLetterView>(this, this->gameModel);
 			break;
 	}
 }

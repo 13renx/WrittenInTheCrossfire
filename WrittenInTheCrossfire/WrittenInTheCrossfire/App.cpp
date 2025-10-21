@@ -22,7 +22,7 @@ void App::run() {
 			}
 
 			if(const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-				if(keyPressed->scancode == sf::Keyboard::Scan::Escape && (activeViewType == ViewController::ViewType::SCENE_VIEW || activeViewType == ViewController::ViewType::CAMP_VIEW || activeViewType == ViewController::ViewType::TABLE_VIEW)) {
+				if(keyPressed->scancode == sf::Keyboard::Scan::Escape && (activeViewType == ViewController::ViewType::SCENE_VIEW || activeViewType == ViewController::ViewType::CAMP_VIEW || activeViewType == ViewController::ViewType::WRITE_LETTER_VIEW)) {
 					if(menuParentPanel->isVisible()) {
 						menuParentPanel->setVisible(false);
 					} else {

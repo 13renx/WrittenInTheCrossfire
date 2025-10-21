@@ -1286,7 +1286,7 @@ Slides (in order):
    6. But it doesn't matter to you right now.
    7. You move toward him.
 17. Black Screen:
-   1. The battle rages around you, but you only see him.[a][b]
+   1. The battle rages around you, but you only see him.
    2. Leo turns, as you approach.
 18. Leo Appearing:
    1. His eyes widen with recognition.
@@ -1379,7 +1379,7 @@ Slides (in order):
 1. Black Screen:
    1. The war ends not with cheers, but with silence.
    2. No victory march. No grand parade.
-   3. Only the stillness that comes when the guns forget to speak.[c]
+   3. Only the stillness that comes when the guns forget to speak.
 2. War Lore:
    1. Smoke still clings to the hills.
    2. The soil is broken and burned, the same color as the uniforms buried beneath it.
@@ -1433,7 +1433,7 @@ Slides (in order):
    13. The memories of both of them fade beneath the quiet sky.
 9. Black Screen:
    1. The war is over. But for those who remember, it never truly ends.
-Mental 0[d]
+Mental 0
 Week -1
 Slides (in order):
 1. Black Screen:

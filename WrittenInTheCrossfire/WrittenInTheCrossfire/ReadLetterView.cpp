@@ -57,7 +57,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	letterTextArea->setTextSize(30);
 	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 26, (tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea)) / 2.0f - 8);
 	letterTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
-	letterTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);
+	letterTextArea->getRenderer()->setSelectedTextColor(tgui::Color::Black);
 	letterTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	letterTextArea->getRenderer()->setTextColor(tgui::Color::Black);
 	finishButton->setSize(240, 100);

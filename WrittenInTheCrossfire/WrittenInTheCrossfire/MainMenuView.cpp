@@ -112,6 +112,8 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 
 			if(result) {
 				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+			} else {
+				apiGroup->setVisible(true);
 			}
 		}
 	});

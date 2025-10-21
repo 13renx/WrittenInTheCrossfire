@@ -18,6 +18,8 @@ class CampView : public View
 		tgui::Button::Ptr writeButton;
 		tgui::Button::Ptr dontWriteButton;
 		tgui::Panel::Ptr patriotismPanel;
+		tgui::Panel::Ptr familyRelationshipPanel;
+		tgui::Panel::Ptr mentalWellbeingPanel;
 		//tgui::VerticalLayout::Ptr buttonLayoutTwo;
 		//tgui::Button::Ptr cancelButton;
 		//tgui::Button::Ptr selectButton;

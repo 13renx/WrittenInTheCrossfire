@@ -29,10 +29,13 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     writeButton = tgui::Button::create("WRITE A LETTER");
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");
 	patriotismPanel = tgui::Panel::create();
+	familyRelationshipPanel = tgui::Panel::create();
+	mentalWellbeingPanel = tgui::Panel::create();
 	//buttonLayoutTwo = tgui::VerticalLayout::create({ 240, 220 });
 	//cancelButton = tgui::Button::create("CANCEL");
 	//selectButton = tgui::Button::create("SELECT");
-	
+
+	mentalWellbeingPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	{
 		Stats stats = gameState.getCurrentStats();
 
@@ -46,9 +49,32 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		} else if(stats.patriotism < 26) {
 			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Worse.png");
 		}
+
+		// Family Relationship
+		if(stats.familyRelationship > 75) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
+		} else if(stats.familyRelationship > 50) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
+		} else if(stats.familyRelationship > 25) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
+		} else if(stats.familyRelationship < 26) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
+		}
+
+		// Mental Wellbeing
+		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
+		} else if(stats.mentalWellbeing > 25) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
+		} else if(stats.mentalWellbeing < 26) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
+		}
 	}
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
+	familyRelationshipPanel->setScale(0.5f);
+	familyRelationshipPanel->setPosition(70, 460);
+
     //buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     //buttonLayoutTwo->setVisible(false);
 
@@ -64,6 +90,8 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	});
 	
 	mainPanel->add(patriotismPanel);
+	mainPanel->add(familyRelationshipPanel);
+	mainPanel->add(mentalWellbeingPanel);
 	mainPanel->add(buttonLayoutOne);
 	//mainPanel->add(buttonLayoutTwo);
 	buttonLayoutOne->add(writeButton);
@@ -115,12 +143,12 @@ void CampView::dontWrite() {
 			std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
 			json parsedText = json::parse(text);
 
-			// Update checkpoint
-			gameState.updateCheckpoint();
-
 			// Update stats
 			gameState.updateCurrentStats(parsedText["stats"]);
 			Stats& stats = gameState.getCurrentStats();
+			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
+
+			// Update checkpoint
 			if(stats.mentalWellbeing < 1) {
 				gameState.setCheckpoint(-1);
 			}
@@ -129,8 +157,9 @@ void CampView::dontWrite() {
 			}
 			else if(stats.patriotism < 1) {
 				gameState.setCheckpoint(-3);
+			} else {
+				gameState.updateCheckpoint();
 			}
-			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
 
 			// Update chat history
 			std::string letter = parsedText["letter"];

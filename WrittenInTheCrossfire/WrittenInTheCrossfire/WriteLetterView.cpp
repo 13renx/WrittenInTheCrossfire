@@ -163,9 +163,6 @@ void WriteLetterView::send() {
 				std::string text = res["candidates"][0]["content"]["parts"][0]["text"];
 				json parsedText = json::parse(text);
 
-				// Update checkpoint
-				gameState.updateCheckpoint();
-
 				// Update stats
 				gameState.updateCurrentStats(parsedText["stats"]);
 				Stats& stats = gameState.getCurrentStats();
@@ -179,6 +176,20 @@ void WriteLetterView::send() {
 					gameState.setCheckpoint(-3);
 				}
 				std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
+
+				// Update checkpoint
+				if(stats.mentalWellbeing < 1) {
+					gameState.setCheckpoint(-1);
+				}
+				else if(stats.familyRelationship < 1) {
+					gameState.setCheckpoint(-2);
+				}
+				else if(stats.patriotism < 1) {
+					gameState.setCheckpoint(-3);
+				}
+				else {
+					gameState.updateCheckpoint();
+				}
 
 				// Update chat history
 				std::string letter = parsedText["letter"];

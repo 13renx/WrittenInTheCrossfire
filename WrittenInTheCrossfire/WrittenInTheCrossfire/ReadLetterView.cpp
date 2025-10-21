@@ -15,7 +15,37 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	// Initialize widgets
 	letterTextArea = tgui::TextArea::create();
 	finishButton = tgui::Button::create("FINISH READING");
+	familyRelationshipPanel = tgui::Panel::create();
+	mentalWellbeingPanel = tgui::Panel::create();
+	
+	{
+		Stats stats = gameState.getCurrentStats();
 
+		// Family Relationship
+		if(stats.familyRelationship > 75) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
+		}
+		else if(stats.familyRelationship > 50) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
+		}
+		else if(stats.familyRelationship > 25) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
+		}
+		else if(stats.familyRelationship < 26) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
+		}
+
+		// Mental Wellbeing
+		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
+		}
+		else if(stats.mentalWellbeing > 25) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
+		}
+		else if(stats.mentalWellbeing < 26) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
+		}
+	}
 	{
 		std::vector<json> chatHistory = gameState.getChatHistory();
 		json j = chatHistory.at(chatHistory.size() - 1);
@@ -35,6 +65,8 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 
+	mainPanel->add(familyRelationshipPanel);
+	mainPanel->add(mentalWellbeingPanel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(finishButton);
 }

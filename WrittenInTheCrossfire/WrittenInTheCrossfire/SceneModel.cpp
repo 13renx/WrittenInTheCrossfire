@@ -8,7 +8,7 @@
 SceneModel::SceneModel() {
     std::ifstream file = std::ifstream("WITC In-game Story.txt");
     std::string line;
-    int checkpoint = -1;
+    int checkpoint = -4;
     std::string texture = "EMPTY";
     std::string dialogue = "EMPTY";
 
@@ -21,7 +21,7 @@ SceneModel::SceneModel() {
             dialogue = "EMPTY";
         }
         else if(line.starts_with("Act")) {
-            checkpoint = -1;
+            checkpoint = -4;
             texture = "EMPTY";
             dialogue = "EMPTY";
         }
@@ -64,7 +64,7 @@ SceneModel::SceneModel() {
             }
         }
 
-        if(checkpoint != -1 && texture != "EMPTY" && dialogue != "EMPTY") {
+        if(checkpoint != -4 && texture != "EMPTY" && dialogue != "EMPTY") {
             assets.push_back(std::make_tuple(checkpoint, texture, dialogue));
         }
     }

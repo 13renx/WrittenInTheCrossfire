@@ -120,7 +120,16 @@ void CampView::dontWrite() {
 
 			// Update stats
 			gameState.updateCurrentStats(parsedText["stats"]);
-			Stats stats = gameState.getCurrentStats();
+			Stats& stats = gameState.getCurrentStats();
+			if(stats.mentalWellbeing < 1) {
+				gameState.setCheckpoint(-1);
+			}
+			else if(stats.familyRelationship < 1) {
+				gameState.setCheckpoint(-2);
+			}
+			else if(stats.patriotism < 1) {
+				gameState.setCheckpoint(-3);
+			}
 			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
 
 			// Update chat history

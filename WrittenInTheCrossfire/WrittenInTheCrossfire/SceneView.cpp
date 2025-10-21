@@ -6,6 +6,7 @@
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
+#include <filesystem>
 #include <memory>
 #include <string>
 #include <tuple>
@@ -33,6 +34,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	dialogTextArea->setSize(1200, 300);
 	dialogTextArea->setTextSize(30);
+	dialogTextArea->getRenderer()->setTextColor(tgui::Color::White);
 	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 	{
@@ -48,6 +50,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 		if(checkpoint == 0 && assetIndex == assets.size()) {
 			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == assets.size()) {
+			std::filesystem::remove("game.json");
 			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 		} else if(assetIndex < assets.size()) {
 			if(std::get<1>(this->assets.at(assetIndex)) != "") {

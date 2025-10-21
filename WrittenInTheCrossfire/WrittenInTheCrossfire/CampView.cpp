@@ -64,7 +64,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		// Mental Wellbeing
 		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
 			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
-		} else if(stats.mentalWellbeing > 25) {
+		} else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
 			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
 		} else if(stats.mentalWellbeing < 26) {
 			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");

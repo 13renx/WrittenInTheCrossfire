@@ -117,22 +117,30 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	});
 	optionsContinueLabel->onClick([=, &window, &client, &gameState] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		auto [result, message] = gameState.load();
 		
-		if(result) {
-			auto [result, message] = client.testApiKey(client.getApiKey());
 
-			alertLabel->setText(message);
-			alertChildWindow->setVisible(true);
+		if(client.getApiKey() == "") {
+			apiGroup->setVisible(true);
+		} else {
+			auto [result, message] = gameState.load();
 
 			if(result) {
-				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+				auto [result, message] = client.testApiKey(client.getApiKey());
+
+				alertLabel->setText(message);
+				alertChildWindow->setVisible(true);
+
+				if(result) {
+					this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+				} else {
+					apiGroup->setVisible(true);
+				}
+			} else {
+				alertLabel->setText(message);
+				alertChildWindow->setVisible(true);
+				optionsContinueLabel->setEnabled(false);
+				optionsContinueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
 			}
-		} else {
-			alertLabel->setText(message);
-			alertChildWindow->setVisible(true);
-			optionsContinueLabel->setEnabled(false);
-			optionsContinueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
 		}
 	});
 	optionsSettingsLabel->onClick([=, &window] {
@@ -165,7 +173,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	apiButtonsLayout->add(apiCancelButton);
 	optionsLayout->add(optionsNewGameLabel);
 	optionsLayout->add(optionsContinueLabel);
-	optionsLayout->add(optionsSettingsLabel);
+	//optionsLayout->add(optionsSettingsLabel);
 	optionsLayout->add(optionsAboutLabel);
 	optionsLayout->add(optionsExitLabel);
 }

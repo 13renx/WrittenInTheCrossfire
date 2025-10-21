@@ -18,6 +18,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	familyRelationshipPanel = tgui::Panel::create();
 	mentalWellbeingPanel = tgui::Panel::create();
 	
+	mentalWellbeingPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	{
 		Stats stats = gameState.getCurrentStats();
 
@@ -39,7 +40,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
 			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
 		}
-		else if(stats.mentalWellbeing > 25) {
+		else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
 			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
 		}
 		else if(stats.mentalWellbeing < 26) {
@@ -54,10 +55,11 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	letterTextArea->setReadOnly();
 	letterTextArea->setSize(822, 995);
 	letterTextArea->setTextSize(30);
-	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 25, (tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea)) / 2.0f - 8);
+	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 26, (tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea)) / 2.0f - 8);
 	letterTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
 	letterTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);
 	letterTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
+	letterTextArea->getRenderer()->setTextColor(tgui::Color::Black);
 	finishButton->setSize(240, 100);
 	finishButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(finishButton), tgui::bindHeight(gui) - tgui::bindHeight(finishButton));
 

@@ -30,10 +30,41 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogTextArea = tgui::TextArea::create();
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0);
 	letterTextArea = tgui::TextArea::create();
+	familyRelationshipPanel = tgui::Panel::create();
+	mentalWellbeingPanel = tgui::Panel::create();
 	buttonLayout = tgui::VerticalLayout::create({ 240, 220 });
 	cancelButton = tgui::Button::create("CANCEL WRITING");
 	sendButton = tgui::Button::create("SEND LETTER");
 
+	mentalWellbeingPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
+	{
+		Stats stats = gameState.getCurrentStats();
+
+		// Family Relationship
+		if(stats.familyRelationship > 75) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
+		}
+		else if(stats.familyRelationship > 50) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
+		}
+		else if(stats.familyRelationship > 25) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
+		}
+		else if(stats.familyRelationship < 26) {
+			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
+		}
+
+		// Mental Wellbeing
+		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
+		}
+		else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
+		}
+		else if(stats.mentalWellbeing < 26) {
+			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
+		}
+	}
 	dialogPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	dialogPanel->setSize(1920, 1080);
 	dialogPanel->setVisible(false);
@@ -43,12 +74,15 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	dialogTextArea->setSize(1200, 300);
 	dialogTextArea->setTextSize(30);
+	dialogTextArea->getRenderer()->setTextColor(tgui::Color::White);
 	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
-	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 40);
-	letterTextArea->setSize(730, 647);
+	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 30, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 90);
+	dearLabel->getRenderer()->setTextColor(tgui::Color::Black);
+	letterTextArea->setSize(822, 900);
 	letterTextArea->setTextSize(30);
-	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea));
+	letterTextArea->getRenderer()->setTextColor(tgui::Color::Black);
+	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 26, (tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea)) / 2.0f + 40);
 	letterTextArea->setMaximumCharacters(1500);
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
@@ -65,7 +99,9 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	sendButton->onClick([=] {
 		this->isSendClicked = true;
 	});
-	
+
+	mainPanel->add(familyRelationshipPanel);
+	mainPanel->add(mentalWellbeingPanel);
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(buttonLayout);

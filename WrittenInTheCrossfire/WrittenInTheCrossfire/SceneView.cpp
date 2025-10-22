@@ -48,6 +48,9 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 		int checkpoint = gameState.getCheckpoint();
 
 		if(checkpoint == 0 && assetIndex == assets.size()) {
+			gameState.updateCheckpoint();
+			this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+		} else if(checkpoint == 1 && assetIndex == assets.size()) {
 			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == assets.size()) {
 			std::filesystem::remove("game.json");

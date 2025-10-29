@@ -16,8 +16,6 @@
     1. Install fmtlib/fmt with vcpkg
     1. Install nlohmann/json with vcpkg
     1. Install libcpr/cpr with vcpkg
-1. Install laserpants/dotenv-cpp
-    1. Clone laserpants/dotenv-cpp in `C:\Libraries`
 1. Clone this repository
 
 ## Dependencies
@@ -27,9 +25,6 @@
 - **[fmtlib/fmt](https://github.com/fmtlib/fmt)**
   - **Author:** [fmtlib](https://github.com/fmtlib)
   - **License:** [MIT License](https://github.com/fmtlib/fmt/blob/master/LICENSE)
-- **[laserpants/dotenv-cpp](https://github.com/laserpants/dotenv-cpp)**
-  - **Author:** [Heikki Johannes Hildén](https://github.com/laserpants)
-  - **License:** [BSD 3-Clause "New" or "Revised" License](https://github.com/laserpants/dotenv-cpp/blob/master/LICENSE)
 - **[libcpr/cpr](https://github.com/libcpr/cpr)**
   - **Author:** [libcpr](https://github.com/libcpr)
   - **License:** [MIT License](https://github.com/libcpr/cpr/blob/master/LICENSE)
@@ -39,12 +34,6 @@
 - **[SFML](https://www.sfml-dev.org/)**
   - **Author:** [SFML](https://github.com/SFML)
   - **License:** [zlib License](https://github.com/SFML/SFML/blob/master/license.md)
-
-### Fonts
-
-- **[Quentin](https://www.dafont.com/quentin-2.font?l[]=10&l[]=1)**
-  - **Author:** [Get Studio](https://www.getstud.io/)
-  - **License:** 100% free
   
 ## Authors
 

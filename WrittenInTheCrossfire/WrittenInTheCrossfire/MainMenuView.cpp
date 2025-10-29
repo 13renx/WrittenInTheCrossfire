@@ -119,7 +119,6 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	});
 	optionsContinueLabel->onClick([=, &window, &client, &gameState] {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		
 
 		if(client.getApiKey() == "") {
 			apiGroup->setVisible(true);

@@ -5,7 +5,6 @@
 - [Getting Started](#getting-started)
 - [Dependencies](#dependencies)
   - [Libraries](#libraries)
-  - [Fonts](#fonts)
 - [Authors](#authors)
 
 ## Getting Started
@@ -13,6 +12,7 @@
 1. [Install Visual Studio 2022 with C++](https://youtu.be/qvg8BXXWpCE?si=7fWiXHoEh8CorjBA)
 1. [Install vcpkg](https://youtu.be/0h1lC3QHLHU?si=0RJoo6vrpOX4tlbg)
     1. Install SFML with vcpkg
+    1. Install texus/TGUI with vcpkg
     1. Install fmtlib/fmt with vcpkg
     1. Install nlohmann/json with vcpkg
     1. Install libcpr/cpr with vcpkg
@@ -22,18 +22,21 @@
 
 ### Libraries
 
-- **[fmtlib/fmt](https://github.com/fmtlib/fmt)**
-  - **Author:** [fmtlib](https://github.com/fmtlib)
-  - **License:** [MIT License](https://github.com/fmtlib/fmt/blob/master/LICENSE)
-- **[libcpr/cpr](https://github.com/libcpr/cpr)**
-  - **Author:** [libcpr](https://github.com/libcpr)
-  - **License:** [MIT License](https://github.com/libcpr/cpr/blob/master/LICENSE)
-- **[nlohmann/json](https://github.com/nlohmann/json)**
-  - **Author:** [nlohmann](https://github.com/nlohmann)
-  - **License:** [MIT License](https://github.com/nlohmann/json/blob/develop/LICENSE.MIT)
 - **[SFML](https://www.sfml-dev.org/)**
   - **Author:** [SFML](https://github.com/SFML)
   - **License:** [zlib License](https://github.com/SFML/SFML/blob/master/license.md)
+- **[texus/TGUI](https://github.com/texus/TGUI)**
+  - **Author:** [texus](https://github.com/texus)
+  - **License:** [zLib License](https://github.com/texus/TGUI/blob/1.x/license.txt)
+- **[fmtlib/fmt](https://github.com/fmtlib/fmt)**
+  - **Author:** [fmtlib](https://github.com/fmtlib)
+  - **License:** [MIT License](https://github.com/fmtlib/fmt/blob/master/LICENSE)
+- **[nlohmann/json](https://github.com/nlohmann/json)**
+  - **Author:** [nlohmann](https://github.com/nlohmann)
+  - **License:** [MIT License](https://github.com/nlohmann/json/blob/develop/LICENSE.MIT)
+- **[libcpr/cpr](https://github.com/libcpr/cpr)**
+  - **Author:** [libcpr](https://github.com/libcpr)
+  - **License:** [MIT License](https://github.com/libcpr/cpr/blob/master/LICENSE)
   
 ## Authors
 

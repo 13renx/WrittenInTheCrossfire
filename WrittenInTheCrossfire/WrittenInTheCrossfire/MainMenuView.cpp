@@ -99,7 +99,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 
 		alertChildWindow->setVisible(true);
 	});
-	optionsNewGameLabel->onClick([=, &window, &client] { 
+	optionsNewGameLabel->onClick([=, &window, &client, &gameState] { 
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
 		if(client.getApiKey() == "") {
@@ -111,6 +111,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 			alertChildWindow->setVisible(true);
 
 			if(result) {
+				gameState.init();
 				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 			} else {
 				apiGroup->setVisible(true);

@@ -75,8 +75,9 @@
       </td>
       <td>
         <ul>
-          <li>Sound designer</li>
           <li>Developer</li>
+          <li>Sound designer</li>
+          <li>Writer</li>
         </ul>
       </td>
     </tr>

@@ -51,6 +51,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 		std::vector<json> chatHistory = gameState.getChatHistory();
 		json j = chatHistory.at(chatHistory.size() - 1);
 		letterTextArea->setText(j["parts"][0]["text"].dump());
+		letterTextArea->setText(letterTextArea->getText().substr(1, letterTextArea->getText().size() - 2)); // Remove quotation marks
 	}
 	letterTextArea->setReadOnly();
 	letterTextArea->setSize(822, 995);

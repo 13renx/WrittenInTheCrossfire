@@ -1,4 +1,5 @@
 #include "Audio.h"
+#include <SFML/Audio.hpp>
 
 Audio::Audio() {
 	if(!music.openFromFile("Assets/Audio/witcmenu.mp3")) {
@@ -6,6 +7,13 @@ Audio::Audio() {
 	} else {
 		isMusicRunning = false;
 	}
+
+	soundBuffers = { 
+		{ "paper", sf::SoundBuffer("Assets/Audio/SFX/paper.mp3") } 
+	};
+	soundEffects = {
+		{ "paper", sf::Sound(soundBuffers["paper"]) }
+	};
 }
 
 void Audio::playMusic() {
@@ -21,4 +29,9 @@ void Audio::stopMusic() {
 		music.stop();
 		isMusicRunning = false;
 	}
+}
+
+void Audio::playSfx(std::string sfxName) {
+	sf::Sound& sfx = soundEffects.at(sfxName);
+	sfx.play();
 }

@@ -113,6 +113,8 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogPanel->add(dialogTextArea);
 	buttonLayout->add(cancelButton);
 	buttonLayout->add(sendButton);
+
+	this->gameModel.getAudio().playSfx("paper");
 }
 
 WriteLetterView::~WriteLetterView() {

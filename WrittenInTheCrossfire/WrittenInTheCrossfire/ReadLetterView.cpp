@@ -72,4 +72,6 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	mainPanel->add(mentalWellbeingPanel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(finishButton);
+
+	this->gameModel.getAudio().playSfx("paper");
 }

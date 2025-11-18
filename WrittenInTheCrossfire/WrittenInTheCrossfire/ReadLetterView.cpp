@@ -65,6 +65,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	finishButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(finishButton), tgui::bindHeight(gui) - tgui::bindHeight(finishButton));
 
 	finishButton->onClick([=] {
+		this->gameModel.getAudio().stopSfx("paper");
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 

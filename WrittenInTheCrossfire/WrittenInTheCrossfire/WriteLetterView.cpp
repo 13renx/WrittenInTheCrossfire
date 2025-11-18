@@ -95,6 +95,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		letterTextArea->setReadOnly();
 		cancelButton->setEnabled(false);
 		sendButton->setEnabled(false);
+		this->gameModel.getAudio().stopSfx("paper");
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 	sendButton->onClick([=] {

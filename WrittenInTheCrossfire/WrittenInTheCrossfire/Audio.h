@@ -19,4 +19,5 @@ class Audio
 		void playMusic();
 		void stopMusic();
 		void playSfx(std::string sfxName);
+		void stopSfx(std::string sfxName);
 };

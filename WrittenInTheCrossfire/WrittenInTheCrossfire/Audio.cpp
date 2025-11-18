@@ -32,6 +32,9 @@ void Audio::stopMusic() {
 }
 
 void Audio::playSfx(std::string sfxName) {
-	sf::Sound& sfx = soundEffects.at(sfxName);
-	sfx.play();
+	soundEffects.at(sfxName).play();
+}
+
+void Audio::stopSfx(std::string sfxName) {
+	soundEffects.at(sfxName).stop();
 }

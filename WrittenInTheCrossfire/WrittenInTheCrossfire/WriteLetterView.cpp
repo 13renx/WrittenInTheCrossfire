@@ -98,6 +98,9 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 	sendButton->onClick([=] {
+		letterTextArea->setReadOnly();
+		cancelButton->setEnabled(false);
+		sendButton->setEnabled(false);
 		this->isSendClicked = true;
 	});
 
@@ -156,16 +159,25 @@ void WriteLetterView::send() {
 			if(textAreaText.length() == 0) { // No input
 				dialogTextArea->setText("What would Mom think if I sent an empty letter?");
 				dialogPanel->setVisible(true);
+				letterTextArea->setReadOnly(false);
+				cancelButton->setEnabled(true);
+				sendButton->setEnabled(true);
 				isSendClicked = false;
 				continue;
 			} else if(textAreaText.length() < 10) { // Input contains less than 10 characters
 				dialogTextArea->setText("What would Mom think if I sent a letter with such few characters?");
 				dialogPanel->setVisible(true);
+				letterTextArea->setReadOnly(false);
+				cancelButton->setEnabled(true);
+				sendButton->setEnabled(true);
 				isSendClicked = false;
 				continue;
 			} else if(textAreaText.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()&\"':;/@#$%-\n ") != std::string::npos) { // Input contains characters that are not part of "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.?!()&\"':;/@#$%-\n "
 				dialogTextArea->setText("What would Mom think if I sent a letter that contains unusual characters?");
 				dialogPanel->setVisible(true);
+				letterTextArea->setReadOnly(false);
+				cancelButton->setEnabled(true);
+				sendButton->setEnabled(true);
 				isSendClicked = false;
 				continue;
 			} else {

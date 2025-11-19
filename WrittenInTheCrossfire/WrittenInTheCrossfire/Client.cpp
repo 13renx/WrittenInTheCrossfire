@@ -83,9 +83,6 @@ Client::Client() {
 						}
 					},
 					"type": "object"
-				},
-				"thinkingConfig": {
-					"thinkingBudget": 0
 				}
 			},
 			"system_instruction": {
@@ -136,7 +133,7 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 		prompt = gamePrompt.dump();
 	}
 
-	res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" },
+	res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" },
 		cpr::Parameters{ { "key", apiKey } },
 		cpr::Header{ { "Content-Type", "application/json" } },
 		cpr::Body{ prompt });

@@ -6,8 +6,8 @@
 
 namespace Widgets {
 	namespace Labels {
-		tgui::Label::Ptr createLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y);
-		tgui::Label::Ptr createButtonLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y, sf::RenderWindow& window);
+		tgui::Label::Ptr createLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y, const tgui::Font& font);
+		tgui::Label::Ptr createButtonLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y, sf::RenderWindow& window, const tgui::Font& font);
 	}
 
 	namespace Panels {

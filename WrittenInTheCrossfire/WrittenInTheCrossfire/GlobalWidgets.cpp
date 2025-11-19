@@ -1,6 +1,7 @@
 #include "GlobalWidgets.h"
 #include "Widgets.h"
 #include "ViewController.h"
+#include "Fonts.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -9,10 +10,10 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	menuParentPanel = tgui::Panel::create();
 	menuChildPanel = tgui::Panel::create();
 	menuLayout = tgui::GrowVerticalLayout::create();
-	menuResumeLabel = Widgets::Labels::createButtonLabel("RESUME", 50, 0, 0, window);
-	menuExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
+	menuResumeLabel = Widgets::Labels::createButtonLabel("RESUME", 50, 0, 0, window, Fonts::Default);
+	menuExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window, Fonts::Default);
 	alertChildWindow = tgui::ChildWindow::create();
-	alertLabel = Widgets::Labels::createLabel("", 13, 0, 0);
+	alertLabel = Widgets::Labels::createLabel("", 13, 0, 0, Fonts::Default);
 	mainPanel = tgui::Panel::create();
 
 	menuParentPanel->setVisible(false);

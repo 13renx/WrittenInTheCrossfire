@@ -3,6 +3,7 @@
 #include "Macros.h"
 #include "View.h"
 #include "ViewController.h"
+#include "Fonts.h"
 #include <nlohmann/json.hpp>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -61,6 +62,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	letterTextArea->getRenderer()->setSelectedTextColor(tgui::Color::Black);
 	letterTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	letterTextArea->getRenderer()->setTextColor(tgui::Color::Black);
+	letterTextArea->getRenderer()->setFont(Fonts::Writing); // new
 	finishButton->setSize(240, 100);
 	finishButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(finishButton), tgui::bindHeight(gui) - tgui::bindHeight(finishButton));
 

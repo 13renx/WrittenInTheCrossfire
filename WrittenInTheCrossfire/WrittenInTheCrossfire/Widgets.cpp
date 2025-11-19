@@ -1,22 +1,37 @@
 #include "Widgets.h"
 #include "Macros.h"
 #include "Model.h"
+#include "Fonts.h"
 #include <fmt/core.h>
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
+#include <TGUI/Font.hpp>
 
-tgui::Label::Ptr Widgets::Labels::createLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y) {
+tgui::Label::Ptr Widgets::Labels::createLabel(std::string text,
+	unsigned int textSize,
+	tgui::Layout x,
+	tgui::Layout y,
+	const tgui::Font& font)
+{
 	tgui::Label::Ptr label = tgui::Label::create(text);
 
 	label->setTextSize(textSize);
 	label->setPosition(x, y);
+
+	label->getRenderer()->setFont(font);
 	
 	return label;
 }
 
-tgui::Label::Ptr Widgets::Labels::createButtonLabel(std::string text, unsigned int textSize, tgui::Layout x, tgui::Layout y, sf::RenderWindow& window) {
-	tgui::Label::Ptr label = createLabel(text, textSize, x, y);
+tgui::Label::Ptr Widgets::Labels::createButtonLabel(std::string text,
+	unsigned int textSize,
+	tgui::Layout x,
+	tgui::Layout y,
+	sf::RenderWindow& window,
+	const tgui::Font& font)
+{
+	tgui::Label::Ptr label = createLabel(text, textSize, x, y, font);
 
 	label->onMouseEnter([=, &window]() {
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Hand));

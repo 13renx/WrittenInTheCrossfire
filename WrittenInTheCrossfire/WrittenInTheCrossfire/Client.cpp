@@ -85,7 +85,7 @@ Client::Client() {
 					"type": "object"
 				},
 				"thinkingConfig": {
-					"thinkingBudget": -1
+					"thinkingBudget": 0
 				}
 			},
 			"system_instruction": {

@@ -20,6 +20,7 @@ tgui::Label::Ptr Widgets::Labels::createLabel(std::string text,
 	label->setPosition(x, y);
 
 	label->getRenderer()->setFont(font);
+	label->getRenderer()->setTextColor(Macros::Colors::Redwood);
 	
 	return label;
 }

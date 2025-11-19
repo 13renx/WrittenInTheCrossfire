@@ -86,7 +86,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	letterTextArea->getRenderer()->setTextColor(tgui::Color::Black);
 	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 26, (tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea)) / 2.0f + 40);
 	letterTextArea->setMaximumCharacters(1500);
-	letterTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
+	letterTextArea->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	letterTextArea->getRenderer()->setFont(Fonts::Writing);
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));

@@ -36,7 +36,8 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	apiFillerGroup = tgui::Group::create();
 	apiEnterButton = tgui::Button::create("ENTER");
 	apiCancelButton = tgui::Button::create("CANCEL");
-	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 80, 700, 80, Fonts::Title);
+	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 80, 700, 180, Fonts::Title);
+	titleLabel->setHorizontalAlignment(tgui::Label::HorizontalAlignment::Right);
 	optionsLayout = tgui::GrowVerticalLayout::create();
 	optionsNewGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0, window, Fonts::Default);
 	optionsContinueLabel = Widgets::Labels::createButtonLabel("CONTINUE", 50, 0, 0, window, Fonts::Default);

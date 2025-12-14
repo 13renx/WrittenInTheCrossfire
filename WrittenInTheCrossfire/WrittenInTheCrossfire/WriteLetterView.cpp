@@ -6,7 +6,7 @@
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
-#include "Fonts.h"
+
 #include <fstream>
 #include <iostream>
 #include <thread>
@@ -30,7 +30,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	// Initialize widgets
 	dialogPanel = tgui::Panel::create();
 	dialogTextArea = tgui::TextArea::create();
-	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0, Fonts::Writing);
+	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0, Macros::Fonts::Writing());
 	letterTextArea = tgui::TextArea::create();
 	familyRelationshipPanel = tgui::Panel::create();
 	mentalWellbeingPanel = tgui::Panel::create();
@@ -87,7 +87,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 26, (tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea)) / 2.0f + 40);
 	letterTextArea->setMaximumCharacters(1500);
 	letterTextArea->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
-	letterTextArea->getRenderer()->setFont(Fonts::Writing);
+	letterTextArea->getRenderer()->setFont(Macros::Fonts::Writing());
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 

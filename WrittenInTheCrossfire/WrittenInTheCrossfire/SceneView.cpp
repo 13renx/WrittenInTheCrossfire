@@ -6,7 +6,7 @@
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
-#include "Fonts.h"
+
 #include <filesystem>
 #include <memory>
 #include <string>
@@ -33,7 +33,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
 	dialogTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);
 	dialogTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
-	dialogTextArea->getRenderer()->setFont(Fonts::Default);
+	dialogTextArea->getRenderer()->setFont(Macros::Fonts::Default());
 	dialogTextArea->setSize(1200, 300);
 	dialogTextArea->setTextSize(30);
 	dialogTextArea->getRenderer()->setTextColor(tgui::Color::White);

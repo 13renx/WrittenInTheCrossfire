@@ -6,7 +6,7 @@
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
-#include "Fonts.h"
+
 #include <fstream>
 #include <memory>
 #include <fmt/core.h>
@@ -20,7 +20,6 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	Client& client = this->gameModel.getClient();
 	GameState& gameState = this->gameModel.getGameState();
 	this->gameModel.getAudio().playMusic();
-	Fonts::load();
 	
 	// Initialize widgets
 	exitGroup = tgui::Group::create();
@@ -31,19 +30,19 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	apiPanel = tgui::Panel::create();
 	apiMainLayout = tgui::GrowVerticalLayout::create();
 	apiButtonsLayout = tgui::GrowHorizontalLayout::create();
-	apiLabel = Widgets::Labels::createLabel("ENTER GEMINI API KEY", 13, 0, 0, Fonts::Default);
+	apiLabel = Widgets::Labels::createLabel("ENTER GEMINI API KEY", 13, 0, 0, Macros::Fonts::Default());
 	apiEditBox = tgui::EditBox::create();
 	apiFillerGroup = tgui::Group::create();
 	apiEnterButton = tgui::Button::create("ENTER");
 	apiCancelButton = tgui::Button::create("CANCEL");
-	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 80, 700, 180, Fonts::Title);
+	titleLabel = Widgets::Labels::createLabel("Written in the Crossfire", 80, 700, 180, Macros::Fonts::Title());
 	titleLabel->setHorizontalAlignment(tgui::Label::HorizontalAlignment::Right);
 	optionsLayout = tgui::GrowVerticalLayout::create();
-	optionsNewGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0, window, Fonts::Default);
-	optionsContinueLabel = Widgets::Labels::createButtonLabel("CONTINUE", 50, 0, 0, window, Fonts::Default);
-	optionsSettingsLabel = Widgets::Labels::createButtonLabel("SETTINGS", 50, 0, 0, window, Fonts::Default);
-	optionsAboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0, window, Fonts::Default);
-	optionsExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window, Fonts::Default);
+	optionsNewGameLabel = Widgets::Labels::createButtonLabel("NEW GAME", 50, 0, 0, window, Macros::Fonts::Default());
+	optionsContinueLabel = Widgets::Labels::createButtonLabel("CONTINUE", 50, 0, 0, window, Macros::Fonts::Default());
+	optionsSettingsLabel = Widgets::Labels::createButtonLabel("SETTINGS", 50, 0, 0, window, Macros::Fonts::Default());
+	optionsAboutLabel = Widgets::Labels::createButtonLabel("ABOUT", 50, 0, 0, window, Macros::Fonts::Default());
+	optionsExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window, Macros::Fonts::Default());
 
 	exitGroup->setVisible(false);
 	exitMessageBox->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(exitMessageBox)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(exitMessageBox)) / 2.0f);

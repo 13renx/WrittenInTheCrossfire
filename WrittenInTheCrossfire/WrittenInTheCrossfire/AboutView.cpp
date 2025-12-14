@@ -3,7 +3,7 @@
 #include "Widgets.h"
 #include "View.h"
 #include "ViewController.h"
-#include "Fonts.h"
+#include "Macros.h"
 #include <memory>
 #include <fmt/core.h>
 #include <TGUI/TGUI.hpp>
@@ -15,14 +15,14 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 	this->gameModel.getAudio().playMusic();
 
 	// Initialize widgets
-	titleLabel = Widgets::Labels::createLabel("ABOUT", 100, 700, 70, Fonts::Default);
-	textLabel = Widgets::Labels::createLabel("Written In the Crossfire follows the narrative of a soldier during war, writing letters to home,", 30, 0, 0, Fonts::Default);
-	textLabel2 = Widgets::Labels::createLabel("and uncovering the human cost of conflict.", 30, 0, 0, Fonts::Default);
-	textLabel3 = Widgets::Labels::createLabel("Created by Angela Miguel, Joaquin Panganiban, Brent Soan, Ana Veron", 30, 0, 0, Fonts::Default);
+	titleLabel = Widgets::Labels::createLabel("ABOUT", 100, 700, 70, Macros::Fonts::Default());
+	textLabel = Widgets::Labels::createLabel("Written In the Crossfire follows the narrative of a soldier during war, writing letters to home,", 30, 0, 0, Macros::Fonts::Default());
+	textLabel2 = Widgets::Labels::createLabel("and uncovering the human cost of conflict.", 30, 0, 0, Macros::Fonts::Default());
+	textLabel3 = Widgets::Labels::createLabel("Created by Angela Miguel, Joaquin Panganiban, Brent Soan, Ana Veron", 30, 0, 0, Macros::Fonts::Default());
 	leftLayout = tgui::GrowVerticalLayout::create(1500);
 	spacer = tgui::Label::create();
 	spacer->setHeight(500);
-	backLabel = Widgets::Labels::createButtonLabel("BACK", 50, 0, 0, window, Fonts::Default);
+	backLabel = Widgets::Labels::createButtonLabel("BACK", 50, 0, 0, window, Macros::Fonts::Default());
 	buttonsLayout = tgui::GrowHorizontalLayout::create();
 
 	leftLayout->setPosition(120, 200);

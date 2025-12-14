@@ -139,7 +139,6 @@
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="CampView.cpp" />
     <ClCompile Include="Client.cpp" />
-    <ClCompile Include="Fonts.cpp" />
     <ClCompile Include="GameModel.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GlobalWidgets.cpp" />
@@ -166,7 +165,6 @@
     <ClInclude Include="Audio.h" />
     <ClInclude Include="CampView.h" />
     <ClInclude Include="Client.h" />
-    <ClInclude Include="Fonts.h" />
     <ClInclude Include="GameModel.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GlobalWidgets.h" />

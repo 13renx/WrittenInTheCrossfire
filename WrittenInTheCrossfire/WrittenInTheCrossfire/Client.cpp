@@ -5,6 +5,7 @@
 #include <vector>
 #include <cpr/cpr.h>
 #include "fmt/core.h"
+#include "spdlog/spdlog.h"
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
@@ -124,7 +125,6 @@ std::string Client::getApiKey() {
 }
 
 json Client::fetchResponse(Client::PromptType promptType, const std::string& apiKey) {
-	cpr::Response res;
 	std::string prompt;
 
 	if(promptType == Client::PromptType::TEST) {
@@ -134,12 +134,19 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 		prompt = gamePrompt.dump();
 	}
 
-	res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" },
+	cpr::Response res = cpr::Post(cpr::Url{ "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent" },
 		cpr::Parameters{ { "key", apiKey } },
 		cpr::Header{ { "Content-Type", "application/json" } },
 		cpr::Body{ prompt });
+	json ret = json::parse(res.text);
 
-	return json::parse(res.text);
+	if(ret.contains("error")) {
+		spdlog::error("Gemini API Response = {}", res.text);
+	} else {
+		spdlog::info("Gemini API Response = {}", res.text);
+	}
+	
+	return ret;
 }
 
 std::tuple<bool, std::string> Client::testApiKey(const std::string& apiKey) {
@@ -164,5 +171,4 @@ std::tuple<bool, std::string> Client::setApiKey(const std::string& apiKey) {
 
 void Client::setGamePromptContents(std::vector<json>& contents) {
 	this->gamePrompt["contents"] = contents;
-	//std::cout << this->gamePrompt.dump();
 }

@@ -1,9 +1,9 @@
 #include "AboutView.h"
 #include "GameModel.h"
+#include "Macros.h"
 #include "Widgets.h"
 #include "View.h"
 #include "ViewController.h"
-#include "Macros.h"
 #include <memory>
 #include <fmt/core.h>
 #include <TGUI/TGUI.hpp>

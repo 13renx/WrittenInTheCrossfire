@@ -6,7 +6,6 @@
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
-
 #include <fstream>
 #include <memory>
 #include <fmt/core.h>

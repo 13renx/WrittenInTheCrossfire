@@ -4,6 +4,7 @@
 #include <tuple>
 #include <vector>
 #include <cpr/cpr.h>
+#include "fmt/core.h"
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
@@ -137,6 +138,7 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 		cpr::Parameters{ { "key", apiKey } },
 		cpr::Header{ { "Content-Type", "application/json" } },
 		cpr::Body{ prompt });
+
 	return json::parse(res.text);
 }
 

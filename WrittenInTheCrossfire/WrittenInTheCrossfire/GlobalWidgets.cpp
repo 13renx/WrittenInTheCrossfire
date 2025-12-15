@@ -1,8 +1,8 @@
 #include "GlobalWidgets.h"
+#include "Macros.h"
 #include "Widgets.h"
 #include "ViewController.h"
-#include "Macros.h"
-#include <TGUI/TGUI.hpp>
+#include <TGUI/TGUI.hpp>	
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewController* viewController) {

@@ -1,10 +1,10 @@
 #include "App.h"
 #include "GameModel.h"
 #include "GlobalWidgets.h"
-#include "Utils.h"
 #include "ViewController.h"
 #include <memory>
 #include <SFML/Audio.hpp>
+#include <spdlog/spdlog.h>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -20,7 +20,7 @@ void App::run() {
 		while(const std::optional event = window.pollEvent()) {
 			if(event->is<sf::Event::Closed>()) {
 				window.close();
-				Utils::log("Closed Window");
+				spdlog::info("Closed window");
 			}
 
 			if(const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {

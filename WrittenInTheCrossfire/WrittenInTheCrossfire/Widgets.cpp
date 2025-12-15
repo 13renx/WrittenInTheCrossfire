@@ -1,7 +1,6 @@
 #include "Widgets.h"
 #include "Macros.h"
 #include "Model.h"
-
 #include <fmt/core.h>
 #include <memory>
 #include <TGUI/TGUI.hpp>

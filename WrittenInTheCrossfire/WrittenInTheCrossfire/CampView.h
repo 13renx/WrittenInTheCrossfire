@@ -18,6 +18,8 @@ class CampView : public View
 		tgui::Button::Ptr writeButton;
 		tgui::Button::Ptr dontWriteButton;
 		tgui::Panel::Ptr patriotismPanel;
+		tgui::Group::Ptr familyRelationshipGroup;
+		tgui::Panel::Ptr familyRelationshipBackgroundPanel;
 		tgui::Panel::Ptr familyRelationshipPanel;
 		tgui::Panel::Ptr mentalWellbeingPanel;
 		//tgui::VerticalLayout::Ptr buttonLayoutTwo;
@@ -25,6 +27,7 @@ class CampView : public View
 		//tgui::Button::Ptr selectButton;
 
 		bool isRunning;
+		bool isPicFrameFar;
 		bool isDontWriteClicked;
 
 	public:

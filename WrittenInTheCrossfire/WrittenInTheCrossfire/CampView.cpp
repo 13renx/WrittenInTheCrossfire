@@ -11,6 +11,7 @@
 #include <memory>
 #include <fmt/core.h>
 #include <nlohmann/json.hpp>
+#include "spdlog/spdlog.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -21,6 +22,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
 	isRunning = true;
+	isPicFrameFar = false;
 	isDontWriteClicked = false;
 	std::thread dontWriteThread(&CampView::dontWrite, this);
 	dontWriteThread.detach();
@@ -30,7 +32,9 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     writeButton = tgui::Button::create("WRITE A LETTER");
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");
 	patriotismPanel = tgui::Panel::create();
+	familyRelationshipGroup = tgui::Group::create();
 	familyRelationshipPanel = tgui::Panel::create();
+	familyRelationshipBackgroundPanel = tgui::Panel::create();
 	mentalWellbeingPanel = tgui::Panel::create();
 	//buttonLayoutTwo = tgui::VerticalLayout::create({ 240, 220 });
 	//cancelButton = tgui::Button::create("CANCEL");
@@ -73,12 +77,32 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	}
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
+	familyRelationshipBackgroundPanel->setVisible(false);
 	familyRelationshipPanel->setScale(0.5f);
 	familyRelationshipPanel->setPosition(70, 460);
-
+	
     //buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     //buttonLayoutTwo->setVisible(false);
 
+	familyRelationshipBackgroundPanel->onClick([=, &gui] {
+		spdlog::info("familyRelationshipBackgroundPanel clicked");
+
+		if(!this->isPicFrameFar) {
+			familyRelationshipBackgroundPanel->setVisible(false);
+			familyRelationshipPanel->setPosition(70, 460);
+		}
+	});
+	familyRelationshipPanel->onClick([=, &gui] {
+		spdlog::info("familyRelationshipPanel clicked");
+
+		if(this->isPicFrameFar) {
+			familyRelationshipBackgroundPanel->setVisible(true);
+			familyRelationshipPanel->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(familyRelationshipPanel) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(familyRelationshipPanel)) / 2.0f);
+		} else {
+			familyRelationshipBackgroundPanel->setVisible(false);
+			familyRelationshipPanel->setPosition(70, 460);
+		}
+	});
 	writeButton->onClick([=] {
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
@@ -90,10 +114,11 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->isDontWriteClicked = true;
 	});
 	
-	mainPanel->add(patriotismPanel);
-	mainPanel->add(familyRelationshipPanel);
+	mainPanel->add(familyRelationshipGroup);
 	mainPanel->add(mentalWellbeingPanel);
 	mainPanel->add(buttonLayoutOne);
+	familyRelationshipGroup->add(familyRelationshipBackgroundPanel);
+	familyRelationshipGroup->add(familyRelationshipPanel);
 	//mainPanel->add(buttonLayoutTwo);
 	buttonLayoutOne->add(writeButton);
 	buttonLayoutOne->add(dontWriteButton);

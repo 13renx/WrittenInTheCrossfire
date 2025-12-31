@@ -5,8 +5,8 @@
 #include <vector>
 #include <cpr/cpr.h>
 #include "fmt/core.h"
-#include "spdlog/spdlog.h"
 #include <nlohmann/json.hpp>
+#include "spdlog/spdlog.h"
 
 using json = nlohmann::json;
 

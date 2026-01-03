@@ -2,6 +2,7 @@
 #include "Client.h"
 #include "GameModel.h"
 #include "Macros.h"
+#include "Utils.h"
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
@@ -11,7 +12,6 @@
 #include <memory>
 #include <fmt/core.h>
 #include <nlohmann/json.hpp>
-#include "spdlog/spdlog.h"
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -85,7 +85,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     //buttonLayoutTwo->setVisible(false);
 
 	familyRelationshipBackgroundPanel->onClick([=, &gui] {
-		spdlog::info("familyRelationshipBackgroundPanel clicked");
+		Utils::Log::info("familyRelationshipBackgroundPanel clicked");
 
 		if(!this->isPicFrameFar) {
 			familyRelationshipBackgroundPanel->setVisible(false);
@@ -93,7 +93,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	familyRelationshipPanel->onClick([=, &gui] {
-		spdlog::info("familyRelationshipPanel clicked");
+		Utils::Log::info("familyRelationshipPanel clicked");
 
 		if(this->isPicFrameFar) {
 			familyRelationshipBackgroundPanel->setVisible(true);
@@ -104,11 +104,15 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	writeButton->onClick([=] {
+		Utils::Log::info("writeButton clicked");
+
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
 		this->viewController->changeView(ViewController::ViewType::WRITE_LETTER_VIEW);
 	});
 	dontWriteButton->onClick([=] {
+		Utils::Log::info("dontWriteButton clicked");
+
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
 		this->isDontWriteClicked = true;

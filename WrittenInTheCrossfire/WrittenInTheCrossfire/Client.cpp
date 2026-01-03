@@ -1,4 +1,5 @@
 #include "Client.h"
+#include "Utils.h"
 #include <iostream>
 #include <string>
 #include <tuple>
@@ -6,7 +7,6 @@
 #include <cpr/cpr.h>
 #include "fmt/core.h"
 #include <nlohmann/json.hpp>
-#include "spdlog/spdlog.h"
 
 using json = nlohmann::json;
 
@@ -141,9 +141,9 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 	json ret = json::parse(res.text);
 
 	if(ret.contains("error")) {
-		spdlog::error("Gemini API Response = {}", res.text);
+		Utils::Log::error(fmt::format("Gemini API Response = {}", res.text));
 	} else {
-		spdlog::info("Gemini API Response = {}", res.text);
+		Utils::Log::info(fmt::format("Gemini API Response = {}", res.text));
 	}
 	
 	return ret;

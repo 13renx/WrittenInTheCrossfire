@@ -12,7 +12,7 @@ SceneModel::SceneModel() {
     std::string texture = "EMPTY";
     std::string dialogue = "EMPTY";
 
-
+    // Extract assets data from "WITC In-game Story.txt"
     while(std::getline(file, line)) {
         std::tuple<int, std::string, std::string> asset;
 

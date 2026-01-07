@@ -1,6 +1,7 @@
 #include "AboutView.h"
 #include "GameModel.h"
 #include "Macros.h"
+#include "Utils.h"
 #include "Widgets.h"
 #include "View.h"
 #include "ViewController.h"
@@ -29,6 +30,8 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 	buttonsLayout->setPosition(120, 930);
 
 	backLabel->onClick([=, &window] {
+		Utils::Log::info("backLabel clicked");
+
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 	});

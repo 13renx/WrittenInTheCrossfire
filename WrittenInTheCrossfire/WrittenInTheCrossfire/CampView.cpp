@@ -78,8 +78,10 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
 	familyRelationshipBackgroundPanel->setVisible(false);
+	//familyRelationshipBackgroundPanel->getRenderer()->setBackgroundColor(tgui::Color::Blue);
 	familyRelationshipPanel->setScale(0.5f);
 	familyRelationshipPanel->setPosition(70, 460);
+	//familyRelationshipPanel->getRenderer()->setBorderColor(tgui::Color::Green);
 	
     //buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     //buttonLayoutTwo->setVisible(false);

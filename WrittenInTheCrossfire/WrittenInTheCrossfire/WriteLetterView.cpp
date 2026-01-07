@@ -2,6 +2,7 @@
 #include "Client.h"
 #include "GameModel.h"
 #include "Macros.h"
+#include "Utils.h"
 #include "Stats.h"
 #include "View.h"
 #include "ViewController.h"
@@ -91,9 +92,11 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 
 	dialogPanel->onClick([=] {
+		Utils::Log::info("dialogPanel clicked");
 		dialogPanel->setVisible(false);
 	});
 	cancelButton->onClick([=] {
+		Utils::Log::info("cancelButton clicked");
 		letterTextArea->setReadOnly();
 		cancelButton->setEnabled(false);
 		sendButton->setEnabled(false);
@@ -101,6 +104,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 	sendButton->onClick([=] {
+		Utils::Log::info("sendButton clicked");
 		letterTextArea->setReadOnly();
 		cancelButton->setEnabled(false);
 		sendButton->setEnabled(false);

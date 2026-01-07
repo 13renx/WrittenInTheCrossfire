@@ -1,4 +1,5 @@
 #include "Audio.h"
+#include "Utils.h"
 #include <SFML/Audio.hpp>
 
 Audio::Audio() {
@@ -18,6 +19,7 @@ Audio::Audio() {
 
 void Audio::playMusic() {
 	if(!isMusicRunning) {
+		Utils::Log::info("Music played");
 		music.play();
 		music.setLooping(true);
 		isMusicRunning = true;
@@ -26,15 +28,18 @@ void Audio::playMusic() {
 
 void Audio::stopMusic() {
 	if(isMusicRunning) {
+		Utils::Log::info("Music stopped");
 		music.stop();
 		isMusicRunning = false;
 	}
 }
 
 void Audio::playSfx(std::string sfxName) {
+	Utils::Log::info(fmt::format("{} sfx played", sfxName));
 	soundEffects.at(sfxName).play();
 }
 
 void Audio::stopSfx(std::string sfxName) {
+	Utils::Log::info(fmt::format("{} sfx stopped", sfxName));
 	soundEffects.at(sfxName).stop();
 }

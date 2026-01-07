@@ -1,5 +1,6 @@
 #include "GameState.h"
 #include "Stats.h"
+#include "Utils.h"
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
@@ -27,6 +28,7 @@ std::vector<json> GameState::getChatHistory() {
 
 void GameState::setChatHistory(std::vector<json> chatHistory) {
 	this->chatHistory = chatHistory;
+	Utils::Log::info("chatHistory updated");
 }
 
 int GameState::getCheckpoint() {
@@ -51,8 +53,11 @@ std::tuple<bool, std::string> GameState::save() {
 
 	if(file.is_open()) {
 		file << save.dump(4) << std::endl;
+
+		Utils::Log::info("Game saved");
 		return { true, "Game saved successfully." };
 	} else {
+		Utils::Log::error("Game save failed");
 		return { false, "Failed to save game." };
 	}
 }
@@ -69,8 +74,10 @@ std::tuple<bool, std::string> GameState::load() {
 		setCheckpoint(gameState.getCheckpoint());
 		setCurrentStats(gameState.getCurrentStats());
 
+		Utils::Log::info("Game loaded");
 		return { true, "Save loaded successfully." };
 	} else {
+		Utils::Log::info("Game load failed");
 		return { false, "No save found." };
 	}
 }
@@ -91,6 +98,9 @@ void GameState::updateCurrentStats(json& sentiments) {
 	if(currentStats.patriotism > 100) {
 		currentStats.patriotism = 100;
 	}
+
+	Utils::Log::info("currentStats updated");
+	Utils::Log::info(fmt::format("currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.familyRelationship, currentStats.mentalWellbeing, currentStats.patriotism));
 }
 
 Stats& GameState::calculateStatChanges(json& sentiments) {
@@ -128,4 +138,5 @@ Stats& GameState::calculateStatChanges(json& sentiments) {
 
 void GameState::updateCheckpoint() {
 	checkpoint++;
+	Utils::Log::info("checkpoint updated");
 }

@@ -1,5 +1,6 @@
 #include "GlobalWidgets.h"
 #include "Macros.h"
+#include "Utils.h"
 #include "Widgets.h"
 #include "ViewController.h"
 #include <TGUI/TGUI.hpp>	
@@ -31,10 +32,12 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	alertLabel->setPosition(10, 10);
 
 	menuResumeLabel->onClick([=, &window] {
+		Utils::Log::info("menuResumeLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		menuParentPanel->setVisible(false);
 	});
 	menuExitLabel->onClick([=, &window] {
+		Utils::Log::info("menuExitLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 		menuParentPanel->setVisible(false);

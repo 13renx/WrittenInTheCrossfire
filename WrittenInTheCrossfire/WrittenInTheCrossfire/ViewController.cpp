@@ -7,6 +7,7 @@
 #include "SceneModel.h"
 #include "SceneView.h"
 #include "SettingsView.h"
+#include "Utils.h"
 #include "AboutView.h"
 #include "WriteLetterView.h"
 #include "View.h"
@@ -31,24 +32,31 @@ void ViewController::changeView(ViewType viewType) {
 	switch(activeViewType) {
 		case ViewType::MAIN_MENU_VIEW:
 			activeView = std::make_shared<MainMenuView>(this, this->gameModel);
+			Utils::Log::info("activeView updated to MainMenuView");
 			break;
 		case ViewType::SETTINGS_VIEW:
 			activeView = std::make_shared<SettingsView>(this, this->gameModel);
+			Utils::Log::info("activeView updated to SettingsView");
 			break;
 		case ViewType::ABOUT_VIEW:
 			activeView = std::make_shared<AboutView>(this, this->gameModel);
+			Utils::Log::info("activeView updated to AboutView");
 			break;
 		case ViewType::SCENE_VIEW:
 			activeView = std::make_shared<SceneView>(this, this->gameModel, sceneModel);
+			Utils::Log::info("activeView updated to SceneView");
 			break;
 		case ViewType::READ_LETTER_VIEW:
 			activeView = std::make_shared<ReadLetterView>(this, this->gameModel);
+			Utils::Log::info("activeView updated to ReadLetterView");
 			break;
 		case ViewType::CAMP_VIEW:
 			activeView = std::make_shared<CampView>(this, this->gameModel);
+			Utils::Log::info("activeView updated to CampView");
 			break;
 		case ViewType::WRITE_LETTER_VIEW:
 			activeView = std::make_shared<WriteLetterView>(this, this->gameModel);
+			Utils::Log::info("activeView updated to WriteLetterView");
 			break;
 	}
 }

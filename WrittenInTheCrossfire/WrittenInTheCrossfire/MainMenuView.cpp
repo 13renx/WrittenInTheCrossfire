@@ -3,6 +3,7 @@
 #include "GameModel.h"
 #include "GameState.h"
 #include "Macros.h"
+#include "Utils.h"
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
@@ -12,6 +13,10 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
+// Undefine the Windows API MessageBox macro which conflicts with tgui::MessageBox
+#ifdef MessageBox
+#undef MessageBox
+#endif
 
 MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/Main Menu.PNG")) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
@@ -70,18 +75,31 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		}
 	}
 	
-	exitPanel->onClick([=] { exitGroup->setVisible(false); });
-	exitMessageBox->onButtonPress([=](const tgui::String& button) {
+	exitPanel->onClick([=] { 
+		Utils::Log::info("exitPanel clicked");
+		exitGroup->setVisible(false); 
+	});
+	exitMessageBox->onButtonPress([=](const tgui::String& button) {//, &gameModel](const tgui::String& button) {
 		if(button == "YES") {
+			Utils::Log::info("exitMessageBox YES button clicked");
+			//gameModel.getWindow().close();
 			exit(0);
 		}
 		else {
+			Utils::Log::info("exitMessageBox NO button clicked");
 			exitGroup->setVisible(false);
 		}
 	});
-	apiPanel->onClick([=] { apiGroup->setVisible(false); });
-	apiCancelButton->onPress([=] { apiGroup->setVisible(false); });
+	apiPanel->onClick([=] { 
+		Utils::Log::info("apiPanel clicked");
+		apiGroup->setVisible(false); 
+	});
+	apiCancelButton->onPress([=] { 
+		Utils::Log::info("apiCancelButton clicked");
+		apiGroup->setVisible(false);
+	});
 	apiEnterButton->onPress([=, &client]() { 
+		Utils::Log::info("apiEnterButton clicked");
 		const std::string apiKey = apiEditBox->getText().toStdString();
 		
 		if(apiKey != "") {
@@ -102,6 +120,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		alertChildWindow->setVisible(true);
 	});
 	optionsNewGameLabel->onClick([=, &window, &client, &gameState] { 
+		Utils::Log::info("optionsNewGameLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
 		if(client.getApiKey() == "") {
@@ -121,6 +140,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		}
 	});
 	optionsContinueLabel->onClick([=, &window, &client, &gameState] {
+		Utils::Log::info("optionsNewGameLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
 		if(client.getApiKey() == "") {
@@ -148,14 +168,17 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		}
 	});
 	optionsSettingsLabel->onClick([=, &window] {
+		Utils::Log::info("optionsSettingsLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::SETTINGS_VIEW);
 	});
 	optionsAboutLabel->onClick([=, &window] {
+		Utils::Log::info("optionsAboutLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::ABOUT_VIEW);
 	});
 	optionsExitLabel->onClick([=, &window] { 
+		Utils::Log::info("optionsExitLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		exitGroup->setVisible(true); 
 	});

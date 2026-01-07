@@ -2,6 +2,7 @@
 #include "SettingsModel.h"
 #include "GameModel.h"
 #include "Macros.h"
+#include "Utils.h"
 #include "Widgets.h"
 #include "View.h"
 #include "ViewController.h"
@@ -42,10 +43,12 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 	buttonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
 
 	backLabel->onClick([=, &window] {
+		Utils::Log::info("backLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 	});
 	resetLabel->onClick([=, &window] {
+		Utils::Log::info("resetLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		settingsModel.init();
 		masterVolumeValueLabel->setText(std::to_string(settingsModel.getMasterVolume()));
@@ -59,6 +62,7 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 		alertChildWindow->setVisible(true);
 	});
 	saveLabel->onClick([=, &window] {
+		Utils::Log::info("saveLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		
 		auto [result, message] = settingsModel.save();

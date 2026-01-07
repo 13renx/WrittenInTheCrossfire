@@ -19,16 +19,20 @@ void App::run() {
 	while(window.isOpen()) {
 		while(const std::optional event = window.pollEvent()) {
 			if(event->is<sf::Event::Closed>()) {
+				Utils::Log::info("Window closed");
 				window.close();
-				Utils::Log::info("Closed window");
 			}
 
 			if(const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-				if(keyPressed->scancode == sf::Keyboard::Scan::Escape && (activeViewType == ViewController::ViewType::SCENE_VIEW || activeViewType == ViewController::ViewType::READ_LETTER_VIEW)) {
-					if(menuParentPanel->isVisible()) {
-						menuParentPanel->setVisible(false);
-					} else {
-						menuParentPanel->setVisible(true);
+				if(keyPressed->scancode == sf::Keyboard::Scan::Escape) {
+					Utils::Log::info("Esc key pressed");
+
+					if(activeViewType == ViewController::ViewType::SCENE_VIEW || activeViewType == ViewController::ViewType::READ_LETTER_VIEW) {
+						if(menuParentPanel->isVisible()) {
+							menuParentPanel->setVisible(false);
+						} else {
+							menuParentPanel->setVisible(true);
+						}
 					}
 				}
 			}

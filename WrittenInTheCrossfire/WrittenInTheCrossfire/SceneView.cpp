@@ -3,6 +3,7 @@
 #include "GameModel.h"
 #include "GameState.h"
 #include "Macros.h"
+#include "Utils.h"
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
@@ -46,6 +47,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	}
 
 	scenePanel->onClick([=, &gameState] {
+		Utils::Log::info("scenePanel clicked");
 		int checkpoint = gameState.getCheckpoint();
 
 		if(checkpoint == 0 && assetIndex == assets.size()) {

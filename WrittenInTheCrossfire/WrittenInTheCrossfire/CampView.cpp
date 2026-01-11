@@ -22,7 +22,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
 	isRunning = true;
-	isPicFrameFar = false;
+	isPicFrameFar = true;
 	isDontWriteClicked = false;
 	std::thread dontWriteThread(&CampView::dontWrite, this);
 	dontWriteThread.detach();
@@ -79,7 +79,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
 	mentalWellbeingPicture->setIgnoreMouseEvents(true);
 	familyRelationshipPanel->setVisible(false);
-	familyRelationshipPanel->getRenderer()->setBackgroundColor(tgui::Color::Blue);
+	familyRelationshipPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	familyRelationshipPicture->setScale(0.5f);
 	familyRelationshipPicture->setPosition(70, 460);
 	
@@ -91,7 +91,9 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 
 		if(!this->isPicFrameFar) {
 			familyRelationshipPanel->setVisible(false);
+			familyRelationshipPicture->setScale(0.5f);
 			familyRelationshipPicture->setPosition(70, 460);
+			this->isPicFrameFar = true;
 		}
 	});
 	familyRelationshipPicture->onClick([=, &gui] {
@@ -99,10 +101,14 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 
 		if(this->isPicFrameFar) {
 			familyRelationshipPanel->setVisible(true);
+			familyRelationshipPicture->setScale(1.0f);
 			familyRelationshipPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(familyRelationshipPanel) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(familyRelationshipPanel)) / 2.0f);
+			this->isPicFrameFar = false;
 		} else {
 			familyRelationshipPanel->setVisible(false);
+			familyRelationshipPicture->setScale(0.5f);
 			familyRelationshipPicture->setPosition(70, 460);
+			this->isPicFrameFar = true;
 		}
 	});
 	writeButton->onClick([=] {
@@ -120,13 +126,13 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->isDontWriteClicked = true;
 	});
 	
+	mainPanel->add(familyRelationshipGroup);
 	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(buttonLayoutOne);
-	mainPanel->add(familyRelationshipGroup);
-	buttonLayoutOne->add(writeButton);
-	buttonLayoutOne->add(dontWriteButton);
 	familyRelationshipGroup->add(familyRelationshipPanel);
 	familyRelationshipGroup->add(familyRelationshipPicture);
+	buttonLayoutOne->add(writeButton);
+	buttonLayoutOne->add(dontWriteButton);
 	//mainPanel->add(buttonLayoutTwo);
 	//buttonLayoutTwo->add(cancelButton);
 	//buttonLayoutTwo->add(selectButton);

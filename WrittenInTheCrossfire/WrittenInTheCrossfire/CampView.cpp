@@ -31,78 +31,78 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     buttonLayoutOne = tgui::HorizontalLayout::create({ 500, 100 });
     writeButton = tgui::Button::create("WRITE A LETTER");
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");
-	patriotismPanel = tgui::Panel::create();
+	patriotismPicture = tgui::Picture::create();
 	familyRelationshipGroup = tgui::Group::create();
+	familyRelationshipPicture = tgui::Picture::create();
 	familyRelationshipPanel = tgui::Panel::create();
-	familyRelationshipBackgroundPanel = tgui::Panel::create();
-	mentalWellbeingPanel = tgui::Panel::create();
+	mentalWellbeingPicture = tgui::Picture::create();
+	
 	//buttonLayoutTwo = tgui::VerticalLayout::create({ 240, 220 });
 	//cancelButton = tgui::Button::create("CANCEL");
 	//selectButton = tgui::Button::create("SELECT");
 
-	mentalWellbeingPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	{
 		Stats stats = gameState.getCurrentStats();
 
 		// Patriotism
 		if(stats.patriotism > 75) {
-			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Very Good.png");
+			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Very Good.png");
 		} else if(stats.patriotism > 50) {
-			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Good.png");
+			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Good.png");
 		} else if(stats.patriotism > 25) {
-			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Bad.png");
+			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Bad.png");
 		} else if(stats.patriotism < 26) {
-			patriotismPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Patriotism/Worse.png");
+			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Worse.png");
 		}
 
 		// Family Relationship
 		if(stats.familyRelationship > 75) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
 		} else if(stats.familyRelationship > 50) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
 		} else if(stats.familyRelationship > 25) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
 		} else if(stats.familyRelationship < 26) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
 		}
 
 		// Mental Wellbeing
 		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
-			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
+			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
 		} else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
-			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
+			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
 		} else if(stats.mentalWellbeing < 26) {
-			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
+			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
 		}
 	}
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
-	familyRelationshipBackgroundPanel->setVisible(false);
-	//familyRelationshipBackgroundPanel->getRenderer()->setBackgroundColor(tgui::Color::Blue);
-	familyRelationshipPanel->setScale(0.5f);
-	familyRelationshipPanel->setPosition(70, 460);
-	//familyRelationshipPanel->getRenderer()->setBorderColor(tgui::Color::Green);
+	mentalWellbeingPicture->setIgnoreMouseEvents(true);
+	familyRelationshipPanel->setVisible(false);
+	familyRelationshipPanel->getRenderer()->setBackgroundColor(tgui::Color::Blue);
+	familyRelationshipPicture->setScale(0.5f);
+	familyRelationshipPicture->setPosition(70, 460);
 	
     //buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     //buttonLayoutTwo->setVisible(false);
 
-	familyRelationshipBackgroundPanel->onClick([=, &gui] {
-		Utils::Log::info("familyRelationshipBackgroundPanel clicked");
-
-		if(!this->isPicFrameFar) {
-			familyRelationshipBackgroundPanel->setVisible(false);
-			familyRelationshipPanel->setPosition(70, 460);
-		}
-	});
 	familyRelationshipPanel->onClick([=, &gui] {
 		Utils::Log::info("familyRelationshipPanel clicked");
 
+		if(!this->isPicFrameFar) {
+			familyRelationshipPanel->setVisible(false);
+			familyRelationshipPicture->setPosition(70, 460);
+		}
+	});
+	familyRelationshipPicture->onClick([=, &gui] {
+		Utils::Log::info("familyRelationshipPicture clicked");
+
 		if(this->isPicFrameFar) {
-			familyRelationshipBackgroundPanel->setVisible(true);
-			familyRelationshipPanel->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(familyRelationshipPanel) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(familyRelationshipPanel)) / 2.0f);
+			familyRelationshipPanel->setVisible(true);
+			familyRelationshipPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(familyRelationshipPanel) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(familyRelationshipPanel)) / 2.0f);
 		} else {
-			familyRelationshipBackgroundPanel->setVisible(false);
-			familyRelationshipPanel->setPosition(70, 460);
+			familyRelationshipPanel->setVisible(false);
+			familyRelationshipPicture->setPosition(70, 460);
 		}
 	});
 	writeButton->onClick([=] {
@@ -120,14 +120,14 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->isDontWriteClicked = true;
 	});
 	
-	mainPanel->add(familyRelationshipGroup);
-	mainPanel->add(mentalWellbeingPanel);
+	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(buttonLayoutOne);
-	familyRelationshipGroup->add(familyRelationshipBackgroundPanel);
-	familyRelationshipGroup->add(familyRelationshipPanel);
-	//mainPanel->add(buttonLayoutTwo);
+	mainPanel->add(familyRelationshipGroup);
 	buttonLayoutOne->add(writeButton);
 	buttonLayoutOne->add(dontWriteButton);
+	familyRelationshipGroup->add(familyRelationshipPanel);
+	familyRelationshipGroup->add(familyRelationshipPicture);
+	//mainPanel->add(buttonLayoutTwo);
 	//buttonLayoutTwo->add(cancelButton);
 	//buttonLayoutTwo->add(selectButton);
 }
@@ -183,11 +183,9 @@ void CampView::dontWrite() {
 			// Update checkpoint
 			if(stats.mentalWellbeing < 1) {
 				gameState.setCheckpoint(-1);
-			}
-			else if(stats.familyRelationship < 1) {
+			} else if(stats.familyRelationship < 1) {
 				gameState.setCheckpoint(-2);
-			}
-			else if(stats.patriotism < 1) {
+			} else if(stats.patriotism < 1) {
 				gameState.setCheckpoint(-3);
 			} else {
 				gameState.updateCheckpoint();

@@ -15,8 +15,8 @@ class ReadLetterView : public View
 
 		tgui::TextArea::Ptr letterTextArea;
 		tgui::Button::Ptr finishButton;
-		tgui::Panel::Ptr familyRelationshipPanel;
-		tgui::Panel::Ptr mentalWellbeingPanel;
+		tgui::Picture::Ptr familyRelationshipPicture;
+		tgui::Picture::Ptr mentalWellbeingPicture;
 
 	public:
 		ReadLetterView(ViewController* viewController, GameModel& gameModel);

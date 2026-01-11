@@ -17,11 +17,14 @@ class CampView : public View
 		tgui::HorizontalLayout::Ptr buttonLayoutOne;
 		tgui::Button::Ptr writeButton;
 		tgui::Button::Ptr dontWriteButton;
-		tgui::Panel::Ptr patriotismPanel;
+		tgui::Picture::Ptr patriotismPicture;
+
+		// Family Relationship
 		tgui::Group::Ptr familyRelationshipGroup;
-		tgui::Panel::Ptr familyRelationshipBackgroundPanel;
 		tgui::Panel::Ptr familyRelationshipPanel;
-		tgui::Panel::Ptr mentalWellbeingPanel;
+		tgui::Picture::Ptr familyRelationshipPicture;
+
+		tgui::Picture::Ptr mentalWellbeingPicture;
 		//tgui::VerticalLayout::Ptr buttonLayoutTwo;
 		//tgui::Button::Ptr cancelButton;
 		//tgui::Button::Ptr selectButton;

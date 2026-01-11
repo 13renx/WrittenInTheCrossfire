@@ -19,8 +19,8 @@ class WriteLetterView : public View
 		tgui::Label::Ptr dearLabel;
 		tgui::TextArea::Ptr letterTextArea;
 		tgui::VerticalLayout::Ptr buttonLayout;
-		tgui::Panel::Ptr familyRelationshipPanel;
-		tgui::Panel::Ptr mentalWellbeingPanel;
+		tgui::Picture::Ptr familyRelationshipPicture;
+		tgui::Picture::Ptr mentalWellbeingPicture;
 		tgui::Button::Ptr cancelButton;
 		tgui::Button::Ptr sendButton;
 

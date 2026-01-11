@@ -32,39 +32,38 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogTextArea = tgui::TextArea::create();
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0, Macros::Fonts::Writing());
 	letterTextArea = tgui::TextArea::create();
-	familyRelationshipPanel = tgui::Panel::create();
-	mentalWellbeingPanel = tgui::Panel::create();
+	familyRelationshipPicture = tgui::Picture::create();
+	mentalWellbeingPicture = tgui::Picture::create();
 	buttonLayout = tgui::VerticalLayout::create({ 240, 220 });
 	cancelButton = tgui::Button::create("CANCEL WRITING");
 	sendButton = tgui::Button::create("SEND LETTER");
 
-	mentalWellbeingPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	{
 		Stats stats = gameState.getCurrentStats();
 
 		// Family Relationship
 		if(stats.familyRelationship > 75) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
 		}
 		else if(stats.familyRelationship > 50) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
 		}
 		else if(stats.familyRelationship > 25) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
 		}
 		else if(stats.familyRelationship < 26) {
-			familyRelationshipPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
+			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
 		}
 
 		// Mental Wellbeing
 		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
-			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
+			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
 		}
 		else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
-			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
+			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
 		}
 		else if(stats.mentalWellbeing < 26) {
-			mentalWellbeingPanel->getRenderer()->setTextureBackground("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
+			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
 		}
 	}
 	dialogPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
@@ -111,8 +110,8 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		this->isSendClicked = true;
 	});
 
-	mainPanel->add(familyRelationshipPanel);
-	mainPanel->add(mentalWellbeingPanel);
+	mainPanel->add(familyRelationshipPicture);
+	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(buttonLayout);

@@ -18,7 +18,8 @@ class ViewController {
 			SCENE_VIEW,
 			READ_LETTER_VIEW,
 			CAMP_VIEW,
-			WRITE_LETTER_VIEW
+			WRITE_LETTER_VIEW,
+			MAP_VIEW
 		};
 
 	private:

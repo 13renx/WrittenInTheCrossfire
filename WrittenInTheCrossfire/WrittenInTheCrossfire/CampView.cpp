@@ -119,6 +119,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
+		exitTentButton->setEnabled(false);
 		this->viewController->changeView(ViewController::ViewType::WRITE_LETTER_VIEW);
 	});
 	dontWriteButton->onClick([=] {
@@ -126,7 +127,16 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
+		exitTentButton->setEnabled(false);
 		this->isDontWriteClicked = true;
+	});
+	exitTentButton->onClick([=] {
+		Utils::Log::info("dontWriteButton clicked");
+
+		writeButton->setEnabled(false);
+		dontWriteButton->setEnabled(false);
+		exitTentButton->setEnabled(false);
+		this->viewController->changeView(ViewController::ViewType::MAP_VIEW);
 	});
 	
 	mainPanel->add(familyRelationshipGroup);

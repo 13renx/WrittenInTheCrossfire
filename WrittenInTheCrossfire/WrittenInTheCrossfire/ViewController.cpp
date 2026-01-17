@@ -3,6 +3,7 @@
 #include "GameModel.h"
 #include "GlobalWidgets.h"
 #include "MainMenuView.h"
+#include "MapView.h"
 #include "ReadLetterView.h"
 #include "SceneModel.h"
 #include "SceneView.h"
@@ -57,6 +58,10 @@ void ViewController::changeView(ViewType viewType) {
 		case ViewType::WRITE_LETTER_VIEW:
 			activeView = std::make_shared<WriteLetterView>(this, this->gameModel);
 			Utils::Log::info("activeView updated to WriteLetterView");
+			break;
+		case ViewType::MAP_VIEW:
+			activeView = std::make_shared<MapView>(this, this->gameModel);
+			Utils::Log::info("activeView updated to MapView");
 			break;
 	}
 }

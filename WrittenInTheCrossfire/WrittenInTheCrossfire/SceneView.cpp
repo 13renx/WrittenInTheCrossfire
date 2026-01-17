@@ -50,12 +50,12 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 		Utils::Log::info("scenePanel clicked");
 		int checkpoint = gameState.getCheckpoint();
 
-		if(checkpoint == 0 && assetIndex == assets.size()) {
+		if(checkpoint == 0 && assetIndex == assets.size()) { // Prelude
 			gameState.updateCheckpoint();
 			this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
-		} else if(checkpoint == 1 && assetIndex == assets.size()) {
-			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
-		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == assets.size()) {
+		} else if(checkpoint == 1 && assetIndex == assets.size()) { // After Prelude
+			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW); // Skip ReadLetterView
+		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == assets.size()) { // Regular/Bad ending
 			std::filesystem::remove("game.json");
 			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 		} else if(assetIndex < assets.size()) {
@@ -69,7 +69,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 			dialogTextArea->setText(text);
 			assetIndex++;
 		} else {
-			this->viewController->changeView(ViewController::ViewType::READ_LETTER_VIEW);
+			this->viewController->changeView(ViewController::ViewType::READ_LETTER_VIEW); // View Mom's letter
 		}
 	});
 	scenePanel->add(dialogTextArea);

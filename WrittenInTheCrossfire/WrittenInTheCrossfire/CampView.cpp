@@ -31,6 +31,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     buttonLayoutOne = tgui::HorizontalLayout::create({ 500, 100 });
     writeButton = tgui::Button::create("WRITE A LETTER");
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");
+	exitTentButton = tgui::Button::create("EXIT TENT");
 	patriotismPicture = tgui::Picture::create();
 	familyRelationshipGroup = tgui::Group::create();
 	familyRelationshipPicture = tgui::Picture::create();
@@ -77,6 +78,8 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	}
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
+	exitTentButton->setSize(240, 100);
+	exitTentButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(exitTentButton), tgui::bindHeight(gui) - tgui::bindHeight(exitTentButton));
 	mentalWellbeingPicture->setIgnoreMouseEvents(true);
 	familyRelationshipPanel->setVisible(false);
 	familyRelationshipPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
@@ -101,7 +104,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 
 		if(this->isPicFrameFar) {
 			familyRelationshipPanel->setVisible(true);
-			familyRelationshipPicture->setScale(1.0f);
+			familyRelationshipPicture->setScale(1.5f);
 			familyRelationshipPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(familyRelationshipPanel) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(familyRelationshipPanel)) / 2.0f);
 			this->isPicFrameFar = false;
 		} else {
@@ -129,6 +132,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	mainPanel->add(familyRelationshipGroup);
 	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(buttonLayoutOne);
+	mainPanel->add(exitTentButton);
 	familyRelationshipGroup->add(familyRelationshipPanel);
 	familyRelationshipGroup->add(familyRelationshipPicture);
 	buttonLayoutOne->add(writeButton);

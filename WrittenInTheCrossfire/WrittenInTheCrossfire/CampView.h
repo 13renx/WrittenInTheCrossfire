@@ -17,6 +17,7 @@ class CampView : public View
 		tgui::HorizontalLayout::Ptr buttonLayoutOne;
 		tgui::Button::Ptr writeButton;
 		tgui::Button::Ptr dontWriteButton;
+		tgui::Button::Ptr exitTentButton;
 		tgui::Picture::Ptr patriotismPicture;
 
 		// Family Relationship

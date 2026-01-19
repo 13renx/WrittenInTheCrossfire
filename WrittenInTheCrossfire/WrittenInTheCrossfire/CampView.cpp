@@ -34,8 +34,14 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	exitTentButton = tgui::Button::create("EXIT TENT");
 	patriotismPicture = tgui::Picture::create();
 	familyRelationshipGroup = tgui::Group::create();
-	familyRelationshipPicture = tgui::Picture::create();
+	familyRelationshipPicture = Widgets::Pictures::createPictureButton(window);
 	familyRelationshipPanel = tgui::Panel::create();
+	newspaperGroup = tgui::Group::create();
+	newspaperPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Not Holding.PNG"));
+	newspaperPanel = tgui::Panel::create();
+	handMirrorGroup = tgui::Group::create();
+	handMirrorPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Not Holding.PNG"));
+	handMirrorPanel = tgui::Panel::create();
 	mentalWellbeingPicture = tgui::Picture::create();
 	
 	//buttonLayoutTwo = tgui::VerticalLayout::create({ 240, 220 });
@@ -85,6 +91,14 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	familyRelationshipPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	familyRelationshipPicture->setScale(0.5f);
 	familyRelationshipPicture->setPosition(70, 460);
+	newspaperPanel->setVisible(false);
+	newspaperPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
+	newspaperPicture->setScale(0.5f);
+	newspaperPicture->setPosition(450, 630);
+	handMirrorPanel->setVisible(false);
+	handMirrorPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
+	handMirrorPicture->setScale(0.5f);
+	handMirrorPicture->setPosition(50, 860);
 	
     //buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     //buttonLayoutTwo->setVisible(false);
@@ -114,6 +128,12 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			this->isPicFrameFar = true;
 		}
 	});
+	newspaperPicture->onClick([=] {
+		Utils::Log::info("newspaperPicture clicked");
+	});
+	handMirrorPicture->onClick([=] {
+		Utils::Log::info("handMirrorPicture clicked");
+	});
 	writeButton->onClick([=] {
 		Utils::Log::info("writeButton clicked");
 
@@ -140,11 +160,17 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	});
 	
 	mainPanel->add(familyRelationshipGroup);
+	mainPanel->add(newspaperGroup);
+	mainPanel->add(handMirrorGroup);
 	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(buttonLayoutOne);
 	mainPanel->add(exitTentButton);
 	familyRelationshipGroup->add(familyRelationshipPanel);
 	familyRelationshipGroup->add(familyRelationshipPicture);
+	newspaperGroup->add(newspaperPanel);
+	newspaperGroup->add(newspaperPicture);
+	handMirrorGroup->add(handMirrorPanel);
+	handMirrorGroup->add(handMirrorPicture);
 	buttonLayoutOne->add(writeButton);
 	buttonLayoutOne->add(dontWriteButton);
 	//mainPanel->add(buttonLayoutTwo);

@@ -19,12 +19,15 @@ class CampView : public View
 		tgui::Button::Ptr dontWriteButton;
 		tgui::Button::Ptr exitTentButton;
 		tgui::Picture::Ptr patriotismPicture;
-
-		// Family Relationship
 		tgui::Group::Ptr familyRelationshipGroup;
 		tgui::Panel::Ptr familyRelationshipPanel;
 		tgui::Picture::Ptr familyRelationshipPicture;
-
+		tgui::Group::Ptr newspaperGroup;
+		tgui::Panel::Ptr newspaperPanel;
+		tgui::Picture::Ptr newspaperPicture;
+		tgui::Group::Ptr handMirrorGroup;
+		tgui::Panel::Ptr handMirrorPanel;
+		tgui::Picture::Ptr handMirrorPicture;
 		tgui::Picture::Ptr mentalWellbeingPicture;
 		//tgui::VerticalLayout::Ptr buttonLayoutTwo;
 		//tgui::Button::Ptr cancelButton;

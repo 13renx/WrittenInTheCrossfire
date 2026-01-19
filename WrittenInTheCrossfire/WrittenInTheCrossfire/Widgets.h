@@ -15,6 +15,11 @@ namespace Widgets {
 		tgui::Panel::Ptr createPanel(const tgui::Color& BackgroundColor);
 	}
 
+	namespace Pictures {
+		tgui::Picture::Ptr createPictureButton(sf::RenderWindow& window);
+		tgui::Picture::Ptr createPictureButton(sf::RenderWindow& window, tgui::Texture texture);
+	}
+
 	namespace Sliders {
 		tgui::Slider::Ptr createSlider(int value);
 		tgui::Slider::Ptr createVolumeSlider(tgui::Label::Ptr label, int volume);

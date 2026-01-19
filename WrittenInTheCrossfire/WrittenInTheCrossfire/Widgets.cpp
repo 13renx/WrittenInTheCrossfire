@@ -59,6 +59,33 @@ tgui::Panel::Ptr Widgets::Panels::createPanel(const tgui::Color& BackgroundColor
 	return panel;
 }
 
+tgui::Picture::Ptr Widgets::Pictures::createPictureButton(sf::RenderWindow& window) {
+	tgui::Picture::Ptr picture = tgui::Picture::create();
+
+	picture->onMouseEnter([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Hand));
+	});
+	picture->onMouseLeave([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	});
+
+	return picture;
+}
+
+tgui::Picture::Ptr Widgets::Pictures::createPictureButton(sf::RenderWindow& window, tgui::Texture texture) {
+	tgui::Picture::Ptr picture = tgui::Picture::create();
+	picture->getRenderer()->setTexture(texture);
+
+	picture->onMouseEnter([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Hand));
+	});
+	picture->onMouseLeave([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	});
+
+	return picture;
+}
+
 tgui::Slider::Ptr Widgets::Sliders::createSlider(int value) {
 	tgui::Slider::Ptr slider = tgui::Slider::create();
 

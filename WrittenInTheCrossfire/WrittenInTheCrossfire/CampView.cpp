@@ -23,6 +23,8 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	this->gameModel.getAudio().stopMusic();
 	isRunning = true;
 	isPicFrameFar = true;
+	isNewspaperFar = true;
+	isHandMirrorFar = true;
 	isDontWriteClicked = false;
 	std::thread dontWriteThread(&CampView::dontWrite, this);
 	dontWriteThread.detach();
@@ -33,6 +35,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");
 	exitTentButton = tgui::Button::create("EXIT TENT");
 	patriotismPicture = tgui::Picture::create();
+	objectsGroup = tgui::Group::create();
 	familyRelationshipGroup = tgui::Group::create();
 	familyRelationshipPicture = Widgets::Pictures::createPictureButton(window);
 	familyRelationshipPanel = tgui::Panel::create();
@@ -107,7 +110,10 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		Utils::Log::info("familyRelationshipPanel clicked");
 
 		if(!this->isPicFrameFar) {
+			familyRelationshipGroup->moveToBack();
 			familyRelationshipPanel->setVisible(false);
+			buttonLayoutOne->setVisible(true);
+			exitTentButton->setVisible(true);
 			familyRelationshipPicture->setScale(0.5f);
 			familyRelationshipPicture->setPosition(70, 460);
 			this->isPicFrameFar = true;
@@ -117,22 +123,93 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		Utils::Log::info("familyRelationshipPicture clicked");
 
 		if(this->isPicFrameFar) {
+			familyRelationshipGroup->moveToFront();
 			familyRelationshipPanel->setVisible(true);
+			buttonLayoutOne->setVisible(false);
+			exitTentButton->setVisible(false);
 			familyRelationshipPicture->setScale(1.5f);
 			familyRelationshipPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(familyRelationshipPanel) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(familyRelationshipPanel)) / 2.0f);
 			this->isPicFrameFar = false;
 		} else {
+			familyRelationshipGroup->moveToBack();
 			familyRelationshipPanel->setVisible(false);
+			buttonLayoutOne->setVisible(true);
+			exitTentButton->setVisible(true);
 			familyRelationshipPicture->setScale(0.5f);
 			familyRelationshipPicture->setPosition(70, 460);
 			this->isPicFrameFar = true;
 		}
 	});
-	newspaperPicture->onClick([=] {
-		Utils::Log::info("newspaperPicture clicked");
+	newspaperPanel->onClick([=, &gui] {
+		Utils::Log::info("newspaperPanel clicked");
+
+		if(!this->isNewspaperFar) {
+			newspaperGroup->moveToBack();
+			newspaperPanel->setVisible(false);
+			buttonLayoutOne->setVisible(true);
+			exitTentButton->setVisible(true);
+			newspaperPicture->setScale(0.5f);
+			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Not Holding.PNG"));
+			newspaperPicture->setPosition(450, 630);
+			this->isNewspaperFar = true;
+		}
 	});
-	handMirrorPicture->onClick([=] {
+	newspaperPicture->onClick([=, &gui] {
+		Utils::Log::info("newspaperPicture clicked");
+
+		if(this->isNewspaperFar) {
+			newspaperGroup->moveToFront();
+			newspaperPanel->setVisible(true);
+			buttonLayoutOne->setVisible(false);
+			exitTentButton->setVisible(false);
+			newspaperPicture->setScale(1.0f);
+			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Holding.PNG"));
+			newspaperPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(newspaperPicture) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(newspaperPicture)) / 2.0f);
+			this->isNewspaperFar = false;
+		} else {
+			newspaperGroup->moveToBack();
+			newspaperPanel->setVisible(false);
+			buttonLayoutOne->setVisible(true);
+			exitTentButton->setVisible(true);
+			newspaperPicture->setScale(0.5f);
+			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Not Holding.PNG"));
+			newspaperPicture->setPosition(450, 630);
+			this->isNewspaperFar = true;
+		}
+	});
+	handMirrorPanel->onClick([=] {
+		Utils::Log::info("handMirrorPanel clicked");
+
+		if(!this->isHandMirrorFar) {
+			handMirrorGroup->moveToBack();
+			handMirrorPanel->setVisible(false);
+			buttonLayoutOne->setVisible(true);
+			exitTentButton->setVisible(true);
+			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Not Holding.PNG"));
+			handMirrorPicture->setPosition(50, 860);
+			this->isHandMirrorFar = true;
+		}
+	});
+	handMirrorPicture->onClick([=, &gui] {
 		Utils::Log::info("handMirrorPicture clicked");
+
+		if(this->isHandMirrorFar) {
+			handMirrorGroup->moveToFront();
+			handMirrorPanel->setVisible(true);
+			buttonLayoutOne->setVisible(false);
+			exitTentButton->setVisible(false);
+			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Holding.PNG"));
+			handMirrorPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(handMirrorPicture) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(handMirrorPicture)) / 2.0f);
+			this->isHandMirrorFar = false;
+		} else {
+			handMirrorGroup->moveToBack();
+			handMirrorPanel->setVisible(false);
+			buttonLayoutOne->setVisible(true);
+			exitTentButton->setVisible(true);
+			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Not Holding.PNG"));
+			handMirrorPicture->setPosition(50, 860);
+			this->isHandMirrorFar = true;
+		}
 	});
 	writeButton->onClick([=] {
 		Utils::Log::info("writeButton clicked");
@@ -159,12 +236,13 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->viewController->changeView(ViewController::ViewType::MAP_VIEW);
 	});
 	
-	mainPanel->add(familyRelationshipGroup);
-	mainPanel->add(newspaperGroup);
-	mainPanel->add(handMirrorGroup);
+	mainPanel->add(objectsGroup);
 	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(buttonLayoutOne);
 	mainPanel->add(exitTentButton);
+	objectsGroup->add(newspaperGroup);
+	objectsGroup->add(familyRelationshipGroup);
+	objectsGroup->add(handMirrorGroup);
 	familyRelationshipGroup->add(familyRelationshipPanel);
 	familyRelationshipGroup->add(familyRelationshipPicture);
 	newspaperGroup->add(newspaperPanel);

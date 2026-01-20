@@ -19,6 +19,7 @@ class CampView : public View
 		tgui::Button::Ptr dontWriteButton;
 		tgui::Button::Ptr exitTentButton;
 		tgui::Picture::Ptr patriotismPicture;
+		tgui::Group::Ptr objectsGroup;
 		tgui::Group::Ptr familyRelationshipGroup;
 		tgui::Panel::Ptr familyRelationshipPanel;
 		tgui::Picture::Ptr familyRelationshipPicture;
@@ -35,6 +36,8 @@ class CampView : public View
 
 		bool isRunning;
 		bool isPicFrameFar;
+		bool isNewspaperFar;
+		bool isHandMirrorFar;
 		bool isDontWriteClicked;
 
 	public:

@@ -42,6 +42,9 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 		viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 		menuParentPanel->setVisible(false);
 	});
+	alertChildWindow->onClose([] {
+		Utils::Log::info("alertChildWindow closed");
+	});
 
 	menuParentPanel->add(menuChildPanel);
 	menuChildPanel->add(menuLayout);

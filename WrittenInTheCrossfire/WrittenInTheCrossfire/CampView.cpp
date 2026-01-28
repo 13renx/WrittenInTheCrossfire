@@ -281,12 +281,10 @@ void CampView::dontWrite() {
 			client.setGamePromptContents(tempChatHistory);
 
 			json res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
-			std::cout << "RES: " << res.dump(4) << std::endl << std::endl; // Log LLM response
 
 			// Error handling
 			if(res.contains("error")) {
 				res = client.fetchResponse(Client::PromptType::GAME, client.getApiKey());
-				std::cout << "RES: " << res.dump(4) << std::endl << std::endl;
 
 				if(res.contains("error")) {
 					alertLabel->setText("API key is not working.");
@@ -302,7 +300,6 @@ void CampView::dontWrite() {
 			// Update stats
 			gameState.updateCurrentStats(parsedText["stats"]);
 			Stats& stats = gameState.getCurrentStats();
-			std::cout << "STATS: " << std::endl << "familyRelationship: " << stats.familyRelationship << std::endl << "mentalWellbeing: " << stats.mentalWellbeing << std::endl << "patriotism: " << stats.patriotism << std::endl << std::endl; // Log new stats
 
 			// Update checkpoint
 			if(stats.mentalWellbeing < 1) {

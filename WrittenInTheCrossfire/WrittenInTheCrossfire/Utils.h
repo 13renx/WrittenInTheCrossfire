@@ -4,11 +4,16 @@
 
 namespace Utils
 {
-	namespace Log {
-		void info(std::string text);
-		void warn(std::string text);
-		void error(std::string text);
-		void critical(std::string text);
-	}
-};
+	class Log {
+		private:
+			static std::string fileName;
+			static spdlog::logger logger;
 
+		public:
+			static void init();
+			static void info(std::string text);
+			static void warn(std::string text);
+			static void error(std::string text);
+			static void critical(std::string text);
+		};
+};

@@ -108,10 +108,11 @@ Stats& GameState::calculateStatChanges(json& sentiments) {
 	srand(time(0));
 
 	for(auto& item : sentiments.items()) {
-		if(item.value() != "NEUTRAL") {
 			int statChanges = rand() % 8; // Generates a random value between 0 and 7
-
-			if(item.value() == "EXCELLENT") {
+			
+			if(item.value() != "NEUTRAL") {
+				statChanges += 0;
+			} else if(item.value() == "EXCELLENT") {
 				statChanges += 14;
 			} else if(item.value() == "GOOD") {
 				statChanges += 7;
@@ -131,7 +132,6 @@ Stats& GameState::calculateStatChanges(json& sentiments) {
 				newStats.patriotism += statChanges;
 			}
 		}
-	}
 
 	return newStats;
 }

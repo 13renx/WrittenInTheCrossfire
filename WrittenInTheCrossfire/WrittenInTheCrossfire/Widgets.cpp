@@ -10,6 +10,21 @@
 tgui::Label::Ptr Widgets::Labels::createLabel(std::string text,
 	unsigned int textSize,
 	tgui::Layout x,
+	tgui::Layout y)
+{
+	tgui::Label::Ptr label = tgui::Label::create(text);
+
+	label->setTextSize(textSize);
+	label->setPosition(x, y);
+
+	label->getRenderer()->setTextColor(Macros::Colors::Redwood);
+
+	return label;
+}
+
+tgui::Label::Ptr Widgets::Labels::createLabel(std::string text,
+	unsigned int textSize,
+	tgui::Layout x,
 	tgui::Layout y,
 	const tgui::Font& font)
 {
@@ -21,6 +36,26 @@ tgui::Label::Ptr Widgets::Labels::createLabel(std::string text,
 	label->getRenderer()->setFont(font);
 	label->getRenderer()->setTextColor(Macros::Colors::Redwood);
 	
+	return label;
+}
+
+tgui::Label::Ptr Widgets::Labels::createButtonLabel(std::string text,
+	unsigned int textSize,
+	tgui::Layout x,
+	tgui::Layout y,
+	sf::RenderWindow& window)
+{
+	tgui::Label::Ptr label = createLabel(text, textSize, x, y);
+
+	label->onMouseEnter([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Hand));
+		label->getRenderer()->setTextColor(tgui::Color::White);
+		});
+	label->onMouseLeave([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+		label->getRenderer()->setTextColor(Macros::Colors::Redwood);
+		});
+
 	return label;
 }
 

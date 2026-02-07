@@ -1,4 +1,5 @@
 #include "ReadLetterView.h"
+#include "Fonts.h"
 #include "GameModel.h"
 #include "Macros.h"
 #include "Utils.h"
@@ -12,6 +13,7 @@ using json = nlohmann::json;
 
 ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, "Assets/Textures/Backgrounds/ReadLetterView.PNG"), gameState(this->gameModel.getGameState()) {
 	tgui::Gui& gui = this->gameModel.getGui();
+	Fonts& fonts = this->gameModel.getFonts();
 
 	// Initialize widgets
 	letterTextArea = tgui::TextArea::create();
@@ -61,7 +63,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	letterTextArea->getRenderer()->setSelectedTextColor(tgui::Color::Black);
 	letterTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	letterTextArea->getRenderer()->setTextColor(tgui::Color::Black);
-	letterTextArea->getRenderer()->setFont(Macros::Fonts::Writing()); // new
+	letterTextArea->getRenderer()->setFont(fonts.getWriting());
 	finishButton->setSize(240, 100);
 	finishButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(finishButton), tgui::bindHeight(gui) - tgui::bindHeight(finishButton));
 

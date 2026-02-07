@@ -18,24 +18,24 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 	settingsModel.load();
 
 	// Initialize widgets
-	titleLabel = Widgets::Labels::createLabel("SETTINGS", 100, 700, 70, Macros::Fonts::Default());
-	audioLabel = Widgets::Labels::createLabel("AUDIO", 75, 0, 0, Macros::Fonts::Default());
+	titleLabel = Widgets::Labels::createLabel("SETTINGS", 100, 700, 70);
+	audioLabel = Widgets::Labels::createLabel("AUDIO", 75, 0, 0);
 	leftLayout = tgui::GrowVerticalLayout::create(1000);
-	masterVolumeLabel = Widgets::Labels::createLabel("MASTER VOLUME", 50, 0, 0, Macros::Fonts::Default());
+	masterVolumeLabel = Widgets::Labels::createLabel("MASTER VOLUME", 50, 0, 0);
 	masterVolumeLayout = tgui::HorizontalLayout::create({ 600, 50 });
-	masterVolumeValueLabel = Widgets::Labels::createLabel(std::to_string(settingsModel.getMasterVolume()), 25, 0, 0, Macros::Fonts::Default());
+	masterVolumeValueLabel = Widgets::Labels::createLabel(std::to_string(settingsModel.getMasterVolume()), 25, 0, 0);
 	masterVolumeSlider = Widgets::Sliders::createVolumeSlider(masterVolumeValueLabel, settingsModel.getMasterVolume());
-	sfxVolumeLabel = Widgets::Labels::createLabel("SFX", 50, 0, 0, Macros::Fonts::Default());
+	sfxVolumeLabel = Widgets::Labels::createLabel("SFX", 50, 0, 0);
 	sfxVolumeLayout = tgui::HorizontalLayout::create({ 600, 50 });
-	sfxVolumeValueLabel = Widgets::Labels::createLabel(std::to_string(settingsModel.getSfxVolume()), 25, 0, 0, Macros::Fonts::Default());
+	sfxVolumeValueLabel = Widgets::Labels::createLabel(std::to_string(settingsModel.getSfxVolume()), 25, 0, 0);
 	sfxVolumeSlider = Widgets::Sliders::createVolumeSlider(sfxVolumeValueLabel, settingsModel.getSfxVolume());
-	musicVolumeLabel = Widgets::Labels::createLabel("MUSIC", 50, 0, 0, Macros::Fonts::Default());
+	musicVolumeLabel = Widgets::Labels::createLabel("MUSIC", 50, 0, 0);
 	musicVolumeLayout = tgui::HorizontalLayout::create({ 600, 50 });
-	musicVolumeValueLabel = Widgets::Labels::createLabel(std::to_string(settingsModel.getMusicVolume()), 25, 0, 0, Macros::Fonts::Default());
+	musicVolumeValueLabel = Widgets::Labels::createLabel(std::to_string(settingsModel.getMusicVolume()), 25, 0, 0);
 	musicVolumeSlider = Widgets::Sliders::createVolumeSlider(musicVolumeValueLabel, settingsModel.getMusicVolume());
-	backLabel = Widgets::Labels::createButtonLabel("BACK", 50, 0, 0, window, Macros::Fonts::Default());
-	resetLabel = Widgets::Labels::createButtonLabel("RESET", 50, 0, 0, window, Macros::Fonts::Default());
-	saveLabel = Widgets::Labels::createButtonLabel("SAVE", 50, 0, 0, window, Macros::Fonts::Default());
+	backLabel = Widgets::Labels::createButtonLabel("BACK", 50, 0, 0, window);
+	resetLabel = Widgets::Labels::createButtonLabel("RESET", 50, 0, 0, window);
+	saveLabel = Widgets::Labels::createButtonLabel("SAVE", 50, 0, 0, window);
 	buttonsLayout = tgui::GrowHorizontalLayout::create();
 	
 	leftLayout->setPosition(120, 200);

@@ -11,10 +11,10 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	menuParentPanel = tgui::Panel::create();
 	menuChildPanel = tgui::Panel::create();
 	menuLayout = tgui::GrowVerticalLayout::create();
-	menuResumeLabel = Widgets::Labels::createButtonLabel("RESUME", 50, 0, 0, window, Macros::Fonts::Default());
-	menuExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window, Macros::Fonts::Default());
+	menuResumeLabel = Widgets::Labels::createButtonLabel("RESUME", 50, 0, 0, window);
+	menuExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
 	alertChildWindow = tgui::ChildWindow::create();
-	alertLabel = Widgets::Labels::createLabel("", 13, 0, 0, Macros::Fonts::Default());
+	alertLabel = Widgets::Labels::createLabel("", 13, 0, 0);
 	mainPanel = tgui::Panel::create();
 
 	menuParentPanel->setVisible(false);

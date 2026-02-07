@@ -1,5 +1,6 @@
 #include "WriteLetterView.h"
 #include "Client.h"
+#include "Fonts.h"
 #include "GameModel.h"
 #include "Macros.h"
 #include "Utils.h"
@@ -21,6 +22,7 @@ using json = nlohmann::json;
 WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, "Assets/Textures/Backgrounds/WriteLetterView.PNG"), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	Fonts& fonts = this->gameModel.getFonts();
 	this->gameModel.getAudio().stopMusic();
 	isRunning = true;
 	isSendClicked = false;
@@ -30,7 +32,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	// Initialize widgets
 	dialogPanel = tgui::Panel::create();
 	dialogTextArea = tgui::TextArea::create();
-	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0, Macros::Fonts::Writing());
+	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0, fonts.getWriting());
 	letterTextArea = tgui::TextArea::create();
 	familyRelationshipPicture = tgui::Picture::create();
 	mentalWellbeingPicture = tgui::Picture::create();
@@ -86,7 +88,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	letterTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 26, (tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea)) / 2.0f + 40);
 	letterTextArea->setMaximumCharacters(1500);
 	letterTextArea->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
-	letterTextArea->getRenderer()->setFont(Macros::Fonts::Writing());
+	letterTextArea->getRenderer()->setFont(fonts.getWriting());
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 

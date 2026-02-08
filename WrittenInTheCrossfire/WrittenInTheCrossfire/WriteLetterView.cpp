@@ -24,8 +24,8 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	tgui::Gui& gui = this->gameModel.getGui();
 	Fonts& fonts = this->gameModel.getFonts();
 	this->gameModel.getAudio().stopMusic();
-	isRunning = true;
 	isSendClicked = false;
+	isRunning = true;
 	std::thread sendThread(&WriteLetterView::send, this);
 	sendThread.detach();
 

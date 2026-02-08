@@ -4,6 +4,7 @@
 #include "GameModel.h"
 #include "View.h"
 #include "ViewController.h"
+#include <atomic>
 #include <memory>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
@@ -25,7 +26,7 @@ class WriteLetterView : public View
 		tgui::Button::Ptr sendButton;
 
 		bool isRunning;
-		bool isSendClicked;
+		std::atomic<bool> isSendClicked;
 
 	public:
 		WriteLetterView(ViewController* viewController, GameModel& gameModel);

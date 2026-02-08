@@ -109,10 +109,12 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 
 			if(result) {
 				client.setApiKey(apiKey);
-				apiGroup->setVisible(false);
 				alertLabel->setText("API key stored successfully.");
-			}
-			else {
+				alertChildWindow->setVisible(true);
+
+				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+				return;
+			} else {
 				alertLabel->setText(message);
 			}
 		} else {

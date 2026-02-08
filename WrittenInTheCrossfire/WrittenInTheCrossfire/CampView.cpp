@@ -21,11 +21,11 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
-	isRunning = true;
 	isPicFrameFar = true;
 	isNewspaperFar = true;
 	isHandMirrorFar = true;
 	isDontWriteClicked = false;
+	isRunning = true;
 	std::thread dontWriteThread(&CampView::dontWrite, this);
 	dontWriteThread.detach();
 

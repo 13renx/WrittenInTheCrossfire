@@ -24,6 +24,6 @@ class Client {
         std::string getApiKey();
         json fetchResponse(PromptType promptType, const std::string& apiKey);
         std::tuple<bool, std::string> testApiKey(const std::string& apiKey);
-        std::tuple<bool, std::string> setApiKey(const std::string& apiKey);
+        void setApiKey(const std::string& apiKey);
         void setGamePromptContents(std::vector<json>& j);
 };

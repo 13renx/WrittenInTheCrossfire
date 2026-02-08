@@ -26,7 +26,7 @@ class GameState : Model {
         std::tuple<bool, std::string> save() override;
         std::tuple<bool, std::string> load() override;
         void updateCheckpoint();
-		Stats& calculateStatChanges(json& sentiments);
+		Stats calculateStatChanges(json& sentiments);
         void updateCurrentStats(json& sentiments);
 
         NLOHMANN_DEFINE_TYPE_INTRUSIVE(GameState, chatHistory, checkpoint, currentStats) // Creates to_json() and from_json() for GameState

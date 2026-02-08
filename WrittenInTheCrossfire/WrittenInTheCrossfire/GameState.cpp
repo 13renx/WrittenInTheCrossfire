@@ -83,8 +83,7 @@ std::tuple<bool, std::string> GameState::load() {
 }
 
 void GameState::updateCurrentStats(json& sentiments) {
-    Utils::Log::info(fmt::format("OLD currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.familyRelationship, currentStats.mentalWellbeing, currentStats.patriotism));
-	Stats& newStats = calculateStatChanges(sentiments);
+	Stats newStats = calculateStatChanges(sentiments);
 
 	currentStats.familyRelationship += newStats.familyRelationship;
 	currentStats.mentalWellbeing += newStats.mentalWellbeing;
@@ -101,38 +100,38 @@ void GameState::updateCurrentStats(json& sentiments) {
 	}
 
 	Utils::Log::info("currentStats updated");
-	Utils::Log::info(fmt::format("NEW currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.familyRelationship, currentStats.mentalWellbeing, currentStats.patriotism));
+	Utils::Log::info(fmt::format("currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.familyRelationship, currentStats.mentalWellbeing, currentStats.patriotism));
 }
 
-Stats& GameState::calculateStatChanges(json& sentiments) {
+Stats GameState::calculateStatChanges(json& sentiments) {
 	Stats newStats = { 0, 0, 0 };
 	srand(time(0));
 
 	for(auto& item : sentiments.items()) {
-			int statChanges = rand() % 7 + 1; // Generates a random value between 1 and 7
+		int statChanges = rand() % 7 + 1; // Generates a random value between 1 and 7
 			
-			if(item.value() == "NEUTRAL") {
-				statChanges *= 0;
-			} else if(item.value() == "EXCELLENT") {
-				statChanges += 14;
-			} else if(item.value() == "GOOD") {
-				statChanges += 7;
-			} else if(item.value() == "POOR") {
-				statChanges *= -1;
-			} else if(item.value() == "BAD") {
-				statChanges = statChanges * -1 - 7;
-			} else if(item.value() == "TERRIBLE") {
-				statChanges = statChanges * -1 - 14;
-			}
-
-			if(item.key() == "familyRelationship") {
-				newStats.familyRelationship += statChanges;
-			} else if(item.key() == "mentalWellbeing") {
-				newStats.mentalWellbeing += statChanges;
-			} else if(item.key() == "patriotism") {
-				newStats.patriotism += statChanges;
-			}
+		if(item.value() == "NEUTRAL") {
+			statChanges *= 0;
+		} else if(item.value() == "EXCELLENT") {
+			statChanges += 14;
+		} else if(item.value() == "GOOD") {
+			statChanges += 7;
+		} else if(item.value() == "POOR") {
+			statChanges *= -1;
+		} else if(item.value() == "BAD") {
+			statChanges = statChanges * -1 - 7;
+		} else if(item.value() == "TERRIBLE") {
+			statChanges = statChanges * -1 - 14;
 		}
+
+		if(item.key() == "familyRelationship") {
+			newStats.familyRelationship = statChanges;
+		} else if(item.key() == "mentalWellbeing") {
+			newStats.mentalWellbeing = statChanges;
+		} else if(item.key() == "patriotism") {
+			newStats.patriotism = statChanges;
+		}
+	}
 
 	return newStats;
 }

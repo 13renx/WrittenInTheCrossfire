@@ -83,6 +83,7 @@ std::tuple<bool, std::string> GameState::load() {
 }
 
 void GameState::updateCurrentStats(json& sentiments) {
+    Utils::Log::info(fmt::format("OLD currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.familyRelationship, currentStats.mentalWellbeing, currentStats.patriotism));
 	Stats& newStats = calculateStatChanges(sentiments);
 
 	currentStats.familyRelationship += newStats.familyRelationship;
@@ -100,7 +101,7 @@ void GameState::updateCurrentStats(json& sentiments) {
 	}
 
 	Utils::Log::info("currentStats updated");
-	Utils::Log::info(fmt::format("currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.familyRelationship, currentStats.mentalWellbeing, currentStats.patriotism));
+	Utils::Log::info(fmt::format("NEW currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.familyRelationship, currentStats.mentalWellbeing, currentStats.patriotism));
 }
 
 Stats& GameState::calculateStatChanges(json& sentiments) {
@@ -108,10 +109,10 @@ Stats& GameState::calculateStatChanges(json& sentiments) {
 	srand(time(0));
 
 	for(auto& item : sentiments.items()) {
-			int statChanges = rand() % 8; // Generates a random value between 0 and 7
+			int statChanges = rand() % 7 + 1; // Generates a random value between 1 and 7
 			
-			if(item.value() != "NEUTRAL") {
-				statChanges += 0;
+			if(item.value() == "NEUTRAL") {
+				statChanges *= 0;
 			} else if(item.value() == "EXCELLENT") {
 				statChanges += 14;
 			} else if(item.value() == "GOOD") {

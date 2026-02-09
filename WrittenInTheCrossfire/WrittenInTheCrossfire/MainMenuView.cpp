@@ -55,19 +55,22 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	exitMessageBox->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(exitMessageBox)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(exitMessageBox)) / 2.0f);
 	exitMessageBox->setButtonAlignment(tgui::HorizontalAlignment::Right);
 	exitMessageBox->setPositionLocked(true);
+	exitMessageBox->getRenderer()->setTextColor(tgui::Color::White);
 	exitPanel->getRenderer()->setOpacity(0.5f);
 	apiGroup->setVisible(false);
 	apiChildWindow->setSize(400, 155);
 	apiChildWindow->setPositionLocked(true);
 	apiChildWindow->setTitleButtons(tgui::ChildWindow::TitleButton::None);
 	apiChildWindow->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(apiChildWindow)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(apiChildWindow)) / 2.0f);
+	apiLabel->getRenderer()->setTextColor(tgui::Color::White);
 	apiPanel->getRenderer()->setOpacity(0.5f);
 	apiMainLayout->getRenderer()->setSpaceBetweenWidgets(15);
 	apiMainLayout->getRenderer()->setPadding(20);
 	apiEditBox->setMaximumCharacters(39);
+	apiEditBox->setPasswordCharacter('*');
 	apiButtonsLayout->setSize(0, 25);
 	apiButtonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
-	apiFillerGroup->setSize(190, 0);
+	apiFillerGroup->setSize(170, 0);
 	optionsLayout->setPosition(1570, 500);
 	{
 		std::ifstream file = std::ifstream("game.json");
@@ -100,6 +103,12 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	apiCancelButton->onPress([=] { 
 		Utils::Log::info("apiCancelButton clicked");
 		apiGroup->setVisible(false);
+	});
+	apiEditBox->onMouseEnter([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Text));
+	});
+	apiEditBox->onMouseLeave([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 	});
 	apiEnterButton->onPress([=, &client, &gameState]() {
 		Utils::Log::info("apiEnterButton clicked");

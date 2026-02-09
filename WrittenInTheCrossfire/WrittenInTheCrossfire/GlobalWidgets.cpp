@@ -29,6 +29,7 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	alertChildWindow->setPositionLocked(true);
 	alertChildWindow->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(alertChildWindow)) / 2.0f, 0);
 	alertChildWindow->setVisible(false);
+	alertLabel->getRenderer()->setTextColor(tgui::Color::White);
 	alertLabel->setPosition(10, 10);
 
 	menuResumeLabel->onClick([=, &window] {

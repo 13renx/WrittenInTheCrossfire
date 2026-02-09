@@ -17,8 +17,6 @@ tgui::Label::Ptr Widgets::Labels::createLabel(std::string text,
 	label->setTextSize(textSize);
 	label->setPosition(x, y);
 
-	label->getRenderer()->setTextColor(Macros::Colors::Redwood);
-
 	return label;
 }
 
@@ -32,9 +30,7 @@ tgui::Label::Ptr Widgets::Labels::createLabel(std::string text,
 
 	label->setTextSize(textSize);
 	label->setPosition(x, y);
-
 	label->getRenderer()->setFont(font);
-	label->getRenderer()->setTextColor(Macros::Colors::Redwood);
 	
 	return label;
 }

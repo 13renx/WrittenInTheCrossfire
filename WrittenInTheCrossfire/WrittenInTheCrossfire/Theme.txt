@@ -1,9 +1,9 @@
-TextColor = rgba(180, 120, 105, 255);
+TextColor = rgb(180, 120, 105); 
 TextColorHover = rgba(255, 255, 255, 235);
 SelectedTextColor = rgba(255, 255, 255, 245);
 BorderColor = rgba(240, 240, 240, 215);
-BackgroundColor = rgba(180, 180, 180, 215);
-BackgroundColorHover = rgba(190, 190, 190, 215);
+BackgroundColor = rgb(28, 28, 28);
+BackgroundColorHover = rgb(80, 80, 80);
 SelectedBackgroundColor = rgba(0, 110, 200, 130);
 ArrowBackgroundColor = rgba(160, 160, 160, 215);
 ArrowBackgroundColorHover = rgba(170, 170, 170, 215);
@@ -11,38 +11,25 @@ ArrowColor = rgba(200, 200, 200, 215);
 ArrowColorHover = rgba(225, 225, 225, 215);
 
 Button {
-    BackgroundColorDown = rgba(150, 150, 150, 215);
+    BackgroundColor = rgba(57, 57, 57, 150);
+    BackgroundColorDown = rgb(100, 100, 100);
+    TextColor = rgb(255, 255, 255);
     TextColorDown = &TextColorHover;
+    TextSize = 20;
 }
 
 ChildWindow {
-    TitleBarColor = rgba(170, 170, 170, 215);
+    TitleBarColor = rgb(45, 45, 45);
     DistanceToSide = 3;
     PaddingBetweenButtons = 1;
     ShowTextOnTitleButtons = true;
+    TextSize = 20;
 }
 
 EditBox {
-    DefaultTextColor = rgba(240, 240, 240, 175);
-    CaretColor = rgba(255, 255, 255, 215);
-}
-
-Knob {
-    Borders = 2;
-}
-
-ListView {
-    HeaderBackgroundColor = rgb(160, 160, 160, 215);
-}
-
-ProgressBar {
-    FillColor = rgba(0, 110, 200, 130);
-    TextColorFilled = rgba(255, 255, 255, 245);
-}
-
-RadioButton {
-    CheckColor = rgba(255, 255, 255, 180);
-    CheckColorHover = rgba(255, 255, 255, 200);
+    BackgroundColor = rgba(57, 57, 57, 150);
+    TextColor = rgb(255, 255, 255);
+    CaretColor = rgb(255, 255, 255);
 }
 
 Scrollbar {
@@ -59,19 +46,7 @@ Slider {
     ThumbColorHover = rgba(170, 170, 170, 215);
 }
 
-SpinButton {
-    BorderBetweenArrows = 1;
-}
-
 TextArea {
-    CaretColor = rgba(255, 255, 255, 215);
-}
-
-ToolTip {
-    BackgroundColor = rgba(180, 180, 180, 215);
-    Padding = 2;
-}
-
-ToggleButton : Button {
-    BackgroundColorDownHover = rgba(160, 160, 160, 215);
+    CaretColor = rgb(0, 0, 0);
+    Padding = 20;
 }

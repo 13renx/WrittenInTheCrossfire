@@ -309,7 +309,7 @@ void CampView::dontWrite() {
 			} else if(stats.patriotism < 1) {
 				gameState.setCheckpoint(-3);
 			} else {
-				gameState.updateCheckpoint();
+				gameState.incrementCheckpoint();
 			}
 
 			// Update chat history

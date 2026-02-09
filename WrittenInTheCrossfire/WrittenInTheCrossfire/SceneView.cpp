@@ -50,7 +50,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 		int checkpoint = gameState.getCheckpoint();
 
 		if(checkpoint == 0 && assetIndex == assets.size()) { // Prelude
-			gameState.updateCheckpoint();
+			gameState.incrementCheckpoint();
 			this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
 		} else if(checkpoint == 1 && assetIndex == assets.size()) { // After Prelude
 			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW); // Skip ReadLetterView

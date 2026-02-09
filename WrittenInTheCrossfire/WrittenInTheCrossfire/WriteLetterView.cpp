@@ -223,28 +223,16 @@ void WriteLetterView::send() {
 				// Update stats
 				gameState.updateCurrentStats(parsedText["stats"]);
 				Stats& stats = gameState.getCurrentStats();
-				if(stats.mentalWellbeing < 1) {
-					gameState.setCheckpoint(-1);
-				}
-				else if(stats.familyRelationship < 1) {
-					gameState.setCheckpoint(-2);
-				}
-				else if(stats.patriotism < 1) {
-					gameState.setCheckpoint(-3);
-				}
 
 				// Update checkpoint
 				if(stats.mentalWellbeing < 1) {
 					gameState.setCheckpoint(-1);
-				}
-				else if(stats.familyRelationship < 1) {
+				} else if(stats.familyRelationship < 1) {
 					gameState.setCheckpoint(-2);
-				}
-				else if(stats.patriotism < 1) {
+				} else if(stats.patriotism < 1) {
 					gameState.setCheckpoint(-3);
-				}
-				else {
-					gameState.updateCheckpoint();
+				} else {
+					gameState.incrementCheckpoint();
 				}
 
 				// Update chat history

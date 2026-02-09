@@ -26,6 +26,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	Client& client = this->gameModel.getClient();
 	GameState& gameState = this->gameModel.getGameState();
 	this->gameModel.getAudio().playMusic();
+	isContinueClicked = false;
 	
 	// Initialize widgets
 	exitGroup = tgui::Group::create();
@@ -100,7 +101,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		Utils::Log::info("apiCancelButton clicked");
 		apiGroup->setVisible(false);
 	});
-	apiEnterButton->onPress([=, &client]() { 
+	apiEnterButton->onPress([=, &client, &gameState]() {
 		Utils::Log::info("apiEnterButton clicked");
 		const std::string apiKey = apiEditBox->getText().toStdString();
 		
@@ -112,8 +113,23 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 				alertLabel->setText("API key stored successfully.");
 				alertChildWindow->setVisible(true);
 
-				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
-				return;
+				if(isContinueClicked) {
+					auto [result, message] = gameState.load();
+
+					alertLabel->setText(message);
+					alertChildWindow->setVisible(true);
+
+					if(!result) {
+						optionsContinueLabel->setEnabled(false);
+						optionsContinueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
+					} else {
+						this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+						return;
+					}
+				} else {
+					this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+					return;
+				}
 			} else {
 				alertLabel->setText(message);
 			}
@@ -124,6 +140,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		alertChildWindow->setVisible(true);
 	});
 	optionsNewGameLabel->onClick([=, &window, &client, &gameState] { 
+		isContinueClicked = false;
 		Utils::Log::info("optionsNewGameLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
@@ -144,6 +161,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		}
 	});
 	optionsContinueLabel->onClick([=, &window, &client, &gameState] {
+		isContinueClicked = true;
 		Utils::Log::info("optionsContinueLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 

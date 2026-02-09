@@ -31,7 +31,6 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->setText("...");
 	dialogTextArea->setReadOnly();
 	dialogTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
-	dialogTextArea->getRenderer()->setSelectedTextColor(Macros::Colors::Redwood);
 	dialogTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	dialogTextArea->setSize(1200, 300);
 	dialogTextArea->setTextSize(30);

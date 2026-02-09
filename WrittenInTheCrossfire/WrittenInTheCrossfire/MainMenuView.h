@@ -31,6 +31,8 @@ class MainMenuView : public View
 		tgui::Label::Ptr optionsAboutLabel;
 		tgui::Label::Ptr optionsExitLabel;
 
+		bool isContinueClicked;
+
 	public:
 		MainMenuView(ViewController* viewController, GameModel& gameModel);
 };

@@ -21,7 +21,7 @@ void Utils::Log::init() {
         fileName = str;
         std::replace(fileName.begin(), fileName.end(), ':', '-');
         fileName.pop_back(); // Remove newline
-        fileName = fmt::format("./logs/{}.txt", fileName);
+        fileName = fmt::format("./Logs/{}.txt", fileName);
 
         auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
         auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(fileName, true);

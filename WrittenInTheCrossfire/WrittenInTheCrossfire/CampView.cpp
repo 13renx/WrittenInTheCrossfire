@@ -20,6 +20,7 @@ using json = nlohmann::json;
 CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
+	Stats& stats = gameState.getCurrentStats();
 	this->gameModel.getAudio().stopMusic();
 	isPicFrameFar = true;
 	isNewspaperFar = true;
@@ -35,15 +36,15 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	dontWriteButton = tgui::Button::create("DON'T WRITE A LETTER");
 	exitTentButton = tgui::Button::create("EXIT TENT");
 	patriotismPicture = tgui::Picture::create();
-	objectsGroup = tgui::Group::create();
+	interactableGroup = tgui::Group::create();
 	familyRelationshipGroup = tgui::Group::create();
 	familyRelationshipPicture = Widgets::Pictures::createPictureButton(window);
 	familyRelationshipPanel = tgui::Panel::create();
 	newspaperGroup = tgui::Group::create();
-	newspaperPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Not Holding.PNG"));
+	newspaperPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("Assets/Textures/Interactables/Newspaper/Far.PNG"));
 	newspaperPanel = tgui::Panel::create();
 	handMirrorGroup = tgui::Group::create();
-	handMirrorPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Not Holding.PNG"));
+	handMirrorPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("Assets/Textures/Interactables/Hand Mirror/Far.PNG"));
 	handMirrorPanel = tgui::Panel::create();
 	mentalWellbeingPicture = tgui::Picture::create();
 	
@@ -51,39 +52,33 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	//cancelButton = tgui::Button::create("CANCEL");
 	//selectButton = tgui::Button::create("SELECT");
 
-	{
-		Stats stats = gameState.getCurrentStats();
-
-		// Patriotism
-		if(stats.patriotism > 75) {
-			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Very Good.png");
-		} else if(stats.patriotism > 50) {
-			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Good.png");
-		} else if(stats.patriotism > 25) {
-			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Bad.png");
-		} else if(stats.patriotism < 26) {
-			patriotismPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Patriotism/Worse.png");
-		}
-
-		// Family Relationship
-		if(stats.familyRelationship > 75) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
-		} else if(stats.familyRelationship > 50) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
-		} else if(stats.familyRelationship > 25) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
-		} else if(stats.familyRelationship < 26) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
-		}
-
-		// Mental Wellbeing
-		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
-			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
-		} else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
-			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
-		} else if(stats.mentalWellbeing < 26) {
-			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
-		}
+	// Patriotism
+	if(stats.patriotism > 75) {
+		patriotismPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Patriotism/Very Good.png");
+	} else if(stats.patriotism > 50) {
+		patriotismPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Patriotism/Good.png");
+	} else if(stats.patriotism > 25) {
+		patriotismPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Patriotism/Bad.png");
+	} else if(stats.patriotism < 26) {
+		patriotismPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Patriotism/Worse.png");
+	}
+	// Family Relationship
+	if(stats.familyRelationship > 75) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+	} else if(stats.familyRelationship > 50) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+	} else if(stats.familyRelationship > 25) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+	} else if(stats.familyRelationship < 26) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+	}
+	// Mental Wellbeing
+	if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
+		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Good.png");
+	} else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
+		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Bad.png");
+	} else if(stats.mentalWellbeing < 26) {
+		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Worse.png");
 	}
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
@@ -106,7 +101,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     //buttonLayoutTwo->getRenderer()->setSpaceBetweenWidgets(20);
     //buttonLayoutTwo->setVisible(false);
 
-	familyRelationshipPanel->onClick([=, &gui] {
+	familyRelationshipPanel->onClick([=, &gui, &stats] {
 		Utils::Log::info("familyRelationshipPanel clicked");
 
 		if(!this->isPicFrameFar) {
@@ -115,11 +110,23 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
 			familyRelationshipPicture->setScale(0.5f);
+			familyRelationshipPicture->setSize(560, 516);
+
+			if(stats.familyRelationship > 75) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+			} else if(stats.familyRelationship > 50) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+			} else if(stats.familyRelationship > 25) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+			} else if(stats.familyRelationship < 26) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+			}
+
 			familyRelationshipPicture->setPosition(70, 460);
 			this->isPicFrameFar = true;
 		}
 	});
-	familyRelationshipPicture->onClick([=, &gui] {
+	familyRelationshipPicture->onClick([=, &gui, &stats] {
 		Utils::Log::info("familyRelationshipPicture clicked");
 
 		if(this->isPicFrameFar) {
@@ -127,8 +134,21 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			familyRelationshipPanel->setVisible(true);
 			buttonLayoutOne->setVisible(false);
 			exitTentButton->setVisible(false);
-			familyRelationshipPicture->setScale(1.5f);
-			familyRelationshipPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(familyRelationshipPanel) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(familyRelationshipPanel)) / 2.0f);
+			familyRelationshipPicture->setScale(1.0f);
+			familyRelationshipPicture->setSize(1920, 1080);
+
+			// Family Relationship
+			if(stats.familyRelationship > 75) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Very Good.png");
+			} else if(stats.familyRelationship > 50) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Good.png");
+			} else if(stats.familyRelationship > 25) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Bad.png");
+			} else if(stats.familyRelationship < 26) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Worse.png");
+			}
+
+			familyRelationshipPicture->setPosition(0, 0);
 			this->isPicFrameFar = false;
 		} else {
 			familyRelationshipGroup->moveToBack();
@@ -136,6 +156,18 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
 			familyRelationshipPicture->setScale(0.5f);
+			familyRelationshipPicture->setSize(560, 516);
+
+			if(stats.familyRelationship > 75) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+			} else if(stats.familyRelationship > 50) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+			} else if(stats.familyRelationship > 25) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+			} else if(stats.familyRelationship < 26) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+			}
+
 			familyRelationshipPicture->setPosition(70, 460);
 			this->isPicFrameFar = true;
 		}
@@ -149,7 +181,8 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
 			newspaperPicture->setScale(0.5f);
-			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Not Holding.PNG"));
+			newspaperPicture->setSize(500, 349);
+			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Newspaper/Far.PNG"));
 			newspaperPicture->setPosition(450, 630);
 			this->isNewspaperFar = true;
 		}
@@ -163,8 +196,9 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			buttonLayoutOne->setVisible(false);
 			exitTentButton->setVisible(false);
 			newspaperPicture->setScale(1.0f);
-			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Holding.PNG"));
-			newspaperPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(newspaperPicture) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(newspaperPicture)) / 2.0f);
+			newspaperPicture->setSize(1920, 1080);
+			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Newspaper/Near.PNG"));
+			newspaperPicture->setPosition(0, 0);
 			this->isNewspaperFar = false;
 		} else {
 			newspaperGroup->moveToBack();
@@ -172,7 +206,8 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
 			newspaperPicture->setScale(0.5f);
-			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Newspaper/Not Holding.PNG"));
+			newspaperPicture->setSize(500, 349);
+			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Newspaper/Far.PNG"));
 			newspaperPicture->setPosition(450, 630);
 			this->isNewspaperFar = true;
 		}
@@ -185,12 +220,14 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			handMirrorPanel->setVisible(false);
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
-			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Not Holding.PNG"));
+			handMirrorPicture->setScale(0.5f);
+			handMirrorPicture->setSize(500, 349);
+			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Hand Mirror/Far.PNG"));
 			handMirrorPicture->setPosition(50, 860);
 			this->isHandMirrorFar = true;
 		}
 	});
-	handMirrorPicture->onClick([=, &gui] {
+	handMirrorPicture->onClick([=, &gui, &stats] {
 		Utils::Log::info("handMirrorPicture clicked");
 
 		if(this->isHandMirrorFar) {
@@ -198,15 +235,29 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			handMirrorPanel->setVisible(true);
 			buttonLayoutOne->setVisible(false);
 			exitTentButton->setVisible(false);
-			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Holding.PNG"));
-			handMirrorPicture->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(handMirrorPicture) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(handMirrorPicture)) / 2.0f);
+			handMirrorPicture->setScale(1.0f);
+			handMirrorPicture->setSize(1920, 1080);
+
+			if(stats.mentalWellbeing > 75) {
+				handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Hand Mirror/Near/Very Good.png"));
+			} else if(stats.mentalWellbeing > 50) {
+				handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Hand Mirror/Near/Good.png"));
+			} else if(stats.mentalWellbeing > 25) {
+				handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Hand Mirror/Near/Bad.png"));
+			} else if(stats.mentalWellbeing < 26) {
+				handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Hand Mirror/Near/Worse.png"));
+			}
+			
+			handMirrorPicture->setPosition(0, 0);
 			this->isHandMirrorFar = false;
 		} else {
 			handMirrorGroup->moveToBack();
 			handMirrorPanel->setVisible(false);
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
-			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Diegetic Interface/Hand Mirror/Not Holding.PNG"));
+			handMirrorPicture->setScale(0.5f);
+			handMirrorPicture->setSize(500, 349);
+			handMirrorPicture->getRenderer()->setTexture(tgui::Texture::Texture("Assets/Textures/Interactables/Hand Mirror/Far.PNG"));
 			handMirrorPicture->setPosition(50, 860);
 			this->isHandMirrorFar = true;
 		}
@@ -236,13 +287,13 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->viewController->changeView(ViewController::ViewType::MAP_VIEW);
 	});
 	
-	mainPanel->add(objectsGroup);
+	mainPanel->add(interactableGroup);
 	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(buttonLayoutOne);
 	mainPanel->add(exitTentButton);
-	objectsGroup->add(newspaperGroup);
-	objectsGroup->add(familyRelationshipGroup);
-	objectsGroup->add(handMirrorGroup);
+	interactableGroup->add(newspaperGroup);
+	interactableGroup->add(familyRelationshipGroup);
+	interactableGroup->add(handMirrorGroup);
 	familyRelationshipGroup->add(familyRelationshipPanel);
 	familyRelationshipGroup->add(familyRelationshipPicture);
 	newspaperGroup->add(newspaperPanel);

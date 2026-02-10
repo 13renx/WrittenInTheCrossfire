@@ -20,7 +20,7 @@ class CampView : public View
 		tgui::Button::Ptr dontWriteButton;
 		tgui::Button::Ptr exitTentButton;
 		tgui::Picture::Ptr patriotismPicture;
-		tgui::Group::Ptr objectsGroup;
+		tgui::Group::Ptr interactableGroup;
 		tgui::Group::Ptr familyRelationshipGroup;
 		tgui::Panel::Ptr familyRelationshipPanel;
 		tgui::Picture::Ptr familyRelationshipPicture;
@@ -35,11 +35,11 @@ class CampView : public View
 		//tgui::Button::Ptr cancelButton;
 		//tgui::Button::Ptr selectButton;
 
+		std::atomic<bool> isDontWriteClicked;
 		bool isRunning;
 		bool isPicFrameFar;
 		bool isNewspaperFar;
 		bool isHandMirrorFar;
-		std::atomic<bool> isDontWriteClicked;
 
 	public:
 		CampView(ViewController* viewController, GameModel& gameModel);

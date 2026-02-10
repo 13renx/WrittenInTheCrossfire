@@ -20,13 +20,16 @@ class WriteLetterView : public View
 		tgui::Label::Ptr dearLabel;
 		tgui::TextArea::Ptr letterTextArea;
 		tgui::VerticalLayout::Ptr buttonLayout;
+		tgui::Group::Ptr familyRelationshipGroup;
+		tgui::Panel::Ptr familyRelationshipPanel;
 		tgui::Picture::Ptr familyRelationshipPicture;
 		tgui::Picture::Ptr mentalWellbeingPicture;
 		tgui::Button::Ptr cancelButton;
 		tgui::Button::Ptr sendButton;
 
-		bool isRunning;
 		std::atomic<bool> isSendClicked;
+		bool isRunning;
+		bool isPicFrameFar;
 
 	public:
 		WriteLetterView(ViewController* viewController, GameModel& gameModel);

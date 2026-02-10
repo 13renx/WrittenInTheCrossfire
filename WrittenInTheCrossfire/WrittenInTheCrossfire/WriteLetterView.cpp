@@ -23,7 +23,9 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	Fonts& fonts = this->gameModel.getFonts();
+	Stats& stats = gameState.getCurrentStats();
 	this->gameModel.getAudio().stopMusic();
+	isPicFrameFar = true;
 	isSendClicked = false;
 	isRunning = true;
 	std::thread sendThread(&WriteLetterView::send, this);
@@ -34,40 +36,34 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogTextArea = tgui::TextArea::create();
 	dearLabel = Widgets::Labels::createLabel("Dear Mom,", 30, 0, 0, fonts.getWriting());
 	letterTextArea = tgui::TextArea::create();
-	familyRelationshipPicture = tgui::Picture::create();
+	familyRelationshipGroup = tgui::Group::create();
+	familyRelationshipPicture = Widgets::Pictures::createPictureButton(window);
+	familyRelationshipPanel = tgui::Panel::create();
 	mentalWellbeingPicture = tgui::Picture::create();
 	buttonLayout = tgui::VerticalLayout::create({ 240, 220 });
 	cancelButton = tgui::Button::create("CANCEL WRITING");
 	sendButton = tgui::Button::create("SEND LETTER");
 
-	{
-		Stats stats = gameState.getCurrentStats();
-
-		// Family Relationship
-		if(stats.familyRelationship > 75) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Very Good.png");
-		}
-		else if(stats.familyRelationship > 50) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Good.png");
-		}
-		else if(stats.familyRelationship > 25) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Bad.png");
-		}
-		else if(stats.familyRelationship < 26) {
-			familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Family Relationship/Worse.png");
-		}
-
-		// Mental Wellbeing
-		if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
-			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Good.png");
-		}
-		else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
-			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Bad.png");
-		}
-		else if(stats.mentalWellbeing < 26) {
-			mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Diegetic Interface/Mental Wellbeing/Worse.png");
-		}
+	// Family Relationship
+	if(stats.familyRelationship > 75) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+	} else if(stats.familyRelationship > 50) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+	} else if(stats.familyRelationship > 25) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+	} else if(stats.familyRelationship < 26) {
+		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
 	}
+	// Mental Wellbeing
+	if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
+		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Good.png");
+	} else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
+		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Bad.png");
+	} else if(stats.mentalWellbeing < 26) {
+		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Worse.png");
+	}
+	familyRelationshipPanel->setVisible(false);
+	familyRelationshipPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	dialogPanel->setSize(1920, 1080);
 	dialogPanel->setVisible(false);
@@ -92,6 +88,73 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	buttonLayout->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 
+	familyRelationshipPanel->onClick([=, &gui, &stats] {
+		Utils::Log::info("familyRelationshipPanel clicked");
+
+		if(!this->isPicFrameFar) {
+			familyRelationshipGroup->moveToBack();
+			familyRelationshipPanel->setVisible(false);
+			cancelButton->setVisible(true);
+			sendButton->setVisible(true);
+			familyRelationshipPicture->setSize(560, 516);
+			familyRelationshipPicture->setPosition(0, 0);
+
+			if(stats.familyRelationship > 75) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+			} else if(stats.familyRelationship > 50) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+			} else if(stats.familyRelationship > 25) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+			} else if(stats.familyRelationship < 26) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+			}
+
+			this->isPicFrameFar = true;
+		}
+	});
+	familyRelationshipPicture->onClick([=, &gui, &stats] {
+		Utils::Log::info("familyRelationshipPicture clicked");
+
+		if(this->isPicFrameFar) {
+			familyRelationshipGroup->moveToFront();
+			familyRelationshipPanel->setVisible(true);
+			cancelButton->setVisible(false);
+			sendButton->setVisible(false);
+			familyRelationshipPicture->setSize(1920, 1080);
+
+			// Family Relationship
+			if(stats.familyRelationship > 75) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Very Good.png");
+			} else if(stats.familyRelationship > 50) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Good.png");
+			} else if(stats.familyRelationship > 25) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Bad.png");
+			} else if(stats.familyRelationship < 26) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Worse.png");
+			}
+
+			this->isPicFrameFar = false;
+		} else {
+			familyRelationshipGroup->moveToBack();
+			familyRelationshipPanel->setVisible(false);
+			cancelButton->setVisible(true);
+			sendButton->setVisible(true);
+			familyRelationshipPicture->setSize(560, 516);
+
+			if(stats.familyRelationship > 75) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+			} else if(stats.familyRelationship > 50) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+			} else if(stats.familyRelationship > 25) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+			} else if(stats.familyRelationship < 26) {
+				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+			}
+
+			familyRelationshipPicture->setPosition(0, 0);
+			this->isPicFrameFar = true;
+		}
+	});
 	dialogPanel->onClick([=] {
 		Utils::Log::info("dialogPanel clicked");
 		dialogPanel->setVisible(false);
@@ -112,12 +175,14 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		this->isSendClicked = true;
 	});
 
-	mainPanel->add(familyRelationshipPicture);
+	mainPanel->add(familyRelationshipGroup);
 	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(dearLabel);
 	mainPanel->add(letterTextArea);
 	mainPanel->add(buttonLayout);
 	mainPanel->add(dialogPanel);
+	familyRelationshipGroup->add(familyRelationshipPanel);
+	familyRelationshipGroup->add(familyRelationshipPicture);
 	dialogPanel->add(dialogTextArea);
 	buttonLayout->add(cancelButton);
 	buttonLayout->add(sendButton);

@@ -287,6 +287,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->viewController->changeView(ViewController::ViewType::MAP_VIEW);
 	});
 	
+	mainPanel->add(patriotismPicture);
 	mainPanel->add(interactableGroup);
 	mainPanel->add(mentalWellbeingPicture);
 	mainPanel->add(buttonLayoutOne);

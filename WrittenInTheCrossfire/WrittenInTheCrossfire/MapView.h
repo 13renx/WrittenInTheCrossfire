@@ -9,6 +9,9 @@
 class MapView : public View
 {
 	private:
+		tgui::Picture::Ptr bunkerPicture;
+		tgui::Picture::Ptr mealAreaPicture;
+		tgui::Picture::Ptr storageBunkerPicture;
 		tgui::Button::Ptr backButton;
 
 	public:

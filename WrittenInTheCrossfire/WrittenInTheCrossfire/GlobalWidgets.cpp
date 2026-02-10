@@ -20,7 +20,7 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	mainPanel = tgui::Panel::create();
 
 	pauseGroup->setVisible(false);
-	pauseParentPanel->getRenderer()->setOpacity(0.5f);
+	pauseChildPanel->getRenderer()->setBackgroundColor(tgui::Color(28, 28, 28));
 	pauseChildPanel->setSize(500, 500);
 	pauseChildPanel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(pauseChildPanel)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(pauseChildPanel)) / 2.0f);
 	pauseLayout->setPosition(0, (tgui::bindHeight(pauseChildPanel) - tgui::bindHeight(pauseLayout)) / 2.0f);

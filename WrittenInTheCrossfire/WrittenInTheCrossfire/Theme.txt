@@ -50,3 +50,7 @@ TextArea {
     CaretColor = rgb(0, 0, 0);
     Padding = 20;
 }
+
+Panel {
+    BackgroundColor = rgba(28, 28, 28, 170);
+}

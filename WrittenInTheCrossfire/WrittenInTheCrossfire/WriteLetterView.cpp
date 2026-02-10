@@ -63,7 +63,6 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Worse.png");
 	}
 	familyRelationshipPanel->setVisible(false);
-	familyRelationshipPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogPanel->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	dialogPanel->setSize(1920, 1080);
 	dialogPanel->setVisible(false);
@@ -74,7 +73,6 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogTextArea->setSize(1200, 300);
 	dialogTextArea->setTextSize(30);
 	dialogTextArea->getRenderer()->setTextColor(tgui::Color::White);
-	dialogTextArea->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 30, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 90);
 	dearLabel->getRenderer()->setTextColor(tgui::Color::Black);

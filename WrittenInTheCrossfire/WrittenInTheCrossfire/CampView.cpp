@@ -86,15 +86,12 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	exitTentButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(exitTentButton), tgui::bindHeight(gui) - tgui::bindHeight(exitTentButton));
 	mentalWellbeingPicture->setIgnoreMouseEvents(true);
 	familyRelationshipPanel->setVisible(false);
-	familyRelationshipPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	familyRelationshipPicture->setScale(0.5f);
 	familyRelationshipPicture->setPosition(70, 460);
 	newspaperPanel->setVisible(false);
-	newspaperPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	newspaperPicture->setScale(0.5f);
 	newspaperPicture->setPosition(450, 630);
 	handMirrorPanel->setVisible(false);
-	handMirrorPanel->getRenderer()->setBackgroundColor(Macros::Colors::TransparentGrey);
 	handMirrorPicture->setScale(0.5f);
 	handMirrorPicture->setPosition(50, 860);
 	

@@ -56,14 +56,12 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	exitMessageBox->setButtonAlignment(tgui::HorizontalAlignment::Right);
 	exitMessageBox->setPositionLocked(true);
 	exitMessageBox->getRenderer()->setTextColor(tgui::Color::White);
-	exitPanel->getRenderer()->setOpacity(0.5f);
 	apiGroup->setVisible(false);
 	apiChildWindow->setSize(400, 155);
 	apiChildWindow->setPositionLocked(true);
 	apiChildWindow->setTitleButtons(tgui::ChildWindow::TitleButton::None);
 	apiChildWindow->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(apiChildWindow)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(apiChildWindow)) / 2.0f);
 	apiLabel->getRenderer()->setTextColor(tgui::Color::White);
-	apiPanel->getRenderer()->setOpacity(0.5f);
 	apiMainLayout->getRenderer()->setSpaceBetweenWidgets(15);
 	apiMainLayout->getRenderer()->setPadding(20);
 	apiEditBox->setMaximumCharacters(39);

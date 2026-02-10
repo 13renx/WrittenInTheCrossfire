@@ -15,8 +15,11 @@ class ReadLetterView : public View
 
 		tgui::TextArea::Ptr letterTextArea;
 		tgui::Button::Ptr finishButton;
+		tgui::Group::Ptr familyRelationshipGroup;
+		tgui::Panel::Ptr familyRelationshipPanel;
 		tgui::Picture::Ptr familyRelationshipPicture;
 		tgui::Picture::Ptr mentalWellbeingPicture;
+		bool isPicFrameFar;
 
 	public:
 		ReadLetterView(ViewController* viewController, GameModel& gameModel);

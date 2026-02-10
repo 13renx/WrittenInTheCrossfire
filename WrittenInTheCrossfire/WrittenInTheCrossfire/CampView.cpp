@@ -83,7 +83,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     buttonLayoutOne->getRenderer()->setSpaceBetweenWidgets(20);
 	buttonLayoutOne->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(buttonLayoutOne) + 20) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(buttonLayoutOne)) / 2.0f);
 	exitTentButton->setSize(240, 100);
-	exitTentButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(exitTentButton), 300);
+	exitTentButton->setPosition(1400, 300);
 	mentalWellbeingPicture->setIgnoreMouseEvents(true);
 	familyRelationshipPanel->setVisible(false);
 	familyRelationshipPicture->setScale(0.5f);

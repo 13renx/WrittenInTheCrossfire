@@ -74,7 +74,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogTextArea->setTextSize(30);
 	dialogTextArea->getRenderer()->setTextColor(tgui::Color::White);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
-	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 30, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 90);
+	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 46, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 90);
 	dearLabel->getRenderer()->setTextColor(tgui::Color::Black);
 	letterTextArea->setSize(822, 900);
 	letterTextArea->setTextSize(30);

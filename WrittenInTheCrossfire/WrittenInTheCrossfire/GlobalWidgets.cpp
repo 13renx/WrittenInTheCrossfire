@@ -8,22 +8,27 @@
 
 GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewController* viewController) {
 	// Initialize widgets
-	menuParentPanel = tgui::Panel::create();
-	menuChildPanel = tgui::Panel::create();
-	menuLayout = tgui::GrowVerticalLayout::create();
-	menuResumeLabel = Widgets::Labels::createButtonLabel("RESUME", 50, 0, 0, window);
-	menuExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
+	pauseGroup = tgui::Group::create();
+	pauseParentPanel = tgui::Panel::create();
+	pauseChildPanel = tgui::Panel::create();
+	pauseLayout = tgui::GrowVerticalLayout::create();
+	pauseGamePausedLabel = Widgets::Labels::createLabel("GAME PAUSED", 60, 0, 0);
+	pauseResumeLabel = Widgets::Labels::createButtonLabel("RESUME", 50, 0, 0, window);
+	pauseExitLabel = Widgets::Labels::createButtonLabel("EXIT", 50, 0, 0, window);
 	alertChildWindow = tgui::ChildWindow::create();
 	alertLabel = Widgets::Labels::createLabel("", 13, 0, 0);
 	mainPanel = tgui::Panel::create();
 
-	menuParentPanel->setVisible(false);
-	menuChildPanel->setSize(450, 450);
-	menuChildPanel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(menuChildPanel)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(menuChildPanel)) / 2.0f);
-	menuLayout->setPosition(0, (tgui::bindHeight(menuChildPanel) - tgui::bindHeight(menuLayout)) / 2.0f);
-	menuLayout->getRenderer()->setSpaceBetweenWidgets(20);
-	menuResumeLabel->setHorizontalAlignment(tgui::HorizontalAlignment::Center);
-	menuExitLabel->setHorizontalAlignment(tgui::HorizontalAlignment::Center);
+	pauseGroup->setVisible(false);
+	pauseParentPanel->getRenderer()->setOpacity(0.5f);
+	pauseChildPanel->setSize(500, 500);
+	pauseChildPanel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(pauseChildPanel)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(pauseChildPanel)) / 2.0f);
+	pauseLayout->setPosition(0, (tgui::bindHeight(pauseChildPanel) - tgui::bindHeight(pauseLayout)) / 2.0f);
+	pauseLayout->getRenderer()->setSpaceBetweenWidgets(20);
+	pauseGamePausedLabel->getRenderer()->setTextStyle(tgui::TextStyle::Bold);
+	pauseGamePausedLabel->setHorizontalAlignment(tgui::HorizontalAlignment::Center);
+	pauseResumeLabel->setHorizontalAlignment(tgui::HorizontalAlignment::Center);
+	pauseExitLabel->setHorizontalAlignment(tgui::HorizontalAlignment::Center);
 	alertChildWindow->setSize(400, 100);
 	alertChildWindow->setCloseBehavior(tgui::ChildWindow::CloseBehavior::Hide);
 	alertChildWindow->setPositionLocked(true);
@@ -32,33 +37,35 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	alertLabel->getRenderer()->setTextColor(tgui::Color::White);
 	alertLabel->setPosition(10, 10);
 
-	menuResumeLabel->onClick([=, &window] {
-		Utils::Log::info("menuResumeLabel clicked");
+	pauseResumeLabel->onClick([=, &window] {
+		Utils::Log::info("pauseResumeLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
-		menuParentPanel->setVisible(false);
+		pauseGroup->setVisible(false);
 	});
-	menuExitLabel->onClick([=, &window] {
-		Utils::Log::info("menuExitLabel clicked");
+	pauseExitLabel->onClick([=, &window] {
+		Utils::Log::info("pauseExitLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
-		menuParentPanel->setVisible(false);
+		pauseGroup->setVisible(false);
 	});
 	alertChildWindow->onClose([] {
 		Utils::Log::info("alertChildWindow closed");
 	});
 
-	menuParentPanel->add(menuChildPanel);
-	menuChildPanel->add(menuLayout);
-	menuLayout->add(menuResumeLabel);
-	menuLayout->add(menuExitLabel);
+	pauseGroup->add(pauseParentPanel);
+	pauseGroup->add(pauseChildPanel);
+	pauseChildPanel->add(pauseLayout);
+	pauseLayout->add(pauseGamePausedLabel);
+	pauseLayout->add(pauseResumeLabel);
+	pauseLayout->add(pauseExitLabel);
 	alertChildWindow->add(alertLabel);
 	gui.add(mainPanel);
 	gui.add(alertChildWindow);
-	gui.add(menuParentPanel);
+	gui.add(pauseGroup);
 }
 
-tgui::Panel::Ptr GlobalWidgets::getMenuParentPanel() {
-	return menuParentPanel;
+tgui::Group::Ptr GlobalWidgets::getPauseGroup() {
+	return pauseGroup;
 }
 
 tgui::ChildWindow::Ptr GlobalWidgets::getAlertChildWindow() {

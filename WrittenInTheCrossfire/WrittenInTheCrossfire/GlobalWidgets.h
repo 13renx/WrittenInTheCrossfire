@@ -10,11 +10,13 @@ class ViewController;
 class GlobalWidgets
 {
 	private:
-		tgui::Panel::Ptr menuParentPanel;
-		tgui::Panel::Ptr menuChildPanel;
-		tgui::GrowVerticalLayout::Ptr menuLayout;
-		tgui::Label::Ptr menuResumeLabel;
-		tgui::Label::Ptr menuExitLabel;
+		tgui::Group::Ptr pauseGroup;
+		tgui::Panel::Ptr pauseParentPanel;
+		tgui::Panel::Ptr pauseChildPanel;
+		tgui::GrowVerticalLayout::Ptr pauseLayout;
+		tgui::Label::Ptr pauseGamePausedLabel;
+		tgui::Label::Ptr pauseResumeLabel;
+		tgui::Label::Ptr pauseExitLabel;
 		tgui::ChildWindow::Ptr alertChildWindow;
 		tgui::Label::Ptr alertLabel;
 		tgui::Panel::Ptr mainPanel;
@@ -22,7 +24,7 @@ class GlobalWidgets
 	public:
 		GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewController* viewController);
 
-		tgui::Panel::Ptr getMenuParentPanel();
+		tgui::Group::Ptr getPauseGroup();
 		tgui::ChildWindow::Ptr getAlertChildWindow();
 		tgui::Label::Ptr getAlertLabel();
 		tgui::Panel::Ptr getMainPanel();

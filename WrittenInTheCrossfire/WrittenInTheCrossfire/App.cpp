@@ -13,7 +13,7 @@ App::App() : gameModel(GameModel()), viewController(ViewController(gameModel)) {
 void App::run() {
 	sf::RenderWindow& window = gameModel.getWindow();
 	tgui::Gui& gui = gameModel.getGui();
-	tgui::Panel::Ptr menuParentPanel = viewController.getGlobalWidgets()->getMenuParentPanel();
+	tgui::Group::Ptr pauseGroup = viewController.getGlobalWidgets()->getPauseGroup();
 	ViewController::ViewType& activeViewType = viewController.getActiveViewType();
 
 	while(window.isOpen()) {
@@ -28,10 +28,10 @@ void App::run() {
 					Utils::Log::info("Esc key pressed");
 
 					if(activeViewType == ViewController::ViewType::SCENE_VIEW || activeViewType == ViewController::ViewType::READ_LETTER_VIEW) {
-						if(menuParentPanel->isVisible()) {
-							menuParentPanel->setVisible(false);
+						if(pauseGroup->isVisible()) {
+							pauseGroup->setVisible(false);
 						} else {
-							menuParentPanel->setVisible(true);
+							pauseGroup->setVisible(true);
 						}
 					}
 				}

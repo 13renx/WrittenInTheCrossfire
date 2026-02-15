@@ -153,6 +153,12 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 			this->isPicFrameFar = true;
 		}
 	});
+	letterTextArea->onMouseEnter([=, &window] {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Text));
+	});
+	letterTextArea->onMouseLeave([=, &window]() {
+		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
+	});
 	dialogPanel->onClick([=] {
 		Utils::Log::info("dialogPanel clicked");
 		dialogPanel->setVisible(false);

@@ -8,7 +8,13 @@ int main() {
 	tgui::Theme::setDefault("Theme.txt");
 
 	App app = App();
-	app.run();
-
+	try {
+		app.run();
+	} catch(const std::exception& ex) {
+		Utils::Log::critical("Exception: " + std::string(ex.what()));
+	} catch(...) {
+		Utils::Log::critical("Unknown exception occurred");
+	}
+	
 	return 0;
 }

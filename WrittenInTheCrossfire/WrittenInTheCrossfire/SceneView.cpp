@@ -33,7 +33,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
 	dialogTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	dialogTextArea->setSize(1200, 300);
-	dialogTextArea->setTextSize(30);
+	dialogTextArea->setTextSize(34);
 	dialogTextArea->getRenderer()->setTextColor(tgui::Color::White);
 	dialogTextArea->getRenderer()->setBackgroundColor(tgui::Color(128, 128, 128, 60));
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);

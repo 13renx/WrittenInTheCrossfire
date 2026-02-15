@@ -27,6 +27,15 @@ MapView::MapView(ViewController* viewController, GameModel& gameModel) : View(vi
 		backButton->setEnabled(false);
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
+	bunkerPicture->onClick([=] {
+		Utils::Log::info("bunkerPicture clicked");
+	});
+	mealAreaPicture->onClick([=] {
+		Utils::Log::info("mealAreaPicture clicked");
+	});
+	storageBunkerPicture->onClick([=] {
+		Utils::Log::info("storageBunkerPicture clicked");
+	});
 
 	mainPanel->add(bunkerPicture);
 	mainPanel->add(mealAreaPicture);

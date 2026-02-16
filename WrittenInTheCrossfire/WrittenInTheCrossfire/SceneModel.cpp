@@ -6,13 +6,13 @@
 #include <fmt/core.h>
 
 SceneModel::SceneModel() {
-    std::ifstream file = std::ifstream("WITC In-game Story.txt");
+    std::ifstream file = std::ifstream("Story.txt");
     std::string line;
     int checkpoint = -4;
     std::string texture = "EMPTY";
     std::string dialogue = "EMPTY";
 
-    // Extract assets data from "WITC In-game Story.txt"
+    // Extract assets data from "Story.txt"
     while(std::getline(file, line)) {
         std::tuple<int, std::string, std::string> asset;
 

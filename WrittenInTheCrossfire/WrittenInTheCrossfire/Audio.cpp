@@ -3,7 +3,7 @@
 #include <SFML/Audio.hpp>
 
 Audio::Audio() {
-	if(!music.openFromFile("./Assets/Audio/witcmenu.mp3")) {
+	if(!music.openFromFile("./Assets/Audio/Music/witcmenu.mp3")) {
 		isMusicRunning = true;
 	} else {
 		isMusicRunning = false;

@@ -11,7 +11,7 @@ MapView::MapView(ViewController* viewController, GameModel& gameModel) : View(vi
 
 	// Initialize widgets
 	bunkerPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("./Assets/Textures/Interactables/Map Locations/Bunker.PNG"));
-	mealAreaPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("./Assets/Textures/Interactables/Map Locations/Meal Area.PNG"));
+	mealAreaPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("./Assets/Textures/Interactables/Map Locations/Meal Time Morning.PNG"));
 	storageBunkerPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("./Assets/Textures/Interactables/Map Locations/Storage Bunker.PNG"));
 	backButton = tgui::Button::create("BACK");
 

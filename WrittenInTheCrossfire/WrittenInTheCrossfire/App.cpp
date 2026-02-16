@@ -11,6 +11,7 @@
 App::App() : gameModel(GameModel()), viewController(ViewController(gameModel)) {}
 
 void App::run() {
+	Utils::Log::info("App is running");
 	sf::RenderWindow& window = gameModel.getWindow();
 	tgui::Gui& gui = gameModel.getGui();
 	tgui::Group::Ptr pauseGroup = viewController.getGlobalWidgets()->getPauseGroup();

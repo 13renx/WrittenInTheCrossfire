@@ -3,14 +3,14 @@
 #include <SFML/Audio.hpp>
 
 Audio::Audio() {
-	if(!music.openFromFile("Assets/Audio/witcmenu.mp3")) {
+	if(!music.openFromFile("./Assets/Audio/witcmenu.mp3")) {
 		isMusicRunning = true;
 	} else {
 		isMusicRunning = false;
 	}
 
 	soundBuffers = { 
-		{ "paper", sf::SoundBuffer("Assets/Audio/SFX/paper.mp3") } 
+		{ "paper", sf::SoundBuffer("./Assets/Audio/SFX/paper.mp3") } 
 	};
 	soundEffects = {
 		{ "paper", sf::Sound(soundBuffers["paper"]) }

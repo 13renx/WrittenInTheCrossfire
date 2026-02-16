@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36202.13
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11505.172 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WrittenInTheCrossfire", "WrittenInTheCrossfire\WrittenInTheCrossfire.vcxproj", "{687134FA-B553-4C9E-A40E-836551EA49DD}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WrittenInTheCrossfireSetup", "WrittenInTheCrossfireSetup\WrittenInTheCrossfireSetup.vdproj", "{3C02B8D6-9ED1-83E9-31C2-88C836BB0E1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{687134FA-B553-4C9E-A40E-836551EA49DD}.Release|x64.Build.0 = Release|x64
 		{687134FA-B553-4C9E-A40E-836551EA49DD}.Release|x86.ActiveCfg = Release|Win32
 		{687134FA-B553-4C9E-A40E-836551EA49DD}.Release|x86.Build.0 = Release|Win32
+		{3C02B8D6-9ED1-83E9-31C2-88C836BB0E1F}.Debug|x64.ActiveCfg = Debug
+		{3C02B8D6-9ED1-83E9-31C2-88C836BB0E1F}.Debug|x86.ActiveCfg = Debug
+		{3C02B8D6-9ED1-83E9-31C2-88C836BB0E1F}.Release|x64.ActiveCfg = Release
+		{3C02B8D6-9ED1-83E9-31C2-88C836BB0E1F}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

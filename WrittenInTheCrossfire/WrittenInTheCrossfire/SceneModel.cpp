@@ -45,7 +45,7 @@ SceneModel::SceneModel() {
 
                     line.pop_back(); // Remove semicolon
                     line.append(".png");
-                    texture = fmt::format("Assets/Textures/Scenes/{}", line);
+                    texture = fmt::format("./Assets/Textures/Scenes/{}", line);
                 }
 
                 dialogue = "EMPTY";

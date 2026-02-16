@@ -11,7 +11,7 @@
 
 using json = nlohmann::json;
 
-ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, "Assets/Textures/Backgrounds/ReadLetterView.PNG"), gameState(this->gameModel.getGameState()) {
+ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, "./Assets/Textures/Backgrounds/ReadLetterView.PNG"), gameState(this->gameModel.getGameState()) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	Fonts& fonts = this->gameModel.getFonts();
@@ -28,21 +28,21 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 
 	// Family Relationship
 	if(stats.familyRelationship > 75) {
-		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+		familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
 	} else if(stats.familyRelationship > 50) {
-		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+		familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Good.png");
 	} else if(stats.familyRelationship > 25) {
-		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+		familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
 	} else if(stats.familyRelationship < 26) {
-		familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+		familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
 	}
 	// Mental Wellbeing
 	if(stats.mentalWellbeing > 50 && stats.mentalWellbeing < 76) {
-		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Good.png");
+		mentalWellbeingPicture->getRenderer()->setTexture("./Assets/Textures/Backgrounds/Mental Wellbeing/Good.png");
 	} else if(stats.mentalWellbeing > 25 && stats.mentalWellbeing < 51) {
-		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Bad.png");
+		mentalWellbeingPicture->getRenderer()->setTexture("./Assets/Textures/Backgrounds/Mental Wellbeing/Bad.png");
 	} else if(stats.mentalWellbeing < 26) {
-		mentalWellbeingPicture->getRenderer()->setTexture("Assets/Textures/Backgrounds/Mental Wellbeing/Worse.png");
+		mentalWellbeingPicture->getRenderer()->setTexture("./Assets/Textures/Backgrounds/Mental Wellbeing/Worse.png");
 	}
 	{
 		std::vector<json> chatHistory = gameState.getChatHistory();
@@ -75,13 +75,13 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 			familyRelationshipPicture->setPosition(0, 0);
 
 			if(stats.familyRelationship > 75) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
 			} else if(stats.familyRelationship > 50) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Good.png");
 			} else if(stats.familyRelationship > 25) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
 			} else if(stats.familyRelationship < 26) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
 			}
 
 			this->isPicFrameFar = true;
@@ -98,13 +98,13 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 
 			// Family Relationship
 			if(stats.familyRelationship > 75) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Very Good.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Near/Very Good.png");
 			} else if(stats.familyRelationship > 50) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Good.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Near/Good.png");
 			} else if(stats.familyRelationship > 25) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Bad.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Near/Bad.png");
 			} else if(stats.familyRelationship < 26) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Near/Worse.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Near/Worse.png");
 			}
 
 			this->isPicFrameFar = false;
@@ -115,13 +115,13 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 			familyRelationshipPicture->setSize(560, 516);
 
 			if(stats.familyRelationship > 75) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Very Good.png");
 			} else if(stats.familyRelationship > 50) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Good.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Good.png");
 			} else if(stats.familyRelationship > 25) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Bad.png");
 			} else if(stats.familyRelationship < 26) {
-				familyRelationshipPicture->getRenderer()->setTexture("Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
+				familyRelationshipPicture->getRenderer()->setTexture("./Assets/Textures/Interactables/Family Relationship/Far/Worse.png");
 			}
 
 			familyRelationshipPicture->setPosition(0, 0);

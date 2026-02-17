@@ -5,8 +5,8 @@
 #include "MainMenuView.h"
 #include "MapView.h"
 #include "ReadLetterView.h"
-#include "SceneModel.h"
-#include "SceneView.h"
+#include "StoryModel.h"
+#include "MainSceneView.h"
 #include "SettingsView.h"
 #include "Utils.h"
 #include "AboutView.h"
@@ -16,7 +16,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), sceneModel(SceneModel()), activeViewType(ViewController::ViewType::MAIN_MENU_VIEW), activeView(std::make_shared<MainMenuView>(this, this->gameModel)) {}
+ViewController::ViewController(GameModel& gameModel) : gameModel(gameModel), globalWidgets(std::make_shared<GlobalWidgets>(this->gameModel.getWindow(), this->gameModel.getGui(), this)), storyModel(StoryModel()), activeViewType(ViewController::ViewType::MAIN_MENU_VIEW), activeView(std::make_shared<MainMenuView>(this, this->gameModel)) {}
 
 std::shared_ptr<GlobalWidgets> ViewController::getGlobalWidgets() {
 	return globalWidgets;
@@ -43,9 +43,9 @@ void ViewController::changeView(ViewType viewType) {
 			activeView = std::make_shared<AboutView>(this, this->gameModel);
 			Utils::Log::debugInfo("activeView updated to AboutView");
 			break;
-		case ViewType::SCENE_VIEW:
-			activeView = std::make_shared<SceneView>(this, this->gameModel, sceneModel);
-			Utils::Log::debugInfo("activeView updated to SceneView");
+		case ViewType::MAIN_SCENE_VIEW:
+			activeView = std::make_shared<MainSceneView>(this, this->gameModel, storyModel);
+			Utils::Log::debugInfo("activeView updated to MainSceneView");
 			break;
 		case ViewType::READ_LETTER_VIEW:
 			activeView = std::make_shared<ReadLetterView>(this, this->gameModel);

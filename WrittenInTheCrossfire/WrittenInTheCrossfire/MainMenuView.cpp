@@ -130,11 +130,11 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 						optionsContinueLabel->setEnabled(false);
 						optionsContinueLabel->getRenderer()->setTextColor(Macros::Colors::Grey);
 					} else {
-						this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+						this->viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
 						return;
 					}
 				} else {
-					this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+					this->viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
 					return;
 				}
 			} else {
@@ -161,7 +161,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 
 			if(result) {
 				gameState.init();
-				this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+				this->viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
 			} else {
 				apiGroup->setVisible(true);
 			}
@@ -184,7 +184,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 				alertChildWindow->setVisible(true);
 
 				if(result) {
-					this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+					this->viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
 				} else { // Enter a new API key
 					apiGroup->setVisible(true);
 				}

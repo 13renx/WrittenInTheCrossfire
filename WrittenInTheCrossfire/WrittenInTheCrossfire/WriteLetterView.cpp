@@ -322,6 +322,6 @@ void WriteLetterView::send() {
 	if(isGetFailed) {
 		viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 	} else if(isSendClicked) {
-		viewController->changeView(ViewController::ViewType::SCENE_VIEW);
+		viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
 	}
 }

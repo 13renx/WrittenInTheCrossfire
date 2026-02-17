@@ -1,6 +1,7 @@
 #pragma once
 
-#include "SceneModel.h"
+#include "StoryModel.h"
+#include "Structs.h"
 #include "GameModel.h"
 #include "View.h"
 #include "ViewController.h"
@@ -11,17 +12,17 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-class SceneView : public View
+class MainSceneView : public View
 {
 	private:
-		SceneModel& sceneModel;
+		StoryModel& storyModel;
 		GameState& gameState;
-		std::vector<std::tuple<int, std::string, std::string>> assets;
+		std::vector<MainSceneAsset> mainSceneAssets;
 		size_t assetIndex;
 
 		tgui::Panel::Ptr scenePanel;
 		tgui::TextArea::Ptr dialogTextArea;
 
 	public:
-		SceneView(ViewController* viewController, GameModel& gameModel, SceneModel& sceneModel);
+		MainSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel);
 };

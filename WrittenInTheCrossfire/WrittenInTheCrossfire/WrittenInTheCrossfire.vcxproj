@@ -148,8 +148,8 @@
     <ClCompile Include="MainMenuView.cpp" />
     <ClCompile Include="MapView.cpp" />
     <ClCompile Include="ReadLetterView.cpp" />
-    <ClCompile Include="SceneModel.cpp" />
-    <ClCompile Include="SceneView.cpp" />
+    <ClCompile Include="StoryModel.cpp" />
+    <ClCompile Include="MainSceneView.cpp" />
     <ClCompile Include="SettingsModel.cpp" />
     <ClCompile Include="SettingsView.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -174,8 +174,8 @@
     <ClInclude Include="MapView.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ReadLetterView.h" />
-    <ClInclude Include="SceneModel.h" />
-    <ClInclude Include="SceneView.h" />
+    <ClInclude Include="StoryModel.h" />
+    <ClInclude Include="MainSceneView.h" />
     <ClInclude Include="SettingsModel.h" />
     <ClInclude Include="SettingsView.h" />
     <ClInclude Include="Structs.h" />

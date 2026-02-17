@@ -1,5 +1,5 @@
-#include "SceneView.h"
-#include "SceneModel.h"
+#include "MainSceneView.h"
+#include "StoryModel.h"
 #include "GameModel.h"
 #include "GameState.h"
 #include "Macros.h"
@@ -15,7 +15,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-SceneView::SceneView(ViewController* viewController, GameModel& gameModel, SceneModel& sceneModel) : View(viewController, gameModel, tgui::Texture::Texture("")), sceneModel(sceneModel), gameState(this->gameModel.getGameState()), assets(this->sceneModel.getCheckpointAssets(this->gameState.getCheckpoint())) {
+MainSceneView::MainSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel) : View(viewController, gameModel, tgui::Texture::Texture("")), storyModel(storyModel), gameState(this->gameModel.getGameState()), mainSceneAssets(this->storyModel.getMainSceneAssets(this->gameState.getCheckpoint())) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
@@ -38,34 +38,34 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->getRenderer()->setBackgroundColor(tgui::Color(128, 128, 128, 60));
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 	{
-		if(std::get<1>(this->assets.at(0)) != "") {
-			tgui::Texture texture(std::get<1>(this->assets.at(0)));
+		if(mainSceneAssets.at(0).backgroundTexture != "") {
+			tgui::Texture texture(mainSceneAssets.at(0).backgroundTexture);
 			scenePanel->getRenderer()->setTextureBackground(texture);
 		}
 	}
 	dialogTextArea->getRenderer()->setPadding(20);
-
+	
 	scenePanel->onClick([=, &gameState] {
 		Utils::Log::debugInfo("scenePanel clicked");
 		int checkpoint = gameState.getCheckpoint();
 
-		if(checkpoint == 0 && assetIndex == assets.size()) { // Prelude
+		if(checkpoint == 0 && assetIndex == mainSceneAssets.size()) { // Prelude
 			gameState.incrementCheckpoint();
-			this->viewController->changeView(ViewController::ViewType::SCENE_VIEW);
-		} else if(checkpoint == 1 && assetIndex == assets.size()) { // After Prelude
+			this->viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
+		} else if(checkpoint == 1 && assetIndex == mainSceneAssets.size()) { // After Prelude
 			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW); // Skip ReadLetterView
-		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == assets.size()) { // Regular/Bad ending
+		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == mainSceneAssets.size()) { // Regular/Bad ending
 			std::filesystem::remove("game.json");
 			Utils::Log::debugInfo("game.json deleted");
 			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
-		} else if(assetIndex < assets.size()) {
-			if(std::get<1>(this->assets.at(assetIndex)) != "") {
-				tgui::Texture texture(std::get<1>(this->assets.at(assetIndex)));
+		} else if(assetIndex < mainSceneAssets.size()) {
+			if(mainSceneAssets.at(assetIndex).backgroundTexture != "") {
+				tgui::Texture texture(mainSceneAssets.at(assetIndex).backgroundTexture);
 				scenePanel->getRenderer()->setTextureBackground(texture);
 			} else {
 				scenePanel->getRenderer()->setTextureBackground("");
 			}
-			std::string text = std::get<2>(this->assets.at(assetIndex));
+			std::string text = mainSceneAssets.at(assetIndex).dialogue;
 			dialogTextArea->setText(text);
 			assetIndex++;
 		} else {

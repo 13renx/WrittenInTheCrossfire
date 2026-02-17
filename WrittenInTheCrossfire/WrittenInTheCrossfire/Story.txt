@@ -71,6 +71,23 @@ Slides (in order):
 9. Overcrowded Camp:
    1. One fateful evening, papers are handed out, and it is announced that everyone is given an opportunity to write to their loved ones. 
    2. You sit in your bunk, staring at a blank sheet of paper. Thinking of home, of your Mom you left behind, of how she will feel knowing the circumstances of your situation.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. …Nothing seems to be happening.
+Eating Area
+1. Black Screen:
+   1. …Nothing seems to be happening.
+Bunk 2
+1. Black Screen:
+   1. …Nothing seems to be happening.
+Newspaper
+1. Main
+   1. VANGUARD REGIMENTS MOBILIZE AS EASTERN TENSIONS RISE
+2. Secondary
+   1. Joint Statement with Westoria Affirms "Unbreakable Alliance"
+3. Blurb
+   1. Minor Shipping Delays Reported Along Southern Coast, Officials Assure Stability
 
 
 Week 2
@@ -104,6 +121,109 @@ Slides (in order):
 8. Black Screen:
    1. Another set of exhausting days passes. You lose count of how long it's been. 
    2. Yet another quiet night and everyone is given a new piece of paper. Another opportunity to write again.
+Location Scenes
+Bunk 1
+1. Guy 1 Talk:
+   1. You go to a nearby bunk and overhear their conversation..
+   2. "The Sergeant is kind of scary.."
+2. Guy 2 Talk:
+   1. "I know right. It's almost like he doesn't really care about us."
+3. Guy 1 Talk:
+   1. "Sort of, but I don't think he's like that."
+   2. "I mean.. haven't you ever received some tough love in your life?"
+   3. "When your mother would scold you for something you did.."
+   4. "Or when your father took away whatever toy you had.."
+4. Guy 2 Talk:
+   1. "Not really.. I didn't have my parents around me as much growing up.."
+   2. "It was really just me and my older brother most of the time."
+   3. "And he was very lenient with me."
+   4. "Maybe because we didn't have them around.."
+5. Guy 1 Talk:
+   1. "I see."
+   2. "Well if that's the case.."
+   3. "Then this must be a tough first time."
+6. Black Screen:
+   1. You think to yourself.
+   2. "Now that he's mentioned it, times were way simpler back then."
+   3. "I miss my playful days."
+   4. "..."
+   5. Your comrades continue their conversation.
+   6. You leave the bunk.
+
+
+Eating Area
+1. Meal Time Night:
+   1. The night grows cold as each quiet moment passes.
+   2. You see someone at the distance.
+2. Guy 1 Not Talk:
+   1. You reach out.
+   2. You call out to someone you are unfamiliar with.
+   3. Another soldier. Undergoing the same struggles as you.
+3. Guy 1 Talk:
+   1. "Oh, hello there."
+4. Guy 1 Not Talk:
+   1. You chat with him. You ask him about his experience so far.
+5. Guy 1 Talk
+   1. "Seems like we are all under the same boat."
+   2. "I'm Milo."
+   3. "But I don't think it'll matter too much."
+   4. "What's your name?"
+   5. "I see."
+   6. "What brings you here?"
+6. Guy 1 Not Talk:
+   1. You tell him you just happen to go here.
+7. Guy 1 Talk:
+   1. "Well, same here."
+   2. "..Actually I got a bit hungry."
+   3. "I just wanted to see if there were still some left."
+   4. "The slop we've been eating hasn't been enough for me."
+   5. "I could just sleep it off, but there's a lot on my mind right now."
+   6. "For instance, when will I get back home?"
+   7. "I'm sure you wonder the same."
+8. Black Screen:
+   1. You nod, agreeing to his sentiment.
+   2. "I wonder when I will get home too.."
+   3. "It feels like a distant dream."
+   4. "..Home."
+   5. "..."
+   6. You leave and head back.
+Bunk 2
+1. Guy 1 Talk:
+   1. You walk away, not too far from your bunk and hear some soldiers talking.
+   2. You peer inside.
+   3. "Gah! What do I tell mama?"
+   4. "I can't think!"
+   5. "I don't want her to worry!"
+   6. "But I also don't want to lie!"
+   7. "Gah!"
+   8. "What do I do?"
+   9. "What are you writing to your mama?"
+2. Guy 2 Talk:
+   1. "I'm not writing to my mother.."
+   2. "I'm.. not even writing to anyone.."
+   3. "I don't have someone back home like you.."
+   4. "So I can't really help you.."
+   5. "And you're mumbling a lot.. It's starting to piss me off."
+3. Guy 1 Talk:
+   1. "..."
+   2. "You.."
+   3. "..Nevermind."
+   4. "..I'll just keep things to myself."
+   5. "Sorry for bothering you."
+4. Guy 2 Talk:
+   1. "Thank you. I just want to rest."
+5. Black Screen:
+   1. You think about what just happened.
+   2. "Well, that was a bit hectic."
+   3. "I think it's time to head back."
+Newspaper
+1. Main
+   1. TRAINING CAMPS REPORT RECORD DISCIPLINE AND UNITY
+2. Secondary
+   1. Legion Activity Observed Along Distant Frontiers
+   2. Ration Adjustments Temporary, Ministry Confirms
+3. Blurb
+   1. Public Urged Not to Heed Foreign Rumors
 
 
 Week 3
@@ -135,12 +255,109 @@ Slides (in order):
    2. And before you know it, it's back to training.
 6. Overcrowded Camp:
    1. Night falls over the camp, the air is thick with the smell of sweat. Sergeant Chaves lets everyone rest earlier than usual.
-   2. Ramos visits your barracks and you both reminisce about the difference in you schoolboy days.
+   2. Ramos visits your barracks and you both reminisce about the difference in your elementary days.
    3. "Quiet down, I'm trying to catch some sleep," a half-asleep recruit grumbles in a nearby bunk.
    4. "Sorry about that, man. You go right back to sleep" Ramos says calmingly.
 7. Black Screen:
    1. Soon enough, Ramos leaves. You, too, tuck in for the night.
    2. The next following days feel like a drag, but despite the struggles, you cling on to hope.
+Location Scenes
+Bunk 1
+6. Black Screen:
+   1. You wander around nearby.
+   2. Someone bumps into you.
+7. Guy 1 Talk:
+   1. "Sorry about that."
+8. Guy 1 Not Talk:
+   1. You apologize as well.
+   2. You tell him you weren't looking at where you were going.
+9. Guy 1 Talk:
+   1. "No problem."
+   2. "I wasn't either, haha!"
+   3. "..."
+   4. "Nothing much to say, huh pal.."
+   5. "I getcha.. Darn war turning us into outcasts bit by bit."
+   6. "Sigh, feels like we've been here since forever.."
+   7. "Don't ya think?"
+   8. "Heh, thought so."
+10. Guy 1 Not Talk:
+   1. Things get quiet.
+   2. You ask him about home.
+11. Guy 1 Talk:
+   1. "Home?"
+   2. "I do miss the comfort of my home."
+   3. "Do I have anyone back at home?"
+   4. "No.."
+   5. "Well, not a person."
+   6. "I left Rufus, my dog, to my neighbors."
+   7. "I can't take care of him while I'm all the way here."
+   8. "Hopefully this war doesn't take too long."
+   9. "He is getting older and he doesn't have a lot of time left."
+   10. "I just hope I make it in time for that moment."
+   11. "..."
+   12. "Don't worry about it too much pal.."
+   13. "It's best to just look ahead from where we are now."
+12. Black Screen:
+   1. You can't help but think about your mother again.
+   2. "I hope nothing bad happens while I'm away."
+Eating Area
+1. Black Screen:
+   1. You feel slightly hungry.
+   2. But there's no food left.
+   3. You decide to just walk around and think to yourself.
+2. Overcrowded Camp:
+   1. "Hungry.."
+   2. "I wish they served just a few more spoons worth.."
+   3. "But supplies are rough and we seem to be a lot of people."
+   4. "..."
+   5. "It's a bit peaceful when you're on break.."
+   6. "It's times like these where I want to turn back into a kid again."
+   7. "Just run around this whole campsite."
+   8. "It must be nice to have that freedom."
+   9. "..."
+   10. "What am I thinking?"
+   11. "It hasn't even been long since I've been here."
+   12. "And I'm already complaining?"
+   13. "I'm, at the very least, lucky to even be alive.."
+   14. "..."
+   15. "But is this really worth living.."
+   16. "..."
+   17. "Of course it is.. Mom is waiting."
+   18. "I hope.."
+   19. "I just have to bear through it I guess.."
+   20. "..Or maybe I could leave.."
+   21. "..Whatever.."
+   22. "I'll just head back.."
+Bunk 2
+1. Guy 1 Talk:
+   1. "Today's training was rough, man.."
+2. Guy 2 Talk:
+   1. "I know.. If only the water pressure at the showers were stronger.."
+   2. "At least we'd have that to look forward to."
+3. Guy 1 Talk:
+   1. "Ugh."
+4. Guy 2 Talk:
+   1. "Ugh."
+   2. You never really think about showers because it gets the job done.
+   3. ..Sort of.
+5. Guy 1 Talk:
+   1. "You know, at least it gets the job done."
+6. Guy 2 Talk:
+   1. "Yeah.."
+7. Black Screen:
+   1. Your eyes widen.
+   2. "Did he just.."
+   3. "I was thinking the exact same thing.."
+   4. "..Kinda weird.."
+   5. You leave.
+Newspaper
+1. Main
+   1. VANGUARD FORCES STRENGTHEN DEFENSIVE LINES IN EAST
+2. Secondary
+   1. Industrial Output Remains Strong Despite "Enemy Posturing"
+   2. Clergy Hold Vigil for Peace and Victory
+3. Blurb
+   1. Local Bride-to-Be Says, "He Will Return"
 
 
 Week 4
@@ -200,6 +417,107 @@ Slides (in order):
    3. "You ever wonder what'll be like once it ends?" Ramos said softly.
    4. "If it does end." Diaz muttered.
    5. You didn't say anything, but you know for sure that you don't want to be facing what comes next alone.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You head to where Ramos is.
+2. Ramos Talk:
+   1. "What's up?"
+   2. "Nothing much, huh.."
+   3. "Then what brings you here!"
+   4. "You're bored? I see"
+   5. "Well, so am I! Guess we're in this together."
+   6. "You want to play cards again, you say?"
+   7. "..."
+   8. "I forgot who owns them.."
+   9. "Surely he will swing by sometime and we can play together again."
+   10. "..."
+   11. "Diaz, huh.."
+   12. "Seems like a fun guy!"
+   13. "Although, he seems like something is always on his mind."
+   14. "We should try to lighten up his day when we can."
+   15. "I don't think he's entirely a bad person."
+   16. "It's probably just the circumstances we're in."
+3. Ramos Not Talk:
+   1. A brief moment of silence passes.
+   2. You tell him how you feel less lonely now.
+   3. You thank him for his friendship.
+4. Ramos Talk:
+   1. "Guess it isn't so bad if there are people like you around, haha!"
+   2. "Although I can't say the same about everyone."
+   3. "..."
+   4. "Alright, gotta get going now?"
+   5. "See you around."
+5. Black Screen:
+   1. You leave Ramos.
+   2. "I'm glad I met someone like him during these times."
+   3. "I hate being alone in an unfamiliar environment."
+   4. "..."
+   5. "Especially if it's something like.. this."
+Eating Area
+1. Black Screen:
+   1. To your surprise, you see Diaz.
+2. Diaz Talk:
+   1. "..."
+   2. "Oh, it's you."
+   3. "So.. you need anything?"
+   4. "..."
+   5. "No?"
+   6. "..."
+   7. "Then what do you want from me?"
+   8. "A small chat, huh.."
+   9. "..What do you want to talk about?"
+3. Diaz Not Talk:
+   1. You mock him about the card game he lost the other day.
+4. Diaz Talk:
+   1. "IT'S NOT MY FAULT!"
+   2. "I just happen to get unlucky."
+   3. "..Well, I've never been lucky."
+   4. "Nothing goes my way anyway."
+   5. "..."
+   6. "Agh, that game sucks."
+   7. "This place sucks."
+   8. "Everything sucks."
+   9. "..."
+5. Diaz Not Talk:
+   1. You apologize.
+6. Diaz Talk:
+   1. "..."
+   2. "It's fine."
+7. Diaz Not Talk:
+   1. As he walks away, he pats your shoulder.
+8. Black Screen:
+   1. "..."
+   2. "I wonder.."
+Bunk 2
+1. Black Screen:
+   1. The slight chatter fills you with a slight sense of comfort.
+2. Overcrowded Camp:
+   1. You overhear a conversation.
+   2. "There's this myth.."
+   3. "Far, far east from here.. across the great ocean.."
+   4. "Isolated from most of humanity.."
+   5. "Only to be seen by some of the world's renowned adventurers."
+   6. "An extremely difficult place to find."
+   7. "They say no man has left it once they've entered."
+   8. "And all those that have passed away do so in that land."
+   9. "They call it.."
+   10. "..Dainlav.."
+   11. "A land free from conflict, a land very fertile."
+   12. The fable awes the crowd, including you.
+3. Black Screen:
+   1. "A place.. far from here?"
+   2. "A place with no war.."
+   3. "Dainlav.."
+   4. You think about Dainlav as you head back.
+Newspaper
+1. Main
+   1. CAMP SAN AURELIO EXEMPLIFIES SOLDIERLY BROTHERHOOD
+2. Secondary
+   1. Minor Equipment Delays Reported, Quickly Resolved
+3. Blurb
+   1. Westorian Fleet Conducts "Routine Exercise" Near Border
+        
 
 
 Week 5
@@ -266,6 +584,95 @@ Slides (in order):
    2. "I'll be sure to invite you guys to our wedding. Don't even worry about it!"
    3. The next day carried on like usual.
    4. When night fell, the sound of gunfire echoed faintly in the distance. Be it training, or something worse, no one knew.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You overhear a nearby conversation.
+   2. "What?"
+2. Guy 1 Talk:
+   1. "What do you mean she's leaving you?"
+   2. "Are you sure?"
+   3. "What if it's some.. nasty prank?"
+3. Guy 2 Talk:
+   1. "..."
+   2. "I know when it's her."
+   3. "I'm not stupid."
+   4. "..."
+4. Guy 1 Talk:
+   1. "..."
+   2. "So now what?"
+   3. "What are you going to do?"
+   4. "...Go home?"
+5. Guy 2 Talk:
+   1. "You think that's an option?"
+   2. "I can't do anything.."
+   3. "I'm so far.."
+   4. "If only she could've waited.."
+   5. "I would've.. maybe find a way.."
+   6. "..I don't even know."
+6. Guy 1 Talk:
+   1. "..."
+   2. "What even happened?"
+   3. "Did you guys fight?"
+7. Guy 2 Talk:
+   1. "I guess."
+   2. "What can I do? I was brought here without a choice."
+   3. "And she hasn't even been sending me letters.."
+   4. "And the one that I received today.."
+   5. "It's just.. not what I needed."
+   6. "I can only reassure her from where I am now."
+   7. "And what can I do if she.. never said anything.."
+   8. "How am I supposed to know?"
+   9. "..."
+8. Guy 1 Talk:
+   1. "..."
+9. Black Screen:
+   1. Briefly after the silence, you hear a silent cry.
+   2. "Poor guy."
+   3. "Love is tough.."
+   4. "Ramos must be one lucky guy."
+Eating Area
+1. Meal Time Late Afternoon:
+   1. "Did you hear?"
+   2. "Some Legion soldier was found sneaking in one of the neighboring campsites."
+   3. "I wonder what they would've done."
+   4. You overhear about the Legion. You can't help but get interested.
+   5. "I heard they were executed on sight."
+   6. "Some scary stuff they do there."
+   7. You imagine the frightening scenery.
+   8. Just the thought of the enemy being close alarms you.
+2. Black Screen:
+   1. You head back
+Bunk 2
+1. Black Screen:
+   1. You see Ramos.
+2. Ramos Talk:
+   1. "Hey, how's it been?"
+   2. "You want to know more about Maria?"
+   3. "Haha, of course!"
+   4. "I love talking about her."
+   5. "..Is she right handed or left handed?
+   6. "What kind of question is that, haha!"
+   7. "..."
+   8. "..Pretty sure she's right handed."
+   9. "I think."
+   10. "Haha! You caught me off guard, now I don't even remember!"
+   11. "Favorite color?"
+   12. "Oh, that I know. It's green!"
+   13. "It's in everything she makes and owns."
+   14. "Oh man, I miss her sweets."
+   15. "..."
+   16. "Buddy! I'll take you to meet her one day!"
+   17. "Then you can ask away."
+3. Ramos Not Talk:
+   1. The conversation ends shortly after and you head back.
+Newspaper
+1. Main
+   1. LIVE-FIRE DRILLS PREPARE VANGUARD MEN FOR ANY THREAT
+2. Secondary
+   1. Legion Tactics Described as "Cowardly and Inhuman"
+3. Blurb
+   1. Isolated Incident Near Eastern Campsite Under Investigation
 
 
 Week 6
@@ -329,11 +736,79 @@ Slides (in order):
    9. You sat in silence, with a few hours left. Everyone, writing a letter on a piece of paper.
    10. Ramos wrote to Maria. Diaz instead rolled up his paper and lit it on fire for an improvised cigarette.
    11. "Helps calm the nerves, even if it isn't exactly the same," he said.
-   12. "I wonder if I could escape right about now," he muttered, "I'm getting so afraid.."
+   12. "I wonder if I could escape right about now," he muttered, "I'm getting so afraid…"
    13. "I understand that. But, if I ditch this place right now, what would Maria think of me?"
    14. You understand what this mission warrants.
    15. Courage, dedication, and determination.
    16. With everyone writing, you wonder what it's like back at home. You take a moment to reflect.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You take a break.
+   2. You walk for a bit outside.
+   3. You feel the tension, the fear.
+2. Overcrowded Camp:
+   1. The camp feels louder.
+   2. Not just audibly, but the hearts that beat.
+   3. They're faster, louder than usual.
+   4. It's the feeling before a great conflict.
+   5. It seems like almost everyone feels the same as you.
+   6. You are all in this together.
+   7. And you think to yourself.
+   8. "Once this is over.."
+   9. "I would never have to see this place again.."
+3. Black Screen:
+   1. You cling to the token Ramos gave.
+   2. "Fight.."
+Eating Area
+1. Black Screen:
+   1. You take a break.
+   2. You walk for a bit outside.
+   3. You feel the tension, the fear.
+2. Meal Time Night:
+   1. The camp feels louder.
+   2. Not just audibly, but the hearts that beat.
+   3. They're faster, louder than usual.
+   4. It's the feeling before a great conflict.
+   5. It seems like almost everyone feels the same as you.
+   6. You are all in this together.
+   7. And you think to yourself.
+   8. To a time where you were once gathered here together to eat.
+   9. When you were with Ramos and Diaz.
+   10. "..."
+   11. "We gotta stay alive.."
+   12. "I don't want to die."
+3. Black Screen:
+   1. You cling to the token Ramos gave.
+   2. "Home.."
+Bunk 2
+1. Black Screen:
+   1. You take a break.
+   2. You walk for a bit outside.
+   3. You feel the tension, the fear.
+2. Overcrowded Camp:
+   1. The camp feels louder.
+   2. Not just audibly, but the hearts that beat.
+   3. They're faster, louder than usual.
+   4. It's the feeling before a great conflict.
+   5. It seems like almost everyone feels the same as you.
+   6. You are all in this together.
+   7. And you think to yourself.
+   8. "Once this is over.."
+   9. "I would never have to see this place again.."
+3. Black Screen:
+   1. You cling to the token Ramos gave.
+   2. "Fight.."
+Newspaper
+1. Main
+   1. SELECT REGIMENTS TO REINFORCE EASTERN FRONT
+2. Secondary
+   1. Minor Losses Sustained in Distant Engagement
+   2. Industrial Labor Programs Expanded
+3. Blurb
+   1. Westorian Commanders Praise Marivelle Courage
+
+
 
 
 Week 7
@@ -432,6 +907,62 @@ Slides (in order):
    35. "What about you? What will you tell your mom?" Diaz asked you.
    36. You shrugged, unsure of what to reply.
    37. You think about what you should write next.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You take a breather outside.
+2. Overcrowded Camp:
+   1. You think to yourself.
+   2. "..."
+   3. "I guess.. I'm alive.."
+   4. "I should be happy about that.."
+   5. "Yet, it feels wrong."
+   6. "It was a mess."
+   7. "I could've died."
+   8. "..."
+   9. "It could be worse.. I guess."
+   10. "But.."
+   11. "What do I tell mom.."
+Eating Area
+1. Black Screen:
+   1. You take a breather outside.
+2. Meal Time Night:
+   1. The camp feels colder..
+   2. The air feels colder.
+   3. Deadpan stares, deadpan voices.
+   4. It's a lot different than it was before.
+   5. And you can definitely feel the difference.
+   6. Letters feel heavier to write.
+   7. Feelings get harder to share.
+   8. "But should I let mom know all of that.."
+   9. "I've been raised to be honest."
+   10. "I should at least.. try."
+Bunk 2
+1. Black Screen:
+   1. You take a breather outside.
+   2. You find yourself with Ramos again.
+2. Ramos Talk:
+   1. "How are you feeling?"
+   2. "Still not great, huh."
+   3. "..That's normal!"
+   4. "Even I don't feel so great, I don't want to keep my mind down."
+   5. "I need to stay strong!"
+   6. "Without this strength, I won't be able to come home."
+   7. "There's definitely a lot worse out there."
+   8. "..We're part of the lucky ones."
+   9. "So in the meantime.."
+   10. "Keep your head up, okay?"
+   11. "I'll be with you. So will everyone."
+3. Ramos Not Talk:
+   1. A few words of optimism fill the air.
+   2. You smile, a very slight smile.
+Newspaper
+1. Main
+   1. VANGUARD FORCES EXECUTE STRATEGIC WITHDRAWAL
+2. Secondary
+   1. Reinforcements En Route
+3. Blurb
+   1. Church Bells Ring in Honor of the Fallen
 Act 2
 Week 8
 Slides (in order):
@@ -497,6 +1028,78 @@ Slides (in order):
    9. Chaves stands watch near the perimeter, shoulders squared despite the weight he carries.
    10. You glance at the stars.
    11. They look duller now, smothered by the haze of gunfire and smoke that never quite leaves the sky.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You take a short walk to a nearby bunk.
+2. Guy 1 Talk:
+   1. "Hey! The cards went missing."
+3. Guy 2 Talk:
+   1. "What? But we needed those!"
+   2. "Whatever.. I can always make another set."
+   3. "It will just take some time."
+   4. "And.. if you're willing to give me some of your papers."
+4. Guy 1 Talk:
+   1. "Of course! I don't have much use of it anyway."
+   2. You remember that you miss playing the card game from before.
+   3. You join in the conversation.
+   4. You tell them about wanting to play again.
+5. Guy 2 Talk:
+   1. "Well, whenever you're free!"
+   2. "I remember you bunch, especially the guy that kept losing!"
+   3. "Diaz was it? Haha!"
+6. Black Screen:
+   1. The conversation slowly ends.
+Eating Area
+1. Black Screen:
+   1. You take a short walk outside.
+   2. Someone is there.
+2. Guy 1 Talk:
+   1. "Oh, hello there."
+3. Guy 1 Not Talk:
+   1. You weren't expecting anyone.
+   2. But you don't mind the company.
+   3. He's one of the new recruits.
+   4. You ask him about his day.
+4. Guy 1 Talk:
+   1. "Well, you know how it is."
+   2. "Not great, of course."
+   3. "I haven't been around as long as you, I assume."
+   4. "But, I guess it's nice to see a face in a time of blood shed."
+5. Guy 1 Not Talk:
+   1. A very short conversation, but lightens the mood.
+   2. Both of you aren't the very talkative type and an awkward silence fills the air.
+6. Guy 1 Talk:
+   1. "Well, I'll be heading back now.."
+   2. "See you around."
+Bunk 2
+1. Black Screen:
+   1. You take a short walk to a nearby bunk.
+2. Guy 2 Talk:
+   1. "Dude, this is terrifying."
+   2. "I can't sleep properly. I feel like I'm about to get blown up any moment now."
+3. Guy 1 Talk:
+   1. "Well, we have to get used to it."
+   2. "It's going to be our new life until an unknown period of time."
+   3. "Who knows how long this will last."
+   4. "But, yeah, it does suck a lot."
+   5. "I do agree with you."
+4. Guy 2 Talk:
+   1. "Yeah, we don't even have proper meals."
+   2. "But.. I guess you're right."
+   3. "We will have to get used to it eventually."
+   4. You remember your first few moments here.
+   5. You share a similar sentiment but you don't say anything.
+5. Black Screen:
+   1. You just listen in and reminisce.
+   2. And soon enough the conversation ends.
+Newspaper
+1. Main
+   1. VETERAN REGIMENTS RETURN TO FIELD WITH NEW RESOLVE
+2. Secondary
+   1. War Orphan Fund Established
+3. Blurb
+   1. Agricultural Yields "Remain Stable"
 
 
 Week 9
@@ -582,6 +1185,75 @@ Slides (in order):
    14. Others whisper about intel he might yield.
    15. That night, your mind drifts and it starts to relive your encounter.
    16. You still feel tense about the whole situation.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You take a breather outside.
+   2. You bump into Diaz.
+2. Diaz Talk:
+   1. "Uh, glad to see you back."
+   2. "I thought you were a goner."
+   3. "Not like I thought you were weak or anything."
+   4. "I just didn't want to feel too sad so I thought of the worst."
+   5. "But really? The enemy.."
+   6. "There is one literally in our camp."
+   7. "I don't know how to feel about it.."
+   8. "I just hope we keep good eyes on him."
+3. Diaz Not Talk:
+   1. You also raise your suspicions.
+   2. But you tell him that he didn't try to hurt you.
+   3. You tell him you were both wounded and that you didn't try to hurt him either.
+4. Diaz Talk:
+   1. "..."
+   2. "Glad to see you back I guess."
+5. Diaz Not Talk:
+   1. Soon enough you find yourself heading back.
+Eating Area
+1. Black Screen:
+   1. You take a breather outside.
+2. Meal Time Night:
+   1. In the distance you can see the Sergeant.
+   2. He seems to be interrogating Leo.
+   3. It's also heavily guarded.
+   4. You can also hear talks about Leo.
+   5. A lot of them seem to dislike the idea of Leo being around.
+   6. To them, he is part of the enemy.
+   7. A part of you agrees with what they say.
+   8. A part of you understands why they think that way.
+   9. But a part of you disagrees with them.
+   10. You just think to yourself.
+   11. "I'm glad to be alive.."
+Bunk 2
+1. Black Screen:
+   1. You take a breather outside and overhear a conversation.
+2. Guy 1 Talk:
+   1. "Leo's the name?"
+   2. "How'd we even find that guy?"
+3. Guy 2 Talk:
+   1. "More importantly, how is he even alive?"
+   2. "Don't we despise the Legion?"
+   3. "I wonder what the higher-ups are thinking.."
+4. Guy 1 Talk:
+   1. "Don't know.."
+   2. "If anything, I think we should just execute him."
+5. Guy 2 Talk:
+   1. "I second the motion."
+   2. "..But who are we to even make that decision."
+   3. "I wouldn't want to die if I were to be caught."
+   4. "I just wanna live."
+6. Guy 1 Talk:
+   1. "..."
+   2. "I guess you're right.."
+7. Black Screen:
+   1. The conversation ends and you head back.
+Newspaper
+1. Main
+   1. UNEXPECTED SKIRMISH ALONG ALTERNATE ROUTE
+2. Secondary
+   1. Security Protocols Under Review
+   2. Vanguard Units Regroup in Orderly Fashion
+3. Blurb
+   1. Citizens Asked to Report Suspicious Activity
 
 
 Week 10
@@ -660,6 +1332,86 @@ Slides (in order):
    4. He sleeps near the supply shelter, still alone.
    5. You wonder if he dreams the same war you do.
    6. You wonder if he dreams at all.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You head to Ramos.
+2. Ramos Talk:
+   1. "Hey."
+   2. "What do you think of Leo so far?"
+   3. "Yeah I agree. He seems to be helping out a lot."
+   4. "But I do want to talk to him."
+   5. "He seems interesting. I hope we get to know more about each other!"
+   6. "Why am I so positive?"
+   7. "He's still a soldier, like us."
+   8. "Who knows what he went through."
+   9. "And just like us, the homes and lives we've been stripped out of."
+   10. "Don't you think there's a chance he could be the same?"
+3. Ramos Not Talk:
+   1. You don't say anything. You stood in silence.
+   2. But you nod, agreeing with him.
+   3. You ask Ramos if he is able to sleep properly.
+   4. You ask him if Leo dreams for a bright future.
+4. Ramos Talk:
+   1. "..."
+   2. "A lot of questions I don't think I can answer."
+   3. "That's something you should ask him directly."
+   4. "Just keep your head up."
+5. Ramos Not Talk:
+   1. You think about it. You nod.
+6. Black Screen:
+   1. And you both wave your goodbyes.
+Eating Area
+1. Black Screen:
+   1. On your way out, you meet the Sergeant.
+2. Sergeant Talk:
+   1. "Soldier, what is your purpose at this hour?"
+   2. "How is Leo?"
+   3. "What's with you and Leo?"
+   4. "Nothing? Hmm.."
+   5. "Did you notice anything?"
+   6. "No? Good. Otherwise he would've faced death by my hands."
+   7. "Right now, he's walking on eggshells at death's door."
+   8. "Anything can go wrong for him."
+   9. "And he knows that for a fact."
+   10. "So he better not go snooping around."
+   11. "You all should keep an eye and report to me."
+   12. "We still don't know for sure who he is and what he could be up to."
+   13. "Stay vigilant, soldier."
+3. Sergeant Not Talk:
+   1. The Sergeant walks away, still as intimidating as ever.
+   2. You head back.
+Bunk 2
+1. Black Screen:
+   1. You head out for a bit.
+2. Guy 1 Talk:
+   1. "This Leo guy.."
+   2. "Don't you think he's suspicious?"
+3. Guy 2 Talk:
+   1. "And why's that?"
+4. Guy 1 Talk:
+   1. "I don't know. He's just treating this all normally."
+   2. "It's like he knew this would happen."
+   3. "Maybe he got caught on purpose?"
+5. Guy 2 Talk:
+   1. "Why would you think someone would throw their life away like that?"
+   2. "What if we weren't the kindest people and just killed him on the spot?"
+   3. "We should just.."
+   4. "Keep our eyes open."
+6. Guy 1 Talk:
+   1. "..."
+   2. "I guess."
+7. Black Screen:
+   1. You think..
+   2. "What is Leo thinking about? I wonder."
+Newspaper
+1. Main
+   1. GOVERNMENT ENACTS NEW SECURITY MEASURES IN BOARDER PROVINCES
+2. Secondary
+   1. War Industries Expand Labor Corps
+3. Blurb
+   1. Communication Interruptions Reported in Selected Areas
+   2. Additional Medical Staff Requested
 
 
 Week 11
@@ -746,6 +1498,95 @@ Slides (in order):
    16. You think that this may be the case for other Legion soldiers.
    17. That they can be the same as you, forced to serve, struggling for survival.
    18. Just like Leo.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You get up for a walk.
+   2. You think to yourself.
+2. Overcrowded Camp:
+   1. "They're supposed to be evil, huh.."
+   2. "That's what they told us, anyway."
+   3. "That they enjoy this."
+   4. "That they chose it."
+   5. "Enemy. Legion. Different uniform, different flag."
+   6. "Different kind of man."
+   7. "But still human."
+   8. "He doesn't hesitate or complain."
+   9. "He just wants to live."
+   10. "Is that really so different from me?"
+   11. "..."
+   12. "I wonder if the others are thinking the same thing."
+   13. "Does the Sergeant think the same?"
+   14. "..."
+   15. "People still talk about him till this day."
+   16. "Do they still think of him as an enemy?"
+   17. "..."
+   18. "I could be wrong."
+   19. "But the thought lingers anyway."
+3. Black Screen:
+   1. After an exhausting day, you head back.
+Eating Area
+1. Black Screen:
+   1. You get up for a walk.
+   2. You think to yourself.
+2. Meal Time Night:
+   1. "They're supposed to be evil, huh.."
+   2. "That's what they told us, anyway."
+   3. "That they enjoy this."
+   4. "That they chose it."
+   5. "Enemy. Legion. Different uniform, different flag."
+   6. "Different kind of man."
+   7. "But still human."
+   8. "He doesn't hesitate or complain."
+   9. "He just wants to live."
+   10. "Is that really so different from me?"
+   11. "..."
+   12. "I wonder if the others are thinking the same thing."
+   13. "Does the Sergeant think the same?"
+   14. "..."
+   15. "People still talk about him till this day."
+   16. "Do they still think of him as an enemy?"
+   17. "..."
+   18. "I could be wrong."
+   19. "But the thought lingers anyway."
+3. Black Screen:
+   1. After an exhausting day, you head back.
+Bunk 2
+1. Black Screen:
+   1. You get up for a walk.
+   2. You think to yourself.
+2. Overcrowded Camp:
+   1. "They're supposed to be evil, huh.."
+   2. "That's what they told us, anyway."
+   3. "That they enjoy this."
+   4. "That they chose it."
+   5. "Enemy. Legion. Different uniform, different flag."
+   6. "Different kind of man."
+   7. "But still human."
+   8. "He doesn't hesitate or complain."
+   9. "He just wants to live."
+   10. "Is that really so different from me?"
+   11. "..."
+   12. "I wonder if the others are thinking the same thing."
+   13. "Does the Sergeant think the same?"
+   14. "..."
+   15. "People still talk about him till this day."
+   16. "Do they still think of him as an enemy?"
+   17. "..."
+   18. "I could be wrong."
+   19. "But the thought lingers anyway."
+3. Black Screen:
+   1. After an exhausting day, you head back.
+Newspaper
+1. Main
+   1. DEFENSE LINES HOLD FIRM AMID CONTINUED PRESSURE
+2. Secondary
+   1. Westorian Air Patrols Intensify Coastal Watch
+   2. Funeral Services Held Quietly Across Provinces
+3. Blurb
+   1. Travel Permits Required in Eastern Zones
+
+
 
 
 Week 12
@@ -930,6 +1771,87 @@ Slides (in order):
 8. Black Screen:
    1. Your mind gets hazy with all these thoughts.
    2. But you are firm with your belief in Leo. That he is inherently a good person.
+Location Scenes
+Bunk 1
+1. Black Screen:
+   1. You decide to visit Leo.
+2. Leo Not Speaking:
+   1. You call out.
+3. Leo Speaking:
+   1. "Oh! It's you."
+   2. "Could I help you?"
+   3. "A small chat.."
+   4. "Sure!"
+4. Leo Not Speaking:
+   1. You apologize to him.
+   2. You tell him what you thought of him at first.
+   3. You tell him that you view him not as an enemy.
+   4. But as a friend.
+5. Leo Speaking:
+   1. "..."
+   2. "That's very touching to hear."
+   3. "I can't blame you for thinking that way. It's only natural."
+   4. "To be honest, I was scared of you guys as well."
+   5. "Though, I never really viewed anyone as a ‘monster' or anything like that."
+   6. "But, I understand."
+   7. "And it's okay."
+   8. "..."
+   9. "Is that it?"
+   10. "I see.. rest well soldier."
+6. Black Screen:
+   1. You head back feeling ever so slightly happier.
+Eating Area
+1. Black Screen:
+   1. You head out for a little while.
+2. Guy 2 Not Talk:
+   1. You bump into someone.
+3. Guy 2 Talk:
+   1. "Howdy!"
+   2. "What are you up to?"
+   3. "..."
+   4. "What do I think of Leo?"
+   5. "Well, seems like a great guy."
+   6. "He's helped us around so much it's kind of crazy to think he's part of the enemy."
+   7. "He also helped me a couple times.."
+   8. "Won't forget the shower incident.."
+   9. "But overall seems like a great guy."
+   10. "..."
+   11. "That's all I gotta say.."
+4. Guy 2 Not Talk:
+   1. You tell him that you think the same.
+   2. You head back after a short while.
+Bunk 2
+1. Black Screen:
+   1. You head out for a little while.
+   2. And to your surprise..
+2. Sergeant Not Talk:
+   1. You see the Sergeant.
+3. Sergeant Talk:
+   1. "Soldier.."
+   2. "The one who brought Leo here."
+   3. "You sure did cause a ruckus amongst us all."
+   4. "But.."
+   5. "I'm a tad bit glad."
+   6. "I was very doubtful at first.."
+   7. "Well, I still have some doubts."
+   8. "But Leo here has been a great help. I cannot argue with that."
+   9. "But soldier.. I'm afraid if this ever happens again, we cannot let the next enemy stay alive."
+   10. "This is an order coming from me."
+   11. "I do not wish to worry our fellow comrades."
+   12. "So if you happen to come across somebody again, you must do what you were trained to do."
+   13. "Otherwise, you would be left in the dust."
+   14. "Got that?"
+4. Sergeant Not Talk:
+   1. No words just salute back.
+   2. And he just walks away.
+Newspaper
+1. Main
+   1. HEROIC ACTIONS MARK LATEST EASTERN OPERATION
+2. Secondary
+   1. Casualty Figures Witheld Pending Verification
+   2. National Day of Prayer Announced
+3. Blurb
+   1. Rice Prices on the Rise
 
 
 Week 13
@@ -993,6 +1915,97 @@ Slides (in order):
    17. "She sees the good in everyone like I do."
    18. "What would your mother say?"
    19. You sit quietly and reflect. You shrug, unsure of what to say.
+Location Scenes:
+Bunk 1
+1. Black Screen:
+   1. You went out to a nearby bunk.
+2. Guy 2 Talk:
+   1. "Brother, my ears have been ringing non-stop."
+3. Guy 1 Talk:
+   1. "How are you not used to it yet?"
+4. Guy 2 Talk:
+   1. "I don't know."
+   2. "I actually haven't been sleeping properly because of it."
+   3. "It kinda sucks."
+5. Guy 1 Talk:
+   1. "Sucks to hear that buddy."
+   2. "Get well soon."
+6. Guy 2 Talk:
+   1. "Thanks."
+   2. "All the gunshots have just numbed my ears."
+   3. "I'm getting tired of it."
+   4. "It's just a constant battle."
+Eating Area
+7. Black Screen:
+   1. You went out on a short walk.
+8. Leo Not Talk:
+   1. You see Leo.
+   2. He seems to be talking to some other soldiers.
+9. Leo Talk:
+   1. "Calm down you guys."
+10. Leo Not Talk:
+   1. "Jose, you rat!"
+   2. "You took from my plate, I know it!"
+11. Leo Talk:
+   1. "Uh.."
+   2. Leo seems to be caught in the middle of a quarrel.
+12. Leo Not Talk:
+   1. "And why would I do that Carlo?"
+   2. "Oh, you want to know why?"
+   3. "Because you were literally complaining a few seconds ago."
+   4. "And all of a sudden, you have a giant pile of slop on your plate."
+   5. "And lo and behold, my portions seem to have SHRUNK."
+   6. "..."
+   7. Seems like Jose has nothing to say.
+13. Leo Talk:
+   1. "Listen, I can share some of my food with you Carlo."
+   2. "What if you just let it go?"
+   3. "It's not something worth expending your energy for."
+14. Leo Not Talk:
+   1. "..."
+   2. "I guess."
+   3. Carlo takes from Leo.
+   4. "Thank you."
+   5. "But that doesn't change the fact that Jose is a RAT."
+   6. Leo doesn't say anything and has this awkward smile on his face.
+15. Leo Talk:
+   1. "Well, that's all sorted out. See you folks around."
+16. Leo Not Talk:
+   1. Leo walks towards your direction.
+   2. He sees you.
+17. Leo Talk:
+   1. "Funny you had to see that buddy, haha!"
+   2. He pats you on the back and leaves.
+Bunk 2
+1. Black Screen:
+   1. You went out to a nearby bunk.
+2. Diaz Not Talk:
+   1. You find Diaz.
+3. Diaz Talk:
+   1. "Hey."
+   2. "...A question?"
+   3. "Sure, ask away."
+   4. "What does it mean to be an enemy huh?"
+   5. "..."
+   6. "Well, obviously it's those that hurt you."
+   7. "And those that are against you."
+   8. "Leo?"
+   9. "Well.. he's a special case."
+   10. "..People can change.. I guess.."
+   11. "I don't know!"
+   12. "That's all I can say."
+4. Diaz Not Talk:
+   1. You don't force him to talk.
+   2. You just let him be.
+   3. You wave goodbye.
+Newspaper
+1. Main
+   1. NATION UNITED AS WAR ENTERS CRITICAL PHASE
+2. Secondary
+   1. Additional Reinforcements Deployed Overnight
+   2. Supply Convoys Delayed by Weather
+3. Blurb
+   1. Public Confidence Survey "Encouraging"
 
 
 Week 14
@@ -1084,6 +2097,68 @@ Slides (in order):
    5. The same rhythm that has been piloting the camp since the beginning.
    6. But a part of that rhythm is missing now.
    7. The war keeps moving forward.
+Location Scenes:
+Bunk 1
+1. Black Screen:
+   1. You head to Ramos.
+2. Ramos Talk:
+   1. "..."
+   2. "And so he's gone.."
+   3. "I miss him already, haha!"
+   4. "Don't you?"
+3. Ramos Not Talk:
+   1. You nod.
+4. Ramos Talk:
+   1. "Hope he gets to go back to his family."
+   2. "Who knows what he will be up to."
+   3. "..."
+   4. "Sorry.. I don't have much to say."
+   5. "Let's just wish him the best of luck."
+5. Ramos Not Talk:
+   1. You don't have much to say either.
+   2. You just stare in silence and nod as you wave goodbye.
+Eating Area
+1. Black Screen:
+   1. You head to Diaz.
+2. Diaz Talk:
+   1. "..."
+   2. "I can't believe it.."
+   3. "I can't believe that I kinda miss the guy.."
+   4. "A part of me feels relieved."
+   5. "A part of me feels worried."
+   6. "He was.. something that's for sure."
+   7. "..."
+   8. "I.. hope's gonna be okay..?"
+   9. "..."
+3. Diaz Not Talk:
+   1. He ran out of things to say.
+   2. You just nod in agreement and wave goodbye.
+Bunk 2
+1. Black Screen:
+   1. You head out.
+   2. You see the Sergeant.
+2. Sergeant Talk:
+   1. "Salutations, soldier."
+   2. "..Leo."
+   3. "He's gone now."
+   4. "But I'm more than glad to have some of our fellow soldiers back on our side."
+   5. "..A worthy trade nonetheless."
+   6. "I will say.. He proved his usefulness and served as a great dog."
+   7. "..."
+   8. "The camp will never forget his contributions.."
+3. Sergeant Not Talk:
+   1. Silence fills the atmosphere and you salute the Sergeant.
+   2. He salutes back and you part your ways.
+Newspaper
+1. Main
+   1. VANGUARD REPOSITIONS FOR LONG-TERM ADVANTAGE
+2. Secondary
+   1. Legion Forces Reported "Strained"
+   2. Youth Enlistment Numbers Rise
+3. Blurb
+   1. Border Communications Restored
+
+
 Act 3
 Week 15
 Slides (in order):
@@ -1114,6 +2189,79 @@ Slides (in order):
    1. Something is brewing, but the outcome is unclear.
    2. Your chest feels heavy.
    3. Perhaps the weight can be unloaded onto paper.
+Location Scenes:
+Bunk 1
+1. Black Screen:
+   1. You take a breather outside.
+   2. The air feels colder.
+   3. But you are used to it already.
+   4. You can hear a few murmurs.
+2. Overcrowded Camp:
+   1. "I miss my family.."
+   2. "Me too.."
+   3. "I miss the comfort.. the peace."
+   4. "Me too.."
+   5. It goes on for a while.
+   6. You reminisce with them for a while.
+   7. And then.. silence.
+   8. Silence fills the atmosphere yet again.
+Eating Area
+1. Black Screen:
+   1. You take a breather outside.
+   2. You bump into another comrade.
+2. Guy 1 Talk:
+   1. "Hello there."
+   2. "..."
+   3. "It feels weird doesn't it?"
+   4. "It's been going on for.. 3 years now?"
+   5. "And we have been in a constant state of fear."
+   6. "A fear of death.. a fear that we will never reach home ever again."
+   7. "And that fear brought us to where we are today."
+   8. "Still alive."
+   9. "..."
+   10. "Although, I'm glad to still be here."
+   11. "But something about it feels off.."
+   12. "There were those who.. didn't make it."
+   13. "Their lives are gone and what remains is us."
+   14. "Doesn't it feel wrong?"
+3. Guy 1 Not Talk:
+   1. He stops speaking.
+   2. You just stare in silence.
+   3. And silence fills the atmosphere.
+   4. The ringing and numbness to it all.
+   5. You agree. You agree that it does feel wrong.
+   6. But you are still thankful as well for the life you still have.
+   7. It just doesn't sit well with you.
+4. Black Screen:
+   1. You head back.
+Bunk 2
+1. Black Screen:
+   1. You take a breather outside.
+2. Guy 2 Talk:
+   1. "Hello."
+   2. "Nothing much.. what about you?"
+   3. "I see.. nothing much either."
+   4. "Well, why don't we just enjoy each other's company?"
+   5. "It's times like these we should appreciate the little serenity that we have."
+   6. "Tranquility amidst the conflict.."
+   7. "How precious.."
+   8. "..."
+   9. "You don't have to talk. I just want us to enjoy it."
+   10. "..."
+   11. This reminds you of back home.
+   12. At the comfort of your own home.
+   13. With your mother.
+   14. "Anyway, looks like I have to go."
+   15. "See you around."
+3. Guy 2 Not Talk:
+   1. He leaves and so do you.
+Newspaper
+1. Main
+   1. EASTERN FRONT REMAINS CONTESTED
+2. Secondary
+   1. Prayer Service Fill City Halls
+3. Blurb
+   1. Rail Lines Reserved for Military Priority
 
 
 Week 16
@@ -1149,7 +2297,7 @@ Slides (in order):
    3. Others stare at blank pages, unable to find the words.
    4. Ramos folds his letter carefully.
    5. "Maria always said to come back to her," he says.
-   6. He takes out a ring from his pocket.
+   6. He takes out a ring from his coat pocket.
    7. It was simple but beautiful.
    8. He waves it at you. "And you can bet I will," he winks.
    9. Diaz doesn't write. He never does.
@@ -1161,6 +2309,93 @@ Slides (in order):
 6. Black Screen:
    1. The night stretches on, restless and heavy.
    2. Sleep doesn't come for most.
+Location Scenes:
+Bunk 1
+1. Black Screen:
+   1. Fear rises within you. The final mission awaits.
+   2. You step outside for a while and head to Ramos.
+2. Ramos Talk:
+   1. "Hey."
+   2. "You scared for the next battle?"
+   3. "..."
+   4. "Me too man."
+   5. "I told Maria about it. I wonder what she would think."
+   6. "But hey, isn't this a sign that it's almost over?"
+   7. "I'm glad but.. still scared."
+   8. "I still have the tokens we shared."
+   9. "It's been a good luck charm ever since."
+   10. "And this photo of Maria as well.."
+   11. "I'll be home soon.."
+   12. "And so will you!"
+   13. "So let's just do our best, shall we?"
+3. Ramos Not Talk:
+   1. Still as optimistic as always.
+   2. You smile, he smiles back.
+   3. And just like that, the mood swings back to its gloomy state.
+   4. You head back.
+Eating Area
+1. Black Screen:
+   1. Fear rises within you. The final mission awaits.
+   2. You step outside for a while.
+2. Guy 1 Talk:
+   1. "Final orders.."
+   2. "Is this it?"
+3. Guy 2 Talk:
+   1. "I guess so.."
+   2. "Are you ready?"
+4. Guy 1 Talk:
+   1. "No.."
+   2. "But I know what I must do.."
+   3. "What about you?"
+5. Guy 2 Talk:
+   1. "Yes.."
+6. Guy 1 Talk:
+   1. "But.. your hands are trembling.."
+7. Guy 2 Talk:
+   1. "And? Being scared is fine."
+   2. "It's never a bad thing. It's what brought me here."
+   3. "That being said, I will also do my best."
+8. Guy 1 Talk:
+   1. "..."
+   2. "I see."
+   3. The conversation continues but you think to yourself.
+9. Black Screen:
+   1. "Fear is what brought me here huh.."
+   2. You head back.
+Bunk 2
+1. Black Screen:
+   1. Fear rises within you. The final mission awaits.
+   2. You step outside for a while and head to Diaz.
+2. Diaz Talk:
+   1. "..."
+   2. "I'm scared man."
+   3. "What do we do?"
+   4. "..."
+   5. "I wanna run away."
+   6. "But I can't.."
+   7. "..You can follow me if you want."
+   8. "But I just want to go."
+   9. "I'm scared. This might be the end of me."
+   10. Diaz starts to panic.
+3. Diaz Not Talk:
+   1. You try to calm him down.
+   2. You tell him you made it this far.
+   3. You tell him you and Ramos and everyone else will be there with him.
+   4. You tell him one big fight and you will be free.
+   5. You tell him to do his best.
+4. Diaz Talk:
+   1. "..."
+5. Diaz Not Talk:
+   1. Seems like he's calm for now.
+   2. It's best to leave him be.
+   3. You pat his shoulder and head back.
+Newspaper
+1. Main
+   1. HIGH COMMAND CALLS FOR STEADFAST COURAGE
+2. Secondary
+   1. Security Tightened Across Provinces
+3. Blurb
+   1. Factory Accidents Rise Under Extended Shifts
 
 
 Week 17
@@ -1266,7 +2501,7 @@ Slides (in order):
    6. You plead with him to stay with you.
    7. He shakes his head with a smile. "Listen…"
    8. His voice is fading.
-   9. Survive. Give your mother a warm hug.
+   9. "Survive. Give your mother a warm hug."
    10. He coughs blood on his lips.
    11. He takes your hand and places a ring on your palm.
    12. "Tell Maria…"
@@ -1321,6 +2556,96 @@ Slides (in order):
    2. Bodies lie scattered across the battlefield.
    3. Some in your colors. Some in theirs.
    4. All of them silent.
+Location Scenes:
+Bunk 1
+1. Black Screen:
+   1. You leave and try to clear your thoughts.
+   2. Your mind is blank.
+   3. You don't know what to think.
+   4. All of a sudden..
+2. Sergeant Talk:
+   1. "Soldier."
+   2. "You did well surviving."
+   3. "I know we faced a lot of casualties."
+   4. "But be proud you're still here.."
+   5. "I'm sure our fellow fallen soldiers would like to see you march on."
+   6. Sergeant Chaves keeps talking and tears eventually roll down your face.
+   7. "..."
+   8. "This is the reality, soldier."
+   9. "There's not much I can do."
+3. Sergeant Not Talk:
+   1. He pats you on the back as he leaves.
+   2. You wipe your tears and head back.
+Eating Area
+1. Black Screen:
+   1. You leave and try to clear your thoughts.
+   2. Your mind is blank.
+   3. You don't know what to think.
+   4. All of a sudden..
+2. Diaz Not Talk:
+   1. You lock eyes with Diaz.
+   2. You both don't say anything for a while.
+3. Diaz Talk:
+   1. "..."
+   2. "He's gone.."
+   3. "..."
+   4. "I don't have any words.."
+   5. "I'm just.. empty.."
+   6. "I didn't think I would ever feel this way."
+   7. "But.. he's gone.."
+4. Diaz Not Talk:
+   1. Tears roll down your face and his.
+   2. You both hug each other.
+   3. You both are still clinging on to his token.
+   4. You tell him about Leo.
+   5. You tell him about what you saw.
+   6. His final moments.
+5. Diaz Talk:
+   1. "..."
+   2. "You did what had to be done.."
+   3. "People come and go, I just didn't expect it to be like this.."
+   4. "..."
+   5. "Can things get any worse?"
+   6. "..."
+   7. "I wonder what Ramos would think of us now.."
+6. Diaz Not Talk:
+   1. You both continue to sulk.
+7. Black Screen:
+   1. And soon enough, you find yourself back in your bunk.
+Bunk 2
+1. Black Screen:
+   1. You leave and try to clear your thoughts.
+   2. Your mind is blank.
+   3. You don't know what to think.
+   4. All of a sudden..
+2. Guy 1 Talk:
+   1. "I don't feel so great."
+   2. "It's always after a fight."
+   3. "It's like I'm not supposed to be here."
+3. Guy 2 Talk:
+   1. "I get how you feel.."
+   2. "Actually I feel the same.."
+   3. "It's like a part of me keeps disappearing."
+   4. "And it hurts."
+4. Guy 1 Talk:
+   1. "Yeah.."
+   2. "And.. I hate being the one who has to take the life of another."
+5. Guy 2 Talk:
+   1. "..."
+   2. "Same here.."
+6. Black Screen:
+   1. You think back about what happened with Leo.
+   2. The final moments.
+   3. The look on his face.
+   4. But it's what had to be done. This is the price of duty and service.
+   5. You tear up and head back.
+Newspaper
+1. Main
+   1. NO TERRITORY LOST, OFFICIALS CONFIRM
+2. Secondary
+   1. Vanguard Coordination "Unshaken"
+3. Blurb
+   1. Editorial: "Victory Demands Patience"
 
 
 Week 18
@@ -1663,7 +2988,7 @@ Slides (in order):
    5. When you reach home, you stand outside for a long time.
    6. You can see your mother through the window.
    7. She looks older, worn.
-   8. You raise your had to knock.
+   8. You raise your hand to knock.
    9. But you can't.
    10. What would you say?
    11. You lower your hand.

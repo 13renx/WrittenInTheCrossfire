@@ -28,7 +28,7 @@ void App::run() {
 				if(keyPressed->scancode == sf::Keyboard::Scan::Escape) {
 					Utils::Log::debugInfo("Esc key pressed");
 
-					if(activeViewType == ViewController::ViewType::SCENE_VIEW || activeViewType == ViewController::ViewType::READ_LETTER_VIEW) {
+					if(activeViewType == ViewController::ViewType::MAIN_SCENE_VIEW || activeViewType == ViewController::ViewType::READ_LETTER_VIEW) {
 						if(pauseGroup->isVisible()) {
 							pauseGroup->setVisible(false);
 						} else {

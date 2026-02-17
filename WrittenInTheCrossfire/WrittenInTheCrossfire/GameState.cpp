@@ -1,5 +1,5 @@
 #include "GameState.h"
-#include "Stats.h"
+#include "Structs.h"
 #include "Utils.h"
 #include <cstdlib>
 #include <iostream>

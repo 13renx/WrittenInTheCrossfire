@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Model.h"
-#include "Stats.h"
+#include "Structs.h"
 #include <string>
 #include <tuple>
 #include <nlohmann/json.hpp>

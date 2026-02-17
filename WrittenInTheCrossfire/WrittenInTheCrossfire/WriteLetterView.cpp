@@ -4,7 +4,7 @@
 #include "GameModel.h"
 #include "Macros.h"
 #include "Utils.h"
-#include "Stats.h"
+#include "Structs.h"
 #include "View.h"
 #include "ViewController.h"
 #include "Widgets.h"
@@ -72,6 +72,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	dialogTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
 	dialogTextArea->setSize(1200, 300);
 	dialogTextArea->setTextSize(30);
+	dialogTextArea->getRenderer()->setBackgroundColor(tgui::Color(128, 128, 128, 60));
 	dialogTextArea->getRenderer()->setTextColor(tgui::Color::White);
 	dialogTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogTextArea) - 50);
 	dearLabel->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(letterTextArea)) / 2.0f + 46, tgui::bindHeight(gui) - tgui::bindHeight(letterTextArea) - 90);

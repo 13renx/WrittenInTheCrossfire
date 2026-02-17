@@ -178,7 +178,7 @@
     <ClInclude Include="SceneView.h" />
     <ClInclude Include="SettingsModel.h" />
     <ClInclude Include="SettingsView.h" />
-    <ClInclude Include="Stats.h" />
+    <ClInclude Include="Structs.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="WriteLetterView.h" />
     <ClInclude Include="View.h" />

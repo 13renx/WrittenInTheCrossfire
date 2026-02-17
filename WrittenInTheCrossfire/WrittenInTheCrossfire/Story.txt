@@ -82,11 +82,11 @@ Bunk 2
 1. Black Screen:
    1. …Nothing seems to be happening.
 Newspaper
-1. Main
+Main
    1. VANGUARD REGIMENTS MOBILIZE AS EASTERN TENSIONS RISE
-2. Secondary
+Secondary
    1. Joint Statement with Westoria Affirms "Unbreakable Alliance"
-3. Blurb
+Blurb
    1. Minor Shipping Delays Reported Along Southern Coast, Officials Assure Stability
 
 
@@ -217,12 +217,12 @@ Bunk 2
    2. "Well, that was a bit hectic."
    3. "I think it's time to head back."
 Newspaper
-1. Main
+Main
    1. TRAINING CAMPS REPORT RECORD DISCIPLINE AND UNITY
-2. Secondary
+Secondary
    1. Legion Activity Observed Along Distant Frontiers
    2. Ration Adjustments Temporary, Ministry Confirms
-3. Blurb
+Blurb
    1. Public Urged Not to Heed Foreign Rumors
 
 
@@ -351,12 +351,12 @@ Bunk 2
    4. "..Kinda weird.."
    5. You leave.
 Newspaper
-1. Main
+Main
    1. VANGUARD FORCES STRENGTHEN DEFENSIVE LINES IN EAST
-2. Secondary
+Secondary
    1. Industrial Output Remains Strong Despite "Enemy Posturing"
    2. Clergy Hold Vigil for Peace and Victory
-3. Blurb
+Blurb
    1. Local Bride-to-Be Says, "He Will Return"
 
 
@@ -511,11 +511,11 @@ Bunk 2
    3. "Dainlav.."
    4. You think about Dainlav as you head back.
 Newspaper
-1. Main
+Main
    1. CAMP SAN AURELIO EXEMPLIFIES SOLDIERLY BROTHERHOOD
-2. Secondary
+Secondary
    1. Minor Equipment Delays Reported, Quickly Resolved
-3. Blurb
+Blurb
    1. Westorian Fleet Conducts "Routine Exercise" Near Border
         
 
@@ -667,11 +667,11 @@ Bunk 2
 3. Ramos Not Talk:
    1. The conversation ends shortly after and you head back.
 Newspaper
-1. Main
+Main
    1. LIVE-FIRE DRILLS PREPARE VANGUARD MEN FOR ANY THREAT
-2. Secondary
+Secondary
    1. Legion Tactics Described as "Cowardly and Inhuman"
-3. Blurb
+Blurb
    1. Isolated Incident Near Eastern Campsite Under Investigation
 
 
@@ -800,12 +800,12 @@ Bunk 2
    1. You cling to the token Ramos gave.
    2. "Fight.."
 Newspaper
-1. Main
+Main
    1. SELECT REGIMENTS TO REINFORCE EASTERN FRONT
-2. Secondary
+Secondary
    1. Minor Losses Sustained in Distant Engagement
    2. Industrial Labor Programs Expanded
-3. Blurb
+Blurb
    1. Westorian Commanders Praise Marivelle Courage
 
 
@@ -957,11 +957,11 @@ Bunk 2
    1. A few words of optimism fill the air.
    2. You smile, a very slight smile.
 Newspaper
-1. Main
+Main
    1. VANGUARD FORCES EXECUTE STRATEGIC WITHDRAWAL
-2. Secondary
+Secondary
    1. Reinforcements En Route
-3. Blurb
+Blurb
    1. Church Bells Ring in Honor of the Fallen
 Act 2
 Week 8
@@ -1094,11 +1094,11 @@ Bunk 2
    1. You just listen in and reminisce.
    2. And soon enough the conversation ends.
 Newspaper
-1. Main
+Main
    1. VETERAN REGIMENTS RETURN TO FIELD WITH NEW RESOLVE
-2. Secondary
+Secondary
    1. War Orphan Fund Established
-3. Blurb
+Blurb
    1. Agricultural Yields "Remain Stable"
 
 
@@ -1247,12 +1247,12 @@ Bunk 2
 7. Black Screen:
    1. The conversation ends and you head back.
 Newspaper
-1. Main
+Main
    1. UNEXPECTED SKIRMISH ALONG ALTERNATE ROUTE
-2. Secondary
+Secondary
    1. Security Protocols Under Review
    2. Vanguard Units Regroup in Orderly Fashion
-3. Blurb
+Blurb
    1. Citizens Asked to Report Suspicious Activity
 
 
@@ -1405,11 +1405,11 @@ Bunk 2
    1. You think..
    2. "What is Leo thinking about? I wonder."
 Newspaper
-1. Main
+Main
    1. GOVERNMENT ENACTS NEW SECURITY MEASURES IN BOARDER PROVINCES
-2. Secondary
+Secondary
    1. War Industries Expand Labor Corps
-3. Blurb
+Blurb
    1. Communication Interruptions Reported in Selected Areas
    2. Additional Medical Staff Requested
 
@@ -1578,12 +1578,12 @@ Bunk 2
 3. Black Screen:
    1. After an exhausting day, you head back.
 Newspaper
-1. Main
+Main
    1. DEFENSE LINES HOLD FIRM AMID CONTINUED PRESSURE
-2. Secondary
+Secondary
    1. Westorian Air Patrols Intensify Coastal Watch
    2. Funeral Services Held Quietly Across Provinces
-3. Blurb
+Blurb
    1. Travel Permits Required in Eastern Zones
 
 
@@ -1845,12 +1845,12 @@ Bunk 2
    1. No words just salute back.
    2. And he just walks away.
 Newspaper
-1. Main
+Main
    1. HEROIC ACTIONS MARK LATEST EASTERN OPERATION
-2. Secondary
+Secondary
    1. Casualty Figures Witheld Pending Verification
    2. National Day of Prayer Announced
-3. Blurb
+Blurb
    1. Rice Prices on the Rise
 
 
@@ -1999,12 +1999,12 @@ Bunk 2
    2. You just let him be.
    3. You wave goodbye.
 Newspaper
-1. Main
+Main
    1. NATION UNITED AS WAR ENTERS CRITICAL PHASE
-2. Secondary
+Secondary
    1. Additional Reinforcements Deployed Overnight
    2. Supply Convoys Delayed by Weather
-3. Blurb
+Blurb
    1. Public Confidence Survey "Encouraging"
 
 
@@ -2150,12 +2150,12 @@ Bunk 2
    1. Silence fills the atmosphere and you salute the Sergeant.
    2. He salutes back and you part your ways.
 Newspaper
-1. Main
+Main
    1. VANGUARD REPOSITIONS FOR LONG-TERM ADVANTAGE
-2. Secondary
+Secondary
    1. Legion Forces Reported "Strained"
    2. Youth Enlistment Numbers Rise
-3. Blurb
+Blurb
    1. Border Communications Restored
 
 
@@ -2256,11 +2256,11 @@ Bunk 2
 3. Guy 2 Not Talk:
    1. He leaves and so do you.
 Newspaper
-1. Main
+Main
    1. EASTERN FRONT REMAINS CONTESTED
-2. Secondary
+Secondary
    1. Prayer Service Fill City Halls
-3. Blurb
+Blurb
    1. Rail Lines Reserved for Military Priority
 
 
@@ -2390,11 +2390,11 @@ Bunk 2
    2. It's best to leave him be.
    3. You pat his shoulder and head back.
 Newspaper
-1. Main
+Main
    1. HIGH COMMAND CALLS FOR STEADFAST COURAGE
-2. Secondary
+Secondary
    1. Security Tightened Across Provinces
-3. Blurb
+Blurb
    1. Factory Accidents Rise Under Extended Shifts
 
 
@@ -2640,11 +2640,11 @@ Bunk 2
    4. But it's what had to be done. This is the price of duty and service.
    5. You tear up and head back.
 Newspaper
-1. Main
+Main
    1. NO TERRITORY LOST, OFFICIALS CONFIRM
-2. Secondary
+Secondary
    1. Vanguard Coordination "Unshaken"
-3. Blurb
+Blurb
    1. Editorial: "Victory Demands Patience"
 
 

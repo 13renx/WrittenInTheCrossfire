@@ -2,6 +2,8 @@
 #include "Client.h"
 #include "GameModel.h"
 #include "Macros.h"
+#include "StoryModel.h"
+#include "Structs.h"
 #include "Utils.h"
 #include "View.h"
 #include "ViewController.h"
@@ -17,18 +19,17 @@
 
 using json = nlohmann::json;
 
-CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(viewController, gameModel, tgui::Texture::Texture("./Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()) {
+CampView::CampView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel) : View(viewController, gameModel, tgui::Texture::Texture("./Assets/Textures/Backgrounds/CampView.PNG")), client(this->gameModel.getClient()), gameState(this->gameModel.getGameState()), storyModel(storyModel) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
-	Stats& stats = gameState.getCurrentStats();
+	Stats& stats = this->gameState.getCurrentStats();
+	int checkpoint = this->gameState.getCheckpoint();
 	this->gameModel.getAudio().stopMusic();
 	isPicFrameFar = true;
 	isNewspaperFar = true;
 	isHandMirrorFar = true;
 	isDontWriteClicked = false;
 	isRunning = true;
-	std::thread dontWriteThread(&CampView::dontWrite, this);
-	dontWriteThread.detach();
 
 	// Initialize widgets
     buttonLayoutOne = tgui::HorizontalLayout::create({ 500, 100 });
@@ -41,6 +42,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	familyRelationshipPicture = Widgets::Pictures::createPictureButton(window);
 	familyRelationshipPanel = tgui::Panel::create();
 	newspaperGroup = tgui::Group::create();
+	newspaperTextArea = tgui::TextArea::create();
 	newspaperPicture = Widgets::Pictures::createPictureButton(window, tgui::Texture::Texture("./Assets/Textures/Interactables/Newspaper/Far.PNG"));
 	newspaperPanel = tgui::Panel::create();
 	handMirrorGroup = tgui::Group::create();
@@ -88,9 +90,12 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	familyRelationshipPanel->setVisible(false);
 	familyRelationshipPicture->setScale(0.5f);
 	familyRelationshipPicture->setPosition(70, 460);
-	newspaperPanel->setVisible(false);
+	newspaperTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(newspaperTextArea)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(newspaperTextArea)) / 2.0f);
+	newspaperTextArea->setText(this->storyModel.getNewspaperAsset(checkpoint).headline);
+	newspaperTextArea->setVisible(false);
 	newspaperPicture->setScale(0.5f);
 	newspaperPicture->setPosition(450, 630);
+	newspaperPanel->setVisible(false);
 	handMirrorPanel->setVisible(false);
 	handMirrorPicture->setScale(0.5f);
 	handMirrorPicture->setPosition(50, 860);
@@ -177,6 +182,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			newspaperPanel->setVisible(false);
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
+			newspaperTextArea->setVisible(false);
 			newspaperPicture->setScale(0.5f);
 			newspaperPicture->setSize(500, 349);
 			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("./Assets/Textures/Interactables/Newspaper/Far.PNG"));
@@ -192,6 +198,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			newspaperPanel->setVisible(true);
 			buttonLayoutOne->setVisible(false);
 			exitTentButton->setVisible(false);
+			newspaperTextArea->setVisible(true);
 			newspaperPicture->setScale(1.0f);
 			newspaperPicture->setSize(1920, 1080);
 			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("./Assets/Textures/Interactables/Newspaper/Near.PNG"));
@@ -202,6 +209,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 			newspaperPanel->setVisible(false);
 			buttonLayoutOne->setVisible(true);
 			exitTentButton->setVisible(true);
+			newspaperTextArea->setVisible(false);
 			newspaperPicture->setScale(0.5f);
 			newspaperPicture->setSize(500, 349);
 			newspaperPicture->getRenderer()->setTexture(tgui::Texture::Texture("./Assets/Textures/Interactables/Newspaper/Far.PNG"));
@@ -296,6 +304,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	familyRelationshipGroup->add(familyRelationshipPicture);
 	newspaperGroup->add(newspaperPanel);
 	newspaperGroup->add(newspaperPicture);
+	newspaperGroup->add(newspaperTextArea);
 	handMirrorGroup->add(handMirrorPanel);
 	handMirrorGroup->add(handMirrorPicture);
 	buttonLayoutOne->add(writeButton);
@@ -303,6 +312,9 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 	//mainPanel->add(buttonLayoutTwo);
 	//buttonLayoutTwo->add(cancelButton);
 	//buttonLayoutTwo->add(selectButton);
+
+	std::thread dontWriteThread(&CampView::dontWrite, this);
+	dontWriteThread.detach();
 }
 
 CampView::~CampView() {

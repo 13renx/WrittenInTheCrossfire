@@ -2,10 +2,13 @@
 
 #include "Client.h"
 #include "GameModel.h"
+#include "StoryModel.h"
+#include "Structs.h"
 #include "View.h"
 #include "ViewController.h"
 #include <atomic>
 #include <memory>
+#include <vector>
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
@@ -14,6 +17,7 @@ class CampView : public View
 	private:
 		Client& client;
 		GameState& gameState;
+		StoryModel& storyModel;
 
 		tgui::HorizontalLayout::Ptr buttonLayoutOne;
 		tgui::Button::Ptr writeButton;
@@ -25,8 +29,9 @@ class CampView : public View
 		tgui::Panel::Ptr familyRelationshipPanel;
 		tgui::Picture::Ptr familyRelationshipPicture;
 		tgui::Group::Ptr newspaperGroup;
-		tgui::Panel::Ptr newspaperPanel;
+		tgui::TextArea::Ptr newspaperTextArea;
 		tgui::Picture::Ptr newspaperPicture;
+		tgui::Panel::Ptr newspaperPanel;
 		tgui::Group::Ptr handMirrorGroup;
 		tgui::Panel::Ptr handMirrorPanel;
 		tgui::Picture::Ptr handMirrorPicture;
@@ -42,7 +47,7 @@ class CampView : public View
 		bool isHandMirrorFar;
 
 	public:
-		CampView(ViewController* viewController, GameModel& gameModel);
+		CampView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel);
 		~CampView();
 
 		void dontWrite();

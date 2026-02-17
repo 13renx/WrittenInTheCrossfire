@@ -1,10 +1,13 @@
 #include "StoryModel.h"
 #include "Structs.h"
+#include "Utils.h"
 #include <fstream>
+#include <iostream>
 #include <vector>
 #include "fmt/core.h"
 
 StoryModel::StoryModel() {
+    Utils::Log::info("Loading Story.txt");
     std::ifstream file = std::ifstream("Story.txt");
     std::string line;
 
@@ -21,9 +24,9 @@ StoryModel::StoryModel() {
     locationSceneAsset.checkpoint = 0;
     locationSceneAsset.backgroundTexture = "";
     locationSceneAsset.dialogue = "";
-    NewspaperAsset newspaper;
-    newspaper.checkpoint = 0;
-    newspaper.headline = "";
+    NewspaperAsset newspaperAsset;
+    newspaperAsset.checkpoint = 0;
+    newspaperAsset.headline = "";
 
     while(std::getline(file, line)) {
         if(line.starts_with("Week")) {
@@ -32,8 +35,10 @@ StoryModel::StoryModel() {
 
             mainSceneAsset.checkpoint = checkpoint;
             locationSceneAsset.checkpoint = checkpoint;
-            newspaper.checkpoint = checkpoint;
+            newspaperAsset.checkpoint = checkpoint;
         }
+
+        std::cout << line << std::endl;
 
         if(isMainScene && line.size() > 3) {
             if(line.at(0) >= '0' && line.at(0) <= '9') { // backgroundTexture
@@ -67,8 +72,7 @@ StoryModel::StoryModel() {
             if(mainSceneAsset.dialogue != "") {
                 mainSceneAssets.push_back(mainSceneAsset);
             }
-        }
-        else if(isLocationScene && line.size() > 3) {
+        } else if(isLocationScene && line.size() > 3) {
             if(line.starts_with("Bunk 1")) {
                 locationSceneAsset.backgroundTexture = "./Assets/Textures/Scenes/Bunker.png";
                 locationSceneAsset.foregroundTexture = "";
@@ -112,29 +116,32 @@ StoryModel::StoryModel() {
             if(locationSceneAsset.foregroundTexture != "" && locationSceneAsset.dialogue != "") {
                 locationSceneAssets.push_back(locationSceneAsset);
             }
-        }
-        else if(isNewspaper && line.size() > 3) {
-            line.erase(0, 5); // Remove "   1. "
-            newspaper.headline = line;
-            newspaperAssets.push_back(newspaper);
+        } else if(isNewspaper && line.size() > 3) {
+            line.erase(0, 6); // Remove "   1. "
+            newspaperAsset.headline = line;
+            newspaperAssets.push_back(newspaperAsset);
             isNewspaper = false;
         }
 
-        if(line.starts_with("Slides")) {
+        if(line.starts_with("Slides")) { // Main Scenes
             isMainScene = true;
-            isNewspaper = false;
-        }
-        else if(line.starts_with("Location")) {
-            isLocationScene = true;
-            isMainScene = false;
-        }
-        else if(line.starts_with("1. Main")) {
-            isNewspaper = true;
             isLocationScene = false;
+            isNewspaper = false;
+        } else if(line.starts_with("Location")) {
+            isMainScene = false;
+            isLocationScene = true;
+            isNewspaper = false;
+        } else if(line.starts_with("Main")) { // Newspaper
+            isMainScene = false;
+            isLocationScene = false;
+            isNewspaper = true;
         }
     }
 
+    
     file.close();
+    Utils::Log::info("Story.txt loaded");
+    Utils::Log::debugInfo(fmt::format("mainSceneAssets.size() = {}\nlocationSceneAssets.size() = {}\nnewspaperAssets.size() = {}", mainSceneAssets.size(), locationSceneAssets.size(), newspaperAssets.size()));
 }
 
 std::vector<MainSceneAsset> StoryModel::getMainSceneAssets(int checkpoint) {
@@ -161,14 +168,7 @@ std::vector<LocationSceneAsset> StoryModel::getLocationSceneAssets(int checkpoin
     return ret;
 }
 
-std::vector<NewspaperAsset> StoryModel::getNewspaperAssets(int checkpoint) {
-    std::vector<NewspaperAsset> ret;
-
-    for(const auto& newspaperAsset : newspaperAssets) {
-        if(newspaperAsset.checkpoint == checkpoint) {
-            ret.push_back(newspaperAsset);
-        }
-    }
-
+NewspaperAsset StoryModel::getNewspaperAsset(int checkpoint) {
+    NewspaperAsset ret = newspaperAssets[checkpoint];
     return ret;
 }

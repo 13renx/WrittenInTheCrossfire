@@ -6,6 +6,7 @@
 #include "MapView.h"
 #include "ReadLetterView.h"
 #include "StoryModel.h"
+#include "Structs.h"
 #include "MainSceneView.h"
 #include "SettingsView.h"
 #include "Utils.h"
@@ -44,7 +45,7 @@ void ViewController::changeView(ViewType viewType) {
 			Utils::Log::debugInfo("activeView updated to AboutView");
 			break;
 		case ViewType::MAIN_SCENE_VIEW:
-			activeView = std::make_shared<MainSceneView>(this, this->gameModel, storyModel);
+			activeView = std::make_shared<MainSceneView>(this, this->gameModel, this->storyModel);
 			Utils::Log::debugInfo("activeView updated to MainSceneView");
 			break;
 		case ViewType::READ_LETTER_VIEW:
@@ -52,7 +53,7 @@ void ViewController::changeView(ViewType viewType) {
 			Utils::Log::debugInfo("activeView updated to ReadLetterView");
 			break;
 		case ViewType::CAMP_VIEW:
-			activeView = std::make_shared<CampView>(this, this->gameModel);
+			activeView = std::make_shared<CampView>(this, this->gameModel, this->storyModel);
 			Utils::Log::debugInfo("activeView updated to CampView");
 			break;
 		case ViewType::WRITE_LETTER_VIEW:

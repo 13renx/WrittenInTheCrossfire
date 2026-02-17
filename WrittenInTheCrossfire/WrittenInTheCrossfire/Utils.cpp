@@ -11,9 +11,6 @@ std::string Utils::Log::fileName = "";
 spdlog::logger Utils::Log::logger = spdlog::logger("");
 
 void Utils::Log::init() {
-    #ifdef _DEBUG
-        
-    #endif
     if(fileName == "") {
         time_t now = time(NULL);
         char str[26] = {};
@@ -29,30 +26,24 @@ void Utils::Log::init() {
     }
 }
 
-void Utils::Log::info(std::string text) {
+void Utils::Log::debugInfo(std::string text) {
     #ifdef _DEBUG
-        
+        logger.info(text);
     #endif
+}
+
+void Utils::Log::info(std::string text) {
     logger.info(text);
 }
 
 void Utils::Log::warn(std::string text) {
-    #ifdef _DEBUG
-        
-    #endif
     logger.warn(text);
 }
 
 void Utils::Log::error(std::string text) {
-    #ifdef _DEBUG
-        
-    #endif
     logger.error(text);
 }
 
 void Utils::Log::critical(std::string text) {
-    #ifdef _DEBUG
-        
-    #endif
     logger.critical(text);
 }

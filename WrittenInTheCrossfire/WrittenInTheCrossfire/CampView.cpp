@@ -99,7 +99,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
     //buttonLayoutTwo->setVisible(false);
 
 	familyRelationshipPanel->onClick([=, &gui, &stats] {
-		Utils::Log::info("familyRelationshipPanel clicked");
+		Utils::Log::debugInfo("familyRelationshipPanel clicked");
 
 		if(!this->isPicFrameFar) {
 			familyRelationshipGroup->moveToBack();
@@ -124,7 +124,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	familyRelationshipPicture->onClick([=, &gui, &stats] {
-		Utils::Log::info("familyRelationshipPicture clicked");
+		Utils::Log::debugInfo("familyRelationshipPicture clicked");
 
 		if(this->isPicFrameFar) {
 			familyRelationshipGroup->moveToFront();
@@ -170,7 +170,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	newspaperPanel->onClick([=, &gui] {
-		Utils::Log::info("newspaperPanel clicked");
+		Utils::Log::debugInfo("newspaperPanel clicked");
 
 		if(!this->isNewspaperFar) {
 			newspaperGroup->moveToBack();
@@ -185,7 +185,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	newspaperPicture->onClick([=, &gui] {
-		Utils::Log::info("newspaperPicture clicked");
+		Utils::Log::debugInfo("newspaperPicture clicked");
 
 		if(this->isNewspaperFar) {
 			newspaperGroup->moveToFront();
@@ -210,7 +210,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	handMirrorPanel->onClick([=] {
-		Utils::Log::info("handMirrorPanel clicked");
+		Utils::Log::debugInfo("handMirrorPanel clicked");
 
 		if(!this->isHandMirrorFar) {
 			handMirrorGroup->moveToBack();
@@ -225,7 +225,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	handMirrorPicture->onClick([=, &gui, &stats] {
-		Utils::Log::info("handMirrorPicture clicked");
+		Utils::Log::debugInfo("handMirrorPicture clicked");
 
 		if(this->isHandMirrorFar) {
 			handMirrorGroup->moveToFront();
@@ -260,7 +260,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		}
 	});
 	writeButton->onClick([=] {
-		Utils::Log::info("writeButton clicked");
+		Utils::Log::debugInfo("writeButton clicked");
 
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
@@ -268,7 +268,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->viewController->changeView(ViewController::ViewType::WRITE_LETTER_VIEW);
 	});
 	dontWriteButton->onClick([=] {
-		Utils::Log::info("dontWriteButton clicked");
+		Utils::Log::debugInfo("dontWriteButton clicked");
 
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);
@@ -276,7 +276,7 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel) : View(
 		this->isDontWriteClicked = true;
 	});
 	exitTentButton->onClick([=] {
-		Utils::Log::info("dontWriteButton clicked");
+		Utils::Log::debugInfo("dontWriteButton clicked");
 
 		writeButton->setEnabled(false);
 		dontWriteButton->setEnabled(false);

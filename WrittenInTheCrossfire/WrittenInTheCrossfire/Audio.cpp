@@ -19,7 +19,7 @@ Audio::Audio() {
 
 void Audio::playMusic() {
 	if(!isMusicRunning) {
-		Utils::Log::info("Music played");
+		Utils::Log::debugInfo("Music played");
 		music.play();
 		music.setLooping(true);
 		isMusicRunning = true;
@@ -28,18 +28,18 @@ void Audio::playMusic() {
 
 void Audio::stopMusic() {
 	if(isMusicRunning) {
-		Utils::Log::info("Music stopped");
+		Utils::Log::debugInfo("Music stopped");
 		music.stop();
 		isMusicRunning = false;
 	}
 }
 
 void Audio::playSfx(std::string sfxName) {
-	Utils::Log::info(fmt::format("{} sfx played", sfxName));
+	Utils::Log::debugInfo(fmt::format("{} sfx played", sfxName));
 	soundEffects.at(sfxName).play();
 }
 
 void Audio::stopSfx(std::string sfxName) {
-	Utils::Log::info(fmt::format("{} sfx stopped", sfxName));
+	Utils::Log::debugInfo(fmt::format("{} sfx stopped", sfxName));
 	soundEffects.at(sfxName).stop();
 }

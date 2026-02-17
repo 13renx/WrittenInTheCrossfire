@@ -43,12 +43,12 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 	buttonsLayout->getRenderer()->setSpaceBetweenWidgets(20);
 
 	backLabel->onClick([=, &window] {
-		Utils::Log::info("backLabel clicked");
+		Utils::Log::debugInfo("backLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 	});
 	resetLabel->onClick([=, &window] {
-		Utils::Log::info("resetLabel clicked");
+		Utils::Log::debugInfo("resetLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		settingsModel.init();
 		masterVolumeValueLabel->setText(std::to_string(settingsModel.getMasterVolume()));
@@ -62,7 +62,7 @@ SettingsView::SettingsView(ViewController* viewController, GameModel& gameModel)
 		alertChildWindow->setVisible(true);
 	});
 	saveLabel->onClick([=, &window] {
-		Utils::Log::info("saveLabel clicked");
+		Utils::Log::debugInfo("saveLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		
 		auto [result, message] = settingsModel.save();

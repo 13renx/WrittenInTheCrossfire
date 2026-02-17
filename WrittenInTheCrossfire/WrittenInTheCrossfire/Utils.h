@@ -11,6 +11,7 @@ namespace Utils
 
 		public:
 			static void init();
+			static void debugInfo(std::string text);
 			static void info(std::string text);
 			static void warn(std::string text);
 			static void error(std::string text);

@@ -80,26 +80,26 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	}
 	
 	exitPanel->onClick([=] { 
-		Utils::Log::info("exitPanel clicked");
+		Utils::Log::debugInfo("exitPanel clicked");
 		exitGroup->setVisible(false); 
 	});
-	exitMessageBox->onButtonPress([=](const tgui::String& button) {//, &gameModel](const tgui::String& button) {
+	exitMessageBox->onButtonPress([=, &window](const tgui::String& button) {//, &gameModel](const tgui::String& button) {
 		if(button == "YES") {
-			Utils::Log::info("exitMessageBox YES button clicked");
-			//gameModel.getWindow().close();
-			exit(0);
+			Utils::Log::debugInfo("exitMessageBox YES button clicked");
+			Utils::Log::debugInfo("Window closed");
+			window.close();
 		}
 		else {
-			Utils::Log::info("exitMessageBox NO button clicked");
+			Utils::Log::debugInfo("exitMessageBox NO button clicked");
 			exitGroup->setVisible(false);
 		}
 	});
 	apiPanel->onClick([=] { 
-		Utils::Log::info("apiPanel clicked");
+		Utils::Log::debugInfo("apiPanel clicked");
 		apiGroup->setVisible(false); 
 	});
 	apiCancelButton->onPress([=] { 
-		Utils::Log::info("apiCancelButton clicked");
+		Utils::Log::debugInfo("apiCancelButton clicked");
 		apiGroup->setVisible(false);
 	});
 	apiEditBox->onMouseEnter([=, &window] {
@@ -109,7 +109,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 	});
 	apiEnterButton->onPress([=, &client, &gameState]() {
-		Utils::Log::info("apiEnterButton clicked");
+		Utils::Log::debugInfo("apiEnterButton clicked");
 		const std::string apiKey = apiEditBox->getText().toStdString();
 		
 		if(apiKey != "") {
@@ -148,7 +148,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	});
 	optionsNewGameLabel->onClick([=, &window, &client, &gameState] { 
 		isContinueClicked = false;
-		Utils::Log::info("optionsNewGameLabel clicked");
+		Utils::Log::debugInfo("optionsNewGameLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
 		if(client.getApiKey() == "") {
@@ -169,7 +169,7 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 	});
 	optionsContinueLabel->onClick([=, &window, &client, &gameState] {
 		isContinueClicked = true;
-		Utils::Log::info("optionsContinueLabel clicked");
+		Utils::Log::debugInfo("optionsContinueLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 
 		if(client.getApiKey() == "") {
@@ -197,17 +197,17 @@ MainMenuView::MainMenuView(ViewController* viewController, GameModel& gameModel)
 		}
 	});
 	optionsSettingsLabel->onClick([=, &window] {
-		Utils::Log::info("optionsSettingsLabel clicked");
+		Utils::Log::debugInfo("optionsSettingsLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::SETTINGS_VIEW);
 	});
 	optionsAboutLabel->onClick([=, &window] {
-		Utils::Log::info("optionsAboutLabel clicked");
+		Utils::Log::debugInfo("optionsAboutLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::ABOUT_VIEW);
 	});
 	optionsExitLabel->onClick([=, &window] { 
-		Utils::Log::info("optionsExitLabel clicked");
+		Utils::Log::debugInfo("optionsExitLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		exitGroup->setVisible(true); 
 	});

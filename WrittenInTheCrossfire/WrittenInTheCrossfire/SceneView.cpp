@@ -46,7 +46,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 	dialogTextArea->getRenderer()->setPadding(20);
 
 	scenePanel->onClick([=, &gameState] {
-		Utils::Log::info("scenePanel clicked");
+		Utils::Log::debugInfo("scenePanel clicked");
 		int checkpoint = gameState.getCheckpoint();
 
 		if(checkpoint == 0 && assetIndex == assets.size()) { // Prelude
@@ -56,7 +56,7 @@ SceneView::SceneView(ViewController* viewController, GameModel& gameModel, Scene
 			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW); // Skip ReadLetterView
 		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == assets.size()) { // Regular/Bad ending
 			std::filesystem::remove("game.json");
-			Utils::Log::info("game.json deleted");
+			Utils::Log::debugInfo("game.json deleted");
 			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 		} else if(assetIndex < assets.size()) {
 			if(std::get<1>(this->assets.at(assetIndex)) != "") {

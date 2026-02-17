@@ -65,7 +65,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	finishButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(finishButton), tgui::bindHeight(gui) - tgui::bindHeight(finishButton));
 
 	familyRelationshipPanel->onClick([=, &gui, &stats] {
-		Utils::Log::info("familyRelationshipPanel clicked");
+		Utils::Log::debugInfo("familyRelationshipPanel clicked");
 
 		if(!this->isPicFrameFar) {
 			familyRelationshipGroup->moveToBack();
@@ -88,7 +88,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 		}
 		});
 	familyRelationshipPicture->onClick([=, &gui, &stats] {
-		Utils::Log::info("familyRelationshipPicture clicked");
+		Utils::Log::debugInfo("familyRelationshipPicture clicked");
 
 		if(this->isPicFrameFar) {
 			familyRelationshipGroup->moveToFront();
@@ -129,7 +129,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 		}
 	});
 	finishButton->onClick([=] {
-		Utils::Log::info("finishButton clicked");
+		Utils::Log::debugInfo("finishButton clicked");
 		this->gameModel.getAudio().stopSfx("paper");
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});

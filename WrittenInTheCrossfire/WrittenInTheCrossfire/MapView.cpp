@@ -22,19 +22,19 @@ MapView::MapView(ViewController* viewController, GameModel& gameModel) : View(vi
 	backButton->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(backButton), tgui::bindHeight(gui) - tgui::bindHeight(backButton));
 
 	backButton->onClick([=] {
-		Utils::Log::info("backButton clicked");
+		Utils::Log::debugInfo("backButton clicked");
 
 		backButton->setEnabled(false);
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 	bunkerPicture->onClick([=] {
-		Utils::Log::info("bunkerPicture clicked");
+		Utils::Log::debugInfo("bunkerPicture clicked");
 	});
 	mealAreaPicture->onClick([=] {
-		Utils::Log::info("mealAreaPicture clicked");
+		Utils::Log::debugInfo("mealAreaPicture clicked");
 	});
 	storageBunkerPicture->onClick([=] {
-		Utils::Log::info("storageBunkerPicture clicked");
+		Utils::Log::debugInfo("storageBunkerPicture clicked");
 	});
 
 	mainPanel->add(bunkerPicture);

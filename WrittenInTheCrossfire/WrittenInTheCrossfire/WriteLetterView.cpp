@@ -87,7 +87,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 	buttonLayout->setPosition(tgui::bindWidth(gui) - tgui::bindWidth(buttonLayout), tgui::bindHeight(gui) - tgui::bindHeight(buttonLayout));
 
 	familyRelationshipPanel->onClick([=, &gui, &stats] {
-		Utils::Log::info("familyRelationshipPanel clicked");
+		Utils::Log::debugInfo("familyRelationshipPanel clicked");
 
 		if(!this->isPicFrameFar) {
 			familyRelationshipGroup->moveToBack();
@@ -111,7 +111,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		}
 	});
 	familyRelationshipPicture->onClick([=, &gui, &stats] {
-		Utils::Log::info("familyRelationshipPicture clicked");
+		Utils::Log::debugInfo("familyRelationshipPicture clicked");
 
 		if(this->isPicFrameFar) {
 			familyRelationshipGroup->moveToFront();
@@ -160,11 +160,11 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 	});
 	dialogPanel->onClick([=] {
-		Utils::Log::info("dialogPanel clicked");
+		Utils::Log::debugInfo("dialogPanel clicked");
 		dialogPanel->setVisible(false);
 	});
 	cancelButton->onClick([=] {
-		Utils::Log::info("cancelButton clicked");
+		Utils::Log::debugInfo("cancelButton clicked");
 		letterTextArea->setReadOnly();
 		cancelButton->setEnabled(false);
 		sendButton->setEnabled(false);
@@ -172,7 +172,7 @@ WriteLetterView::WriteLetterView(ViewController* viewController, GameModel& game
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 	sendButton->onClick([=] {
-		Utils::Log::info("sendButton clicked");
+		Utils::Log::debugInfo("sendButton clicked");
 		letterTextArea->setReadOnly();
 		cancelButton->setEnabled(false);
 		sendButton->setEnabled(false);

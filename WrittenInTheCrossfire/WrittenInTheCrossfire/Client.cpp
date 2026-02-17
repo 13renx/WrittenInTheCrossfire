@@ -143,7 +143,7 @@ json Client::fetchResponse(Client::PromptType promptType, const std::string& api
 	if(ret.contains("error")) {
 		Utils::Log::error(fmt::format("Gemini API Response = {}", res.text));
 	} else {
-		Utils::Log::info(fmt::format("Gemini API Response = {}", res.text));
+		Utils::Log::debugInfo(fmt::format("Gemini API Response = {}", res.text));
 	}
 	
 	return ret;

@@ -30,7 +30,7 @@ AboutView::AboutView(ViewController* viewController, GameModel& gameModel) : Vie
 	spacer->setHeight(500);
 
 	backLabel->onClick([=, &window] {
-		Utils::Log::info("backLabel clicked");
+		Utils::Log::debugInfo("backLabel clicked");
 
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);

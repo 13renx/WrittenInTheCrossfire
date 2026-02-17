@@ -38,18 +38,18 @@ GlobalWidgets::GlobalWidgets(sf::RenderWindow& window, tgui::Gui& gui, ViewContr
 	alertLabel->setPosition(10, 10);
 
 	pauseResumeLabel->onClick([=, &window] {
-		Utils::Log::info("pauseResumeLabel clicked");
+		Utils::Log::debugInfo("pauseResumeLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		pauseGroup->setVisible(false);
 	});
 	pauseExitLabel->onClick([=, &window] {
-		Utils::Log::info("pauseExitLabel clicked");
+		Utils::Log::debugInfo("pauseExitLabel clicked");
 		window.setMouseCursor(sf::Cursor(sf::Cursor::Type::Arrow));
 		viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
 		pauseGroup->setVisible(false);
 	});
 	alertChildWindow->onClose([] {
-		Utils::Log::info("alertChildWindow closed");
+		Utils::Log::debugInfo("alertChildWindow closed");
 	});
 
 	pauseGroup->add(pauseParentPanel);

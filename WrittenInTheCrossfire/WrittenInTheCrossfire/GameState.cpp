@@ -28,13 +28,13 @@ std::vector<json> GameState::getChatHistory() {
 
 void GameState::setChatHistory(std::vector<json> chatHistory) {
 	this->chatHistory = chatHistory;
-	Utils::Log::info("chatHistory updated");
+	Utils::Log::debugInfo("chatHistory updated");
 
 	json jsonArray = json::array();
 	for(const auto& item : chatHistory) {
 		jsonArray.push_back(item);
 	}
-	Utils::Log::info(fmt::format("chatHistory = {}", jsonArray.dump()));
+	Utils::Log::debugInfo(fmt::format("chatHistory = {}", jsonArray.dump()));
 }
 
 int GameState::getCheckpoint() {
@@ -43,8 +43,8 @@ int GameState::getCheckpoint() {
 
 void GameState::setCheckpoint(int checkpoint) {
 	this->checkpoint = checkpoint;
-	Utils::Log::info("checkpoint updated");
-	Utils::Log::info(fmt::format("checkpoint = {}", this->checkpoint));
+	Utils::Log::debugInfo("checkpoint updated");
+	Utils::Log::debugInfo(fmt::format("checkpoint = {}", this->checkpoint));
 }
 
 Stats& GameState::getCurrentStats() {
@@ -85,7 +85,7 @@ std::tuple<bool, std::string> GameState::load() {
 		Utils::Log::info("Game loaded");
 		return { true, "Save loaded successfully." };
 	} else {
-		Utils::Log::info("Game load failed");
+		Utils::Log::error("Game load failed");
 		return { false, "No save found." };
 	}
 }
@@ -107,8 +107,8 @@ void GameState::updateCurrentStats(json& sentiments) {
 		currentStats.patriotism = 100;
 	}
 
-	Utils::Log::info("currentStats updated");
-	Utils::Log::info(fmt::format("currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.mentalWellbeing, currentStats.familyRelationship, currentStats.patriotism));
+	Utils::Log::debugInfo("currentStats updated");
+	Utils::Log::debugInfo(fmt::format("currentStats.mentalWellbeing = {}\ncurrentStats.familyRelationship = {}\ncurrentStats.patriotism = {}", currentStats.mentalWellbeing, currentStats.familyRelationship, currentStats.patriotism));
 }
 
 Stats GameState::calculateStatChanges(json& sentiments) {
@@ -146,6 +146,6 @@ Stats GameState::calculateStatChanges(json& sentiments) {
 
 void GameState::incrementCheckpoint() {
 	checkpoint++;
-	Utils::Log::info("checkpoint updated");
-	Utils::Log::info(fmt::format("checkpoint = {}", checkpoint));
+	Utils::Log::debugInfo("checkpoint updated");
+	Utils::Log::debugInfo(fmt::format("checkpoint = {}", checkpoint));
 }

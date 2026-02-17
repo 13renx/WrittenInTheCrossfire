@@ -33,35 +33,35 @@ void ViewController::changeView(ViewType viewType) {
 	switch(activeViewType) {
 		case ViewType::MAIN_MENU_VIEW:
 			activeView = std::make_shared<MainMenuView>(this, this->gameModel);
-			Utils::Log::info("activeView updated to MainMenuView");
+			Utils::Log::debugInfo("activeView updated to MainMenuView");
 			break;
 		case ViewType::SETTINGS_VIEW:
 			activeView = std::make_shared<SettingsView>(this, this->gameModel);
-			Utils::Log::info("activeView updated to SettingsView");
+			Utils::Log::debugInfo("activeView updated to SettingsView");
 			break;
 		case ViewType::ABOUT_VIEW:
 			activeView = std::make_shared<AboutView>(this, this->gameModel);
-			Utils::Log::info("activeView updated to AboutView");
+			Utils::Log::debugInfo("activeView updated to AboutView");
 			break;
 		case ViewType::SCENE_VIEW:
 			activeView = std::make_shared<SceneView>(this, this->gameModel, sceneModel);
-			Utils::Log::info("activeView updated to SceneView");
+			Utils::Log::debugInfo("activeView updated to SceneView");
 			break;
 		case ViewType::READ_LETTER_VIEW:
 			activeView = std::make_shared<ReadLetterView>(this, this->gameModel);
-			Utils::Log::info("activeView updated to ReadLetterView");
+			Utils::Log::debugInfo("activeView updated to ReadLetterView");
 			break;
 		case ViewType::CAMP_VIEW:
 			activeView = std::make_shared<CampView>(this, this->gameModel);
-			Utils::Log::info("activeView updated to CampView");
+			Utils::Log::debugInfo("activeView updated to CampView");
 			break;
 		case ViewType::WRITE_LETTER_VIEW:
 			activeView = std::make_shared<WriteLetterView>(this, this->gameModel);
-			Utils::Log::info("activeView updated to WriteLetterView");
+			Utils::Log::debugInfo("activeView updated to WriteLetterView");
 			break;
 		case ViewType::MAP_VIEW:
 			activeView = std::make_shared<MapView>(this, this->gameModel);
-			Utils::Log::info("activeView updated to MapView");
+			Utils::Log::debugInfo("activeView updated to MapView");
 			break;
 	}
 }

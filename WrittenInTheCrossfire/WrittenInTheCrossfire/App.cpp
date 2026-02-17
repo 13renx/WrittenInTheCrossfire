@@ -20,13 +20,13 @@ void App::run() {
 	while(window.isOpen()) {
 		while(const std::optional event = window.pollEvent()) {
 			if(event->is<sf::Event::Closed>()) {
-				Utils::Log::info("Window closed");
+				Utils::Log::debugInfo("Window closed");
 				window.close();
 			}
 
 			if(const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
 				if(keyPressed->scancode == sf::Keyboard::Scan::Escape) {
-					Utils::Log::info("Esc key pressed");
+					Utils::Log::debugInfo("Esc key pressed");
 
 					if(activeViewType == ViewController::ViewType::SCENE_VIEW || activeViewType == ViewController::ViewType::READ_LETTER_VIEW) {
 						if(pauseGroup->isVisible()) {

@@ -1,4 +1,4 @@
-#include "MainSceneView.h"
+#include "LocationSceneView.h"
 #include "StoryModel.h"
 #include "GameModel.h"
 #include "GameState.h"
@@ -15,7 +15,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-MainSceneView::MainSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel) : View(viewController, gameModel, tgui::Texture::Texture("")), storyModel(storyModel), gameState(this->gameModel.getGameState()), mainSceneAssets(this->storyModel.getMainSceneAssets(this->gameState.getCheckpoint())) {
+LocationSceneView::LocationSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel) : View(viewController, gameModel, tgui::Texture::Texture("")), storyModel(storyModel), gameState(this->gameModel.getGameState()), locationSceneAssets(this->storyModel.getMainSceneAssets(this->gameState.getCheckpoint())) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
@@ -24,10 +24,11 @@ MainSceneView::MainSceneView(ViewController* viewController, GameModel& gameMode
 	assetIndex = 0;
 
 	// Initialize widgets
-	scenePanel = tgui::Panel::create();
+	backgroundPanel = tgui::Panel::create();
+	foregroundPanel = tgui::Panel::create();
 	dialogueTextArea = tgui::TextArea::create();
-	
-	scenePanel->getRenderer()->setBackgroundColor(tgui::Color::Black);
+
+	backgroundPanel->getRenderer()->setBackgroundColor(tgui::Color::Black);
 	dialogueTextArea->setText("...");
 	dialogueTextArea->setReadOnly();
 	dialogueTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
@@ -38,40 +39,45 @@ MainSceneView::MainSceneView(ViewController* viewController, GameModel& gameMode
 	dialogueTextArea->getRenderer()->setBackgroundColor(tgui::Color(128, 128, 128, 60));
 	dialogueTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(dialogueTextArea)) / 2.0f, tgui::bindHeight(gui) - tgui::bindHeight(dialogueTextArea) - 50);
 	{
-		if(mainSceneAssets.at(0).backgroundTexture != "") {
-			tgui::Texture texture(mainSceneAssets.at(0).backgroundTexture);
+		if(locationSceneAssets.at(0).backgroundTexture != "") {
+			tgui::Texture texture(locationSceneAssets.at(0).backgroundTexture);
 			scenePanel->getRenderer()->setTextureBackground(texture);
 		}
 	}
 	dialogueTextArea->getRenderer()->setPadding(20);
-	
+
 	scenePanel->onClick([=, &gameState] {
 		Utils::Log::debugInfo("scenePanel clicked");
 		int checkpoint = gameState.getCheckpoint();
 
-		if(checkpoint == 0 && assetIndex == mainSceneAssets.size()) { // Prelude
+		if(checkpoint == 0 && assetIndex == locationSceneAssets.size()) { // Prelude
 			gameState.incrementCheckpoint();
 			this->viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
-		} else if(checkpoint == 1 && assetIndex == mainSceneAssets.size()) { // After Prelude
+		}
+		else if(checkpoint == 1 && assetIndex == locationSceneAssets.size()) { // After Prelude
 			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW); // Skip ReadLetterView
-		} else if((checkpoint == 19 || checkpoint < 0) && assetIndex == mainSceneAssets.size()) { // Regular/Bad ending
+		}
+		else if((checkpoint == 19 || checkpoint < 0) && assetIndex == locationSceneAssets.size()) { // Regular/Bad ending
 			std::filesystem::remove("game.json");
 			Utils::Log::debugInfo("game.json deleted");
 			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
-		} else if(assetIndex < mainSceneAssets.size()) {
-			if(mainSceneAssets.at(assetIndex).backgroundTexture != "") {
-				tgui::Texture texture(mainSceneAssets.at(assetIndex).backgroundTexture);
+		}
+		else if(assetIndex < locationSceneAssets.size()) {
+			if(locationSceneAssets.at(assetIndex).backgroundTexture != "") {
+				tgui::Texture texture(locationSceneAssets.at(assetIndex).backgroundTexture);
 				scenePanel->getRenderer()->setTextureBackground(texture);
-			} else {
+			}
+			else {
 				scenePanel->getRenderer()->setTextureBackground("");
 			}
-			std::string text = mainSceneAssets.at(assetIndex).dialogue;
+			std::string text = locationSceneAssets.at(assetIndex).dialogue;
 			dialogueTextArea->setText(text);
 			assetIndex++;
-		} else {
+		}
+		else {
 			this->viewController->changeView(ViewController::ViewType::READ_LETTER_VIEW); // View Mom's letter
 		}
-	});
+		});
 	scenePanel->add(dialogueTextArea);
 	mainPanel->add(scenePanel);
 }

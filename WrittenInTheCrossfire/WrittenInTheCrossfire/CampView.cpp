@@ -90,9 +90,17 @@ CampView::CampView(ViewController* viewController, GameModel& gameModel, StoryMo
 	familyRelationshipPanel->setVisible(false);
 	familyRelationshipPicture->setScale(0.5f);
 	familyRelationshipPicture->setPosition(70, 460);
-	newspaperTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(newspaperTextArea)) / 2.0f, (tgui::bindHeight(gui) - tgui::bindHeight(newspaperTextArea)) / 2.0f);
+	newspaperTextArea->setPosition((tgui::bindWidth(gui) - tgui::bindWidth(newspaperTextArea)) / 2.0f - 250, (tgui::bindHeight(gui) - tgui::bindHeight(newspaperTextArea)) / 2.0f + 200);
 	newspaperTextArea->setText(this->storyModel.getNewspaperAsset(checkpoint).headline);
+	newspaperTextArea->setReadOnly();
+	newspaperTextArea->getRenderer()->setSelectedTextColor(tgui::Color(51, 39, 34));
+	newspaperTextArea->getRenderer()->setSelectedTextBackgroundColor(tgui::Color::Transparent);
+	newspaperTextArea->getRenderer()->setCaretColor(tgui::Color::Transparent);
+	newspaperTextArea->setTextSize(50);
+	newspaperTextArea->getRenderer()->setBackgroundColor(tgui::Color::Transparent);
 	newspaperTextArea->setVisible(false);
+	newspaperTextArea->setSize(500, 700);
+	newspaperTextArea->getRenderer()->setTextColor(tgui::Color(51, 39, 34));
 	newspaperPicture->setScale(0.5f);
 	newspaperPicture->setPosition(450, 630);
 	newspaperPanel->setVisible(false);

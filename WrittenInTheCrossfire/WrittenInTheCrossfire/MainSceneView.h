@@ -21,7 +21,7 @@ class MainSceneView : public View
 		size_t assetIndex;
 
 		tgui::Panel::Ptr scenePanel;
-		tgui::TextArea::Ptr dialogTextArea;
+		tgui::TextArea::Ptr dialogueTextArea;
 
 	public:
 		MainSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel);

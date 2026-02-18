@@ -15,7 +15,7 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
-LocationSceneView::LocationSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel) : View(viewController, gameModel, tgui::Texture::Texture("")), storyModel(storyModel), gameState(this->gameModel.getGameState()), locationSceneAssets(this->storyModel.getMainSceneAssets(this->gameState.getCheckpoint())) {
+LocationSceneView::LocationSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel, LocationType locationType) : View(viewController, gameModel, tgui::Texture::Texture("")), storyModel(storyModel), gameState(this->gameModel.getGameState()), locationSceneAssets(this->storyModel.getMainSceneAssets(this->gameState.getCheckpoint())) {
 	sf::RenderWindow& window = this->gameModel.getWindow();
 	tgui::Gui& gui = this->gameModel.getGui();
 	this->gameModel.getAudio().stopMusic();
@@ -50,18 +50,11 @@ LocationSceneView::LocationSceneView(ViewController* viewController, GameModel& 
 		Utils::Log::debugInfo("scenePanel clicked");
 		int checkpoint = gameState.getCheckpoint();
 
-		if(checkpoint == 0 && assetIndex == locationSceneAssets.size()) { // Prelude
-			gameState.incrementCheckpoint();
-			this->viewController->changeView(ViewController::ViewType::MAIN_SCENE_VIEW);
+		
+		if(checkpoint == 1 && assetIndex == locationSceneAssets.size()) {
+			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 		}
-		else if(checkpoint == 1 && assetIndex == locationSceneAssets.size()) { // After Prelude
-			this->viewController->changeView(ViewController::ViewType::CAMP_VIEW); // Skip ReadLetterView
-		}
-		else if((checkpoint == 19 || checkpoint < 0) && assetIndex == locationSceneAssets.size()) { // Regular/Bad ending
-			std::filesystem::remove("game.json");
-			Utils::Log::debugInfo("game.json deleted");
-			this->viewController->changeView(ViewController::ViewType::MAIN_MENU_VIEW);
-		}
+		
 		else if(assetIndex < locationSceneAssets.size()) {
 			if(locationSceneAssets.at(assetIndex).backgroundTexture != "") {
 				tgui::Texture texture(locationSceneAssets.at(assetIndex).backgroundTexture);
@@ -74,9 +67,7 @@ LocationSceneView::LocationSceneView(ViewController* viewController, GameModel& 
 			dialogueTextArea->setText(text);
 			assetIndex++;
 		}
-		else {
-			this->viewController->changeView(ViewController::ViewType::READ_LETTER_VIEW); // View Mom's letter
-		}
+		
 		});
 	scenePanel->add(dialogueTextArea);
 	mainPanel->add(scenePanel);

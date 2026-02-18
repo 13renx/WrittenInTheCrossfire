@@ -10,6 +10,13 @@
 
 class LocationSceneView : public View
 {
+    public:
+        enum class LocationType {
+            BUNK,
+            STORAGE,
+            MEAL
+        };
+        
 private:
 	StoryModel& storyModel;
 	GameState& gameState;
@@ -21,5 +28,5 @@ private:
 	tgui::TextArea::Ptr dialogueTextArea;
 
 public:
-	LocationSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel);
+	LocationSceneView(ViewController* viewController, GameModel& gameModel, StoryModel& storyModel, LocationType locationType);
 };

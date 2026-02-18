@@ -12,6 +12,7 @@ class GameState : Model {
         std::vector<json> chatHistory;
         int checkpoint;
         Stats currentStats;
+        bool isLocationVisited
 
     public:
         GameState();

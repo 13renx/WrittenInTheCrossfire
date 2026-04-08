@@ -243,12 +243,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5C35CD67C27141F881FB6B50FB742019"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_60C05A4F49DD489184C1128657ACD320"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -688,6 +682,12 @@
         "Entry"
         {
         "MsmKey" = "8:_ED936065A9854C73BE1182DF96CCD658"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EDE3ABA503BC40CA957DD0FCBBA1ECA3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1602,26 +1602,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5C35CD67C27141F881FB6B50FB742019"
-            {
-            "SourcePath" = "8:..\\WrittenInTheCrossfire\\Assets\\Audio\\SFX\\paper.mp3"
-            "TargetName" = "8:paper.mp3"
-            "Tag" = "8:"
-            "Folder" = "8:_51F662B195B44C63A62F2D78776F7A73"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_60C05A4F49DD489184C1128657ACD320"
@@ -3084,6 +3064,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EDE3ABA503BC40CA957DD0FCBBA1ECA3"
+            {
+            "SourcePath" = "8:..\\WrittenInTheCrossfire\\Assets\\Audio\\SFX\\letter.mp3"
+            "TargetName" = "8:letter.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_51F662B195B44C63A62F2D78776F7A73"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F18F2962699346DD94ED46B260C65F3D"
             {
             "SourcePath" = "8:..\\WrittenInTheCrossfire\\Assets\\Textures\\Scenes\\Characters\\Soldier 3 not .PNG"
@@ -3581,20 +3581,20 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WrittenInTheCrossfireSetup"
         "ProductCode" = "8:{A2432D58-F307-4AFE-AA4C-FB04A0934D25}"
-        "PackageCode" = "8:{868D5B62-D75C-4125-B019-48E7925187DA}"
+        "PackageCode" = "8:{214C0CEC-B22D-44D5-AB5E-5DD86AC533E3}"
         "UpgradeCode" = "8:{F1FBC49E-4F77-4172-816D-FE08192F9631}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
-        "DetectNewerInstalledVersion" = "11:TRUE"
+        "DetectNewerInstalledVersion" = "11:FALSE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Brent"
+        "Manufacturer" = "8:13renx"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:WrittenInTheCrossfireSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Brent"
+        "ARPCONTACT" = "8:13renx"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -3703,7 +3703,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7843456BF7DE45AABC0538C2FDBB30B3"
             {
-            "Name" = "8:Shortcut to %sPrimary Output from WrittenInTheCrossfire (Release x64)"
+            "Name" = "8:WrittenInTheCrossfire (Release x64)"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -3717,7 +3717,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D363F6DA62174139906AE4CF6ACD6566"
             {
-            "Name" = "8:Shortcut to %sPrimary Output from WrittenInTheCrossfire (Release x64)"
+            "Name" = "8:WrittenInTheCrossfire (Release x64)"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

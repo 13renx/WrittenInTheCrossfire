@@ -5,6 +5,7 @@
 - [Getting Started](#getting-started)
 - [Dependencies](#dependencies)
   - [Libraries](#libraries)
+  - [Fonts](#fonts)
 - [Authors](#authors)
 
 ## Getting Started
@@ -16,6 +17,7 @@
     1. Install fmtlib/fmt with vcpkg
     1. Install nlohmann/json with vcpkg
     1. Install libcpr/cpr with vcpkg
+    1. Install gabime/spdlog with vcpkg
 1. Clone this repository
 
 ## Dependencies
@@ -37,6 +39,21 @@
 - **[libcpr/cpr](https://github.com/libcpr/cpr)**
   - **Author:** [libcpr](https://github.com/libcpr)
   - **License:** [MIT License](https://github.com/libcpr/cpr/blob/master/LICENSE)
+- **[gabime/spdlog](https://github.com/gabime/spdlog)**
+  - **Owner:** [gabime](https://github.com/gabime)
+  - **License:** [MIT License](https://github.com/gabime/spdlog/blob/v1.x/LICENSE)
+
+### Fonts
+
+- **[Caveat](https://fonts.google.com/specimen/Homemade+Apple)**
+  - **Designer:** [Impallari Type](https://fonts.google.com/?query=Impallari%20Type)
+  - **License:** [Open Font License](https://fonts.google.com/specimen/Caveat/license)
+- **[Homemade Apple](https://fonts.google.com/specimen/Homemade+Apple)**
+  - **Designer:** [Font Diner](https://fonts.google.com/?query=Font+Diner)
+  - **License:** [Apache License](https://fonts.google.com/specimen/Homemade+Apple/license)
+- **[Inconsolata](https://fonts.google.com/specimen/Inconsolata)**
+  - **Designer:** [Raph Levien](https://fonts.google.com/?query=Raph%20Levien)
+  - **License:** [Open Font License](https://fonts.google.com/specimen/Inconsolata/license)
   
 ## Authors
 
@@ -83,12 +100,12 @@
     </tr>
     <tr>
       <td align="center">
-        <img src="https://github.com/brent-soan.png" width="50" height="50" style="border-radius: 50%;" />
+        <img src="https://github.com/13renx.png" width="50" height="50" style="border-radius: 50%;" />
       </td>
       <td>
         <strong>Brent Jan Soan</strong>  
         <br />
-        <a href="https://github.com/brent-soan">@brent-soan</a>
+        <a href="https://github.com/13renx">@13renx</a>
       </td>
       <td>
         <ul>
@@ -107,6 +124,7 @@
       </td>
       <td>
         <ul>
+          <li>Developer</li>
           <li>Writer</li>
         </ul>
       </td>

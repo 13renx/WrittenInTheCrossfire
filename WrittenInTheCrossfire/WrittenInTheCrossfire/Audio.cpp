@@ -10,10 +10,10 @@ Audio::Audio() {
 	}
 
 	soundBuffers = { 
-		{ "paper", sf::SoundBuffer("./Assets/Audio/SFX/paper.mp3") } 
+		{ "letter", sf::SoundBuffer("./Assets/Audio/SFX/letter.mp3") } 
 	};
 	soundEffects = {
-		{ "paper", sf::Sound(soundBuffers["paper"]) }
+		{ "letter", sf::Sound(soundBuffers["letter"]) }
 	};
 }
 

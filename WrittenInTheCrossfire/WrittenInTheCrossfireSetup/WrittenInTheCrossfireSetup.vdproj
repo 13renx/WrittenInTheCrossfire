@@ -579,6 +579,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_CF90F8E1F5894119B6F980FCA8DDDEC6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D06BE6383BB046BBB41F9D8803A5C9F9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -776,6 +782,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -2690,6 +2704,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CF90F8E1F5894119B6F980FCA8DDDEC6"
+            {
+            "SourcePath" = "8:..\\WrittenInTheCrossfire\\Assets\\Icons\\Logo.ico"
+            "TargetName" = "8:Logo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_4438EECF110E446497E3BA5A75C82ADB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D06BE6383BB046BBB41F9D8803A5C9F9"
             {
             "SourcePath" = "8:..\\WrittenInTheCrossfire\\Assets\\Textures\\Interactables\\Newspaper\\Far.png"
@@ -3667,6 +3701,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7843456BF7DE45AABC0538C2FDBB30B3"
+            {
+            "Name" = "8:Shortcut to %sPrimary Output from WrittenInTheCrossfire (Release x64)"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_88896F2751B84AB2BAD1285FDA105EB4"
+            "Folder" = "8:_7EA6146559E84D4390AAFE4F3E85A49E"
+            "WorkingFolder" = "8:_083D83675488420499AB56F409B959EE"
+            "Icon" = "8:_CF90F8E1F5894119B6F980FCA8DDDEC6"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D363F6DA62174139906AE4CF6ACD6566"
+            {
+            "Name" = "8:Shortcut to %sPrimary Output from WrittenInTheCrossfire (Release x64)"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_88896F2751B84AB2BAD1285FDA105EB4"
+            "Folder" = "8:_DBD82CB4E2BF4968BC2DF794B78BD50D"
+            "WorkingFolder" = "8:_083D83675488420499AB56F409B959EE"
+            "Icon" = "8:_CF90F8E1F5894119B6F980FCA8DDDEC6"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {

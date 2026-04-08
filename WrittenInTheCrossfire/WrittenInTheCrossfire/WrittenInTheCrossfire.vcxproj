@@ -144,6 +144,7 @@
     <ClCompile Include="GameModel.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GlobalWidgets.cpp" />
+    <ClCompile Include="LocationSceneView.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuView.cpp" />
     <ClCompile Include="MapView.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="GameModel.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GlobalWidgets.h" />
+    <ClInclude Include="LocationSceneView.h" />
     <ClInclude Include="Macros.h" />
     <ClInclude Include="MainMenuView.h" />
     <ClInclude Include="MapView.h" />

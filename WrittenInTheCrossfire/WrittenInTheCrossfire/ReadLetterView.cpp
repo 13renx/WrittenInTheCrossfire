@@ -130,7 +130,7 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	});
 	finishButton->onClick([=] {
 		Utils::Log::debugInfo("finishButton clicked");
-		this->gameModel.getAudio().stopSfx("paper");
+		this->gameModel.getAudio().stopSfx("letter");
 		this->viewController->changeView(ViewController::ViewType::CAMP_VIEW);
 	});
 
@@ -141,5 +141,5 @@ ReadLetterView::ReadLetterView(ViewController* viewController, GameModel& gameMo
 	familyRelationshipGroup->add(familyRelationshipPanel);
 	familyRelationshipGroup->add(familyRelationshipPicture);
 
-	this->gameModel.getAudio().playSfx("paper");
+	this->gameModel.getAudio().playSfx("letter");
 }

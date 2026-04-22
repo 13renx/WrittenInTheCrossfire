@@ -38,8 +38,6 @@ StoryModel::StoryModel() {
             newspaperAsset.checkpoint = checkpoint;
         }
 
-        std::cout << line << std::endl;
-
         if(isMainScene && line.size() > 3) {
             if(line.at(0) >= '0' && line.at(0) <= '9') { // backgroundTexture
                 if(line.find("Black Screen") != std::string::npos) {
